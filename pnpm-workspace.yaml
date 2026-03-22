@@ -15,9 +15,11 @@ catalog:
   clsx: ^2.1.1
   convex: ^1.34.0
   dotenv: ^17.3.1
+  nanoid: ^5.1.7
   radix-ui: ^1.4.3
   satori: ^0.26.0
   shadcn: ^4.1.0
+  sharp: ^0.34.5
   tailwind-merge: ^3.5.0
   tailwindcss: ^4.2.2
   tsx: ^4.21.0
@@ -26,6 +28,7 @@ catalog:
   vite: npm:@voidzero-dev/vite-plus-core@latest
   vite-plus: latest
   vitest: npm:@voidzero-dev/vite-plus-test@latest
+  zod: ^4.3.6
 
 catalogMode: prefer
 overrides:
