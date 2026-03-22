@@ -9,6 +9,7 @@
  */
 
 import type * as seed from "../seed.js";
+import type * as songs from "../songs.js";
 import type * as tables_categories from "../tables/categories.js";
 import type * as tables_difficulties from "../tables/difficulties.js";
 import type * as tables_regions from "../tables/regions.js";
@@ -26,6 +27,7 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   seed: typeof seed;
+  songs: typeof songs;
   "tables/categories": typeof tables_categories;
   "tables/difficulties": typeof tables_difficulties;
   "tables/regions": typeof tables_regions;
