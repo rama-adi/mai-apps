@@ -17,6 +17,7 @@ export const songs = defineTable({
   comment: v.union(v.string(), v.null()),
 })
   .index("by_songId", ["songId"])
+  .index("by_slug", ["slug"])
   .index("by_categoryId", ["categoryId"])
   .index("by_versionId", ["versionId"])
   .searchIndex("search_title", { searchField: "title" });

@@ -12,6 +12,7 @@ export default defineConfig({
       "components/ui/input": "src/components/ui/input.tsx",
       "components/ui/select": "src/components/ui/select.tsx",
       "components/ui/collapsible": "src/components/ui/collapsible.tsx",
+      "components/ui/dialog": "src/components/ui/dialog.tsx",
     },
     dts: {
       tsgo: true,

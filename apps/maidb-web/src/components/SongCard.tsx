@@ -1,9 +1,11 @@
+import { useNavigate } from "@tanstack/react-router";
 import { Music, Clock, Zap } from "lucide-react";
 import { useState } from "react";
 
 const THUMBNAIL_BASE = "https://maisongdb-blob.onebyteworks.my.id/thumb";
 
 interface SongCardProps {
+  slug: string | null;
   title: string;
   artist: string;
   bpm: number | null;
@@ -17,11 +19,12 @@ interface SongCardProps {
 
 // Fixed height so skeletons and real cards are identical size — no layout shift
 const cardClass =
-  "group flex h-full w-full gap-4 rounded-lg border bg-card p-4 transition-colors hover:bg-accent/50";
+  "group flex h-full w-full gap-4 rounded-lg border bg-card p-4 transition-colors hover:bg-accent/50 cursor-pointer";
 const thumbClass =
   "flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted";
 
 export function SongCard({
+  slug,
   title,
   artist,
   bpm,
@@ -32,10 +35,20 @@ export function SongCard({
   internalImageId,
 }: SongCardProps) {
   const [imgError, setImgError] = useState(false);
+  const navigate = useNavigate();
   const thumbnailUrl = internalImageId ? `${THUMBNAIL_BASE}/${internalImageId}.png` : null;
 
+  const handleClick = () => {
+    if (!slug) return;
+    void navigate({
+      to: "/",
+      search: (prev: Record<string, unknown>) => ({ ...prev, songSlug: slug }),
+      mask: { to: "/songs/$slug", params: { slug } },
+    });
+  };
+
   return (
-    <article className={cardClass}>
+    <article className={cardClass} onClick={handleClick}>
       <div className={thumbClass}>
         {thumbnailUrl && !imgError ? (
           <img
