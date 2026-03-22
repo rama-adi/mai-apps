@@ -3,7 +3,7 @@ import {
   getFilterOptions as getFilterOptionsServer,
   getLatestSongs as getLatestSongsServer,
 } from "../lib/song-data.server";
-import type { FilterOptions } from "../lib/songs";
+import type { FilterOptions } from "maidb-data";
 
 export const getLatestSongs = createServerFn({ method: "GET" })
   .inputValidator((data: { limit?: number } | undefined) => data)
