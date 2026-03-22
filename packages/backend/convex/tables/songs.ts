@@ -13,6 +13,7 @@ export const songs = defineTable({
   releaseDate: v.union(v.string(), v.null()),
   isNew: v.boolean(),
   isLocked: v.boolean(),
+  slug: v.optional(v.string()),
   comment: v.union(v.string(), v.null()),
 })
   .index("by_songId", ["songId"])

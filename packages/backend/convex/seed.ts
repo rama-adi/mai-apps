@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
 
@@ -233,6 +234,38 @@ export const backfillImageIds = mutation({
       } else {
         console.warn(`Song not found: ${songId}`);
       }
+    }
+  },
+});
+
+export const getSongsWithoutSlugs = query({
+  args: { secret: v.string() },
+  handler: async (ctx, { secret }) => {
+    const expected = process.env.SEED_SECRET;
+    if (!expected || secret !== expected) {
+      throw new Error("Unauthorized");
+    }
+
+    const allSongs = await ctx.db.query("songs").collect();
+    return allSongs
+      .filter((s) => !s.slug)
+      .map((s) => ({ _id: s._id, title: s.title, artist: s.artist }));
+  },
+});
+
+export const backfillSlugs = mutation({
+  args: {
+    secret: v.string(),
+    patches: v.array(v.object({ id: v.id("songs"), slug: v.string() })),
+  },
+  handler: async (ctx, { secret, patches }) => {
+    const expected = process.env.SEED_SECRET;
+    if (!expected || secret !== expected) {
+      throw new Error("Unauthorized");
+    }
+
+    for (const { id, slug } of patches) {
+      await ctx.db.patch(id, { slug });
     }
   },
 });

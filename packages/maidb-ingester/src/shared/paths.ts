@@ -8,5 +8,6 @@ export const METADATA_PATH = join(SCRATCH_DIR, "metadata.json");
 export const RECEIPTS_PATH = join(SCRATCH_DIR, "image-assets-receipts.json");
 export const BACKFILL_INPUT_PATH = join(SCRATCH_DIR, "backfill-receipts.json");
 export const BACKFILL_RECEIPTS_PATH = join(SCRATCH_DIR, "backfill-image-assets-receipts.json");
+export const SLUGS_BACKFILL_PATH = join(SCRATCH_DIR, "slugs-backfill-receipts.json");
 export const THUMB_DIR = join(SCRATCH_DIR, "thumb");
 export const OG_DIR = join(SCRATCH_DIR, "og-v1");
