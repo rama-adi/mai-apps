@@ -1,0 +1,61 @@
+{
+  "name": "ui",
+  "version": "0.0.0",
+  "description": "A starter for creating a TypeScript package.",
+  "homepage": "https://github.com/author/library#readme",
+  "bugs": {
+    "url": "https://github.com/author/library/issues"
+  },
+  "license": "MIT",
+  "author": "Author Name <author.name@mail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/author/library.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./dist/lib/utils.mjs",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vp pack",
+    "dev": "vp pack --watch",
+    "test": "vp test",
+    "check": "vp check",
+    "prepublishOnly": "vp run build"
+  },
+  "dependencies": {
+    "@fontsource-variable/figtree": "catalog:",
+    "@hugeicons/core-free-icons": "catalog:",
+    "@hugeicons/react": "catalog:",
+    "@tailwindcss/vite": "catalog:",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
+    "radix-ui": "catalog:",
+    "shadcn": "catalog:",
+    "tailwind-merge": "catalog:",
+    "tailwindcss": "catalog:",
+    "tw-animate-css": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@typescript/native-preview": "7.0.0-dev.20260316.1",
+    "bumpp": "^11.0.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "typescript": "^5.9.3",
+    "vite-plus": "^0.1.11"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

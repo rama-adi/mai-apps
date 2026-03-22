@@ -74,3 +74,7 @@ These commands map to their corresponding tools. For example, `vp dev --port 300
 - [ ] Run `vp install` after pulling remote changes and before getting started.
 - [ ] Run `vp check` and `vp test` to validate changes.
 <!--VITE PLUS END-->
+
+## No Barrel Exports
+
+Do not use barrel exports (`index.ts` that re-exports everything). Each module must be exported individually via subpath exports in `package.json`. Consumers import directly from the specific module path (e.g., `import { Button } from "ui/components/button"`).
