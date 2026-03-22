@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "maidb-ingester",
   "version": "0.0.0",
   "description": "A starter for creating a TypeScript package.",
   "homepage": "https://github.com/author/library#readme",
@@ -18,7 +18,6 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.mjs",
-    "./convex/_generated/api": "./convex/_generated/api.js",
     "./package.json": "./package.json"
   },
   "publishConfig": {
@@ -29,10 +28,27 @@
     "dev": "vp pack --watch",
     "test": "vp test",
     "check": "vp check",
-    "prepublishOnly": "vp run build"
+    "prepublishOnly": "vp run build",
+    "scrape": "tsx src/scrape-maimai-songs.ts",
+    "create-images": "tsx src/create-image-assets.ts",
+    "upload": "tsx src/upload-to-s3.ts",
+    "ingest": "tsx src/ingest-to-convex.ts",
+    "total-reset": "tsx src/total-reset.ts",
+    "backfill:find": "tsx src/backfill-missing-images.ts",
+    "backfill:images": "tsx src/create-image-assets.ts --backfill",
+    "backfill:upload": "tsx src/upload-to-s3.ts --backfill",
+    "backfill:ingest": "tsx src/ingest-image-backfill-convex.ts"
   },
   "dependencies": {
-    "convex": "catalog:"
+    "@aws-sdk/client-s3": "catalog:",
+    "@resvg/resvg-js": "catalog:",
+    "backend": "workspace:*",
+    "convex": "catalog:",
+    "dotenv": "catalog:",
+    "nanoid": "^5.1.5",
+    "satori": "catalog:",
+    "sharp": "^0.34.2",
+    "tsx": "catalog:"
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
