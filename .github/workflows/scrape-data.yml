@@ -1,0 +1,55 @@
+name: Scrape maimai song data
+
+on:
+  schedule:
+    # Tue–Fri at 10:30 AM JST (01:30 UTC), 30min after game update
+    - cron: "30 1 * * 2-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/maidb-data
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version: "22"
+          cache: true
+
+      - run: vp install
+
+      - name: Append new songs
+        run: vp run append-songs
+
+      - name: Generate slugs
+        run: vp run create-slugs
+
+      - name: Create image assets
+        run: vp run create-images
+
+      - name: Upload to S3
+        run: vp run upload
+        env:
+          S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+          S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
+
+      - name: Finalize songs.json
+        run: vp run finalize
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add songs.json
+          git diff --cached --quiet || git commit -m "chore(maidb-data): sync songs.json"
+          git push
