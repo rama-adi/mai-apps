@@ -1,4 +1,4 @@
-import { useNavigate } from "@tanstack/react-router";
+import { useLocation, useNavigate } from "@tanstack/react-router";
 import { Music, Clock, Zap } from "lucide-react";
 import { useState } from "react";
 import type { MaiDbSong } from "maidb-data";
@@ -14,6 +14,7 @@ const thumbClass =
 export function SongCard({ song }: { song: MaiDbSong }) {
   const [imgError, setImgError] = useState(false);
   const navigate = useNavigate();
+  const search = useLocation({ select: (location) => location.search });
   const thumbnailUrl = song.internalImageId
     ? `${THUMBNAIL_BASE}/${song.internalImageId}.png`
     : null;
@@ -21,9 +22,10 @@ export function SongCard({ song }: { song: MaiDbSong }) {
   const handleClick = () => {
     if (!song.slug) return;
     void navigate({
-      to: "/",
-      search: (prev: Record<string, unknown>) => ({ ...prev, songSlug: song.slug }),
-      mask: { to: "/songs/$slug", params: { slug: song.slug! } },
+      to: "/song-modal/$slug",
+      params: { slug: song.slug },
+      search: search,
+      mask: { to: "/songs/$slug", params: { slug: song.slug }, unmaskOnReload: true },
     });
   };
 

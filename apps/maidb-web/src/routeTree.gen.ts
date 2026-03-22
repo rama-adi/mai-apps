@@ -9,90 +9,94 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SonglistRouteImport } from './routes/songlist'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SongsSlugRouteImport } from './routes/songs.$slug'
+import { Route as SongModalSlugRouteImport } from './routes/song-modal.$slug'
 
+const SonglistRoute = SonglistRouteImport.update({
+            id: '/songlist',path: '/songlist',getParentRoute: () => rootRouteImport
+          }as any)
 const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
+            id: '/about',path: '/about',getParentRoute: () => rootRouteImport
+          }as any)
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
+            id: '/',path: '/',getParentRoute: () => rootRouteImport
+          }as any)
 const SongsSlugRoute = SongsSlugRouteImport.update({
-  id: '/songs/$slug',
-  path: '/songs/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
+            id: '/songs/$slug',path: '/songs/$slug',getParentRoute: () => rootRouteImport
+          }as any)
+const SongModalSlugRoute = SongModalSlugRouteImport.update({
+            id: '/song-modal/$slug',path: '/song-modal/$slug',getParentRoute: () => rootRouteImport
+          }as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/songs/$slug': typeof SongsSlugRoute
+'/': typeof IndexRoute,'/about': typeof AboutRoute,'/songlist': typeof SonglistRoute,'/song-modal/$slug': typeof SongModalSlugRoute,'/songs/$slug': typeof SongsSlugRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/songs/$slug': typeof SongsSlugRoute
+'/': typeof IndexRoute,'/about': typeof AboutRoute,'/songlist': typeof SonglistRoute,'/song-modal/$slug': typeof SongModalSlugRoute,'/songs/$slug': typeof SongsSlugRoute
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/songs/$slug': typeof SongsSlugRoute
+'__root__': typeof rootRouteImport,
+'/': typeof IndexRoute,'/about': typeof AboutRoute,'/songlist': typeof SonglistRoute,'/song-modal/$slug': typeof SongModalSlugRoute,'/songs/$slug': typeof SongsSlugRoute
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/songs/$slug'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/songs/$slug'
-  id: '__root__' | '/' | '/about' | '/songs/$slug'
-  fileRoutesById: FileRoutesById
+fileRoutesByFullPath: FileRoutesByFullPath
+fullPaths: '/'|'/about'|'/songlist'|'/song-modal/$slug'|'/songs/$slug'
+fileRoutesByTo: FileRoutesByTo
+to: '/'|'/about'|'/songlist'|'/song-modal/$slug'|'/songs/$slug'
+id: '__root__'|'/'|'/about'|'/songlist'|'/song-modal/$slug'|'/songs/$slug'
+fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  SongsSlugRoute: typeof SongsSlugRoute
+IndexRoute: typeof IndexRoute,AboutRoute: typeof AboutRoute,SonglistRoute: typeof SonglistRoute,SongModalSlugRoute: typeof SongModalSlugRoute,SongsSlugRoute: typeof SongsSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/songs/$slug': {
-      id: '/songs/$slug'
-      path: '/songs/$slug'
-      fullPath: '/songs/$slug'
-      preLoaderRoute: typeof SongsSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+    '/songlist': {
+          id: '/songlist'
+          path: '/songlist'
+          fullPath: '/songlist'
+          preLoaderRoute: typeof SonglistRouteImport
+          parentRoute: typeof rootRouteImport
+        }
+'/about': {
+          id: '/about'
+          path: '/about'
+          fullPath: '/about'
+          preLoaderRoute: typeof AboutRouteImport
+          parentRoute: typeof rootRouteImport
+        }
+'/': {
+          id: '/'
+          path: '/'
+          fullPath: '/'
+          preLoaderRoute: typeof IndexRouteImport
+          parentRoute: typeof rootRouteImport
+        }
+'/songs/$slug': {
+          id: '/songs/$slug'
+          path: '/songs/$slug'
+          fullPath: '/songs/$slug'
+          preLoaderRoute: typeof SongsSlugRouteImport
+          parentRoute: typeof rootRouteImport
+        }
+'/song-modal/$slug': {
+          id: '/song-modal/$slug'
+          path: '/song-modal/$slug'
+          fullPath: '/song-modal/$slug'
+          preLoaderRoute: typeof SongModalSlugRouteImport
+          parentRoute: typeof rootRouteImport
+        }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  SongsSlugRoute: SongsSlugRoute,
+  IndexRoute: IndexRoute,AboutRoute: AboutRoute,SonglistRoute: SonglistRoute,SongModalSlugRoute: SongModalSlugRoute,SongsSlugRoute: SongsSlugRoute
 }
-export const routeTree = rootRouteImport
-  ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+export const routeTree = rootRouteImport._addFileChildren(rootRouteChildren)._addFileTypes<FileRouteTypes>()
 
 import type { getRouter } from './router.tsx'
 import type { createStart } from '@tanstack/react-start'

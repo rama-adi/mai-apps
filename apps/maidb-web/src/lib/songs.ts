@@ -1,9 +1,6 @@
 import type { MaiDbSong } from "maidb-data";
 import { DIFFICULTY_COLORS } from "maidb-data";
-
-import allSongs from "maidb-data/songs.json";
-
-const songs = allSongs as MaiDbSong[];
+import Fuse, { type IFuseOptions } from "fuse.js";
 
 // -- Build-time / server-side helpers -----------------------------------------
 
@@ -18,18 +15,6 @@ export function sortSongsByReleaseDate(songs: MaiDbSong[]): MaiDbSong[] {
   return [...songs].sort(compareReleaseDatesDesc);
 }
 
-export function getLatestSongs(limit = 50): MaiDbSong[] {
-  return sortSongsByReleaseDate(songs).slice(0, limit);
-}
-
-export function getSongBySlug(slug: string): MaiDbSong | null {
-  return songs.find((s) => s.slug === slug) ?? null;
-}
-
-export function getAllSlugs(): string[] {
-  return songs.map((s) => s.slug);
-}
-
 export type FilterOptions = {
   categories: string[];
   versions: string[];
@@ -37,7 +22,7 @@ export type FilterOptions = {
   types: { type: string; name: string }[];
 };
 
-export function getFilterOptions(): FilterOptions {
+export function buildFilterOptions(songs: MaiDbSong[]): FilterOptions {
   const categories = new Set<string>();
   const versions = new Set<string>();
   const difficulties = new Set<string>();
@@ -99,13 +84,24 @@ export type SongFilters = {
   isNew?: boolean;
 };
 
+const SONG_SEARCH_OPTIONS = {
+  ignoreLocation: true,
+  includeScore: true,
+  keys: [{ name: "keyword", weight: 1 }],
+  threshold: 0.35,
+} satisfies IFuseOptions<MaiDbSong>;
+
+export function searchSongsByKeyword(songs: MaiDbSong[], query: string): MaiDbSong[] {
+  const trimmedQuery = query.trim();
+  if (!trimmedQuery) return songs;
+
+  const fuse = new Fuse(songs, SONG_SEARCH_OPTIONS);
+  return fuse.search(trimmedQuery).map((result) => result.item);
+}
+
 export function filterSongs(songs: MaiDbSong[], filters: SongFilters): MaiDbSong[] {
   let result = songs;
 
-  if (filters.q) {
-    const q = filters.q.toLowerCase();
-    result = result.filter((s) => s.keyword.toLowerCase().includes(q));
-  }
   if (filters.category) {
     result = result.filter((s) => s.category === filters.category);
   }
@@ -140,6 +136,10 @@ export function filterSongs(songs: MaiDbSong[], filters: SongFilters): MaiDbSong
   }
   if (filters.isNew != null) {
     result = result.filter((s) => s.isNew === filters.isNew);
+  }
+
+  if (filters.q) {
+    result = searchSongsByKeyword(result, filters.q);
   }
 
   return result;

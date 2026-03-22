@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { getSongBySlug } from "./songs.$slug.functions";
+import { getSongBySlug } from "./-songs.$slug.functions";
 import { SongDetail, SongDetailSkeleton } from "../components/SongDetail";
 import { useSongBySlug } from "../lib/use-songs";
 import { ArrowLeft } from "lucide-react";
@@ -23,8 +23,8 @@ export const Route = createFileRoute("/songs/$slug")({
       ],
     };
   },
-  loader: ({ params }) => {
-    return getSongBySlug(params.slug);
+  loader: async ({ params }) => {
+    return getSongBySlug({ data: { slug: params.slug } });
   },
   component: SongPage,
 });

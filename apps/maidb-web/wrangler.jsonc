@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "maidb-web",
+  "main": "@tanstack/react-start/server-entry",
+  "compatibility_date": "2026-03-17",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+  },
+  "r2_buckets": [
+    {
+      "binding": "SONG_DATA_BUCKET",
+      "bucket_name": "maisongdb-data",
+    },
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "SONGS_CACHE",
+      "id": "replace-with-songs-cache-namespace-id",
+      "preview_id": "replace-with-songs-cache-preview-namespace-id",
+    },
+  ],
+}

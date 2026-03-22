@@ -8,25 +8,24 @@ type SongsContextValue = {
 
 const SongsContext = createContext<SongsContextValue>({ songs: null, isLoading: true });
 
-const SONGS_URL = import.meta.env.VITE_SONGS_JSON_URL as string | undefined;
+const SONGS_URL = "/songlist";
 
 export function SongsProvider({ children }: { children: ReactNode }) {
   const [songs, setSongs] = useState<MaiDbSong[] | null>(null);
 
   useEffect(() => {
-    if (!SONGS_URL) return;
-
     fetch(SONGS_URL)
-      .then((res) => res.json())
-      .then((data: MaiDbSong[]) => setSongs(data))
-      .catch((err) => console.error("Failed to load songs.json:", err));
+      .then(async (res) => {
+        if (!res.ok) {
+          throw new Error(`Failed to load songlist: ${res.status}`);
+        }
+        return (await res.json()) as MaiDbSong[];
+      })
+      .then((data) => setSongs(data))
+      .catch((err) => console.error("Failed to load /songlist:", err));
   }, []);
 
-  return (
-    <SongsContext value={{ songs, isLoading: songs === null && !!SONGS_URL }}>
-      {children}
-    </SongsContext>
-  );
+  return <SongsContext value={{ songs, isLoading: songs === null }}>{children}</SongsContext>;
 }
 
 export function useSongs(): SongsContextValue {

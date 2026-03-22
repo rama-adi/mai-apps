@@ -6,10 +6,13 @@
     "#/*": "./src/*"
   },
   "scripts": {
-    "dev": "vp dev --port 3000",
-    "build": "vp build",
-    "preview": "vp preview",
-    "test": "vp test run"
+    "dev": "vite dev --port 3000",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vite-plus test run",
+    "cf-typegen": "vp exec wrangler types --config wrangler.jsonc worker-configuration.d.ts",
+    "cf-dev": "vp exec wrangler dev",
+    "deploy": "vite build && vp exec wrangler deploy"
   },
   "dependencies": {
     "@fontsource-variable/figtree": "catalog:",
@@ -21,9 +24,9 @@
     "@tanstack/react-router-ssr-query": "latest",
     "@tanstack/react-start": "latest",
     "@tanstack/router-plugin": "^1.132.0",
+    "fuse.js": "catalog:",
     "lucide-react": "^0.545.0",
     "maidb-data": "workspace:*",
-    "nitro": "npm:nitro-nightly@latest",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "shadcn": "catalog:",
@@ -31,6 +34,7 @@
     "tw-animate-css": "catalog:"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "catalog:",
     "@tailwindcss/typography": "^0.5.16",
     "@tanstack/devtools-vite": "latest",
     "@testing-library/dom": "^10.4.1",
@@ -44,7 +48,8 @@
     "vite": "catalog:",
     "vite-plus": "catalog:",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "wrangler": "catalog:"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
