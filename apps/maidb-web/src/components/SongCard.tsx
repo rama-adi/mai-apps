@@ -1,21 +1,9 @@
 import { useNavigate } from "@tanstack/react-router";
 import { Music, Clock, Zap } from "lucide-react";
 import { useState } from "react";
+import type { MaiDbSong } from "maidb-data";
 
 const THUMBNAIL_BASE = "https://maisongdb-blob.onebyteworks.my.id/thumb";
-
-interface SongCardProps {
-  slug: string | null;
-  title: string;
-  artist: string;
-  bpm: number | null;
-  version: { version: string; abbr: string } | null;
-  category: string | null;
-  isNew: boolean;
-  releaseDate: string | null;
-  imageName: string;
-  internalImageId: string | null;
-}
 
 // Fixed height so skeletons and real cards are identical size — no layout shift
 const cardClass =
@@ -23,27 +11,19 @@ const cardClass =
 const thumbClass =
   "flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted";
 
-export function SongCard({
-  slug,
-  title,
-  artist,
-  bpm,
-  version,
-  category,
-  isNew,
-  releaseDate,
-  internalImageId,
-}: SongCardProps) {
+export function SongCard({ song }: { song: MaiDbSong }) {
   const [imgError, setImgError] = useState(false);
   const navigate = useNavigate();
-  const thumbnailUrl = internalImageId ? `${THUMBNAIL_BASE}/${internalImageId}.png` : null;
+  const thumbnailUrl = song.internalImageId
+    ? `${THUMBNAIL_BASE}/${song.internalImageId}.png`
+    : null;
 
   const handleClick = () => {
-    if (!slug) return;
+    if (!song.slug) return;
     void navigate({
       to: "/",
-      search: (prev: Record<string, unknown>) => ({ ...prev, songSlug: slug }),
-      mask: { to: "/songs/$slug", params: { slug } },
+      search: (prev: Record<string, unknown>) => ({ ...prev, songSlug: song.slug }),
+      mask: { to: "/songs/$slug", params: { slug: song.slug! } },
     });
   };
 
@@ -53,7 +33,7 @@ export function SongCard({
         {thumbnailUrl && !imgError ? (
           <img
             src={thumbnailUrl}
-            alt={title}
+            alt={song.title}
             className="h-full w-full object-cover"
             loading="lazy"
             onError={() => setImgError(true)}
@@ -65,36 +45,30 @@ export function SongCard({
 
       <div className="min-w-0 flex-1">
         <div className="flex items-start gap-2">
-          <h3 className="m-0 truncate text-sm font-semibold text-card-foreground">{title}</h3>
-          {isNew && (
+          <h3 className="m-0 truncate text-sm font-semibold text-card-foreground">{song.title}</h3>
+          {song.isNew && (
             <span className="flex-shrink-0 rounded-full bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-foreground">
               New
             </span>
           )}
         </div>
-        <p className="m-0 mt-0.5 truncate text-xs text-muted-foreground">{artist}</p>
+        <p className="m-0 mt-0.5 truncate text-xs text-muted-foreground">{song.artist}</p>
 
         <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-muted-foreground">
-          {bpm != null && (
-            <span className="inline-flex items-center gap-1">
-              <Zap className="h-3 w-3" />
-              {bpm} BPM
-            </span>
-          )}
-          {version && (
-            <span className="inline-flex items-center gap-1 rounded-sm border bg-secondary px-1.5 py-0.5 text-[10px] font-medium text-secondary-foreground">
-              {version.abbr}
-            </span>
-          )}
-          {category && (
-            <span className="inline-flex items-center gap-1 font-medium text-primary">
-              {category}
-            </span>
-          )}
-          {releaseDate && (
+          <span className="inline-flex items-center gap-1">
+            <Zap className="h-3 w-3" />
+            {song.bpm} BPM
+          </span>
+          <span className="inline-flex items-center gap-1 rounded-sm border bg-secondary px-1.5 py-0.5 text-[10px] font-medium text-secondary-foreground">
+            {song.version}
+          </span>
+          <span className="inline-flex items-center gap-1 font-medium text-primary">
+            {song.category}
+          </span>
+          {song.releaseDate && (
             <span className="inline-flex items-center gap-1">
               <Clock className="h-3 w-3" />
-              {releaseDate}
+              {song.releaseDate}
             </span>
           )}
         </div>

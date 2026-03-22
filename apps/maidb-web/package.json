@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@fontsource-variable/figtree": "catalog:",
-    "@packages/backend": "workspace:*",
     "@packages/ui": "workspace:*",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-devtools": "latest",
@@ -22,8 +21,8 @@
     "@tanstack/react-router-ssr-query": "latest",
     "@tanstack/react-start": "latest",
     "@tanstack/router-plugin": "^1.132.0",
-    "convex": "catalog:",
     "lucide-react": "^0.545.0",
+    "maidb-data": "workspace:*",
     "nitro": "npm:nitro-nightly@latest",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

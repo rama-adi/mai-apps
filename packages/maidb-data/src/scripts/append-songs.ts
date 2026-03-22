@@ -167,7 +167,8 @@ async function main() {
         isNew: raw.isNew,
         isLocked: raw.isLocked,
         comment: raw.comment,
-        internalImageId: null,
+        slug: null as unknown as string, // filled by create-slugs
+        internalImageId: null as unknown as string, // filled by create-image-assets
         sheets,
         keyword,
       });

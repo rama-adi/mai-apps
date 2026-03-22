@@ -52,8 +52,8 @@ export const maiDbSongSchema = z.object({
   isNew: z.boolean(),
   isLocked: z.boolean(),
   comment: z.union([z.string(), z.null()]),
-  slug: z.string().optional(),
-  internalImageId: z.union([z.string(), z.null()]),
+  slug: z.string(),
+  internalImageId: z.string(),
   sheets: z.array(sheetSchema),
   keyword: z.string(),
 });

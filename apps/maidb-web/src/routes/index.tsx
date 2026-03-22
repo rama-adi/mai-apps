@@ -1,20 +1,21 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useQuery } from "convex/react";
-import { api } from "@packages/backend/convex/_generated/api";
+import { REGION_LABELS } from "maidb-data";
 import { Music, Search, SlidersHorizontal, ChevronDown, ChevronUp } from "lucide-react";
 import { SongCard, SongCardSkeleton } from "../components/SongCard";
 import { SongDetail, SongDetailSkeleton } from "../components/SongDetail";
 import { Dialog, DialogContent, DialogTitle } from "@packages/ui/components/ui/dialog";
 import { getLatestSongs, getFilterOptions } from "./index.functions";
-import { useState, useDeferredValue, useEffect } from "react";
+import { useSongs, useSongBySlug } from "../lib/use-songs";
+import { filterSongs, sortSongsByReleaseDate, type SongFilters } from "../lib/songs";
+import { useState, useDeferredValue, useEffect, useMemo } from "react";
 
 type SearchParams = {
   q?: string;
   songSlug?: string;
-  categoryId?: string;
-  versionId?: string;
-  difficultyId?: string;
-  typeId?: string;
+  category?: string;
+  version?: string;
+  difficulty?: string;
+  type?: string;
   region?: string;
   minBpm?: number;
   maxBpm?: number;
@@ -27,10 +28,10 @@ export const Route = createFileRoute("/")({
   validateSearch: (search: Record<string, unknown>): SearchParams => ({
     q: typeof search.q === "string" ? search.q : undefined,
     songSlug: typeof search.songSlug === "string" ? search.songSlug : undefined,
-    categoryId: typeof search.categoryId === "string" ? search.categoryId : undefined,
-    versionId: typeof search.versionId === "string" ? search.versionId : undefined,
-    difficultyId: typeof search.difficultyId === "string" ? search.difficultyId : undefined,
-    typeId: typeof search.typeId === "string" ? search.typeId : undefined,
+    category: typeof search.category === "string" ? search.category : undefined,
+    version: typeof search.version === "string" ? search.version : undefined,
+    difficulty: typeof search.difficulty === "string" ? search.difficulty : undefined,
+    type: typeof search.type === "string" ? search.type : undefined,
     region: typeof search.region === "string" ? search.region : undefined,
     minBpm: typeof search.minBpm === "number" ? search.minBpm : undefined,
     maxBpm: typeof search.maxBpm === "number" ? search.maxBpm : undefined,
@@ -54,9 +55,8 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
-  loader: async () => {
-    const [songs, filterOptions] = await Promise.all([getLatestSongs(), getFilterOptions()]);
-    return { songs, filterOptions };
+  loader: () => {
+    return { songs: getLatestSongs(50), filterOptions: getFilterOptions() };
   },
   component: HomePage,
 });
@@ -67,13 +67,12 @@ const inputClass =
   "h-10 w-full rounded-md border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50";
 
 function HomePage() {
-  const { songs: loaderSongs, filterOptions: loaderFilterOptions } = Route.useLoaderData();
+  const { songs: loaderSongs, filterOptions } = Route.useLoaderData();
   const search = Route.useSearch();
   const navigate = useNavigate({ from: "/" });
 
-  const liveSongs = useQuery(api.songs.latestSongs);
-  const liveFilterOptions = useQuery(api.songs.filterOptions);
-  const filterOptions = liveFilterOptions ?? loaderFilterOptions;
+  // Client-side songs store (fetched from KV after hydration)
+  const { songs: allClientSongs } = useSongs();
 
   // Local search input for deferred updates
   const [searchInput, setSearchInput] = useState(search.q ?? "");
@@ -96,10 +95,10 @@ function HomePage() {
 
   // Filter state
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const categoryId = search.categoryId ?? "";
-  const versionId = search.versionId ?? "";
-  const difficultyId = search.difficultyId ?? "";
-  const typeId = search.typeId ?? "";
+  const category = search.category ?? "";
+  const version = search.version ?? "";
+  const difficulty = search.difficulty ?? "";
+  const type = search.type ?? "";
   const region = search.region ?? "";
   const minBpm = search.minBpm;
   const maxBpm = search.maxBpm;
@@ -108,10 +107,10 @@ function HomePage() {
   const isNew = search.isNew;
 
   const activeFilterCount = [
-    categoryId,
-    versionId,
-    difficultyId,
-    typeId,
+    category,
+    version,
+    difficulty,
+    type,
     region,
     minBpm != null ? "y" : "",
     maxBpm != null ? "y" : "",
@@ -127,11 +126,17 @@ function HomePage() {
     });
   };
 
-  const filterArgs = {
-    ...(categoryId ? { categoryId: categoryId as never } : {}),
-    ...(versionId ? { versionId: versionId as never } : {}),
-    ...(difficultyId ? { difficultyId: difficultyId as never } : {}),
-    ...(typeId ? { typeId: typeId as never } : {}),
+  const hasSearch = searchQuery.length > 0;
+  const hasFilters = activeFilterCount > 0;
+  const isFiltered = hasSearch || hasFilters;
+
+  // Build filter args
+  const filters: SongFilters = {
+    ...(searchQuery ? { q: searchQuery } : {}),
+    ...(category ? { category } : {}),
+    ...(version ? { version } : {}),
+    ...(difficulty ? { difficulty } : {}),
+    ...(type ? { type } : {}),
     ...(region ? { region } : {}),
     ...(minBpm != null ? { minBpm } : {}),
     ...(maxBpm != null ? { maxBpm } : {}),
@@ -140,27 +145,20 @@ function HomePage() {
     ...(isNew != null ? { isNew } : {}),
   };
 
-  const hasSearch = searchQuery.length > 0;
-  const hasFilters = activeFilterCount > 0;
+  // Use client songs if loaded, otherwise fall back to SSG loader data
+  const allSongs = useMemo(() => {
+    if (isFiltered) {
+      // Filtering requires the full dataset from KV
+      if (!allClientSongs) return undefined; // still loading
+      return filterSongs(allClientSongs, filters);
+    }
+    // Default view: use client songs (sorted by release) or loader fallback
+    if (allClientSongs) {
+      return sortSongsByReleaseDate(allClientSongs);
+    }
+    return loaderSongs;
+  }, [isFiltered, allClientSongs, loaderSongs, filters]);
 
-  // Use FTS search when there's a query
-  const searchResults = useQuery(
-    api.songs.searchSongs,
-    hasSearch ? { searchQuery: searchQuery, ...filterArgs } : "skip",
-  );
-
-  // Use browse when only filters are active
-  const browseResults = useQuery(
-    api.songs.browseSongs,
-    !hasSearch && hasFilters ? filterArgs : "skip",
-  );
-
-  const isFiltered = hasSearch || hasFilters;
-  const allSongs = hasSearch
-    ? searchResults
-    : hasFilters
-      ? browseResults
-      : (liveSongs ?? loaderSongs);
   const isLoading = isFiltered && allSongs === undefined;
 
   // Client-side progressive display
@@ -202,6 +200,11 @@ function HomePage() {
             placeholder="Search song title or alias..."
             className="h-12 w-full rounded-lg border bg-card pl-12 pr-4 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
           />
+          {!allClientSongs && (
+            <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-muted-foreground">
+              Loading songs...
+            </span>
+          )}
         </div>
 
         {/* Advanced filters toggle */}
@@ -226,14 +229,14 @@ function HomePage() {
             {/* Category */}
             <FilterField label="Category">
               <select
-                value={categoryId}
-                onChange={(e) => setFilter("categoryId", e.target.value || undefined)}
+                value={category}
+                onChange={(e) => setFilter("category", e.target.value || undefined)}
                 className={selectClass}
               >
                 <option value="">All</option>
                 {filterOptions.categories.map((c) => (
-                  <option key={c._id} value={c._id}>
-                    {c.category}
+                  <option key={c} value={c}>
+                    {c}
                   </option>
                 ))}
               </select>
@@ -242,14 +245,14 @@ function HomePage() {
             {/* Version */}
             <FilterField label="Version">
               <select
-                value={versionId}
-                onChange={(e) => setFilter("versionId", e.target.value || undefined)}
+                value={version}
+                onChange={(e) => setFilter("version", e.target.value || undefined)}
                 className={selectClass}
               >
                 <option value="">All</option>
                 {filterOptions.versions.map((v) => (
-                  <option key={v._id} value={v._id}>
-                    {v.version} ({v.abbr})
+                  <option key={v} value={v}>
+                    {v}
                   </option>
                 ))}
               </select>
@@ -258,13 +261,13 @@ function HomePage() {
             {/* Difficulty */}
             <FilterField label="Difficulty">
               <select
-                value={difficultyId}
-                onChange={(e) => setFilter("difficultyId", e.target.value || undefined)}
+                value={difficulty}
+                onChange={(e) => setFilter("difficulty", e.target.value || undefined)}
                 className={selectClass}
               >
                 <option value="">All</option>
                 {filterOptions.difficulties.map((d) => (
-                  <option key={d._id} value={d._id}>
+                  <option key={d.name} value={d.name}>
                     {d.name}
                   </option>
                 ))}
@@ -274,14 +277,14 @@ function HomePage() {
             {/* Type */}
             <FilterField label="Type">
               <select
-                value={typeId}
-                onChange={(e) => setFilter("typeId", e.target.value || undefined)}
+                value={type}
+                onChange={(e) => setFilter("type", e.target.value || undefined)}
                 className={selectClass}
               >
                 <option value="">All</option>
                 {filterOptions.types.map((t) => (
-                  <option key={t._id} value={t._id}>
-                    {t.name} ({t.abbr})
+                  <option key={t.type} value={t.type}>
+                    {t.name}
                   </option>
                 ))}
               </select>
@@ -345,9 +348,9 @@ function HomePage() {
                 className={selectClass}
               >
                 <option value="">All</option>
-                {filterOptions.regions.map((r) => (
-                  <option key={r._id} value={r.region}>
-                    {r.name}
+                {(Object.entries(REGION_LABELS) as [string, string][]).map(([key, label]) => (
+                  <option key={key} value={key}>
+                    {label}
                   </option>
                 ))}
               </select>
@@ -393,7 +396,7 @@ function HomePage() {
           </h2>
           <span className="text-sm text-muted-foreground">
             {isLoading
-              ? "Searching..."
+              ? "Loading full song list..."
               : allSongs
                 ? `${allSongs.length} song${allSongs.length !== 1 ? "s" : ""}`
                 : ""}
@@ -404,21 +407,7 @@ function HomePage() {
           {isLoading
             ? Array.from({ length: 12 }).map((_, i) => <SongCardSkeleton key={i} />)
             : songs && songs.length > 0
-              ? songs.map((song) => (
-                  <SongCard
-                    key={song._id}
-                    slug={song.slug}
-                    title={song.title}
-                    artist={song.artist}
-                    bpm={song.bpm}
-                    version={song.version}
-                    category={song.category}
-                    isNew={song.isNew}
-                    releaseDate={song.releaseDate}
-                    imageName={song.imageName}
-                    internalImageId={song.internalImageId}
-                  />
-                ))
+              ? songs.map((song) => <SongCard key={song.songId} song={song} />)
               : null}
         </div>
 
@@ -461,7 +450,7 @@ function HomePage() {
 }
 
 function SongModal({ slug, onClose }: { slug?: string; onClose: () => void }) {
-  const song = useQuery(api.songs.getSongBySlug, slug ? { slug } : "skip");
+  const song = useSongBySlug(slug);
 
   return (
     <Dialog open={!!slug} onOpenChange={(open: boolean) => !open && onClose()}>

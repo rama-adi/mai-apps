@@ -1,7 +1,7 @@
 import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
-import { ConvexClientProvider } from "../components/ConvexClientProvider";
+import { SongsProvider } from "../lib/use-songs";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -40,12 +40,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   return (
-    <ConvexClientProvider>
+    <SongsProvider>
       <div className="flex min-h-screen flex-col">
         <Header />
         <Outlet />
         <Footer />
       </div>
-    </ConvexClientProvider>
+    </SongsProvider>
   );
 }

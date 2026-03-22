@@ -1,52 +1,16 @@
 import { Music, Zap, Clock, ExternalLink } from "lucide-react";
 import { useState } from "react";
+import type { MaiDbSong, Sheet } from "maidb-data";
+import { DIFFICULTY_COLORS } from "maidb-data";
+import { DIFFICULTY_NAMES, TYPE_NAMES } from "../lib/songs";
 
 const THUMBNAIL_BASE = "https://maisongdb-blob.onebyteworks.my.id/thumb";
-
-type Sheet = {
-  _id: string;
-  difficulty: { difficulty: string; name: string; color: string } | null;
-  type: { type: string; name: string; abbr: string } | null;
-  level: string;
-  levelValue: number;
-  internalLevel: string | null;
-  internalLevelValue: number;
-  noteDesigner: string | null;
-  noteCounts: {
-    tap: number | null;
-    hold: number | null;
-    slide: number | null;
-    touch: number | null;
-    break: number | null;
-    total: number | null;
-  };
-  regions: { jp: boolean; intl: boolean; usa: boolean; cn: boolean };
-  isSpecial: boolean;
-};
-
-export type SongDetailData = {
-  _id: string;
-  songId: string;
-  slug: string | null;
-  title: string;
-  artist: string;
-  bpm: number | null;
-  imageName: string;
-  internalImageId: string | null;
-  releaseDate: string | null;
-  isNew: boolean;
-  isLocked: boolean;
-  comment: string | null;
-  version: { version: string; abbr: string } | null;
-  category: string | null;
-  sheets: Sheet[];
-};
 
 export function SongDetail({
   song,
   showFullPageLink = true,
 }: {
-  song: SongDetailData;
+  song: MaiDbSong;
   showFullPageLink?: boolean;
 }) {
   const [imgError, setImgError] = useState(false);
@@ -57,7 +21,7 @@ export function SongDetail({
   // Group sheets by type
   const sheetsByType = new Map<string, Sheet[]>();
   for (const sheet of song.sheets) {
-    const key = sheet.type?.name ?? "Unknown";
+    const key = TYPE_NAMES[sheet.type] ?? sheet.type;
     const existing = sheetsByType.get(key) ?? [];
     existing.push(sheet);
     sheetsByType.set(key, existing);
@@ -90,18 +54,14 @@ export function SongDetail({
           </div>
           <p className="m-0 mt-0.5 text-sm text-muted-foreground">{song.artist}</p>
           <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
-            {song.bpm != null && (
-              <span className="inline-flex items-center gap-1">
-                <Zap className="h-3 w-3" />
-                {song.bpm} BPM
-              </span>
-            )}
-            {song.version && (
-              <span className="inline-flex items-center gap-1 rounded-sm border bg-secondary px-1.5 py-0.5 text-[10px] font-medium text-secondary-foreground">
-                {song.version.abbr}
-              </span>
-            )}
-            {song.category && <span className="font-medium text-primary">{song.category}</span>}
+            <span className="inline-flex items-center gap-1">
+              <Zap className="h-3 w-3" />
+              {song.bpm} BPM
+            </span>
+            <span className="inline-flex items-center gap-1 rounded-sm border bg-secondary px-1.5 py-0.5 text-[10px] font-medium text-secondary-foreground">
+              {song.version}
+            </span>
+            <span className="font-medium text-primary">{song.category}</span>
             {song.releaseDate && (
               <span className="inline-flex items-center gap-1">
                 <Clock className="h-3 w-3" />
@@ -121,8 +81,8 @@ export function SongDetail({
           <div className="space-y-2">
             {sheets
               .sort((a, b) => a.levelValue - b.levelValue)
-              .map((sheet) => (
-                <SheetRow key={sheet._id} sheet={sheet} />
+              .map((sheet, i) => (
+                <SheetRow key={i} sheet={sheet} />
               ))}
           </div>
         </div>
@@ -143,7 +103,8 @@ export function SongDetail({
 }
 
 function SheetRow({ sheet }: { sheet: Sheet }) {
-  const diffColor = sheet.difficulty?.color ?? "#888";
+  const diffColor = DIFFICULTY_COLORS[sheet.difficulty] ?? "#888";
+  const diffName = DIFFICULTY_NAMES[sheet.difficulty] ?? sheet.difficulty;
 
   return (
     <div className="flex items-center gap-3 rounded-md border bg-card px-3 py-2">
@@ -151,7 +112,7 @@ function SheetRow({ sheet }: { sheet: Sheet }) {
         className="inline-flex min-w-[4.5rem] items-center justify-center rounded-sm px-2 py-0.5 text-xs font-bold text-white"
         style={{ backgroundColor: diffColor }}
       >
-        {sheet.difficulty?.name ?? "?"}
+        {diffName}
       </span>
       <span className="text-sm font-semibold text-foreground">{sheet.level}</span>
       {sheet.internalLevel && (

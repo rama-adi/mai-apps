@@ -16,7 +16,7 @@ function About() {
         </h1>
         <p className="m-0 max-w-3xl text-base leading-8 text-muted-foreground">
           Browse the complete maimai song catalog. Explore charts, difficulty levels, BPM, and
-          version history. Built with TanStack Start, Convex, and shadcn/ui.
+          version history. Built with TanStack Start and shadcn/ui.
         </p>
       </section>
     </main>

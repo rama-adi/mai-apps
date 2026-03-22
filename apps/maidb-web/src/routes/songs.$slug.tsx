@@ -1,8 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useQuery } from "convex/react";
-import { api } from "@packages/backend/convex/_generated/api";
 import { getSongBySlug } from "./songs.$slug.functions";
 import { SongDetail, SongDetailSkeleton } from "../components/SongDetail";
+import { useSongBySlug } from "../lib/use-songs";
 import { ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/songs/$slug")({
@@ -24,7 +23,7 @@ export const Route = createFileRoute("/songs/$slug")({
       ],
     };
   },
-  loader: async ({ params }) => {
+  loader: ({ params }) => {
     return getSongBySlug(params.slug);
   },
   component: SongPage,
@@ -34,8 +33,9 @@ function SongPage() {
   const loaderSong = Route.useLoaderData();
   const { slug } = Route.useParams();
 
-  const liveSong = useQuery(api.songs.getSongBySlug, { slug });
-  const song = liveSong ?? loaderSong;
+  // Prefer client-side data if available (from KV store)
+  const clientSong = useSongBySlug(slug);
+  const song = clientSong ?? loaderSong;
 
   return (
     <main className="mx-auto max-w-3xl flex-1 px-4 pb-12 pt-8">
