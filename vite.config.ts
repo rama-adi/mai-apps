@@ -2,7 +2,7 @@ import { defineConfig } from "vite-plus";
 
 export default defineConfig({
   staged: {
-    "*": "vp check --fix",
+    "!packages/backend/convex/_generated/**": "vp check --fix",
   },
   lint: { options: { typeAware: true, typeCheck: true } },
 });
