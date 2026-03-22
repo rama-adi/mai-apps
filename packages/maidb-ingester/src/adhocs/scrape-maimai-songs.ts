@@ -1,6 +1,6 @@
 import { writeFileSync, mkdirSync } from "fs";
 import { join } from "path";
-import { SCRATCH_DIR } from "./shared/paths.js";
+import { SCRATCH_DIR } from "../shared/paths.js";
 
 const SONG_DATA_URL = "https://dp4p6x0xfi5o9.cloudfront.net/maimai/data.json";
 const ALIASES_URL =

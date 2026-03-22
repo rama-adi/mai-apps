@@ -1,8 +1,8 @@
 import { api } from "@packages/backend/convex/_generated/api";
 import { readFileSync, existsSync } from "fs";
-import { BACKFILL_INPUT_PATH, RECEIPTS_PATH } from "./shared/paths.js";
-import { createConvexClient } from "./shared/convex.js";
-import type { Receipt } from "./shared/types.js";
+import { BACKFILL_INPUT_PATH, RECEIPTS_PATH } from "../shared/paths.js";
+import { createConvexClient } from "../shared/convex.js";
+import type { Receipt } from "../shared/types.js";
 
 const BATCH_SIZE = 25;
 
@@ -10,7 +10,7 @@ async function main() {
   const { client, seedSecret } = createConvexClient();
 
   if (!existsSync(BACKFILL_INPUT_PATH)) {
-    console.error("backfill-receipts.json not found — run backfill-missing-images.ts first");
+    console.error("backfill-receipts.json not found — run find-missing-images.ts first");
     process.exit(1);
   }
   if (!existsSync(RECEIPTS_PATH)) {

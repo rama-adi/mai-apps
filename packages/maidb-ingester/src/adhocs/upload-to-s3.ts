@@ -1,15 +1,9 @@
 import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join } from "path";
-import {
-  THUMB_DIR,
-  OG_DIR,
-  SONGS_PATH,
-  RECEIPTS_PATH,
-  BACKFILL_RECEIPTS_PATH,
-} from "./shared/paths.js";
-import { createS3Client } from "./shared/s3.js";
-import type { Receipt } from "./shared/types.js";
+import { THUMB_DIR, OG_DIR, SONGS_PATH, RECEIPTS_PATH } from "../shared/paths.js";
+import { createS3Client } from "../shared/s3.js";
+import type { Receipt } from "../shared/types.js";
 
 const { s3, bucket: S3_BUCKET } = createS3Client();
 
@@ -17,27 +11,17 @@ async function main() {
   const args = process.argv.slice(2);
   const concurrencyIdx = args.indexOf("--concurrency");
   const concurrency = concurrencyIdx !== -1 ? parseInt(args[concurrencyIdx + 1]) : 10;
-  const isBackfill = args.includes("--backfill");
-
-  const receiptsPath = isBackfill ? BACKFILL_RECEIPTS_PATH : RECEIPTS_PATH;
 
   if (!existsSync(SONGS_PATH)) {
     console.error("songs.jsonl not found");
     process.exit(1);
   }
-  if (!existsSync(receiptsPath)) {
-    const name = isBackfill ? "backfill-image-assets-receipts.json" : "image-assets-receipts.json";
-    console.error(
-      `${name} not found — run create-image-assets.ts${isBackfill ? " --backfill" : ""} first`,
-    );
+  if (!existsSync(RECEIPTS_PATH)) {
+    console.error("image-assets-receipts.json not found — run create-image-assets.ts first");
     process.exit(1);
   }
 
-  if (isBackfill) {
-    console.log("Backfill mode: using backfill-image-assets-receipts.json");
-  }
-
-  const receipts: Receipt[] = JSON.parse(readFileSync(receiptsPath, "utf-8"));
+  const receipts: Receipt[] = JSON.parse(readFileSync(RECEIPTS_PATH, "utf-8"));
   const pending = receipts.filter((r) => !r.isUploaded);
 
   if (pending.length === 0) {
@@ -131,7 +115,7 @@ async function main() {
     }
 
     // Persist progress after each batch
-    writeFileSync(receiptsPath, JSON.stringify(receipts, null, 2) + "\n");
+    writeFileSync(RECEIPTS_PATH, JSON.stringify(receipts, null, 2) + "\n");
     writeFileSync(SONGS_PATH, songEntries.map((e: any) => JSON.stringify(e)).join("\n") + "\n");
   }
 

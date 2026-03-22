@@ -1,17 +1,15 @@
-import { writeFileSync, mkdirSync, readFileSync, existsSync, rmSync } from "fs";
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from "fs";
 import { join } from "path";
 import sharp from "sharp";
 import { nanoid } from "nanoid";
 import {
-  SCRATCH_DIR,
   ASSETS_DIR,
   THUMB_DIR,
   OG_DIR,
-  RECEIPTS_PATH,
   BACKFILL_INPUT_PATH,
   BACKFILL_RECEIPTS_PATH,
-} from "./shared/paths.js";
-import { toDataUrl, generateOgImage } from "./shared/og-image.js";
+} from "../shared/paths.js";
+import { toDataUrl, generateOgImage } from "../shared/og-image.js";
 
 const COVER_BASE_URL = "https://dp4p6x0xfi5o9.cloudfront.net/maimai/img/cover/";
 
@@ -21,29 +19,10 @@ async function main() {
   const limit = limitIdx !== -1 ? parseInt(args[limitIdx + 1]) : undefined;
   const concurrencyIdx = args.indexOf("--concurrency");
   const concurrency = concurrencyIdx !== -1 ? parseInt(args[concurrencyIdx + 1]) : 5;
-  const isBackfill = args.includes("--backfill");
 
-  const receiptsOutPath = isBackfill ? BACKFILL_RECEIPTS_PATH : RECEIPTS_PATH;
-
-  if (isBackfill) {
-    if (!existsSync(BACKFILL_INPUT_PATH)) {
-      console.error("backfill-receipts.json not found — run backfill-missing-images.ts first");
-      process.exit(1);
-    }
-  } else {
-    const songsPath = join(SCRATCH_DIR, "songs.jsonl");
-    if (!existsSync(songsPath)) {
-      console.error("songs.jsonl not found — run scrape-maimai-songs.ts first");
-      process.exit(1);
-    }
-  }
-
-  if (!isBackfill) {
-    // Clean up previous run (only in normal mode)
-    for (const dir of [THUMB_DIR, OG_DIR]) {
-      rmSync(dir, { recursive: true, force: true });
-    }
-    rmSync(RECEIPTS_PATH, { force: true });
+  if (!existsSync(BACKFILL_INPUT_PATH)) {
+    console.error("backfill-receipts.json not found — run find-missing-images.ts first");
+    process.exit(1);
   }
 
   mkdirSync(THUMB_DIR, { recursive: true });
@@ -81,15 +60,8 @@ async function main() {
     chartBadges[kind] = toDataUrl(buf, "image/png");
   }
 
-  let entries: any[];
-  if (isBackfill) {
-    entries = JSON.parse(readFileSync(BACKFILL_INPUT_PATH, "utf-8"));
-    console.log(`Backfill mode: ${entries.length} entries from backfill-receipts.json`);
-  } else {
-    const songsPath = join(SCRATCH_DIR, "songs.jsonl");
-    const lines = readFileSync(songsPath, "utf-8").trim().split("\n");
-    entries = lines.map((line) => JSON.parse(line)).filter((e: any) => !e.song.internalImageId);
-  }
+  let entries: any[] = JSON.parse(readFileSync(BACKFILL_INPUT_PATH, "utf-8"));
+  console.log(`Backfill mode: ${entries.length} entries from backfill-receipts.json`);
 
   if (limit) {
     entries = entries.sort(() => Math.random() - 0.5).slice(0, limit);
@@ -204,8 +176,8 @@ async function main() {
   }
 
   // Write receipts
-  writeFileSync(receiptsOutPath, JSON.stringify(receipts, null, 2) + "\n");
-  console.log(`\nDone! ${receipts.length} receipts written to ${receiptsOutPath}`);
+  writeFileSync(BACKFILL_RECEIPTS_PATH, JSON.stringify(receipts, null, 2) + "\n");
+  console.log(`\nDone! ${receipts.length} receipts written to ${BACKFILL_RECEIPTS_PATH}`);
 }
 
 main().catch(console.error);

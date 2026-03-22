@@ -1,8 +1,8 @@
 import { api } from "@packages/backend/convex/_generated/api";
 import { readFileSync } from "fs";
 import { join } from "path";
-import { SCRATCH_DIR } from "./shared/paths.js";
-import { createConvexClient } from "./shared/convex.js";
+import { SCRATCH_DIR } from "../shared/paths.js";
+import { createConvexClient } from "../shared/convex.js";
 
 const BATCH_SIZE = 25;
 

@@ -2,9 +2,9 @@ import { api } from "@packages/backend/convex/_generated/api";
 import { ListObjectsV2Command, DeleteObjectsCommand } from "@aws-sdk/client-s3";
 import { rmSync, existsSync } from "fs";
 import { join } from "path";
-import { SCRATCH_DIR } from "./shared/paths.js";
-import { createConvexClient } from "./shared/convex.js";
-import { createS3Client } from "./shared/s3.js";
+import { SCRATCH_DIR } from "../shared/paths.js";
+import { createConvexClient } from "../shared/convex.js";
+import { createS3Client } from "../shared/s3.js";
 
 const TABLES = [
   "songs",

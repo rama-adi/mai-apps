@@ -1,7 +1,7 @@
 import { writeFileSync } from "fs";
 import { api } from "@packages/backend/convex/_generated/api";
-import { BACKFILL_INPUT_PATH as BACKFILL_PATH } from "./shared/paths.js";
-import { createConvexClient } from "./shared/convex.js";
+import { BACKFILL_INPUT_PATH as BACKFILL_PATH } from "../shared/paths.js";
+import { createConvexClient } from "../shared/convex.js";
 
 async function main() {
   const { client, seedSecret } = createConvexClient();
