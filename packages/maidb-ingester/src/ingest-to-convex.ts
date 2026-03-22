@@ -1,4 +1,4 @@
-import { api } from "backend/convex/_generated/api";
+import { api } from "@packages/backend/convex/_generated/api";
 import { readFileSync } from "fs";
 import { join } from "path";
 import { SCRATCH_DIR } from "./shared/paths.js";

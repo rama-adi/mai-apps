@@ -1,5 +1,5 @@
 import { writeFileSync } from "fs";
-import { api } from "backend/convex/_generated/api";
+import { api } from "@packages/backend/convex/_generated/api";
 import { BACKFILL_INPUT_PATH as BACKFILL_PATH } from "./shared/paths.js";
 import { createConvexClient } from "./shared/convex.js";
 

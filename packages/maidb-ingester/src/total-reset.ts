@@ -1,4 +1,4 @@
-import { api } from "backend/convex/_generated/api";
+import { api } from "@packages/backend/convex/_generated/api";
 import { ListObjectsV2Command, DeleteObjectsCommand } from "@aws-sdk/client-s3";
 import { rmSync, existsSync } from "fs";
 import { join } from "path";

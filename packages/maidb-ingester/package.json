@@ -41,8 +41,8 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "catalog:",
+    "@packages/backend": "workspace:*",
     "@resvg/resvg-js": "catalog:",
-    "backend": "workspace:*",
     "convex": "catalog:",
     "dotenv": "catalog:",
     "nanoid": "^5.1.5",

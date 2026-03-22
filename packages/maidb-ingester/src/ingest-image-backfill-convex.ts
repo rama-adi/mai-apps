@@ -1,4 +1,4 @@
-import { api } from "backend/convex/_generated/api";
+import { api } from "@packages/backend/convex/_generated/api";
 import { readFileSync, existsSync } from "fs";
 import { BACKFILL_INPUT_PATH, RECEIPTS_PATH } from "./shared/paths.js";
 import { createConvexClient } from "./shared/convex.js";

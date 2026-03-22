@@ -182,12 +182,12 @@ importers:
       '@aws-sdk/client-s3':
         specifier: 'catalog:'
         version: 3.1014.0
+      '@packages/backend':
+        specifier: workspace:*
+        version: link:../backend
       '@resvg/resvg-js':
         specifier: 'catalog:'
         version: 2.6.2
-      backend:
-        specifier: workspace:*
-        version: link:../backend
       convex:
         specifier: 'catalog:'
         version: 1.34.0(react@19.2.4)

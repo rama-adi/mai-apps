@@ -77,4 +77,38 @@ These commands map to their corresponding tools. For example, `vp dev --port 300
 
 ## No Barrel Exports
 
-Do not use barrel exports (`index.ts` that re-exports everything). Each module must be exported individually via subpath exports in `package.json`. Consumers import directly from the specific module path (e.g., `import { Button } from "ui/components/button"`).
+Do not use barrel exports (`index.ts` that re-exports everything). Each module must be exported individually via subpath exports in `package.json`. Consumers import directly from the specific module path (e.g., `import { Button } from "@packages/ui/components/button"`).
+
+## shadcn UI (packages/ui)
+
+All shared UI components live in `packages/ui`, powered by shadcn + Tailwind CSS v4 + Radix UI.
+
+### Adding components
+
+Run from the `packages/ui` directory:
+
+```sh
+vp dlx shadcn@latest add <component>
+```
+
+After adding a component, update `packages/ui/package.json` exports and `vite.config.ts` entry to expose it:
+
+```jsonc
+// package.json exports
+"./components/button": "./dist/components/ui/button.mjs"
+```
+
+```ts
+// vite.config.ts pack.entry
+"components/ui/button": "src/components/ui/button.tsx"
+```
+
+### Consuming from apps
+
+Apps (e.g., `apps/maidb-web`) depend on the `@packages/ui` workspace package and import directly:
+
+```ts
+import { Button } from "@packages/ui/components/button";
+import { cn } from "@packages/ui/lib/utils";
+import "@packages/ui/styles.css";
+```
