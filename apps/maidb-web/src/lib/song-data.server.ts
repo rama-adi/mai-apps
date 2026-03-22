@@ -2,7 +2,7 @@ import { env } from "cloudflare:workers";
 import type { MaiDbSong } from "maidb-data";
 
 import localSongsJson from "maidb-data/songs.json";
-import { buildFilterOptions, sortSongsByReleaseDate, type FilterOptions } from "./songs";
+import { buildFilterOptions, sortSongsByReleaseDate, type FilterOptions } from "maidb-data";
 
 const SONGS_OBJECT_KEY = "songs.json";
 const SONGS_CACHE_KEY = "songlist:v1";

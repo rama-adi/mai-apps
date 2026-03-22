@@ -202,6 +202,9 @@ importers:
       dotenv:
         specifier: 'catalog:'
         version: 17.3.1
+      fuse.js:
+        specifier: 'catalog:'
+        version: 7.1.0
       nanoid:
         specifier: 'catalog:'
         version: 5.1.7

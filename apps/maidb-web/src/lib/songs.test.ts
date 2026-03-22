@@ -1,6 +1,5 @@
 import { expect, test } from "vite-plus/test";
-import type { MaiDbSong } from "maidb-data";
-import { filterSongs, searchSongsByKeyword } from "./songs";
+import { filterSongs, searchSongsByKeyword, type MaiDbSong } from "maidb-data";
 
 function makeSong(overrides: Partial<MaiDbSong>): MaiDbSong {
   return {

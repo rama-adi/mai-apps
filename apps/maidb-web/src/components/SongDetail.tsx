@@ -2,7 +2,7 @@ import { Music, Zap, Clock, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import type { MaiDbSong, Sheet } from "maidb-data";
 import { DIFFICULTY_COLORS } from "maidb-data";
-import { DIFFICULTY_NAMES, TYPE_NAMES } from "../lib/songs";
+import { DIFFICULTY_NAMES, TYPE_NAMES } from "maidb-data";
 
 const THUMBNAIL_BASE = "https://maisongdb-blob.onebyteworks.my.id/thumb";
 

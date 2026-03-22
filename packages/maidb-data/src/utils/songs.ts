@@ -1,8 +1,8 @@
-import type { MaiDbSong } from "maidb-data";
-import { DIFFICULTY_COLORS } from "maidb-data";
+import type { MaiDbSong } from "../schema.js";
+import { DIFFICULTY_COLORS } from "../constants.js";
 import Fuse, { type IFuseOptions } from "fuse.js";
 
-// -- Build-time / server-side helpers -----------------------------------------
+// -- Sorting ------------------------------------------------------------------
 
 function compareReleaseDatesDesc(a: MaiDbSong, b: MaiDbSong): number {
   if (a.releaseDate == null && b.releaseDate == null) return 0;
@@ -14,6 +14,25 @@ function compareReleaseDatesDesc(a: MaiDbSong, b: MaiDbSong): number {
 export function sortSongsByReleaseDate(songs: MaiDbSong[]): MaiDbSong[] {
   return [...songs].sort(compareReleaseDatesDesc);
 }
+
+// -- Display mappings ---------------------------------------------------------
+
+export const TYPE_NAMES: Record<string, string> = {
+  std: "Standard",
+  dx: "Deluxe",
+  utage: "Utage",
+};
+
+export const DIFFICULTY_NAMES: Record<string, string> = {
+  basic: "Basic",
+  advanced: "Advanced",
+  expert: "Expert",
+  master: "Master",
+  remaster: "Re:Master",
+  utage: "Utage",
+};
+
+// -- Filter options -----------------------------------------------------------
 
 export type FilterOptions = {
   categories: string[];
@@ -50,23 +69,6 @@ export function buildFilterOptions(songs: MaiDbSong[]): FilterOptions {
     })),
   };
 }
-
-// -- Display mappings ---------------------------------------------------------
-
-export const TYPE_NAMES: Record<string, string> = {
-  std: "Standard",
-  dx: "Deluxe",
-  utage: "Utage",
-};
-
-export const DIFFICULTY_NAMES: Record<string, string> = {
-  basic: "Basic",
-  advanced: "Advanced",
-  expert: "Expert",
-  master: "Master",
-  remaster: "Re:Master",
-  utage: "Utage",
-};
 
 // -- Client-side filtering ----------------------------------------------------
 
@@ -140,6 +142,8 @@ export function filterSongs(songs: MaiDbSong[], filters: SongFilters): MaiDbSong
 
   if (filters.q) {
     result = searchSongsByKeyword(result, filters.q);
+  } else {
+    result = sortSongsByReleaseDate(result);
   }
 
   return result;

@@ -4,7 +4,7 @@ import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { SongCard, SongCardSkeleton } from "./SongCard";
 import { useSongs } from "../lib/use-songs";
-import { filterSongs, sortSongsByReleaseDate, type SongFilters } from "../lib/songs";
+import { filterSongs, sortSongsByReleaseDate, type SongFilters } from "maidb-data";
 import type { MaiDbSong } from "maidb-data";
 
 type FilterOption = { name: string };
