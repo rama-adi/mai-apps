@@ -22,7 +22,7 @@ function getTopDifficulties(song: MaiDbSong) {
   }));
 }
 
-export function SongCard({ song }: { song: MaiDbSong }) {
+export function SongCard({ song, openInModal = true }: { song: MaiDbSong; openInModal?: boolean }) {
   const [imgError, setImgError] = useState(false);
   const navigate = useNavigate();
   const search = useLocation({ select: (location) => location.search });
@@ -34,12 +34,22 @@ export function SongCard({ song }: { song: MaiDbSong }) {
 
   const handleClick = () => {
     if (!song.slug) return;
+    if (openInModal) {
+      void navigate({
+        to: "/song-modal/$slug",
+        params: { slug: song.slug },
+        search: search,
+        resetScroll: false,
+        mask: { to: "/songs/$slug", params: { slug: song.slug }, unmaskOnReload: true },
+      });
+      return;
+    }
+
     void navigate({
-      to: "/song-modal/$slug",
+      to: "/songs/$slug",
       params: { slug: song.slug },
       search: search,
       resetScroll: false,
-      mask: { to: "/songs/$slug", params: { slug: song.slug }, unmaskOnReload: true },
     });
   };
 
