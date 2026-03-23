@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import type { MaiDbSong } from "maidb-data";
 import { CATEGORY_BY_SLUG, DIFFICULTY_NAMES, TYPE_NAMES, VERSION_BY_SLUG } from "maidb-data";
+import { useMemo } from "react";
 import { getSongBySlug } from "../-server/songs";
 import { SongWikiPage, SongWikiPageSkeleton } from "../../components/song-detail/SongWikiPage";
 import { useSongBySlug } from "../../lib/use-songs";
@@ -147,18 +148,33 @@ function SongPage() {
 
   const clientSong = useSongBySlug(slug);
   const song = clientSong ?? loaderSong;
+  const catColor = useMemo(
+    () => (song ? (CATEGORY_BY_SLUG[song.category]?.color ?? "#888") : null),
+    [song],
+  );
 
   return (
-    <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-8">
-      <Link
-        to="/"
-        className="mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Back to songs
-      </Link>
+    <>
+      {/* Full-width gradient that bleeds behind the navbar */}
+      {catColor && (
+        <div
+          className="pointer-events-none fixed inset-x-0 top-0 z-0 h-72"
+          style={{
+            background: `linear-gradient(to bottom, color-mix(in oklch, ${catColor} 10%, transparent), transparent)`,
+          }}
+        />
+      )}
+      <main className="relative z-0 mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-6">
+        <Link
+          to="/songs"
+          className="mb-5 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ArrowLeft className="h-3.5 w-3.5" />
+          All songs
+        </Link>
 
-      {song ? <SongWikiPage song={song} /> : <SongWikiPageSkeleton />}
-    </main>
+        {song ? <SongWikiPage song={song} /> : <SongWikiPageSkeleton />}
+      </main>
+    </>
   );
 }

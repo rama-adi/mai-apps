@@ -1,15 +1,26 @@
 import { useLocation, useNavigate } from "@tanstack/react-router";
-import { Music, Clock, Zap } from "lucide-react";
+import { Music } from "lucide-react";
 import { useState } from "react";
-import { CATEGORY_BY_SLUG, VERSION_BY_SLUG, type MaiDbSong } from "maidb-data";
+import { CATEGORY_BY_SLUG, DIFFICULTY_COLORS, VERSION_BY_SLUG, type MaiDbSong } from "maidb-data";
 
 const THUMBNAIL_BASE = "https://maisongdb-blob.onebyteworks.my.id/thumb";
 
-// Fixed height so skeletons and real cards are identical size — no layout shift
-const cardClass =
-  "group flex h-full w-full gap-4 rounded-lg border bg-card p-4 transition-colors hover:bg-accent/50 cursor-pointer";
-const thumbClass =
-  "flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted";
+const DIFF_ORDER = ["basic", "advanced", "expert", "master", "remaster"];
+
+function getTopDifficulties(song: MaiDbSong) {
+  const best = new Map<string, string>();
+  for (const s of song.sheets) {
+    if (s.type === "utage" || s.isSpecial) continue;
+    if (!best.has(s.difficulty) || s.levelValue > (Number(best.get(s.difficulty)) || 0)) {
+      best.set(s.difficulty, s.level);
+    }
+  }
+  return DIFF_ORDER.filter((d) => best.has(d)).map((d) => ({
+    difficulty: d,
+    level: best.get(d)!,
+    color: DIFFICULTY_COLORS[d] ?? "#888",
+  }));
+}
 
 export function SongCard({ song }: { song: MaiDbSong }) {
   const [imgError, setImgError] = useState(false);
@@ -18,6 +29,8 @@ export function SongCard({ song }: { song: MaiDbSong }) {
   const thumbnailUrl = song.internalImageId
     ? `${THUMBNAIL_BASE}/${song.internalImageId}.png`
     : null;
+  const catColor = CATEGORY_BY_SLUG[song.category]?.color ?? "#888";
+  const diffs = getTopDifficulties(song);
 
   const handleClick = () => {
     if (!song.slug) return;
@@ -31,52 +44,60 @@ export function SongCard({ song }: { song: MaiDbSong }) {
   };
 
   return (
-    <article className={cardClass} onClick={handleClick}>
-      <div className={thumbClass}>
-        {thumbnailUrl && !imgError ? (
-          <img
-            src={thumbnailUrl}
-            alt={song.title}
-            className="h-full w-full object-cover"
-            loading="lazy"
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <Music className="h-6 w-6 text-muted-foreground" />
-        )}
-      </div>
+    <article
+      className="group relative flex cursor-pointer flex-col overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
+      style={{ borderColor: `color-mix(in oklch, ${catColor} 25%, transparent)` }}
+      onClick={handleClick}
+    >
+      {/* Category accent strip */}
+      <div className="h-0.5" style={{ backgroundColor: catColor }} />
 
-      <div className="min-w-0 flex-1">
-        <div className="flex items-start gap-2">
-          <h3 className="m-0 truncate text-sm font-semibold text-card-foreground">{song.title}</h3>
+      <div className="flex gap-3 p-3">
+        {/* Thumbnail */}
+        <div className="relative flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted">
+          {thumbnailUrl && !imgError ? (
+            <img
+              src={thumbnailUrl}
+              alt={song.title}
+              className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-105"
+              loading="lazy"
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <Music className="h-6 w-6 text-muted-foreground" />
+          )}
           {song.isNew && (
-            <span className="flex-shrink-0 rounded-full bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-foreground">
+            <span className="absolute -right-0.5 -top-0.5 rounded-bl-md bg-primary px-1.5 py-0.5 text-[9px] font-bold uppercase leading-none tracking-wider text-primary-foreground">
               New
             </span>
           )}
         </div>
-        <p className="m-0 mt-0.5 truncate text-xs text-muted-foreground">{song.artist}</p>
 
-        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-muted-foreground">
-          <span className="inline-flex items-center gap-1">
-            <Zap className="h-3 w-3" />
-            {song.bpm} BPM
-          </span>
-          <span className="inline-flex items-center gap-1 rounded-sm border bg-secondary px-1.5 py-0.5 text-[10px] font-medium text-secondary-foreground">
-            {VERSION_BY_SLUG[song.version]?.abbr ?? song.version}
-          </span>
-          <span
-            className="inline-flex items-center gap-1 font-medium"
-            style={{ color: CATEGORY_BY_SLUG[song.category]?.color ?? undefined }}
-          >
-            {CATEGORY_BY_SLUG[song.category]?.category ?? song.category}
-          </span>
-          {song.releaseDate && (
-            <span className="inline-flex items-center gap-1">
-              <Clock className="h-3 w-3" />
-              {song.releaseDate}
+        {/* Info */}
+        <div className="flex min-w-0 flex-1 flex-col justify-between">
+          <div>
+            <h3 className="m-0 truncate text-sm font-bold leading-tight text-card-foreground">
+              {song.title}
+            </h3>
+            <p className="m-0 mt-0.5 truncate text-xs text-muted-foreground">{song.artist}</p>
+          </div>
+
+          {/* Difficulty chips — the most useful info at a glance */}
+          <div className="mt-1.5 flex items-center gap-1">
+            {diffs.map((d) => (
+              <span
+                key={d.difficulty}
+                className="inline-flex min-w-[1.75rem] items-center justify-center rounded px-1 py-[1px] text-[10px] font-bold leading-tight text-white"
+                style={{ backgroundColor: d.color }}
+                title={d.difficulty}
+              >
+                {d.level}
+              </span>
+            ))}
+            <span className="ml-auto text-[10px] text-muted-foreground">
+              {VERSION_BY_SLUG[song.version]?.abbr ?? song.version}
             </span>
-          )}
+          </div>
         </div>
       </div>
     </article>
@@ -85,22 +106,20 @@ export function SongCard({ song }: { song: MaiDbSong }) {
 
 export function SongCardSkeleton() {
   return (
-    <div className="flex h-full w-full gap-4 rounded-lg border bg-card p-4">
-      <div className="h-14 w-14 flex-shrink-0 animate-pulse rounded-md bg-muted" />
-      <div className="min-w-0 flex-1">
-        {/* Title + badge row */}
-        <div className="flex items-start gap-2">
-          <div className="h-[20px] w-3/4 animate-pulse rounded bg-muted" />
-          <div className="h-[20px] w-10 flex-shrink-0 animate-pulse rounded-full bg-muted" />
-        </div>
-        {/* Artist row */}
-        <div className="mt-0.5 h-[16px] w-1/2 animate-pulse rounded bg-muted" />
-        {/* Metadata row: BPM + version + category + date */}
-        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
-          <div className="h-[17px] w-16 animate-pulse rounded bg-muted" />
-          <div className="h-[21px] w-14 animate-pulse rounded-sm bg-muted" />
-          <div className="h-[17px] w-20 animate-pulse rounded bg-muted" />
-          <div className="h-[17px] w-24 animate-pulse rounded bg-muted" />
+    <div className="flex flex-col overflow-hidden rounded-lg border bg-card">
+      <div className="h-0.5 bg-muted" />
+      <div className="flex gap-3 p-3">
+        <div className="h-16 w-16 flex-shrink-0 animate-pulse rounded-md bg-muted" />
+        <div className="flex min-w-0 flex-1 flex-col justify-between">
+          <div>
+            <div className="h-[18px] w-3/4 animate-pulse rounded bg-muted" />
+            <div className="mt-1 h-[14px] w-1/2 animate-pulse rounded bg-muted" />
+          </div>
+          <div className="mt-1.5 flex gap-1">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <div key={i} className="h-[18px] w-7 animate-pulse rounded bg-muted" />
+            ))}
+          </div>
         </div>
       </div>
     </div>
