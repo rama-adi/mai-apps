@@ -1,8 +1,10 @@
 import { env } from "cloudflare:workers";
-import type { MaiDbSong } from "maidb-data";
+import type { MaiDbSong, Metadata } from "maidb-data";
 
-import localSongsJson from "maidb-data/songs.json";
-import { buildFilterOptions, sortSongsByReleaseDate, type FilterOptions } from "maidb-data";
+import localSongsJson from "maidb-data/data/songs/songs.json";
+import localLatestJson from "maidb-data/data/songs/latest-only.json";
+import localMetadataJson from "maidb-data/data/songs/metadata.json";
+import { buildFilterOptions, type FilterOptions } from "maidb-data";
 
 const SONGS_OBJECT_KEY = "songs.json";
 const SONGS_CACHE_KEY = "songlist:v1";
@@ -43,9 +45,12 @@ export async function loadSongListResponse(): Promise<Response> {
   });
 }
 
-export async function getLatestSongs(limit = 50): Promise<MaiDbSong[]> {
-  const { songs } = await loadSongList();
-  return sortSongsByReleaseDate(songs).slice(0, limit);
+export function getLatestSongs(): MaiDbSong[] {
+  return localLatestJson as MaiDbSong[];
+}
+
+export function getMetadata(): Metadata {
+  return localMetadataJson as Metadata;
 }
 
 export async function getSongBySlug(slug: string): Promise<MaiDbSong | null> {

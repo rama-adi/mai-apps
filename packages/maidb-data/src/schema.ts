@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { CATEGORIES, CHART_TYPES, DIFFICULTIES, REGIONS, VERSIONS } from "./constants.js";
 
 // -- Receipt schema (image upload tracking) -----------------------------------
 
@@ -10,6 +11,14 @@ export const receiptSchema = z.object({
 });
 
 export type Receipt = z.infer<typeof receiptSchema>;
+
+// -- Enum values derived from constants ---------------------------------------
+
+const categoryValues = CATEGORIES.map((c) => c.category) as [string, ...string[]];
+const versionValues = VERSIONS.map((v) => v.version) as [string, ...string[]];
+const typeValues = CHART_TYPES.map((t) => t.type) as [string, ...string[]];
+const difficultyValues = DIFFICULTIES.map((d) => d.difficulty) as [string, ...string[]];
+const regionKeys = REGIONS.map((r) => r.region) as [string, ...string[]];
 
 // -- songs.json entry schema --------------------------------------------------
 
@@ -56,6 +65,24 @@ export const maiDbSongSchema = z.object({
   internalImageId: z.string(),
   sheets: z.array(sheetSchema),
   keyword: z.string(),
+});
+
+// -- Strict schema for finalized songs ----------------------------------------
+
+const finalSheetSchema = sheetSchema.extend({
+  type: z.enum(typeValues),
+  difficulty: z.enum(difficultyValues),
+  regions: z.object(
+    Object.fromEntries(regionKeys.map((r) => [r, z.boolean()])) as Record<string, z.ZodBoolean>,
+  ),
+});
+
+export const finalMaiDbSongSchema = maiDbSongSchema.extend({
+  category: z.enum(categoryValues),
+  version: z.enum(versionValues),
+  slug: z.string().min(1),
+  internalImageId: z.string().min(1),
+  sheets: z.array(finalSheetSchema).min(1),
 });
 
 export type MaiDbSong = z.infer<typeof maiDbSongSchema>;

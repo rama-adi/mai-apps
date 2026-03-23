@@ -14,12 +14,14 @@
   },
   "files": [
     "dist",
-    "songs.json"
+    "data/songs"
   ],
   "type": "module",
   "exports": {
     ".": "./dist/index.mjs",
-    "./songs.json": "./songs.json",
+    "./data/songs/songs.json": "./data/songs/songs.json",
+    "./data/songs/metadata.json": "./data/songs/metadata.json",
+    "./data/songs/latest-only.json": "./data/songs/latest-only.json",
     "./package.json": "./package.json"
   },
   "publishConfig": {

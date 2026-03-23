@@ -1,5 +1,5 @@
 import type { MaiDbSong } from "../schema.js";
-import { DIFFICULTY_COLORS } from "../constants.js";
+import { DIFFICULTY_COLORS, DIFFICULTY_NAMES, TYPE_NAMES } from "../constants.js";
 import Fuse, { type IFuseOptions } from "fuse.js";
 
 // -- Sorting ------------------------------------------------------------------
@@ -15,22 +15,7 @@ export function sortSongsByReleaseDate(songs: MaiDbSong[]): MaiDbSong[] {
   return [...songs].sort(compareReleaseDatesDesc);
 }
 
-// -- Display mappings ---------------------------------------------------------
-
-export const TYPE_NAMES: Record<string, string> = {
-  std: "Standard",
-  dx: "Deluxe",
-  utage: "Utage",
-};
-
-export const DIFFICULTY_NAMES: Record<string, string> = {
-  basic: "Basic",
-  advanced: "Advanced",
-  expert: "Expert",
-  master: "Master",
-  remaster: "Re:Master",
-  utage: "Utage",
-};
+export { TYPE_NAMES, DIFFICULTY_NAMES };
 
 // -- Filter options -----------------------------------------------------------
 

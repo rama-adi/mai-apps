@@ -4,7 +4,7 @@ import { REGION_LABELS, filterSongs, sortSongsByReleaseDate, type SongFilters } 
 import { ChevronDown, ChevronUp, Music, Search, SlidersHorizontal } from "lucide-react";
 import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import { SongCard, SongCardSkeleton } from "../components/SongCard";
-import { getLatestSongs, getFilterOptions } from "./-server/index";
+import { getLatestSongs, getFilterOptions, getMetadata } from "./-server/index";
 import { useSongs } from "../lib/use-songs";
 
 type FilterOption = { name: string };
@@ -69,11 +69,12 @@ export const Route = createFileRoute("/")({
     ],
   }),
   loader: async () => {
-    const [songs, filterOptions] = await Promise.all([
-      getLatestSongs({ data: { limit: 50 } }),
+    const [songs, filterOptions, metadata] = await Promise.all([
+      getLatestSongs(),
       getFilterOptions(),
+      getMetadata(),
     ]);
-    return { songs, filterOptions };
+    return { songs, filterOptions, metadata };
   },
   component: HomePage,
 });

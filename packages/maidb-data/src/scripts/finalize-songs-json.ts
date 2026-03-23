@@ -1,6 +1,15 @@
 import { readFileSync, writeFileSync, existsSync } from "fs";
-import { SONGS_JSON_PATH, RECEIPTS_PATH } from "../shared/paths.js";
+import {
+  SONGS_JSON_PATH,
+  RECEIPTS_PATH,
+  METADATA_JSON_PATH,
+  LATEST_JSON_PATH,
+} from "../shared/paths.js";
+import { CATEGORIES, VERSIONS, EXPORTED_METADATA } from "../constants.js";
 import type { MaiDbSong, Receipt } from "../schema.js";
+
+const categorySlugMap = new Map(CATEGORIES.map((c) => [c.category, c.slug]));
+const versionSlugMap = new Map(VERSIONS.map((v) => [v.version, v.slug]));
 
 async function main() {
   if (!existsSync(SONGS_JSON_PATH)) {
@@ -15,7 +24,6 @@ async function main() {
     const receipts: Receipt[] = JSON.parse(readFileSync(RECEIPTS_PATH, "utf-8"));
     const uploadedReceipts = receipts.filter((r) => r.isUploaded);
 
-    // Index by imageName — multiple songs can share the same image
     const receiptByImage = new Map<string, Receipt>();
     for (const r of uploadedReceipts) {
       receiptByImage.set(r.imageName, r);
@@ -45,8 +53,45 @@ async function main() {
     console.warn(`WARNING: ${missingImage.length} songs missing internalImageId`);
   }
 
+  // Replace category/version with slugs
+  const unknownCategories = new Set<string>();
+  const unknownVersions = new Set<string>();
+
+  for (const song of songs) {
+    const catSlug = categorySlugMap.get(song.category);
+    if (catSlug) {
+      song.category = catSlug;
+    } else {
+      unknownCategories.add(song.category);
+    }
+
+    const verSlug = versionSlugMap.get(song.version);
+    if (verSlug) {
+      song.version = verSlug;
+    } else {
+      unknownVersions.add(song.version);
+    }
+  }
+
+  if (unknownCategories.size > 0) {
+    console.warn(`WARNING: Unknown categories: ${[...unknownCategories].join(", ")}`);
+  }
+  if (unknownVersions.size > 0) {
+    console.warn(`WARNING: Unknown versions: ${[...unknownVersions].join(", ")}`);
+  }
+
+  // Write songs.json
   writeFileSync(SONGS_JSON_PATH, JSON.stringify(songs, null, 2) + "\n");
   console.log(`Finalized songs.json: ${songs.length} songs`);
+
+  // Write metadata.json
+  writeFileSync(METADATA_JSON_PATH, JSON.stringify(EXPORTED_METADATA, null, 2) + "\n");
+  console.log(`Wrote metadata.json`);
+
+  // Write latest-only.json (isNew songs only)
+  const latestSongs = songs.filter((s) => s.isNew);
+  writeFileSync(LATEST_JSON_PATH, JSON.stringify(latestSongs, null, 2) + "\n");
+  console.log(`Wrote latest-only.json: ${latestSongs.length} songs`);
 }
 
 main().catch(console.error);
