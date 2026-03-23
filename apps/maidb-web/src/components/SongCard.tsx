@@ -25,6 +25,7 @@ export function SongCard({ song }: { song: MaiDbSong }) {
       to: "/song-modal/$slug",
       params: { slug: song.slug },
       search: search,
+      resetScroll: false,
       mask: { to: "/songs/$slug", params: { slug: song.slug }, unmaskOnReload: true },
     });
   };

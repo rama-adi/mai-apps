@@ -8,45 +8,21 @@ const SONGS_OBJECT_KEY = "songs.json";
 const SONGS_CACHE_KEY = "songlist:v1";
 const SONGS_CACHE_TTL_SECONDS = 60 * 60;
 
-type KvStore = {
-  get(key: string, type: "text"): Promise<string | null>;
-  put(key: string, value: string, options?: { expirationTtl?: number }): Promise<void>;
-};
-
-type R2Object = {
-  text(): Promise<string>;
-};
-
-type R2Store = {
-  get(key: string): Promise<R2Object | null>;
-};
-
-type SongWorkerEnv = {
-  SONGS_CACHE?: KvStore;
-  SONG_DATA_BUCKET?: R2Store;
-};
-
 type SongListPayload = {
   songs: MaiDbSong[];
   source: "kv" | "r2" | "local";
 };
 
-function getSongWorkerEnv(): SongWorkerEnv {
-  return env as SongWorkerEnv;
-}
-
 export async function loadSongList(): Promise<SongListPayload> {
-  const workerEnv = getSongWorkerEnv();
-
-  const cachedSongs = await workerEnv.SONGS_CACHE?.get(SONGS_CACHE_KEY, "text");
+  const cachedSongs = await env.SONGS_CACHE.get(SONGS_CACHE_KEY, "text");
   if (cachedSongs) {
     return { songs: JSON.parse(cachedSongs) as MaiDbSong[], source: "kv" };
   }
 
-  const r2Object = await workerEnv.SONG_DATA_BUCKET?.get(SONGS_OBJECT_KEY);
+  const r2Object = await env.SONG_DATA_BUCKET.get(SONGS_OBJECT_KEY);
   if (r2Object) {
     const songsText = await r2Object.text();
-    await workerEnv.SONGS_CACHE?.put(SONGS_CACHE_KEY, songsText, {
+    await env.SONGS_CACHE.put(SONGS_CACHE_KEY, songsText, {
       expirationTtl: SONGS_CACHE_TTL_SECONDS,
     });
     return { songs: JSON.parse(songsText) as MaiDbSong[], source: "r2" };

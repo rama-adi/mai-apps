@@ -12,7 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SonglistRouteImport } from './routes/songlist'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as SongsSlugRouteImport } from './routes/songs.$slug'
+import { Route as SongsSlugRouteImport } from './routes/songs/$slug'
 import { Route as SongModalSlugRouteImport } from './routes/song-modal.$slug'
 
 const SonglistRoute = SonglistRouteImport.update({

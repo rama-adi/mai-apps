@@ -13,6 +13,7 @@ export default defineConfig({
       "components/ui/select": "src/components/ui/select.tsx",
       "components/ui/collapsible": "src/components/ui/collapsible.tsx",
       "components/ui/dialog": "src/components/ui/dialog.tsx",
+      "components/ui/tabs": "src/components/ui/tabs.tsx",
     },
     dts: {
       tsgo: true,

@@ -2,7 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import {
   getFilterOptions as getFilterOptionsServer,
   getLatestSongs as getLatestSongsServer,
-} from "../lib/song-data.server";
+} from "../../lib/song-data.server";
 import type { FilterOptions } from "maidb-data";
 
 export const getLatestSongs = createServerFn({ method: "GET" })

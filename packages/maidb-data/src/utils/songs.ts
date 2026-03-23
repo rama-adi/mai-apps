@@ -90,7 +90,7 @@ const SONG_SEARCH_OPTIONS = {
   ignoreLocation: true,
   includeScore: true,
   keys: [{ name: "keyword", weight: 1 }],
-  threshold: 0.35,
+  threshold: 0.2,
 } satisfies IFuseOptions<MaiDbSong>;
 
 export function searchSongsByKeyword(songs: MaiDbSong[], query: string): MaiDbSong[] {
@@ -98,7 +98,7 @@ export function searchSongsByKeyword(songs: MaiDbSong[], query: string): MaiDbSo
   if (!trimmedQuery) return songs;
 
   const fuse = new Fuse(songs, SONG_SEARCH_OPTIONS);
-  return fuse.search(trimmedQuery).map((result) => result.item);
+  return sortSongsByReleaseDate(fuse.search(trimmedQuery).map((result) => result.item));
 }
 
 export function filterSongs(songs: MaiDbSong[], filters: SongFilters): MaiDbSong[] {
