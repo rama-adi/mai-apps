@@ -1,5 +1,5 @@
 import type { MaiDbSong, Sheet } from "maidb-data";
-import { DIFFICULTY_COLORS, REGION_LABELS } from "maidb-data";
+import { CATEGORY_BY_SLUG, DIFFICULTY_COLORS, REGION_LABELS, VERSION_BY_SLUG } from "maidb-data";
 import { DIFFICULTY_NAMES, TYPE_NAMES } from "maidb-data";
 import { Zap, Clock, Check, X, Youtube, Share2, ClipboardCheck } from "lucide-react";
 import { useState } from "react";
@@ -80,11 +80,16 @@ export function SongWikiPage({ song }: { song: MaiDbSong }) {
               </InfoboxRow>
               <InfoboxRow label="Version">
                 <span className="inline-flex items-center gap-1 rounded-sm border bg-secondary px-1.5 py-0.5 text-[11px] font-medium text-secondary-foreground">
-                  {song.version}
+                  {VERSION_BY_SLUG[song.version]?.abbr ?? song.version}
                 </span>
               </InfoboxRow>
               <InfoboxRow label="Category">
-                <span className="font-medium text-primary">{song.category}</span>
+                <span
+                  className="font-medium"
+                  style={{ color: CATEGORY_BY_SLUG[song.category]?.color ?? undefined }}
+                >
+                  {CATEGORY_BY_SLUG[song.category]?.category ?? song.category}
+                </span>
               </InfoboxRow>
               <InfoboxRow label="Chart Type">
                 {chartTypes.map((t) => TYPE_NAMES[t] ?? t).join(", ")}

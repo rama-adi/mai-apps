@@ -157,3 +157,12 @@ export const TYPE_NAMES: Record<string, string> = Object.fromEntries(
 export const REGION_LABELS: Record<string, string> = Object.fromEntries(
   REGIONS.map((r) => [r.region, r.label]),
 );
+
+// Slug-to-display-name maps (for resolving slugs in finalized song data)
+export const CATEGORY_BY_SLUG: Record<string, Category> = Object.fromEntries(
+  CATEGORIES.map((c) => [c.slug, c]),
+);
+
+export const VERSION_BY_SLUG: Record<string, Version> = Object.fromEntries(
+  VERSIONS.map((v) => [v.slug, v]),
+);

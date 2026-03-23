@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import type { MaiDbSong } from "maidb-data";
-import { DIFFICULTY_NAMES, TYPE_NAMES } from "maidb-data";
+import { CATEGORY_BY_SLUG, DIFFICULTY_NAMES, TYPE_NAMES, VERSION_BY_SLUG } from "maidb-data";
 import { getSongBySlug } from "../-server/songs";
 import { SongWikiPage, SongWikiPageSkeleton } from "../../components/song-detail/SongWikiPage";
 import { useSongBySlug } from "../../lib/use-songs";
@@ -24,7 +24,9 @@ function buildSongSeoDescription(song: MaiDbSong): string {
     ),
   ].join("/");
 
-  return `${song.title} by ${song.artist} — ${chartTypes} charts for maimai. BPM: ${song.bpm}. Difficulties: ${difficulties}. Version: ${song.version}. Category: ${song.category}. Available in: ${regions}.${song.releaseDate ? ` Released: ${song.releaseDate}.` : ""}`;
+  const versionName = VERSION_BY_SLUG[song.version]?.version ?? song.version;
+  const categoryName = CATEGORY_BY_SLUG[song.category]?.category ?? song.category;
+  return `${song.title} by ${song.artist} — ${chartTypes} charts for maimai. BPM: ${song.bpm}. Difficulties: ${difficulties}. Version: ${versionName}. Category: ${categoryName}. Available in: ${regions}.${song.releaseDate ? ` Released: ${song.releaseDate}.` : ""}`;
 }
 
 function buildJsonLd(song: MaiDbSong) {
@@ -40,11 +42,15 @@ function buildJsonLd(song: MaiDbSong) {
     ...(imageUrl ? { image: imageUrl } : {}),
     identifier: song.songId,
     datePublished: song.releaseDate || undefined,
-    genre: song.category,
+    genre: CATEGORY_BY_SLUG[song.category]?.category ?? song.category,
     url: `${SITE_URL}/songs/${song.slug}`,
     additionalProperty: [
       { "@type": "PropertyValue", name: "BPM", value: String(song.bpm) },
-      { "@type": "PropertyValue", name: "Version", value: song.version },
+      {
+        "@type": "PropertyValue",
+        name: "Version",
+        value: VERSION_BY_SLUG[song.version]?.version ?? song.version,
+      },
       {
         "@type": "PropertyValue",
         name: "Chart Types",
@@ -110,8 +116,8 @@ export const Route = createFileRoute("/songs/$slug")({
             song.artist,
             "maimai",
             "chart",
-            song.category,
-            song.version,
+            CATEGORY_BY_SLUG[song.category]?.category ?? song.category,
+            VERSION_BY_SLUG[song.version]?.version ?? song.version,
             ...song.sheets.map((s) => DIFFICULTY_NAMES[s.difficulty] ?? s.difficulty),
             ...song.sheets.map((s) => `level ${s.level}`),
             "rhythm game",

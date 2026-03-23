@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "@tanstack/react-router";
 import { Music, Clock, Zap } from "lucide-react";
 import { useState } from "react";
-import type { MaiDbSong } from "maidb-data";
+import { CATEGORY_BY_SLUG, VERSION_BY_SLUG, type MaiDbSong } from "maidb-data";
 
 const THUMBNAIL_BASE = "https://maisongdb-blob.onebyteworks.my.id/thumb";
 
@@ -63,10 +63,13 @@ export function SongCard({ song }: { song: MaiDbSong }) {
             {song.bpm} BPM
           </span>
           <span className="inline-flex items-center gap-1 rounded-sm border bg-secondary px-1.5 py-0.5 text-[10px] font-medium text-secondary-foreground">
-            {song.version}
+            {VERSION_BY_SLUG[song.version]?.abbr ?? song.version}
           </span>
-          <span className="inline-flex items-center gap-1 font-medium text-primary">
-            {song.category}
+          <span
+            className="inline-flex items-center gap-1 font-medium"
+            style={{ color: CATEGORY_BY_SLUG[song.category]?.color ?? undefined }}
+          >
+            {CATEGORY_BY_SLUG[song.category]?.category ?? song.category}
           </span>
           {song.releaseDate && (
             <span className="inline-flex items-center gap-1">

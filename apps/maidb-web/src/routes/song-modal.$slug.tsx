@@ -1,8 +1,10 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import type { MaiDbSong, Sheet } from "maidb-data";
 import {
+  CATEGORY_BY_SLUG,
   DIFFICULTY_COLORS,
   REGION_LABELS,
+  VERSION_BY_SLUG,
   filterSongs,
   sortSongsByReleaseDate,
   type SongFilters,
@@ -25,7 +27,7 @@ import {
 import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@packages/ui/components/ui/tabs";
 import { SongCard, SongCardSkeleton } from "../components/SongCard";
-import { getLatestSongs, getFilterOptions } from "./-server/index";
+import { getSongsPageLatest, getSongsPageFilterOptions } from "./-server/songs-index";
 import { getSongBySlug } from "./-server/songs";
 import { useSongBySlug, useSongs } from "../lib/use-songs";
 
@@ -82,8 +84,8 @@ export const Route = createFileRoute("/song-modal/$slug")({
   validateSearch: validateSongBrowserSearch,
   loader: async ({ params }) => {
     const [songs, filterOptions, song] = await Promise.all([
-      getLatestSongs({ data: { limit: 50 } }),
-      getFilterOptions(),
+      getSongsPageLatest(),
+      getSongsPageFilterOptions(),
       getSongBySlug({ data: { slug: params.slug } }),
     ]);
     return { songs, filterOptions, song };
@@ -603,9 +605,12 @@ function OverviewTab({ song }: { song: MaiDbSong }) {
       <LevelGrid song={song} />
 
       <div className="flex flex-wrap gap-2">
-        <MetaPill label="Version" value={song.version} />
+        <MetaPill label="Version" value={VERSION_BY_SLUG[song.version]?.abbr ?? song.version} />
         <MetaPill label="Chart Type" value={chartTypes.map((t) => TYPE_NAMES[t] ?? t).join(", ")} />
-        <MetaPill label="Category" value={song.category} />
+        <MetaPill
+          label="Category"
+          value={CATEGORY_BY_SLUG[song.category]?.category ?? song.category}
+        />
       </div>
 
       <div>
@@ -842,7 +847,9 @@ function AvailabilityTab({ song }: { song: MaiDbSong }) {
             </>
           )}
           <dt className="text-muted-foreground">Version</dt>
-          <dd className="m-0 font-medium text-foreground">{song.version}</dd>
+          <dd className="m-0 font-medium text-foreground">
+            {VERSION_BY_SLUG[song.version]?.abbr ?? song.version}
+          </dd>
         </dl>
       </div>
     </div>

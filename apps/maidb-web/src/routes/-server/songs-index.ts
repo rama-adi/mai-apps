@@ -1,0 +1,16 @@
+import { createServerFn } from "@tanstack/react-start";
+import {
+  getFilterOptions as getFilterOptionsServer,
+  getLatestSongs as getLatestSongsServer,
+} from "../../lib/song-data.server";
+import type { FilterOptions } from "maidb-data";
+
+export const getSongsPageLatest = createServerFn({ method: "GET" }).handler((() => {
+  return getLatestSongsServer();
+}) as never);
+
+export const getSongsPageFilterOptions = createServerFn({ method: "GET" }).handler(
+  (async (): Promise<FilterOptions> => {
+    return getFilterOptionsServer();
+  }) as never,
+);

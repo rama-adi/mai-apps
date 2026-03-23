@@ -13,6 +13,8 @@ export {
   DIFFICULTY_NAMES,
   TYPE_NAMES,
   REGION_LABELS,
+  CATEGORY_BY_SLUG,
+  VERSION_BY_SLUG,
   EXPORTED_METADATA,
 } from "./constants.js";
 export type { Category, Version, ChartType, Difficulty, Region, Metadata } from "./constants.js";
