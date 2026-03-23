@@ -4,7 +4,7 @@ import type { MaiDbSong } from "maidb-data";
 import { SongCard, SongCardSkeleton } from "../SongCard";
 import { useSongBrowser } from "./SongBrowser";
 
-export function SongBrowserGrid({
+export function SongBrowserGridView({
   emptyDescription = "Database is empty.",
   emptyTitle = "No songs found",
   onSongSelect,
@@ -15,13 +15,26 @@ export function SongBrowserGrid({
 }) {
   const { canLoadMore, isFiltered, isLoading, loadMore, songs, totalCount } = useSongBrowser();
   const sentinelRef = useRef<HTMLDivElement | null>(null);
+  const isAdvancingRef = useRef(false);
+  const songCount = songs?.length ?? 0;
+
+  useEffect(() => {
+    isAdvancingRef.current = false;
+  }, [songCount]);
 
   useEffect(() => {
     if (!canLoadMore || !sentinelRef.current) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
+        const isIntersecting = entries.some((entry) => entry.isIntersecting);
+        if (!isIntersecting) {
+          isAdvancingRef.current = false;
+          return;
+        }
+
+        if (!isAdvancingRef.current) {
+          isAdvancingRef.current = true;
           loadMore();
         }
       },
@@ -30,7 +43,7 @@ export function SongBrowserGrid({
 
     observer.observe(sentinelRef.current);
     return () => observer.disconnect();
-  }, [canLoadMore, loadMore]);
+  }, [canLoadMore, loadMore, songCount]);
 
   return (
     <section className="mt-4">

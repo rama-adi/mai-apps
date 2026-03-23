@@ -4,7 +4,7 @@ import type { MaiDbSong, Metadata } from "maidb-data";
 import localSongsJson from "maidb-data/data/songs/songs.json";
 import localLatestJson from "maidb-data/data/songs/latest-only.json";
 import localMetadataJson from "maidb-data/data/songs/metadata.json";
-import { buildFilterOptions, type FilterOptions } from "maidb-data";
+import { buildFilterOptions, sortSongsByReleaseDate, type FilterOptions } from "maidb-data";
 
 const SONGS_OBJECT_KEY = "songs.json";
 const SONGS_CACHE_KEY = "songlist:v1";
@@ -51,6 +51,11 @@ export function getLatestSongs(): MaiDbSong[] {
 
 export function getMetadata(): Metadata {
   return localMetadataJson as Metadata;
+}
+
+export async function getSongsByVersion(versionSlug: string): Promise<MaiDbSong[]> {
+  const { songs } = await loadSongList();
+  return sortSongsByReleaseDate(songs.filter((song) => song.version === versionSlug));
 }
 
 export async function getSongBySlug(slug: string): Promise<MaiDbSong | null> {

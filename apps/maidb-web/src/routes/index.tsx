@@ -2,7 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import type { MaiDbSong, Metadata } from "maidb-data";
 import { ArrowRight, Search, Sparkles } from "lucide-react";
 import { SongBrowser } from "../components/song-browser/SongBrowser";
-import { SongBrowserGrid } from "../components/song-browser/SongBrowserGrid";
+import { SongBrowserGridView } from "../components/song-browser/SongBrowserGridView";
 import { getLatestSongs, getMetadata } from "./-server/index";
 
 export const Route = createFileRoute("/")({
@@ -149,7 +149,7 @@ function HomePage() {
                 )
             }
           >
-            <SongBrowserGrid onSongSelect={openSongModal} />
+            <SongBrowserGridView onSongSelect={openSongModal} />
           </SongBrowser>
         </section>
 
@@ -205,8 +205,8 @@ function HomePage() {
             {[...metadata.versions].reverse().map((ver, i) => (
               <Link
                 key={ver.slug}
-                to="/songs"
-                search={{ version: ver.slug }}
+                to="/version/$slug"
+                params={{ slug: ver.slug }}
                 className="group flex items-center gap-3 rounded-lg border bg-card px-4 py-2.5 transition-all hover:bg-accent/50 hover:shadow-sm"
               >
                 <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-[9px] font-black text-primary">

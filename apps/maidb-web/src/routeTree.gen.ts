@@ -12,7 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SonglistRouteImport } from './routes/songlist'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as VersionIndexRouteImport } from './routes/version/index'
 import { Route as SongsIndexRouteImport } from './routes/songs/index'
+import { Route as VersionSlugRouteImport } from './routes/version/$slug'
 import { Route as SongsSlugRouteImport } from './routes/songs/$slug'
 import { Route as SongModalSlugRouteImport } from './routes/song-modal.$slug'
 
@@ -25,8 +27,14 @@ const AboutRoute = AboutRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
             id: '/',path: '/',getParentRoute: () => rootRouteImport
           }as any)
+const VersionIndexRoute = VersionIndexRouteImport.update({
+            id: '/version/',path: '/version/',getParentRoute: () => rootRouteImport
+          }as any)
 const SongsIndexRoute = SongsIndexRouteImport.update({
             id: '/songs/',path: '/songs/',getParentRoute: () => rootRouteImport
+          }as any)
+const VersionSlugRoute = VersionSlugRouteImport.update({
+            id: '/version/$slug',path: '/version/$slug',getParentRoute: () => rootRouteImport
           }as any)
 const SongsSlugRoute = SongsSlugRouteImport.update({
             id: '/songs/$slug',path: '/songs/$slug',getParentRoute: () => rootRouteImport
@@ -36,25 +44,25 @@ const SongModalSlugRoute = SongModalSlugRouteImport.update({
           }as any)
 
 export interface FileRoutesByFullPath {
-'/': typeof IndexRoute,'/about': typeof AboutRoute,'/songlist': typeof SonglistRoute,'/song-modal/$slug': typeof SongModalSlugRoute,'/songs/$slug': typeof SongsSlugRoute,'/songs/': typeof SongsIndexRoute
+'/': typeof IndexRoute,'/about': typeof AboutRoute,'/songlist': typeof SonglistRoute,'/song-modal/$slug': typeof SongModalSlugRoute,'/songs/$slug': typeof SongsSlugRoute,'/version/$slug': typeof VersionSlugRoute,'/songs/': typeof SongsIndexRoute,'/version/': typeof VersionIndexRoute
 }
 export interface FileRoutesByTo {
-'/': typeof IndexRoute,'/about': typeof AboutRoute,'/songlist': typeof SonglistRoute,'/song-modal/$slug': typeof SongModalSlugRoute,'/songs/$slug': typeof SongsSlugRoute,'/songs': typeof SongsIndexRoute
+'/': typeof IndexRoute,'/about': typeof AboutRoute,'/songlist': typeof SonglistRoute,'/song-modal/$slug': typeof SongModalSlugRoute,'/songs/$slug': typeof SongsSlugRoute,'/version/$slug': typeof VersionSlugRoute,'/songs': typeof SongsIndexRoute,'/version': typeof VersionIndexRoute
 }
 export interface FileRoutesById {
 '__root__': typeof rootRouteImport,
-'/': typeof IndexRoute,'/about': typeof AboutRoute,'/songlist': typeof SonglistRoute,'/song-modal/$slug': typeof SongModalSlugRoute,'/songs/$slug': typeof SongsSlugRoute,'/songs/': typeof SongsIndexRoute
+'/': typeof IndexRoute,'/about': typeof AboutRoute,'/songlist': typeof SonglistRoute,'/song-modal/$slug': typeof SongModalSlugRoute,'/songs/$slug': typeof SongsSlugRoute,'/version/$slug': typeof VersionSlugRoute,'/songs/': typeof SongsIndexRoute,'/version/': typeof VersionIndexRoute
 }
 export interface FileRouteTypes {
 fileRoutesByFullPath: FileRoutesByFullPath
-fullPaths: '/'|'/about'|'/songlist'|'/song-modal/$slug'|'/songs/$slug'|'/songs/'
+fullPaths: '/'|'/about'|'/songlist'|'/song-modal/$slug'|'/songs/$slug'|'/version/$slug'|'/songs/'|'/version/'
 fileRoutesByTo: FileRoutesByTo
-to: '/'|'/about'|'/songlist'|'/song-modal/$slug'|'/songs/$slug'|'/songs'
-id: '__root__'|'/'|'/about'|'/songlist'|'/song-modal/$slug'|'/songs/$slug'|'/songs/'
+to: '/'|'/about'|'/songlist'|'/song-modal/$slug'|'/songs/$slug'|'/version/$slug'|'/songs'|'/version'
+id: '__root__'|'/'|'/about'|'/songlist'|'/song-modal/$slug'|'/songs/$slug'|'/version/$slug'|'/songs/'|'/version/'
 fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-IndexRoute: typeof IndexRoute,AboutRoute: typeof AboutRoute,SonglistRoute: typeof SonglistRoute,SongModalSlugRoute: typeof SongModalSlugRoute,SongsSlugRoute: typeof SongsSlugRoute,SongsIndexRoute: typeof SongsIndexRoute
+IndexRoute: typeof IndexRoute,AboutRoute: typeof AboutRoute,SonglistRoute: typeof SonglistRoute,SongModalSlugRoute: typeof SongModalSlugRoute,SongsSlugRoute: typeof SongsSlugRoute,VersionSlugRoute: typeof VersionSlugRoute,SongsIndexRoute: typeof SongsIndexRoute,VersionIndexRoute: typeof VersionIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -80,11 +88,25 @@ declare module '@tanstack/react-router' {
           preLoaderRoute: typeof IndexRouteImport
           parentRoute: typeof rootRouteImport
         }
+'/version/': {
+          id: '/version/'
+          path: '/version'
+          fullPath: '/version/'
+          preLoaderRoute: typeof VersionIndexRouteImport
+          parentRoute: typeof rootRouteImport
+        }
 '/songs/': {
           id: '/songs/'
           path: '/songs'
           fullPath: '/songs/'
           preLoaderRoute: typeof SongsIndexRouteImport
+          parentRoute: typeof rootRouteImport
+        }
+'/version/$slug': {
+          id: '/version/$slug'
+          path: '/version/$slug'
+          fullPath: '/version/$slug'
+          preLoaderRoute: typeof VersionSlugRouteImport
           parentRoute: typeof rootRouteImport
         }
 '/songs/$slug': {
@@ -105,7 +127,7 @@ declare module '@tanstack/react-router' {
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,AboutRoute: AboutRoute,SonglistRoute: SonglistRoute,SongModalSlugRoute: SongModalSlugRoute,SongsSlugRoute: SongsSlugRoute,SongsIndexRoute: SongsIndexRoute
+  IndexRoute: IndexRoute,AboutRoute: AboutRoute,SonglistRoute: SonglistRoute,SongModalSlugRoute: SongModalSlugRoute,SongsSlugRoute: SongsSlugRoute,VersionSlugRoute: VersionSlugRoute,SongsIndexRoute: SongsIndexRoute,VersionIndexRoute: VersionIndexRoute
 }
 export const routeTree = rootRouteImport._addFileChildren(rootRouteChildren)._addFileTypes<FileRouteTypes>()
 

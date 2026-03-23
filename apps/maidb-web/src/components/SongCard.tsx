@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { Music } from "lucide-react";
 import { useState } from "react";
 import { CATEGORY_BY_SLUG, DIFFICULTY_COLORS, VERSION_BY_SLUG, type MaiDbSong } from "maidb-data";
@@ -30,7 +30,6 @@ export function SongCard({
   onSelect?: (song: MaiDbSong) => void;
 }) {
   const [imgError, setImgError] = useState(false);
-  const navigate = useNavigate();
   const search = useLocation({ select: (location) => location.search });
   const thumbnailUrl = song.internalImageId
     ? `${THUMBNAIL_BASE}/${song.internalImageId}.png`
@@ -38,23 +37,32 @@ export function SongCard({
   const catColor = CATEGORY_BY_SLUG[song.category]?.color ?? "#888";
   const diffs = getTopDifficulties(song);
 
-  const handleClick = () => {
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (!song.slug) return;
-    if (onSelect) {
-      onSelect(song);
+    if (
+      !onSelect ||
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
       return;
     }
 
-    void navigate({
-      to: "/songs/$slug",
-      params: { slug: song.slug },
-      search: search,
-      resetScroll: false,
-    });
+    event.preventDefault();
+    if (onSelect) {
+      onSelect(song);
+    }
   };
 
   return (
-    <article
+    <Link
+      to="/songs/$slug"
+      params={{ slug: song.slug }}
+      search={search}
+      resetScroll={false}
       className="group relative flex cursor-pointer flex-col overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
       style={{ borderColor: `color-mix(in oklch, ${catColor} 25%, transparent)` }}
       onClick={handleClick}
@@ -110,7 +118,7 @@ export function SongCard({
           </div>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
 

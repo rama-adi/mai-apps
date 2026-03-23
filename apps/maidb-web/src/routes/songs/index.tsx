@@ -3,7 +3,7 @@ import { sortSongsByReleaseDate, type MaiDbSong } from "maidb-data";
 import { ArrowLeft } from "lucide-react";
 import { SongBrowser } from "../../components/song-browser/SongBrowser";
 import { SongBrowserFilters } from "../../components/song-browser/SongBrowserFilters";
-import { SongBrowserGrid } from "../../components/song-browser/SongBrowserGrid";
+import { SongBrowserGridView } from "../../components/song-browser/SongBrowserGridView";
 import { SongBrowserSearchBar } from "../../components/song-browser/SongBrowserSearchBar";
 import {
   validateSongBrowserSearch,
@@ -94,7 +94,7 @@ function SongBrowserPage() {
           <SongBrowserSearchBar />
           <SongBrowserFilters />
         </section>
-        <SongBrowserGrid onSongSelect={openSongModal} />
+        <SongBrowserGridView onSongSelect={openSongModal} />
       </SongBrowser>
     </main>
   );
