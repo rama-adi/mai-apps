@@ -1,17 +1,19 @@
 import { useEffect, useRef } from "react";
 import { Music } from "lucide-react";
+import type { MaiDbSong } from "maidb-data";
 import { SongCard, SongCardSkeleton } from "../SongCard";
 import { useSongBrowser } from "./SongBrowser";
 
 export function SongBrowserGrid({
   emptyDescription = "Database is empty.",
   emptyTitle = "No songs found",
+  onSongSelect,
 }: {
   emptyDescription?: string;
   emptyTitle?: string;
+  onSongSelect?: (song: MaiDbSong) => void;
 }) {
-  const { canLoadMore, isFiltered, isLoading, loadMore, navigationMode, songs, totalCount } =
-    useSongBrowser();
+  const { canLoadMore, isFiltered, isLoading, loadMore, songs, totalCount } = useSongBrowser();
   const sentinelRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export function SongBrowserGrid({
           ? Array.from({ length: 12 }).map((_, index) => <SongCardSkeleton key={index} />)
           : songs && songs.length > 0
             ? songs.map((song) => (
-                <SongCard key={song.songId} song={song} openInModal={navigationMode === "modal"} />
+                <SongCard key={song.songId} song={song} onSelect={onSongSelect} />
               ))
             : null}
       </div>

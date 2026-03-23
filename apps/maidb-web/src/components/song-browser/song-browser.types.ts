@@ -1,6 +1,7 @@
 import type { FilterOptions } from "maidb-data";
 
 export type SongBrowserSearchParams = {
+  from?: string;
   q?: string;
   category?: string;
   version?: string;
@@ -20,6 +21,7 @@ export function validateSongBrowserSearch(
   search: Record<string, unknown>,
 ): SongBrowserSearchParams {
   return {
+    from: typeof search.from === "string" ? search.from : undefined,
     q: typeof search.q === "string" ? search.q : undefined,
     category: typeof search.category === "string" ? search.category : undefined,
     version: typeof search.version === "string" ? search.version : undefined,

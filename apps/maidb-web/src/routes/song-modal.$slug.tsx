@@ -44,6 +44,7 @@ type FilterOption = { name: string };
 type TypeOption = { type: string; name: string };
 
 type SongBrowserSearchParams = {
+  from?: string;
   q?: string;
   category?: string;
   version?: string;
@@ -69,6 +70,7 @@ function youtubeSearchUrl(query: string) {
 }
 
 const validateSongBrowserSearch = (search: Record<string, unknown>): SongBrowserSearchParams => ({
+  from: typeof search.from === "string" ? search.from : undefined,
   q: typeof search.q === "string" ? search.q : undefined,
   category: typeof search.category === "string" ? search.category : undefined,
   version: typeof search.version === "string" ? search.version : undefined,
@@ -222,9 +224,26 @@ function SongModalPage() {
     if (isClosing) return;
     setIsClosing(true);
     window.setTimeout(() => {
+      if (search.from && typeof window !== "undefined" && window.history.length > 1) {
+        window.history.back();
+        return;
+      }
+
       void navigate({
-        to: "/",
-        search,
+        to: "/songs",
+        search: {
+          q: search.q,
+          category: search.category,
+          version: search.version,
+          difficulty: search.difficulty,
+          type: search.type,
+          region: search.region,
+          minBpm: search.minBpm,
+          maxBpm: search.maxBpm,
+          minLevel: search.minLevel,
+          maxLevel: search.maxLevel,
+          isNew: search.isNew,
+        },
         replace: true,
         resetScroll: false,
       });
@@ -232,7 +251,7 @@ function SongModalPage() {
   };
 
   const clearFilters = () => {
-    navigateWithSearch((prev) => ({ q: prev.q }));
+    navigateWithSearch((prev) => ({ q: prev.q, from: prev.from }));
   };
 
   return (

@@ -1,7 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import type { MaiDbSong, Metadata } from "maidb-data";
 import { ArrowRight, Search, Sparkles } from "lucide-react";
-import { SongCard } from "../components/SongCard";
+import { SongBrowser } from "../components/song-browser/SongBrowser";
+import { SongBrowserGrid } from "../components/song-browser/SongBrowserGrid";
 import { getLatestSongs, getMetadata } from "./-server/index";
 
 export const Route = createFileRoute("/")({
@@ -33,8 +34,30 @@ function HomePage() {
     latestSongs: MaiDbSong[];
     metadata: Metadata;
   };
+  const navigate = useNavigate({ from: "/" });
+  const featuredSongs = latestSongs.slice(0, 12);
+  const featuredSongIds = new Set(featuredSongs.map((song) => song.songId));
 
   const catColors = metadata.categories.map((c) => c.color);
+
+  const openSongModal = (song: MaiDbSong) => {
+    const from =
+      typeof window !== "undefined"
+        ? `${window.location.pathname}${window.location.search}${window.location.hash}`
+        : "/";
+
+    void navigate({
+      to: "/song-modal/$slug",
+      params: { slug: song.slug },
+      search: { from },
+      resetScroll: false,
+      mask: {
+        to: "/songs/$slug",
+        params: { slug: song.slug },
+        unmaskOnReload: true,
+      },
+    });
+  };
 
   return (
     <>
@@ -110,11 +133,24 @@ function HomePage() {
             </Link>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {latestSongs.slice(0, 12).map((song) => (
-              <SongCard key={song.songId} song={song} />
-            ))}
-          </div>
+          <SongBrowser
+            initialSongs={featuredSongs}
+            paginationMode="all"
+            resolveHydratedSongs={(songs) =>
+              featuredSongs
+                .map((featuredSong) => songs.find((song) => song.songId === featuredSong.songId))
+                .filter((song): song is MaiDbSong => song != null)
+                .concat(
+                  songs.filter(
+                    (song) =>
+                      featuredSongIds.has(song.songId) &&
+                      !featuredSongs.some((featuredSong) => featuredSong.songId === song.songId),
+                  ),
+                )
+            }
+          >
+            <SongBrowserGrid onSongSelect={openSongModal} />
+          </SongBrowser>
         </section>
 
         {/* Categories */}

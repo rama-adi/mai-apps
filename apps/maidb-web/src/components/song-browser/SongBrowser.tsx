@@ -11,7 +11,6 @@ import { filterSongs, type MaiDbSong, type SongFilters } from "maidb-data";
 import { useSongs } from "../../lib/use-songs";
 import type { SongBrowserFilterOptions, SongBrowserSearchParams } from "./song-browser.types";
 
-type SongBrowserNavigationMode = "modal" | "page";
 type SongBrowserPaginationMode = "infinite" | "all";
 
 type SongBrowserContextValue = {
@@ -21,7 +20,6 @@ type SongBrowserContextValue = {
   isFiltered: boolean;
   isLoading: boolean;
   loadMore: () => void;
-  navigationMode: SongBrowserNavigationMode;
   search: SongBrowserSearchParams;
   searchInput: string;
   setFilter: <K extends keyof SongBrowserSearchParams>(
@@ -41,7 +39,6 @@ export function SongBrowser({
   children,
   filterOptions,
   initialSongs,
-  navigationMode = "modal",
   onSearchChange,
   pageSize = DEFAULT_PAGE_SIZE,
   paginationMode = "infinite",
@@ -51,7 +48,6 @@ export function SongBrowser({
   children: ReactNode;
   filterOptions?: SongBrowserFilterOptions;
   initialSongs?: MaiDbSong[];
-  navigationMode?: SongBrowserNavigationMode;
   onSearchChange?: (updater: (prev: SongBrowserSearchParams) => SongBrowserSearchParams) => void;
   pageSize?: number;
   paginationMode?: SongBrowserPaginationMode;
@@ -156,7 +152,6 @@ export function SongBrowser({
     isFiltered,
     isLoading: allSongs === undefined,
     loadMore: () => setVisibleCount((count) => count + pageSize),
-    navigationMode,
     search: controlledSearch,
     searchInput,
     setFilter,

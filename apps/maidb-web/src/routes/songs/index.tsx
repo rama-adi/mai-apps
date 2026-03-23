@@ -51,6 +51,25 @@ function SongBrowserPage() {
       replace: true,
     });
 
+  const openSongModal = (song: MaiDbSong) => {
+    const from =
+      typeof window !== "undefined"
+        ? `${window.location.pathname}${window.location.search}${window.location.hash}`
+        : "/songs";
+
+    void navigate({
+      to: "/song-modal/$slug",
+      params: { slug: song.slug },
+      search: { ...search, from },
+      resetScroll: false,
+      mask: {
+        to: "/songs/$slug",
+        params: { slug: song.slug },
+        unmaskOnReload: true,
+      },
+    });
+  };
+
   return (
     <main className="mx-auto max-w-5xl flex-1 px-4 pb-12 pt-6">
       {/* Back nav */}
@@ -69,14 +88,13 @@ function SongBrowserPage() {
         search={search}
         onSearchChange={navigateWithSearch}
         paginationMode="infinite"
-        navigationMode="modal"
         resolveHydratedSongs={sortSongsByReleaseDate}
       >
         <section className="sticky top-[53px] z-10 -mx-4 border-b bg-background/80 px-4 pb-3 pt-2 backdrop-blur-lg">
           <SongBrowserSearchBar />
           <SongBrowserFilters />
         </section>
-        <SongBrowserGrid />
+        <SongBrowserGrid onSongSelect={openSongModal} />
       </SongBrowser>
     </main>
   );
