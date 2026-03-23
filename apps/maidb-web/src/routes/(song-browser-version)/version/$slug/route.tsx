@@ -1,10 +1,10 @@
-import { createFileRoute, useNavigate, useRouter } from "@tanstack/react-router";
+import { createFileRoute, Outlet, useNavigate, useRouter } from "@tanstack/react-router";
 import { VERSION_BY_SLUG, sortSongsByReleaseDate, type MaiDbSong, type Metadata } from "maidb-data";
 import { ArrowLeft, ArrowRight, CalendarDays } from "lucide-react";
-import { SongCard, SongCardSkeleton } from "../../components/SongCard";
-import { SongBrowser } from "../../components/song-browser/SongBrowser";
-import { SongBrowserResults } from "../../components/song-browser/SongBrowserResults";
-import { getVersionPageData } from "../-server/version";
+import { SongCard, SongCardSkeleton } from "../../../../components/SongCard";
+import { SongBrowser } from "../../../../components/song-browser/SongBrowser";
+import { SongBrowserResults } from "../../../../components/song-browser/SongBrowserResults";
+import { getVersionPageData } from "../../../-server/version";
 
 type WeekGroup = {
   key: string;
@@ -12,7 +12,7 @@ type WeekGroup = {
   songs: MaiDbSong[];
 };
 
-export const Route = createFileRoute("/version/$slug")({
+export const Route = createFileRoute("/(song-browser-version)/version/$slug")({
   head: ({ loaderData, params }) => {
     const data = loaderData as
       | { songs: MaiDbSong[]; version: Metadata["versions"][number] | null }
@@ -50,12 +50,12 @@ function VersionPage() {
       typeof window !== "undefined"
         ? `${window.location.pathname}${window.location.search}${window.location.hash}`
         : `/version/${slug}`;
-
     void navigate({
-      to: "/song-modal/$slug",
-      params: { slug: song.slug },
+      to: "/version/$slug/modal/$songSlug",
+      params: { slug, songSlug: song.slug },
       search: { from },
       resetScroll: false,
+      viewTransition: true,
       mask: {
         to: "/songs/$slug",
         params: { slug: song.slug },
@@ -65,7 +65,7 @@ function VersionPage() {
   };
 
   return (
-    <main className="mx-auto max-w-5xl px-4 pb-16 pt-6">
+    <main className="mx-auto max-w-5xl px-4 pb-16 pt-6" data-song-browser-surface="">
       <button
         type="button"
         onClick={() => router.history.back()}
@@ -168,6 +168,7 @@ function VersionPage() {
           }}
         </SongBrowserResults>
       </SongBrowser>
+      <Outlet />
     </main>
   );
 }

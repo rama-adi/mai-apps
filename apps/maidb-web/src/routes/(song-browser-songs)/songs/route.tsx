@@ -1,18 +1,18 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useNavigate } from "@tanstack/react-router";
 import { sortSongsByReleaseDate, type MaiDbSong } from "maidb-data";
 import { ArrowLeft } from "lucide-react";
-import { SongBrowser } from "../../components/song-browser/SongBrowser";
-import { SongBrowserFilters } from "../../components/song-browser/SongBrowserFilters";
-import { SongBrowserGridView } from "../../components/song-browser/SongBrowserGridView";
-import { SongBrowserSearchBar } from "../../components/song-browser/SongBrowserSearchBar";
+import { SongBrowser } from "../../../components/song-browser/SongBrowser";
+import { SongBrowserFilters } from "../../../components/song-browser/SongBrowserFilters";
+import { SongBrowserGridView } from "../../../components/song-browser/SongBrowserGridView";
+import { SongBrowserSearchBar } from "../../../components/song-browser/SongBrowserSearchBar";
 import {
   validateSongBrowserSearch,
   type SongBrowserFilterOptions,
   type SongBrowserSearchParams,
-} from "../../components/song-browser/song-browser.types";
-import { getSongsPageLatest, getSongsPageFilterOptions } from "../-server/songs-index";
+} from "../../../components/song-browser/song-browser.types";
+import { getSongsPageLatest, getSongsPageFilterOptions } from "../../-server/songs-index";
 
-export const Route = createFileRoute("/songs/")({
+export const Route = createFileRoute("/(song-browser-songs)/songs")({
   validateSearch: validateSongBrowserSearch,
   head: () => ({
     meta: [
@@ -40,7 +40,7 @@ function SongBrowserPage() {
     filterOptions: SongBrowserFilterOptions;
   };
   const search = Route.useSearch();
-  const navigate = useNavigate({ from: "/songs/" });
+  const navigate = useNavigate({ from: "/songs" });
 
   const navigateWithSearch = (
     updater: (prev: SongBrowserSearchParams) => SongBrowserSearchParams,
@@ -56,12 +56,12 @@ function SongBrowserPage() {
       typeof window !== "undefined"
         ? `${window.location.pathname}${window.location.search}${window.location.hash}`
         : "/songs";
-
     void navigate({
-      to: "/song-modal/$slug",
+      to: "/songs/modal/$slug",
       params: { slug: song.slug },
       search: { ...search, from },
       resetScroll: false,
+      viewTransition: true,
       mask: {
         to: "/songs/$slug",
         params: { slug: song.slug },
@@ -71,7 +71,7 @@ function SongBrowserPage() {
   };
 
   return (
-    <main className="mx-auto max-w-5xl flex-1 px-4 pb-12 pt-6">
+    <main className="mx-auto max-w-5xl flex-1 px-4 pb-12 pt-6" data-song-browser-surface="">
       {/* Back nav */}
       <Link
         to="/"
@@ -96,6 +96,7 @@ function SongBrowserPage() {
         </section>
         <SongBrowserGridView onSongSelect={openSongModal} />
       </SongBrowser>
+      <Outlet />
     </main>
   );
 }

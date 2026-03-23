@@ -1,6 +1,6 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { Music } from "lucide-react";
-import { useState } from "react";
+import { type MouseEvent, useState } from "react";
 import { CATEGORY_BY_SLUG, DIFFICULTY_COLORS, VERSION_BY_SLUG, type MaiDbSong } from "maidb-data";
 
 const THUMBNAIL_BASE = "https://maisongdb-blob.onebyteworks.my.id/thumb";
@@ -27,7 +27,7 @@ export function SongCard({
   onSelect,
 }: {
   song: MaiDbSong;
-  onSelect?: (song: MaiDbSong) => void;
+  onSelect?: (song: MaiDbSong, trigger?: HTMLElement | null) => void;
 }) {
   const [imgError, setImgError] = useState(false);
   const search = useLocation({ select: (location) => location.search });
@@ -37,7 +37,7 @@ export function SongCard({
   const catColor = CATEGORY_BY_SLUG[song.category]?.color ?? "#888";
   const diffs = getTopDifficulties(song);
 
-  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!song.slug) return;
     if (
       !onSelect ||
@@ -52,9 +52,7 @@ export function SongCard({
     }
 
     event.preventDefault();
-    if (onSelect) {
-      onSelect(song);
-    }
+    onSelect(song, event.currentTarget);
   };
 
   return (

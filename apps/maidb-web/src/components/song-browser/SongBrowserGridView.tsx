@@ -11,7 +11,7 @@ export function SongBrowserGridView({
 }: {
   emptyDescription?: string;
   emptyTitle?: string;
-  onSongSelect?: (song: MaiDbSong) => void;
+  onSongSelect?: (song: MaiDbSong, trigger?: HTMLElement | null) => void;
 }) {
   const { canLoadMore, isFiltered, isLoading, loadMore, songs, totalCount } = useSongBrowser();
   const sentinelRef = useRef<HTMLDivElement | null>(null);

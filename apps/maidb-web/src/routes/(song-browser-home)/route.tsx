@@ -1,11 +1,11 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useNavigate } from "@tanstack/react-router";
 import type { MaiDbSong, Metadata } from "maidb-data";
 import { ArrowRight, Search, Sparkles } from "lucide-react";
-import { SongBrowser } from "../components/song-browser/SongBrowser";
-import { SongBrowserGridView } from "../components/song-browser/SongBrowserGridView";
-import { getLatestSongs, getMetadata } from "./-server/index";
+import { SongBrowser } from "../../components/song-browser/SongBrowser";
+import { SongBrowserGridView } from "../../components/song-browser/SongBrowserGridView";
+import { getLatestSongs, getMetadata } from "../-server/index";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/(song-browser-home)")({
   head: () => ({
     meta: [
       { title: "MaiDB - The Complete maimai Song Database" },
@@ -45,12 +45,12 @@ function HomePage() {
       typeof window !== "undefined"
         ? `${window.location.pathname}${window.location.search}${window.location.hash}`
         : "/";
-
     void navigate({
-      to: "/song-modal/$slug",
+      to: "/modal/$slug",
       params: { slug: song.slug },
       search: { from },
       resetScroll: false,
+      viewTransition: true,
       mask: {
         to: "/songs/$slug",
         params: { slug: song.slug },
@@ -113,7 +113,7 @@ function HomePage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-5xl px-4 pb-16">
+      <div className="mx-auto max-w-5xl px-4 pb-16" data-song-browser-surface="">
         {/* Newest Songs */}
         <section className="mt-12">
           <div className="mb-5 flex items-center justify-between">
@@ -225,6 +225,7 @@ function HomePage() {
           </div>
         </section>
       </div>
+      <Outlet />
     </>
   );
 }

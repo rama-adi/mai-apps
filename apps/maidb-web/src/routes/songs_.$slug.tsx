@@ -2,9 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import type { MaiDbSong } from "maidb-data";
 import { CATEGORY_BY_SLUG, DIFFICULTY_NAMES, TYPE_NAMES, VERSION_BY_SLUG } from "maidb-data";
 import { useMemo } from "react";
-import { getSongBySlug } from "../-server/songs";
-import { SongWikiPage, SongWikiPageSkeleton } from "../../components/song-detail/SongWikiPage";
-import { useSongBySlug } from "../../lib/use-songs";
+import { getSongBySlug } from "./-server/songs";
+import { SongWikiPage, SongWikiPageSkeleton } from "../components/song-detail/SongWikiPage";
+import { useSongBySlug } from "../lib/use-songs";
 import { ArrowLeft } from "lucide-react";
 
 const SITE_URL = "https://maidb.onebyteworks.my.id";
@@ -66,7 +66,7 @@ function buildJsonLd(song: MaiDbSong) {
   };
 }
 
-export const Route = createFileRoute("/songs/$slug")({
+export const Route = createFileRoute("/songs_/$slug")({
   head: ({ loaderData }) => {
     const song = loaderData as unknown as MaiDbSong | null;
     if (!song) {
