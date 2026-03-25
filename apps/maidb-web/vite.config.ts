@@ -13,6 +13,9 @@ const config = defineConfig({
     devtools(),
     tailwindcss(),
     tanstackStart({
+      prerender: {
+        enabled: true,
+      },
       router: {
         enableRouteTreeFormatting: false,
         quoteStyle: "single",

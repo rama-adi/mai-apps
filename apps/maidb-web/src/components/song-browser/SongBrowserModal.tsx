@@ -12,6 +12,7 @@ import {
   ClipboardCheck,
   Clock,
   Lock,
+  MessageCircle,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@packages/ui/components/ui/tabs";
@@ -90,6 +91,9 @@ function SongBrowserModalContent({ song }: { song: MaiDbSong }) {
   const catColor = catMeta?.color ?? "#888";
   const verMeta = VERSION_BY_SLUG[song.version];
 
+  const utageSheets = song.sheets.filter((s) => s.type === "utage");
+  const hasUtage = utageSheets.length > 0;
+
   return (
     <div className="flex flex-col">
       <div
@@ -145,6 +149,12 @@ function SongBrowserModalContent({ song }: { song: MaiDbSong }) {
                   {song.releaseDate}
                 </span>
               )}
+              {song.isLocked && (
+                <span className="inline-flex items-center gap-1 text-amber-500">
+                  <Lock className="h-3 w-3" />
+                  Locked
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -165,27 +175,39 @@ function SongBrowserModalContent({ song }: { song: MaiDbSong }) {
 
       <div className="px-5 pb-5">
         <Tabs defaultValue="overview" className="flex-col">
-          <TabsList className="grid h-auto w-full grid-cols-3 rounded-xl bg-muted/60 p-1">
+          <TabsList
+            className={`grid h-auto w-full ${hasUtage ? "grid-cols-4" : "grid-cols-3"} rounded-xl bg-muted/60 p-1`}
+          >
             <TabsTrigger value="overview" className="rounded-lg text-xs">
               Overview
             </TabsTrigger>
-            <TabsTrigger value="difficulties" className="rounded-lg text-xs">
+            <TabsTrigger value="charts" className="rounded-lg text-xs">
               Charts
             </TabsTrigger>
-            <TabsTrigger value="availability" className="rounded-lg text-xs">
+            <TabsTrigger value="regions" className="rounded-lg text-xs">
               Regions
             </TabsTrigger>
+            {hasUtage && (
+              <TabsTrigger value="utage" className="rounded-lg text-xs">
+                Utage
+              </TabsTrigger>
+            )}
           </TabsList>
 
           <TabsContent value="overview" className="mt-4">
             <OverviewTab song={song} catColor={catColor} />
           </TabsContent>
-          <TabsContent value="difficulties" className="mt-4">
-            <DifficultiesTab song={song} />
+          <TabsContent value="charts" className="mt-4">
+            <ChartsTab song={song} />
           </TabsContent>
-          <TabsContent value="availability" className="mt-4">
-            <AvailabilityTab song={song} />
+          <TabsContent value="regions" className="mt-4">
+            <RegionsTab song={song} />
           </TabsContent>
+          {hasUtage && (
+            <TabsContent value="utage" className="mt-4">
+              <UtageTab song={song} utageSheets={utageSheets} />
+            </TabsContent>
+          )}
         </Tabs>
       </div>
     </div>
@@ -193,10 +215,46 @@ function SongBrowserModalContent({ song }: { song: MaiDbSong }) {
 }
 
 function OverviewTab({ song, catColor }: { song: MaiDbSong; catColor: string }) {
+  const nonUtageSheets = song.sheets.filter((s) => s.type !== "utage");
+  const sheetsByType = groupSheetsByType(nonUtageSheets);
+
   return (
     <div className="space-y-4">
-      <LevelGrid song={song} catColor={catColor} />
+      {/* Compact level summary */}
+      <div className="space-y-2.5">
+        {[...sheetsByType.entries()].map(([type, sheets]) => (
+          <div key={type} className="flex items-start gap-2.5">
+            <span className="mt-1 min-w-[1.75rem] text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+              {TYPE_NAMES[type] ?? type}
+            </span>
+            <div className="flex flex-wrap gap-1">
+              {sheets
+                .sort((a, b) => a.levelValue - b.levelValue)
+                .map((sheet, i) => {
+                  const color = DIFFICULTY_COLORS[sheet.difficulty] ?? "#888";
+                  return (
+                    <div
+                      key={i}
+                      className="flex items-center gap-1 rounded-md px-2 py-0.5"
+                      style={{
+                        backgroundColor: `color-mix(in oklch, ${color} 10%, transparent)`,
+                      }}
+                    >
+                      <span className="text-[9px] font-semibold uppercase" style={{ color }}>
+                        {(DIFFICULTY_NAMES[sheet.difficulty] ?? sheet.difficulty).slice(0, 3)}
+                      </span>
+                      <span className="text-sm font-black leading-none" style={{ color }}>
+                        {sheet.level}
+                      </span>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+        ))}
+      </div>
 
+      {/* Region availability */}
       <div>
         <p className="m-0 mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
           Available in
@@ -232,86 +290,18 @@ function OverviewTab({ song, catColor }: { song: MaiDbSong; catColor: string }) 
   );
 }
 
-function LevelGrid({ song, catColor }: { song: MaiDbSong; catColor: string }) {
-  const sheetsByType = new Map<string, MaiDbSong["sheets"]>();
-  for (const sheet of song.sheets) {
-    const existing = sheetsByType.get(sheet.type) ?? [];
-    existing.push(sheet);
-    sheetsByType.set(sheet.type, existing);
-  }
-
-  return (
-    <div className="space-y-3">
-      {[...sheetsByType.entries()].map(([type, sheets]) => (
-        <div key={type}>
-          <div className="mb-1.5 flex items-center gap-1.5">
-            <div
-              className="h-px flex-1"
-              style={{ backgroundColor: `color-mix(in oklch, ${catColor} 20%, transparent)` }}
-            />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-              {TYPE_NAMES[type] ?? type}
-            </span>
-            <div
-              className="h-px flex-1"
-              style={{ backgroundColor: `color-mix(in oklch, ${catColor} 20%, transparent)` }}
-            />
-          </div>
-          <div className="flex flex-wrap justify-center gap-1.5">
-            {sheets
-              .sort((a, b) => a.levelValue - b.levelValue)
-              .map((sheet, index) => {
-                const color = DIFFICULTY_COLORS[sheet.difficulty] ?? "#888";
-                return (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center rounded-lg px-2.5 py-1.5"
-                    style={{ backgroundColor: `color-mix(in oklch, ${color} 10%, transparent)` }}
-                  >
-                    <span
-                      className="text-[9px] font-semibold uppercase tracking-wider"
-                      style={{ color }}
-                    >
-                      {(DIFFICULTY_NAMES[sheet.difficulty] ?? sheet.difficulty).slice(0, 3)}
-                    </span>
-                    <span className="text-lg font-black leading-none" style={{ color }}>
-                      {sheet.level}
-                    </span>
-                    {sheet.internalLevelValue > 0 &&
-                      sheet.internalLevelValue !== sheet.levelValue && (
-                        <span className="mt-0.5 text-[9px] text-muted-foreground">
-                          {sheet.internalLevelValue.toFixed(1)}
-                        </span>
-                      )}
-                  </div>
-                );
-              })}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function DifficultiesTab({ song }: { song: MaiDbSong }) {
-  const sheetsByType = new Map<string, Sheet[]>();
-  for (const sheet of song.sheets) {
-    const existing = sheetsByType.get(sheet.type) ?? [];
-    existing.push(sheet);
-    sheetsByType.set(sheet.type, existing);
-  }
+function ChartsTab({ song }: { song: MaiDbSong }) {
+  const nonUtageSheets = song.sheets.filter((s) => s.type !== "utage");
+  const sheetsByType = groupSheetsByType(nonUtageSheets);
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center gap-2 rounded-md bg-muted/50 px-3 py-2">
-        <Zap className="h-4 w-4 text-primary" />
-        <span className="text-sm font-semibold text-foreground">{song.bpm} BPM</span>
-        {song.isLocked && (
-          <span className="ml-auto inline-flex items-center gap-1 text-xs text-muted-foreground">
-            <Lock className="h-3 w-3" /> Locked
-          </span>
-        )}
-      </div>
+      {song.isLocked && (
+        <div className="flex items-center gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 px-3 py-2 text-xs text-amber-600 dark:text-amber-400">
+          <Lock className="h-3.5 w-3.5 flex-shrink-0" />
+          <span>This song requires certain conditions to be playable.</span>
+        </div>
+      )}
 
       {[...sheetsByType.entries()].map(([type, sheets]) => (
         <div key={type}>
@@ -362,61 +352,104 @@ function DifficultiesTab({ song }: { song: MaiDbSong }) {
   );
 }
 
-function AvailabilityTab({ song }: { song: MaiDbSong }) {
-  const sheetsByType = new Map<string, Sheet[]>();
-  for (const sheet of song.sheets) {
-    const existing = sheetsByType.get(sheet.type) ?? [];
-    existing.push(sheet);
-    sheetsByType.set(sheet.type, existing);
-  }
+function RegionsTab({ song }: { song: MaiDbSong }) {
+  const nonUtageSheets = song.sheets.filter((s) => s.type !== "utage");
+  const typeRegions = computeTypeRegions(nonUtageSheets);
 
   return (
-    <div className="space-y-4">
-      {[...sheetsByType.entries()].map(([type, sheets]) => (
-        <div key={type}>
-          <h4 className="m-0 mb-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-            {TYPE_NAMES[type] ?? type}
-          </h4>
-          <div className="rounded-lg border overflow-hidden">
-            <div className="grid grid-cols-[96px_repeat(4,1fr)] bg-muted/40 px-3 py-2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
-              <span>Chart</span>
-              {REGION_KEYS.map((region) => (
-                <span key={region} className="text-center">
-                  {REGION_LABELS[region]}
-                </span>
-              ))}
-            </div>
-            {sheets
-              .sort((a, b) => a.levelValue - b.levelValue)
-              .map((sheet, index) => {
-                const diffColor = DIFFICULTY_COLORS[sheet.difficulty] ?? "#888";
-
-                return (
-                  <div
-                    key={index}
-                    className="grid grid-cols-[96px_repeat(4,1fr)] items-center border-t px-3 py-2 first:border-t-0"
-                  >
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold" style={{ color: diffColor }}>
-                        {DIFFICULTY_NAMES[sheet.difficulty] ?? sheet.difficulty}
-                      </span>
-                      <span className="text-sm font-black text-foreground">{sheet.level}</span>
-                    </div>
-                    {REGION_KEYS.map((region) => (
-                      <span key={region} className="flex justify-center">
-                        {sheet.regions[region] ? (
-                          <Check className="h-4 w-4 text-emerald-500" />
-                        ) : (
-                          <XIcon className="h-4 w-4 text-muted-foreground/30" />
-                        )}
-                      </span>
-                    ))}
-                  </div>
-                );
-              })}
-          </div>
+    <div className="overflow-hidden rounded-lg border">
+      <div className="grid grid-cols-[80px_repeat(4,1fr)] bg-muted/40 px-3 py-2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+        <span>Type</span>
+        {REGION_KEYS.map((region) => (
+          <span key={region} className="text-center">
+            {REGION_LABELS[region]}
+          </span>
+        ))}
+      </div>
+      {[...typeRegions.entries()].map(([type, regions]) => (
+        <div
+          key={type}
+          className="grid grid-cols-[80px_repeat(4,1fr)] items-center border-t px-3 py-2.5"
+        >
+          <span className="text-xs font-bold text-foreground">{TYPE_NAMES[type] ?? type}</span>
+          {REGION_KEYS.map((region) => (
+            <span key={region} className="flex justify-center">
+              {regions[region] ? (
+                <Check className="h-4 w-4 text-emerald-500" />
+              ) : (
+                <XIcon className="h-4 w-4 text-muted-foreground/30" />
+              )}
+            </span>
+          ))}
         </div>
       ))}
+    </div>
+  );
+}
+
+function UtageTab({ song, utageSheets }: { song: MaiDbSong; utageSheets: Sheet[] }) {
+  return (
+    <div className="space-y-4">
+      <div className="space-y-1">
+        {utageSheets
+          .sort((a, b) => a.levelValue - b.levelValue)
+          .map((sheet, i) => {
+            const diffColor = DIFFICULTY_COLORS[sheet.difficulty] ?? "#888";
+            const diffName = DIFFICULTY_NAMES[sheet.difficulty] ?? sheet.difficulty;
+
+            return (
+              <div
+                key={i}
+                className="group/row flex items-center gap-2 rounded-lg border px-3 py-2 transition-colors hover:bg-accent/30"
+                style={{ borderLeftColor: diffColor, borderLeftWidth: "3px" }}
+              >
+                <span className="min-w-[4rem] text-xs font-bold" style={{ color: diffColor }}>
+                  {diffName}
+                </span>
+                <span className="text-sm font-black text-foreground">{sheet.level}</span>
+                {sheet.internalLevelValue > 0 && (
+                  <span className="text-[11px] text-muted-foreground">
+                    ({sheet.internalLevelValue})
+                  </span>
+                )}
+                <span className="ml-auto truncate text-xs text-muted-foreground">
+                  {sheet.noteDesigner || "?"}
+                </span>
+              </div>
+            );
+          })}
+      </div>
+
+      {/* Utage region availability */}
+      <div>
+        <p className="m-0 mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+          Available in
+        </p>
+        <div className="flex gap-1.5">
+          {REGION_KEYS.map((key) => {
+            const available = utageSheets.some((sheet) => sheet.regions[key]);
+            return (
+              <span
+                key={key}
+                className={`rounded-md border px-2.5 py-1 text-[11px] font-semibold ${
+                  available
+                    ? "border-primary/30 bg-primary/10 text-primary"
+                    : "border-transparent bg-muted/50 text-muted-foreground/40 line-through"
+                }`}
+              >
+                {REGION_LABELS[key] ?? key}
+              </span>
+            );
+          })}
+        </div>
+      </div>
+
+      {song.comment && (
+        <div className="flex items-start gap-2 rounded-lg bg-muted/30 px-3 py-2.5">
+          <MessageCircle className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-muted-foreground/60" />
+          <p className="m-0 text-sm italic text-muted-foreground">{song.comment}</p>
+        </div>
+      )}
     </div>
   );
 }
@@ -477,4 +510,30 @@ function SongBrowserModalSkeleton() {
       </div>
     </div>
   );
+}
+
+/* ── Helpers ── */
+
+function groupSheetsByType(sheets: Sheet[]) {
+  const map = new Map<string, Sheet[]>();
+  for (const sheet of sheets) {
+    const existing = map.get(sheet.type) ?? [];
+    existing.push(sheet);
+    map.set(sheet.type, existing);
+  }
+  return map;
+}
+
+function computeTypeRegions(sheets: Sheet[]) {
+  const map = new Map<string, Record<string, boolean>>();
+  for (const sheet of sheets) {
+    if (!map.has(sheet.type)) {
+      map.set(sheet.type, { jp: false, intl: false, usa: false, cn: false });
+    }
+    const regions = map.get(sheet.type)!;
+    for (const key of REGION_KEYS) {
+      if (sheet.regions[key]) regions[key] = true;
+    }
+  }
+  return map;
 }

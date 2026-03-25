@@ -17,12 +17,9 @@ export function SongWikiPage({ song }: { song: MaiDbSong }) {
   const catColor = catMeta?.color ?? "#888";
   const verMeta = VERSION_BY_SLUG[song.version];
 
-  const sheetsByType = new Map<string, Sheet[]>();
-  for (const sheet of song.sheets) {
-    const existing = sheetsByType.get(sheet.type) ?? [];
-    existing.push(sheet);
-    sheetsByType.set(sheet.type, existing);
-  }
+  const nonUtageSheets = song.sheets.filter((s) => s.type !== "utage");
+  const utageSheets = song.sheets.filter((s) => s.type === "utage");
+  const sheetsByType = groupSheetsByType(nonUtageSheets);
 
   const regions = { jp: false, intl: false, usa: false, cn: false };
   for (const sheet of song.sheets) {
@@ -125,9 +122,6 @@ export function SongWikiPage({ song }: { song: MaiDbSong }) {
                   </span>
                 </InfoboxRow>
               )}
-              <InfoboxRow label="Song ID">
-                <span className="font-mono text-[11px]">{song.songId}</span>
-              </InfoboxRow>
               <InfoboxRow label="Regions">
                 <div className="flex flex-wrap gap-1">
                   {(Object.entries(regions) as [string, boolean][]).map(([key, available]) => (
@@ -149,10 +143,17 @@ export function SongWikiPage({ song }: { song: MaiDbSong }) {
         </aside>
       </div>
 
-      {/* Charts section */}
+      {/* Charts section - with inline note breakdown */}
       <section className="mt-8">
         <SectionHeading color={catColor}>Charts</SectionHeading>
         <div className="mt-4 space-y-6">
+          {song.isLocked && (
+            <div className="flex items-center gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 px-3 py-2.5 text-sm text-amber-600 dark:text-amber-400">
+              <Lock className="h-4 w-4 flex-shrink-0" />
+              <span>This song requires certain conditions to be playable.</span>
+            </div>
+          )}
+
           {[...sheetsByType.entries()].map(([type, sheets]) => (
             <div key={type}>
               <h3 className="m-0 mb-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
@@ -164,41 +165,54 @@ export function SongWikiPage({ song }: { song: MaiDbSong }) {
                   .map((sheet, i) => {
                     const diffColor = DIFFICULTY_COLORS[sheet.difficulty] ?? "#888";
                     const diffName = DIFFICULTY_NAMES[sheet.difficulty] ?? sheet.difficulty;
+                    const nc = sheet.noteCounts;
+                    const hasBreakdown = nc.tap != null || nc.hold != null;
                     return (
                       <div
                         key={i}
-                        className="group flex items-center gap-3 rounded-lg border px-3 py-2 transition-colors hover:bg-accent/30"
+                        className="group rounded-lg border px-3 py-2 transition-colors hover:bg-accent/30"
                         style={{ borderLeftWidth: "3px", borderLeftColor: diffColor }}
                       >
-                        <span
-                          className="min-w-[4.5rem] text-xs font-bold"
-                          style={{ color: diffColor }}
-                        >
-                          {diffName}
-                        </span>
-                        <span className="text-sm font-black text-foreground">{sheet.level}</span>
-                        {sheet.internalLevelValue > 0 && (
-                          <span className="text-xs text-muted-foreground">
-                            ({sheet.internalLevelValue})
-                          </span>
-                        )}
-                        <span className="ml-auto flex items-center gap-4 text-xs text-muted-foreground">
-                          {sheet.noteCounts.total != null && (
-                            <span className="tabular-nums">{sheet.noteCounts.total} notes</span>
-                          )}
-                          {sheet.noteDesigner && sheet.noteDesigner !== "-" && (
-                            <span>{sheet.noteDesigner}</span>
-                          )}
-                          <a
-                            href={youtubeSearchUrl(`${song.title} maimai ${diffName}`)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded p-1 text-muted-foreground/40 opacity-0 transition-all hover:text-red-500 group-hover:opacity-100"
-                            title={`Search YouTube for ${diffName}`}
+                        <div className="flex items-center gap-3">
+                          <span
+                            className="min-w-[4.5rem] text-xs font-bold"
+                            style={{ color: diffColor }}
                           >
-                            <Youtube className="h-3.5 w-3.5" />
-                          </a>
-                        </span>
+                            {diffName}
+                          </span>
+                          <span className="text-sm font-black text-foreground">{sheet.level}</span>
+                          {sheet.internalLevelValue > 0 && (
+                            <span className="text-xs text-muted-foreground">
+                              ({sheet.internalLevelValue})
+                            </span>
+                          )}
+                          <span className="ml-auto flex items-center gap-4 text-xs text-muted-foreground">
+                            {nc.total != null && (
+                              <span className="tabular-nums">{nc.total} notes</span>
+                            )}
+                            {sheet.noteDesigner && sheet.noteDesigner !== "-" && (
+                              <span>{sheet.noteDesigner}</span>
+                            )}
+                            <a
+                              href={youtubeSearchUrl(`${song.title} maimai ${diffName}`)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="rounded p-1 text-muted-foreground/40 opacity-0 transition-all hover:text-red-500 group-hover:opacity-100"
+                              title={`Search YouTube for ${diffName}`}
+                            >
+                              <Youtube className="h-3.5 w-3.5" />
+                            </a>
+                          </span>
+                        </div>
+                        {hasBreakdown && (
+                          <div className="mt-1 flex gap-3 pl-[4.5rem] text-[10px] tabular-nums text-muted-foreground/50">
+                            {nc.tap != null && <span>Tap {nc.tap}</span>}
+                            {nc.hold != null && <span>Hold {nc.hold}</span>}
+                            {nc.slide != null && <span>Slide {nc.slide}</span>}
+                            {nc.touch != null && <span>Touch {nc.touch}</span>}
+                            {nc.break != null && <span>Break {nc.break}</span>}
+                          </div>
+                        )}
                       </div>
                     );
                   })}
@@ -208,137 +222,122 @@ export function SongWikiPage({ song }: { song: MaiDbSong }) {
         </div>
       </section>
 
-      {/* Note breakdown section */}
-      <section className="mt-8">
-        <SectionHeading color={catColor}>Note Breakdown</SectionHeading>
-        <div className="mt-4 space-y-6">
-          {[...sheetsByType.entries()].map(([type, sheets]) => (
-            <div key={type}>
-              <h3 className="m-0 mb-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-                {TYPE_NAMES[type] ?? type}
-              </h3>
-              <div className="overflow-x-auto rounded-lg border">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b bg-muted/30">
-                      <th className="px-3 py-2 text-left text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                        Difficulty
-                      </th>
-                      {["Tap", "Hold", "Slide", "Touch", "Break", "Total"].map((h) => (
-                        <th
-                          key={h}
-                          className="px-3 py-2 text-center text-[10px] font-bold uppercase tracking-wider text-muted-foreground"
-                        >
-                          {h}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {sheets
-                      .sort((a, b) => a.levelValue - b.levelValue)
-                      .map((sheet, i) => {
-                        const diffColor = DIFFICULTY_COLORS[sheet.difficulty] ?? "#888";
-                        const diffName = DIFFICULTY_NAMES[sheet.difficulty] ?? sheet.difficulty;
-                        const nc = sheet.noteCounts;
-                        return (
-                          <tr key={i} className="border-b last:border-b-0">
-                            <td className="px-3 py-1.5">
-                              <span
-                                className="inline-flex min-w-[4rem] items-center justify-center rounded px-2 py-0.5 text-[10px] font-bold text-white"
-                                style={{ backgroundColor: diffColor }}
-                              >
-                                {diffName}
-                              </span>
-                            </td>
-                            <td className="px-3 py-1.5 text-center tabular-nums text-muted-foreground">
-                              {nc.tap ?? "-"}
-                            </td>
-                            <td className="px-3 py-1.5 text-center tabular-nums text-muted-foreground">
-                              {nc.hold ?? "-"}
-                            </td>
-                            <td className="px-3 py-1.5 text-center tabular-nums text-muted-foreground">
-                              {nc.slide ?? "-"}
-                            </td>
-                            <td className="px-3 py-1.5 text-center tabular-nums text-muted-foreground">
-                              {nc.touch ?? "-"}
-                            </td>
-                            <td className="px-3 py-1.5 text-center tabular-nums text-muted-foreground">
-                              {nc.break ?? "-"}
-                            </td>
-                            <td className="px-3 py-1.5 text-center tabular-nums font-bold text-foreground">
-                              {nc.total ?? "-"}
-                            </td>
-                          </tr>
-                        );
-                      })}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Utage charts section */}
+      {utageSheets.length > 0 && (
+        <section className="mt-8">
+          <SectionHeading color={catColor}>Utage Charts</SectionHeading>
+          <div className="mt-4 space-y-1">
+            {utageSheets
+              .sort((a, b) => a.levelValue - b.levelValue)
+              .map((sheet, i) => {
+                const diffColor = DIFFICULTY_COLORS[sheet.difficulty] ?? "#888";
+                const diffName = DIFFICULTY_NAMES[sheet.difficulty] ?? sheet.difficulty;
+                const nc = sheet.noteCounts;
+                const hasBreakdown = nc.tap != null || nc.hold != null;
+                return (
+                  <div
+                    key={i}
+                    className="group rounded-lg border px-3 py-2 transition-colors hover:bg-accent/30"
+                    style={{ borderLeftWidth: "3px", borderLeftColor: diffColor }}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span
+                        className="min-w-[4.5rem] text-xs font-bold"
+                        style={{ color: diffColor }}
+                      >
+                        {diffName}
+                      </span>
+                      <span className="text-sm font-black text-foreground">{sheet.level}</span>
+                      {sheet.internalLevelValue > 0 && (
+                        <span className="text-xs text-muted-foreground">
+                          ({sheet.internalLevelValue})
+                        </span>
+                      )}
+                      <span className="ml-auto flex items-center gap-4 text-xs text-muted-foreground">
+                        {nc.total != null && <span className="tabular-nums">{nc.total} notes</span>}
+                        {sheet.noteDesigner && sheet.noteDesigner !== "-" && (
+                          <span>{sheet.noteDesigner}</span>
+                        )}
+                      </span>
+                    </div>
+                    {hasBreakdown && (
+                      <div className="mt-1 flex gap-3 pl-[4.5rem] text-[10px] tabular-nums text-muted-foreground/50">
+                        {nc.tap != null && <span>Tap {nc.tap}</span>}
+                        {nc.hold != null && <span>Hold {nc.hold}</span>}
+                        {nc.slide != null && <span>Slide {nc.slide}</span>}
+                        {nc.touch != null && <span>Touch {nc.touch}</span>}
+                        {nc.break != null && <span>Break {nc.break}</span>}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+          </div>
+        </section>
+      )}
 
-      {/* Region availability section */}
+      {/* Region availability section - simplified to per-type */}
       <section className="mt-8">
         <SectionHeading color={catColor}>Region Availability</SectionHeading>
-        <div className="mt-4 space-y-6">
-          {[...sheetsByType.entries()].map(([type, sheets]) => (
-            <div key={type}>
-              <h3 className="m-0 mb-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-                {TYPE_NAMES[type] ?? type}
-              </h3>
-              <div className="overflow-x-auto rounded-lg border">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b bg-muted/30">
-                      <th className="px-3 py-2 text-left text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                        Difficulty
-                      </th>
+        <div className="mt-4">
+          <div className="overflow-x-auto rounded-lg border">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b bg-muted/30">
+                  <th className="px-3 py-2 text-left text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                    Type
+                  </th>
+                  {REGION_KEYS.map((r) => (
+                    <th
+                      key={r}
+                      className="px-3 py-2 text-center text-[10px] font-bold uppercase tracking-wider text-muted-foreground"
+                    >
+                      {REGION_LABELS[r] ?? r}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {[...computeTypeRegions(nonUtageSheets).entries()].map(([type, typeRegs]) => (
+                  <tr key={type} className="border-b last:border-b-0">
+                    <td className="px-3 py-2">
+                      <span className="text-xs font-bold text-foreground">
+                        {TYPE_NAMES[type] ?? type}
+                      </span>
+                    </td>
+                    {REGION_KEYS.map((r) => (
+                      <td key={r} className="px-3 py-2 text-center">
+                        {typeRegs[r] ? (
+                          <Check className="mx-auto h-4 w-4 text-green-500" />
+                        ) : (
+                          <X className="mx-auto h-4 w-4 text-muted-foreground/20" />
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+                {utageSheets.length > 0 &&
+                  [...computeTypeRegions(utageSheets).entries()].map(([type, typeRegs]) => (
+                    <tr key={type} className="border-b last:border-b-0">
+                      <td className="px-3 py-2">
+                        <span className="text-xs font-bold text-foreground">
+                          {TYPE_NAMES[type] ?? type}
+                        </span>
+                      </td>
                       {REGION_KEYS.map((r) => (
-                        <th
-                          key={r}
-                          className="px-3 py-2 text-center text-[10px] font-bold uppercase tracking-wider text-muted-foreground"
-                        >
-                          {REGION_LABELS[r] ?? r}
-                        </th>
+                        <td key={r} className="px-3 py-2 text-center">
+                          {typeRegs[r] ? (
+                            <Check className="mx-auto h-4 w-4 text-green-500" />
+                          ) : (
+                            <X className="mx-auto h-4 w-4 text-muted-foreground/20" />
+                          )}
+                        </td>
                       ))}
                     </tr>
-                  </thead>
-                  <tbody>
-                    {sheets
-                      .sort((a, b) => a.levelValue - b.levelValue)
-                      .map((sheet, i) => {
-                        const diffColor = DIFFICULTY_COLORS[sheet.difficulty] ?? "#888";
-                        const diffName = DIFFICULTY_NAMES[sheet.difficulty] ?? sheet.difficulty;
-                        return (
-                          <tr key={i} className="border-b last:border-b-0">
-                            <td className="px-3 py-1.5">
-                              <span
-                                className="inline-flex min-w-[4rem] items-center justify-center rounded px-2 py-0.5 text-[10px] font-bold text-white"
-                                style={{ backgroundColor: diffColor }}
-                              >
-                                {diffName}
-                              </span>
-                            </td>
-                            {REGION_KEYS.map((r) => (
-                              <td key={r} className="px-3 py-1.5 text-center">
-                                {sheet.regions[r] ? (
-                                  <Check className="mx-auto h-4 w-4 text-green-500" />
-                                ) : (
-                                  <X className="mx-auto h-4 w-4 text-muted-foreground/20" />
-                                )}
-                              </td>
-                            ))}
-                          </tr>
-                        );
-                      })}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          ))}
+                  ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
     </div>
@@ -417,4 +416,31 @@ export function SongWikiPageSkeleton() {
       </div>
     </div>
   );
+}
+
+/* ── Helpers ── */
+
+function groupSheetsByType(sheets: Sheet[]) {
+  const map = new Map<string, Sheet[]>();
+  for (const sheet of sheets) {
+    const existing = map.get(sheet.type) ?? [];
+    existing.push(sheet);
+    map.set(sheet.type, existing);
+  }
+  return map;
+}
+
+function computeTypeRegions(sheets: Sheet[]) {
+  const regionKeys = ["jp", "intl", "usa", "cn"] as const;
+  const map = new Map<string, Record<string, boolean>>();
+  for (const sheet of sheets) {
+    if (!map.has(sheet.type)) {
+      map.set(sheet.type, { jp: false, intl: false, usa: false, cn: false });
+    }
+    const regions = map.get(sheet.type)!;
+    for (const key of regionKeys) {
+      if (sheet.regions[key]) regions[key] = true;
+    }
+  }
+  return map;
 }

@@ -26,12 +26,13 @@ function SongsPageModalRoute() {
 
   const closeModal = () => {
     if (isClosing) return;
+    setIsClosing(true);
+
     if (search.from && window.history.length > 1) {
-      window.history.back();
+      window.setTimeout(() => window.history.back(), 180);
       return;
     }
 
-    setIsClosing(true);
     window.setTimeout(() => {
       void navigate({
         to: "/songs",
