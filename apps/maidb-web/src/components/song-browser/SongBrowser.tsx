@@ -1,5 +1,6 @@
 import {
   createContext,
+  startTransition,
   useContext,
   useDeferredValue,
   useEffect,
@@ -19,7 +20,8 @@ type SongBrowserContextValue = {
   filterOptions?: SongBrowserFilterOptions;
   isFiltered: boolean;
   isLoading: boolean;
-  loadMore: () => void;
+  loadMore: (pageCount?: number) => void;
+  pageSize: number;
   search: SongBrowserSearchParams;
   searchInput: string;
   setFilter: <K extends keyof SongBrowserSearchParams>(
@@ -143,11 +145,13 @@ export function SongBrowser({
     setVisibleCount(pageSize);
   }, [allSongs, pageSize, paginationMode]);
 
-  const visibleSongs =
-    paginationMode === "all" || !allSongs ? allSongs : allSongs.slice(0, visibleCount);
+  const shouldShowAllSongs = paginationMode === "all" || isFiltered;
+
+  const visibleSongs = shouldShowAllSongs || !allSongs ? allSongs : allSongs.slice(0, visibleCount);
 
   const canLoadMore =
     paginationMode === "infinite" &&
+    !isFiltered &&
     allSongs != null &&
     visibleSongs != null &&
     visibleSongs.length < allSongs.length;
@@ -158,7 +162,11 @@ export function SongBrowser({
     filterOptions,
     isFiltered,
     isLoading: allSongs === undefined,
-    loadMore: () => setVisibleCount((count) => count + pageSize),
+    loadMore: (pageCount = 1) =>
+      startTransition(() => {
+        setVisibleCount((count) => count + pageSize * Math.max(1, pageCount));
+      }),
+    pageSize,
     search: controlledSearch,
     searchInput,
     setFilter,

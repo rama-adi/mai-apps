@@ -6,7 +6,7 @@ export type SongBrowserResultsRenderProps = {
   canLoadMore: boolean;
   isFiltered: boolean;
   isLoading: boolean;
-  loadMore: () => void;
+  loadMore: (pageCount?: number) => void;
   songs?: MaiDbSong[];
   totalCount?: number;
 };
