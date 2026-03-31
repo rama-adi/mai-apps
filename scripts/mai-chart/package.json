@@ -1,0 +1,17 @@
+{
+  "name": "mai-chart",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync": "tsx sync-charts.ts"
+  },
+  "dependencies": {
+    "maidb-data": "workspace:*",
+    "tsx": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0"
+  }
+}

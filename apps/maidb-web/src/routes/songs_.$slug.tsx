@@ -9,13 +9,15 @@ import {
   VERSION_BY_SLUG,
 } from "maidb-data";
 import { useMemo, useState } from "react";
-import { getSongBySlug } from "./-server/songs";
+import { getSongBySlug, getMaiNotesCharts } from "./-server/songs";
+import type { MaiNotesEntry } from "../lib/song-data.server";
 import { useSongBySlug } from "../lib/use-songs";
 import {
   ArrowLeft,
   Check,
   ClipboardCheck,
   Clock,
+  ExternalLink,
   Lock,
   Share2,
   X,
@@ -26,7 +28,6 @@ import { SongImage } from "../components/song-detail/shared";
 
 const SITE_URL = "https://maidb.onebyteworks.my.id";
 const OG_IMAGE_BASE = "https://maisongdb-blob.onebyteworks.my.id/og-v1";
-const REGION_KEYS = ["jp", "intl", "usa", "cn"] as const;
 
 function buildSongSeoDescription(song: MaiDbSong): string {
   const difficulties = song.sheets
@@ -90,7 +91,7 @@ function youtubeSearchUrl(query: string) {
 
 export const Route = createFileRoute("/songs_/$slug")({
   head: ({ loaderData }) => {
-    const song = loaderData as unknown as MaiDbSong | null;
+    const song = (loaderData as unknown as { song: MaiDbSong | null })?.song ?? null;
     if (!song) {
       return {
         meta: [{ title: "Song Not Found - MaiDB" }, { name: "robots", content: "noindex" }],
@@ -159,17 +160,25 @@ export const Route = createFileRoute("/songs_/$slug")({
     };
   },
   loader: async ({ params }) => {
-    return getSongBySlug({ data: { slug: params.slug } });
+    const [song, maiNotesCharts] = await Promise.all([
+      getSongBySlug({ data: { slug: params.slug } }),
+      getMaiNotesCharts({ data: { slug: params.slug } }),
+    ]);
+    return { song, maiNotesCharts };
   },
   component: SongPage,
 });
 
 function SongPage() {
-  const loaderSong = Route.useLoaderData();
+  const loaderData = Route.useLoaderData() as {
+    song: MaiDbSong | null;
+    maiNotesCharts: MaiNotesEntry | null;
+  };
   const { slug } = Route.useParams();
 
   const clientSong = useSongBySlug(slug);
-  const song = clientSong ?? loaderSong;
+  const song = clientSong ?? loaderData.song;
+  const maiNotesCharts = loaderData.maiNotesCharts;
   const catColor = useMemo(
     () => (song ? (CATEGORY_BY_SLUG[song.category]?.color ?? "#888") : null),
     [song],
@@ -195,13 +204,23 @@ function SongPage() {
           All songs
         </Link>
 
-        {song ? <SongWikiContent song={song} /> : <SongWikiPageSkeleton />}
+        {song ? (
+          <SongWikiContent song={song} maiNotesCharts={maiNotesCharts} />
+        ) : (
+          <SongWikiPageSkeleton />
+        )}
       </main>
     </>
   );
 }
 
-function SongWikiContent({ song }: { song: MaiDbSong }) {
+function SongWikiContent({
+  song,
+  maiNotesCharts,
+}: {
+  song: MaiDbSong;
+  maiNotesCharts: MaiNotesEntry | null;
+}) {
   const chartTypes = [...new Set(song.sheets.map((s) => s.type))];
   const catMeta = CATEGORY_BY_SLUG[song.category];
   const catColor = catMeta?.color ?? "#888";
@@ -210,6 +229,16 @@ function SongWikiContent({ song }: { song: MaiDbSong }) {
   const nonUtageSheets = song.sheets.filter((s) => s.type !== "utage");
   const utageSheets = song.sheets.filter((s) => s.type === "utage");
   const sheetsByType = groupSheetsByType(nonUtageSheets);
+
+  // Build lookup: "difficulty|level" -> mai-notes chart (for Play links)
+  const maiNotesLookup = useMemo(() => {
+    const map = new Map<string, MaiNotesEntry["charts"][number]>();
+    if (!maiNotesCharts) return map;
+    for (const c of maiNotesCharts.charts) {
+      map.set(`${c.difficulty}|${c.level}`, c);
+    }
+    return map;
+  }, [maiNotesCharts]);
 
   const regions = { jp: false, intl: false, usa: false, cn: false };
   for (const sheet of song.sheets) {
@@ -302,22 +331,26 @@ function SongWikiContent({ song }: { song: MaiDbSong }) {
                   </span>
                 </InfoboxRow>
               )}
-              <InfoboxRow label="Regions">
-                <div className="flex flex-wrap justify-end gap-1">
+              <div className="px-3 py-2">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                  Regions
+                </span>
+                <div className="mt-1.5 flex flex-wrap gap-1.5">
                   {(Object.entries(regions) as [string, boolean][]).map(([key, available]) => (
                     <span
                       key={key}
-                      className={`rounded px-1.5 py-0.5 text-[10px] font-bold ${
+                      className={`inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold ${
                         available
-                          ? "bg-primary/10 text-primary"
-                          : "bg-muted text-muted-foreground/40 line-through"
+                          ? "bg-green-500/10 text-green-600 dark:text-green-400"
+                          : "bg-muted text-muted-foreground/30"
                       }`}
                     >
+                      {available ? <Check className="h-3 w-3" /> : <X className="h-3 w-3" />}
                       {REGION_LABELS[key] ?? key}
                     </span>
                   ))}
                 </div>
-              </InfoboxRow>
+              </div>
             </div>
           </div>
         </aside>
@@ -342,7 +375,12 @@ function SongWikiContent({ song }: { song: MaiDbSong }) {
                     {sheets
                       .sort((a, b) => a.levelValue - b.levelValue)
                       .map((sheet, i) => (
-                        <ChartRow key={i} sheet={sheet} song={song} />
+                        <ChartRow
+                          key={i}
+                          sheet={sheet}
+                          song={song}
+                          maiNotesLookup={maiNotesLookup}
+                        />
                       ))}
                   </div>
                 </div>
@@ -357,75 +395,43 @@ function SongWikiContent({ song }: { song: MaiDbSong }) {
                 {utageSheets
                   .sort((a, b) => a.levelValue - b.levelValue)
                   .map((sheet, i) => (
-                    <ChartRow key={i} sheet={sheet} song={song} />
+                    <ChartRow key={i} sheet={sheet} song={song} maiNotesLookup={maiNotesLookup} />
                   ))}
               </div>
             </section>
           )}
 
-          <section>
-            <SectionHeading color={catColor}>Region Availability</SectionHeading>
-            <div className="mt-4">
-              <div className="overflow-x-auto rounded-lg border">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b bg-muted/30">
-                      <th className="px-3 py-2 text-left text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                        Type
-                      </th>
-                      {REGION_KEYS.map((r) => (
-                        <th
-                          key={r}
-                          className="px-3 py-2 text-center text-[10px] font-bold uppercase tracking-wider text-muted-foreground"
-                        >
-                          {REGION_LABELS[r] ?? r}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[...computeTypeRegions(nonUtageSheets).entries()].map(([type, typeRegs]) => (
-                      <tr key={type} className="border-b last:border-b-0">
-                        <td className="px-3 py-2">
-                          <span className="text-xs font-bold text-foreground">
-                            {TYPE_NAMES[type] ?? type}
-                          </span>
-                        </td>
-                        {REGION_KEYS.map((r) => (
-                          <td key={r} className="px-3 py-2 text-center">
-                            {typeRegs[r] ? (
-                              <Check className="mx-auto h-4 w-4 text-green-500" />
-                            ) : (
-                              <X className="mx-auto h-4 w-4 text-muted-foreground/20" />
-                            )}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                    {utageSheets.length > 0 &&
-                      [...computeTypeRegions(utageSheets).entries()].map(([type, typeRegs]) => (
-                        <tr key={type} className="border-b last:border-b-0">
-                          <td className="px-3 py-2">
-                            <span className="text-xs font-bold text-foreground">
-                              {TYPE_NAMES[type] ?? type}
-                            </span>
-                          </td>
-                          {REGION_KEYS.map((r) => (
-                            <td key={r} className="px-3 py-2 text-center">
-                              {typeRegs[r] ? (
-                                <Check className="mx-auto h-4 w-4 text-green-500" />
-                              ) : (
-                                <X className="mx-auto h-4 w-4 text-muted-foreground/20" />
-                              )}
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
-                  </tbody>
-                </table>
+          {maiNotesCharts && (maiNotesCharts.gamerch_id || maiNotesCharts.simai_id) && (
+            <section>
+              <SectionHeading color={catColor}>External Links</SectionHeading>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {maiNotesCharts.gamerch_id && (
+                  <a
+                    href={`https://gamerch.com/maimai/${maiNotesCharts.gamerch_id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg border bg-card px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-accent"
+                  >
+                    <img src="/assets/maiwiki-gamerch-logo.png" alt="" className="h-5" />
+                    <span>maimai　攻略wiki (JP)</span>
+                    <ExternalLink className="h-4 w-4 text-muted-foreground" />
+                  </a>
+                )}
+                {maiNotesCharts.simai_id && (
+                  <a
+                    href={`https://w.atwiki.jp/simai/pages/${maiNotesCharts.simai_id}.html`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg border bg-card px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-accent"
+                  >
+                    <img src="/assets/atwiki-logo.svg" alt="" className="h-5" />
+                    <span>Simai chart wiki (JP)</span>
+                    <ExternalLink className="h-4 w-4 text-muted-foreground" />
+                  </a>
+                )}
               </div>
-            </div>
-          </section>
+            </section>
+          )}
         </div>
       </div>
     </div>
@@ -506,58 +512,96 @@ function SongWikiPageSkeleton() {
   );
 }
 
-function ChartRow({ sheet, song }: { sheet: Sheet; song: MaiDbSong }) {
+function ChartRow({
+  sheet,
+  song,
+  maiNotesLookup,
+}: {
+  sheet: Sheet;
+  song: MaiDbSong;
+  maiNotesLookup: Map<string, MaiNotesEntry["charts"][number]>;
+}) {
   const diffColor = DIFFICULTY_COLORS[sheet.difficulty] ?? "#888";
   const diffName = DIFFICULTY_NAMES[sheet.difficulty] ?? sheet.difficulty;
   const nc = sheet.noteCounts;
   const hasBreakdown = nc.tap != null || nc.hold != null;
   const designer = sheet.noteDesigner && sheet.noteDesigner !== "-" ? sheet.noteDesigner : "-";
+  const maiNotesChart = maiNotesLookup.get(`${sheet.difficulty}|${sheet.level}`);
 
   return (
     <div
-      className="group rounded-lg border px-3 py-2 transition-colors hover:bg-accent/30"
+      className="group grid grid-cols-[5.5rem_1fr] items-start gap-3 rounded-lg border px-3 py-2.5 transition-colors hover:bg-accent/30"
       style={{ borderLeftWidth: "3px", borderLeftColor: diffColor }}
     >
-      <div className="flex items-start gap-3">
-        <div className="min-w-[7.5rem] pt-0.5 text-xs font-bold" style={{ color: diffColor }}>
+      {/* Column 1: Difficulty + Level */}
+      <div className="space-y-0.5">
+        <div className="text-xs font-bold" style={{ color: diffColor }}>
           {diffName}
         </div>
-        <div className="min-w-0 flex-1 space-y-1">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-            <div className="flex items-baseline gap-2">
-              <span className="text-sm font-black text-foreground">{sheet.level}</span>
-              {sheet.internalLevelValue > 0 && (
-                <span className="text-xs text-muted-foreground">({sheet.internalLevelValue})</span>
+        <div className="flex items-baseline gap-1">
+          <span className="text-lg font-black leading-tight text-foreground">{sheet.level}</span>
+          {sheet.internalLevelValue > 0 && (
+            <span className="text-xs text-muted-foreground">({sheet.internalLevelValue})</span>
+          )}
+        </div>
+      </div>
+
+      {/* Column 2: Metadata + Buttons */}
+      <div className="min-w-0 space-y-2.5">
+        {/* Metadata */}
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5 text-xs">
+          {nc.total != null && (
+            <span className="font-bold tabular-nums text-foreground">{nc.total} notes</span>
+          )}
+          <span className="text-muted-foreground">
+            Designer: <span className="font-medium text-foreground/80">{designer}</span>
+          </span>
+          {hasBreakdown && (
+            <>
+              <span className="text-muted-foreground/30">|</span>
+              {nc.tap != null && (
+                <span className="tabular-nums text-muted-foreground">Tap {nc.tap}</span>
               )}
-            </div>
-            <div className="flex items-center gap-3 sm:justify-end">
-              <span className="w-[7.5rem] shrink-0 text-left text-xs text-muted-foreground sm:text-right">
-                {nc.total != null && <span className="tabular-nums">{nc.total} notes</span>}
-              </span>
-              <a
-                href={youtubeSearchUrl(`${song.title} maimai ${diffName}`)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 rounded-md border border-red-500/30 bg-red-500/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-red-600 transition-colors hover:border-red-500/50 hover:bg-red-500/15 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/40 dark:text-red-400 dark:hover:text-red-300"
-                title={`Search YouTube for ${diffName}`}
-              >
-                <Youtube className="h-3.5 w-3.5" />
-                <span>YT</span>
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-col gap-1 text-[11px] text-muted-foreground/80 sm:gap-1.5">
-            <span className="min-h-[1rem]">Notes designer: {designer}</span>
-            {hasBreakdown && (
-              <div className="flex flex-wrap gap-x-4 gap-y-1 tabular-nums text-[11px] text-muted-foreground/80">
-                {nc.tap != null && <span>Tap {nc.tap}</span>}
-                {nc.hold != null && <span>Hold {nc.hold}</span>}
-                {nc.slide != null && <span>Slide {nc.slide}</span>}
-                {nc.touch != null && <span>Touch {nc.touch}</span>}
-                {nc.break != null && <span>Break {nc.break}</span>}
-              </div>
-            )}
-          </div>
+              {nc.hold != null && (
+                <span className="tabular-nums text-muted-foreground">Hold {nc.hold}</span>
+              )}
+              {nc.slide != null && (
+                <span className="tabular-nums text-muted-foreground">Slide {nc.slide}</span>
+              )}
+              {nc.touch != null && (
+                <span className="tabular-nums text-muted-foreground">Touch {nc.touch}</span>
+              )}
+              {nc.break != null && (
+                <span className="tabular-nums text-muted-foreground">Break {nc.break}</span>
+              )}
+            </>
+          )}
+        </div>
+
+        {/* Buttons */}
+        <div className="flex flex-wrap items-center gap-1.5">
+          {maiNotesChart?.has_chart_data && (
+            <a
+              href={`https://mai-notes.com/player?chart=${maiNotesChart.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-md border border-cyan-500/30 bg-cyan-500/10 px-2.5 py-1.5 text-xs font-semibold text-cyan-600 transition-colors hover:border-cyan-500/50 hover:bg-cyan-500/15 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              title="Preview chart on maiノーツ"
+            >
+              <img src="/assets/mainotes-logo.png" alt="" className="h-3.5" />
+              <span>View chart</span>
+            </a>
+          )}
+          <a
+            href={youtubeSearchUrl(`${song.title} maimai ${diffName}`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-md border border-red-500/30 bg-red-500/10 px-2.5 py-1.5 text-xs font-semibold text-red-600 transition-colors hover:border-red-500/50 hover:bg-red-500/15 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
+            title={`Search YouTube for ${diffName}`}
+          >
+            <Youtube className="h-4 w-4" />
+            <span>YouTube</span>
+          </a>
         </div>
       </div>
     </div>
@@ -570,20 +614,6 @@ function groupSheetsByType(sheets: Sheet[]) {
     const existing = map.get(sheet.type) ?? [];
     existing.push(sheet);
     map.set(sheet.type, existing);
-  }
-  return map;
-}
-
-function computeTypeRegions(sheets: Sheet[]) {
-  const map = new Map<string, Record<string, boolean>>();
-  for (const sheet of sheets) {
-    if (!map.has(sheet.type)) {
-      map.set(sheet.type, { jp: false, intl: false, usa: false, cn: false });
-    }
-    const regions = map.get(sheet.type)!;
-    for (const key of REGION_KEYS) {
-      if (sheet.regions[key]) regions[key] = true;
-    }
   }
   return map;
 }

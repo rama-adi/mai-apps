@@ -14,7 +14,8 @@
   },
   "files": [
     "dist",
-    "data/songs"
+    "data/songs",
+    "data/mai-charts"
   ],
   "type": "module",
   "exports": {
@@ -23,6 +24,7 @@
     "./data/songs/metadata.json": "./data/songs/metadata.json",
     "./data/songs/latest-only.json": "./data/songs/latest-only.json",
     "./data/songs/filters.json": "./data/songs/filters.json",
+    "./data/mai-charts/charts.json": "./data/mai-charts/charts.json",
     "./package.json": "./package.json"
   },
   "publishConfig": {

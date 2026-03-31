@@ -5,6 +5,7 @@ import localSongsJson from "maidb-data/data/songs/songs.json";
 import localLatestJson from "maidb-data/data/songs/latest-only.json";
 import localMetadataJson from "maidb-data/data/songs/metadata.json";
 import localFiltersJson from "maidb-data/data/songs/filters.json";
+import localChartsJson from "maidb-data/data/mai-charts/charts.json";
 import { buildFilterOptions, sortSongsByReleaseDate, type FilterOptions } from "maidb-data";
 
 const SONGS_OBJECT_KEY = "songs.json";
@@ -76,4 +77,28 @@ export async function getFilterOptions(): Promise<FilterOptions> {
 
 export function getSongFiltersData(): SongFiltersData {
   return localFiltersJson as SongFiltersData;
+}
+
+export type MaiNotesChart = {
+  id: string;
+  difficulty: string;
+  level: string;
+  internal_level: number;
+  version: string;
+  release_date: string;
+  notes_designer: string | null;
+  has_chart_data: boolean;
+};
+
+export type MaiNotesEntry = {
+  title: string;
+  simai_id: string;
+  gamerch_id: string;
+  charts: MaiNotesChart[];
+};
+
+const chartsData = localChartsJson as Record<string, MaiNotesEntry>;
+
+export function getMaiNotesCharts(slug: string): MaiNotesEntry | null {
+  return chartsData[slug] ?? null;
 }
