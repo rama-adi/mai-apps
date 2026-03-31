@@ -9,7 +9,7 @@ export const getVersionPageData = createServerFn({ method: "GET" })
   .handler((async ({ data }: { data: { slug: string } }) => {
     const [songs, metadata] = await Promise.all([
       getSongsByVersionServer(data.slug),
-      Promise.resolve(getMetadataServer()),
+      getMetadataServer(),
     ]);
     const version = metadata.versions.find((item) => item.slug === data.slug) ?? null;
     return { songs, version };

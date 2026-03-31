@@ -6,7 +6,7 @@ import {
 } from "../../lib/song-data.server";
 import type { FilterOptions, SongFiltersData } from "maidb-data";
 
-export const getSongsPageLatest = createServerFn({ method: "GET" }).handler((() => {
+export const getSongsPageLatest = createServerFn({ method: "GET" }).handler((async () => {
   return getLatestSongsServer();
 }) as never);
 
@@ -17,7 +17,7 @@ export const getSongsPageFilterOptions = createServerFn({ method: "GET" }).handl
 );
 
 export const getSongsPageFiltersData = createServerFn({ method: "GET" }).handler(
-  ((): SongFiltersData => {
+  (async (): Promise<SongFiltersData> => {
     return getSongFiltersDataServer();
   }) as never,
 );
