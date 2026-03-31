@@ -1,4 +1,4 @@
-import type { FilterOptions } from "maidb-data";
+import type { SongFiltersData } from "maidb-data";
 
 export type SongBrowserSearchParams = {
   from?: string;
@@ -12,10 +12,13 @@ export type SongBrowserSearchParams = {
   maxBpm?: number;
   minLevel?: number;
   maxLevel?: number;
+  minInternalLevel?: number;
+  maxInternalLevel?: number;
+  useChartConstant?: boolean;
   isNew?: boolean;
 };
 
-export type SongBrowserFilterOptions = FilterOptions;
+export type SongBrowserFilterOptions = SongFiltersData;
 
 export function validateSongBrowserSearch(
   search: Record<string, unknown>,
@@ -32,6 +35,12 @@ export function validateSongBrowserSearch(
     maxBpm: typeof search.maxBpm === "number" ? search.maxBpm : undefined,
     minLevel: typeof search.minLevel === "number" ? search.minLevel : undefined,
     maxLevel: typeof search.maxLevel === "number" ? search.maxLevel : undefined,
+    minInternalLevel:
+      typeof search.minInternalLevel === "number" ? search.minInternalLevel : undefined,
+    maxInternalLevel:
+      typeof search.maxInternalLevel === "number" ? search.maxInternalLevel : undefined,
+    useChartConstant:
+      typeof search.useChartConstant === "boolean" ? search.useChartConstant : undefined,
     isNew: typeof search.isNew === "boolean" ? search.isNew : undefined,
   };
 }

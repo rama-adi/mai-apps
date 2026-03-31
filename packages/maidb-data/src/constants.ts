@@ -4,17 +4,16 @@ export const ALIASES_URL =
 export const COVER_BASE_URL = "https://dp4p6x0xfi5o9.cloudfront.net/maimai/img/cover/";
 
 // -- Structured game metadata -------------------------------------------------
-export type Category = { category: string; color: string; slug: string };
-export type Version = { version: string; abbr: string; releaseDate: string; slug: string };
-export type ChartType = {
-  type: string;
-  name: string;
-  abbr: string;
-  iconUrl?: string;
-  iconHeight?: number;
-};
-export type Difficulty = { difficulty: string; name: string; color: string };
-export type Region = { region: string; name: string; label: string };
+import type {
+  Category,
+  Version,
+  ChartType,
+  Difficulty,
+  Region,
+  Metadata,
+} from "./types/metadata.js";
+
+export type { Category, Version, ChartType, Difficulty, Region, Metadata };
 
 export const CATEGORIES: Category[] = [
   { category: "POPS＆アニメ", color: "#ff972a", slug: "pops-anime" },
@@ -122,15 +121,6 @@ export const REGIONS: Region[] = [
   { region: "usa", name: "アメリカ海外版 (USA International ver.)", label: "USA" },
   { region: "cn", name: "中国版 (舞萌DX)", label: "CN" },
 ];
-
-// Exported metadata:
-export type Metadata = {
-  categories: Category[];
-  versions: Version[];
-  chart_types: ChartType[];
-  difficulties: Difficulty[];
-  regions: Region[];
-};
 
 export const EXPORTED_METADATA: Metadata = {
   categories: CATEGORIES,

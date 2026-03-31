@@ -226,13 +226,56 @@ function SongWikiContent({ song }: { song: MaiDbSong }) {
             className="overflow-hidden rounded-xl border bg-card"
             style={{ borderColor: `color-mix(in oklch, ${catColor} 25%, transparent)` }}
           >
-            <div
-              className="flex items-center justify-center p-4"
-              style={{
-                background: `linear-gradient(to bottom, color-mix(in oklch, ${catColor} 8%, transparent), transparent)`,
-              }}
-            >
-              <SongImage song={song} size="lg" />
+            <div className="p-3">
+              <div className="relative overflow-hidden rounded-lg">
+                <SongImage song={song} size="full" />
+                <span
+                  className="absolute bottom-0 left-0 rounded-tr-md px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm"
+                  style={{ backgroundColor: `color-mix(in oklch, ${catColor} 85%, transparent)` }}
+                >
+                  {catMeta?.category ?? song.category}
+                </span>
+                <div className="absolute top-0 right-0 flex flex-col items-end">
+                  {song.isNew && (
+                    <span className="rounded-bl-md bg-primary/85 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-primary-foreground backdrop-blur-sm">
+                      New
+                    </span>
+                  )}
+                  {song.isLocked && (
+                    <span className="inline-flex items-center gap-1 rounded-bl-md bg-muted/85 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-muted-foreground backdrop-blur-sm">
+                      <Lock className="h-3 w-3" /> Locked
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
+            <div className="space-y-3 px-4 py-4">
+              <div>
+                <h1 className="m-0 text-base font-black leading-snug tracking-tight text-foreground">
+                  {song.title}
+                </h1>
+                <p className="m-0 mt-0.5 text-xs text-muted-foreground">{song.artist}</p>
+              </div>
+              <div className="flex gap-1.5">
+                <a
+                  href={youtubeSearchUrl(`${song.title} ${song.artist} maimai`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 rounded-md bg-red-600 px-2.5 py-1 text-xs font-semibold text-white transition-colors hover:bg-red-700"
+                >
+                  <Youtube className="h-3.5 w-3.5" />
+                  YouTube
+                </a>
+                <ShareButton slug={song.slug} />
+              </div>
+              {song.comment && (
+                <blockquote
+                  className="border-l-2 pl-3 text-xs italic text-muted-foreground"
+                  style={{ borderLeftColor: catColor }}
+                >
+                  {song.comment}
+                </blockquote>
+              )}
             </div>
             <div className="divide-y text-sm">
               <InfoboxRow label="BPM">
@@ -280,54 +323,6 @@ function SongWikiContent({ song }: { song: MaiDbSong }) {
         </aside>
 
         <div className="min-w-0 space-y-8">
-          <section>
-            <div className="mb-2 flex items-center gap-2">
-              <span
-                className="rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white"
-                style={{ backgroundColor: catColor }}
-              >
-                {catMeta?.category ?? song.category}
-              </span>
-              {song.isNew && (
-                <span className="rounded bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-foreground">
-                  New
-                </span>
-              )}
-              {song.isLocked && (
-                <span className="inline-flex items-center gap-1 rounded bg-muted px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                  <Lock className="h-2.5 w-2.5" /> Locked
-                </span>
-              )}
-            </div>
-
-            <h1 className="m-0 text-2xl font-black tracking-tight text-foreground sm:text-3xl">
-              {song.title}
-            </h1>
-            <p className="m-0 mt-1 text-lg text-muted-foreground">{song.artist}</p>
-
-            <div className="mt-3 flex gap-2">
-              <a
-                href={youtubeSearchUrl(`${song.title} ${song.artist} maimai`)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-red-700"
-              >
-                <Youtube className="h-4 w-4" />
-                YouTube
-              </a>
-              <ShareButton slug={song.slug} />
-            </div>
-
-            {song.comment && (
-              <blockquote
-                className="mt-3 border-l-2 pl-3 text-sm italic text-muted-foreground"
-                style={{ borderLeftColor: catColor }}
-              >
-                {song.comment}
-              </blockquote>
-            )}
-          </section>
-
           <section>
             <SectionHeading color={catColor}>Charts</SectionHeading>
             <div className="mt-4 space-y-6">
@@ -472,16 +467,16 @@ function ShareButton({ slug }: { slug: string }) {
     <button
       type="button"
       onClick={handleCopy}
-      className="inline-flex items-center gap-1.5 rounded-md border bg-card px-3 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-accent"
+      className="inline-flex items-center gap-1 rounded-md border bg-card px-2.5 py-1 text-xs font-semibold text-foreground transition-colors hover:bg-accent"
     >
       {copied ? (
         <>
-          <ClipboardCheck className="h-4 w-4 text-green-500" />
+          <ClipboardCheck className="h-3.5 w-3.5 text-green-500" />
           Copied!
         </>
       ) : (
         <>
-          <Share2 className="h-4 w-4" />
+          <Share2 className="h-3.5 w-3.5" />
           Share
         </>
       )}

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { CATEGORIES, CHART_TYPES, DIFFICULTIES, REGIONS, VERSIONS } from "./constants.js";
+import { CATEGORIES, CHART_TYPES, DIFFICULTIES, REGIONS, VERSIONS } from "../constants.js";
 
 // -- Receipt schema (image upload tracking) -----------------------------------
 

@@ -10,7 +10,7 @@ import {
   type SongBrowserFilterOptions,
   type SongBrowserSearchParams,
 } from "../../../components/song-browser/song-browser.types";
-import { getSongsPageLatest, getSongsPageFilterOptions } from "../../-server/songs-index";
+import { getSongsPageLatest, getSongsPageFiltersData } from "../../-server/songs-index";
 
 export const Route = createFileRoute("/(song-browser-songs)/songs")({
   validateSearch: validateSongBrowserSearch,
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/(song-browser-songs)/songs")({
   loader: async () => {
     const [songs, filterOptions] = await Promise.all([
       getSongsPageLatest(),
-      getSongsPageFilterOptions(),
+      getSongsPageFiltersData(),
     ]);
     return { songs, filterOptions };
   },

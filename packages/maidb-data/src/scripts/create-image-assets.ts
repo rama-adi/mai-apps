@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 import { COVER_BASE_URL } from "../constants.js";
 import { SONGS_JSON_PATH, ASSETS_DIR, THUMB_DIR, OG_DIR, RECEIPTS_PATH } from "../shared/paths.js";
 import { toDataUrl, generateOgImage } from "../shared/og-image.js";
-import type { MaiDbSong, Receipt } from "../schema.js";
+import type { MaiDbSong, Receipt } from "../types/song.js";
 
 async function main() {
   const args = process.argv.slice(2);

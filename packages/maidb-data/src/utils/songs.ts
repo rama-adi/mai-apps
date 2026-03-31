@@ -1,6 +1,9 @@
-import type { MaiDbSong } from "../schema.js";
+import type { MaiDbSong } from "../types/song.js";
+import type { FilterOptions, SongFilters } from "../types/filters.js";
 import { DIFFICULTY_COLORS, DIFFICULTY_NAMES, TYPE_NAMES } from "../constants.js";
 import Fuse, { type IFuseOptions } from "fuse.js";
+
+export type { FilterOptions, SongFilters };
 
 // -- Sorting ------------------------------------------------------------------
 
@@ -18,13 +21,6 @@ export function sortSongsByReleaseDate(songs: MaiDbSong[]): MaiDbSong[] {
 export { TYPE_NAMES, DIFFICULTY_NAMES };
 
 // -- Filter options -----------------------------------------------------------
-
-export type FilterOptions = {
-  categories: string[];
-  versions: string[];
-  difficulties: { name: string; color: string }[];
-  types: { type: string; name: string }[];
-};
 
 export function buildFilterOptions(songs: MaiDbSong[]): FilterOptions {
   const categories = new Set<string>();
@@ -56,20 +52,6 @@ export function buildFilterOptions(songs: MaiDbSong[]): FilterOptions {
 }
 
 // -- Client-side filtering ----------------------------------------------------
-
-export type SongFilters = {
-  q?: string;
-  category?: string;
-  version?: string;
-  difficulty?: string;
-  type?: string;
-  region?: string;
-  minBpm?: number;
-  maxBpm?: number;
-  minLevel?: number;
-  maxLevel?: number;
-  isNew?: boolean;
-};
 
 const SONG_SEARCH_OPTIONS = {
   ignoreLocation: true,
@@ -120,6 +102,18 @@ export function filterSongs(songs: MaiDbSong[], filters: SongFilters): MaiDbSong
   if (filters.maxLevel != null) {
     const max = filters.maxLevel;
     result = result.filter((s) => s.sheets.some((sh) => sh.levelValue <= max));
+  }
+  if (filters.minInternalLevel != null) {
+    const min = filters.minInternalLevel;
+    result = result.filter((s) =>
+      s.sheets.some((sh) => sh.internalLevelValue > 0 && sh.internalLevelValue >= min),
+    );
+  }
+  if (filters.maxInternalLevel != null) {
+    const max = filters.maxInternalLevel;
+    result = result.filter((s) =>
+      s.sheets.some((sh) => sh.internalLevelValue > 0 && sh.internalLevelValue <= max),
+    );
   }
   if (filters.isNew != null) {
     result = result.filter((s) => s.isNew === filters.isNew);

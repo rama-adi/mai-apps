@@ -1,0 +1,510 @@
+{
+  "categories": [
+    {
+      "value": "pops-anime",
+      "label": "POPS＆アニメ"
+    },
+    {
+      "value": "game-variety",
+      "label": "ゲーム＆バラエティ"
+    },
+    {
+      "value": "niconico-vocaloid",
+      "label": "niconico＆ボーカロイド"
+    },
+    {
+      "value": "ongeki-chunithm",
+      "label": "オンゲキ＆CHUNITHM"
+    },
+    {
+      "value": "maimai",
+      "label": "maimai"
+    },
+    {
+      "value": "touhou",
+      "label": "東方Project"
+    },
+    {
+      "value": "utage",
+      "label": "宴会場"
+    }
+  ],
+  "versions": [
+    {
+      "value": "green",
+      "label": "GreeN (超)"
+    },
+    {
+      "value": "orange-plus",
+      "label": "ORANGE+ (暁)"
+    },
+    {
+      "value": "orange",
+      "label": "ORANGE (橙)"
+    },
+    {
+      "value": "milk-plus",
+      "label": "MiLK+ (雪)"
+    },
+    {
+      "value": "murasaki",
+      "label": "MURASAKi (紫)"
+    },
+    {
+      "value": "murasaki-plus",
+      "label": "MURASAKi+ (菫)"
+    },
+    {
+      "value": "milk",
+      "label": "MiLK (白)"
+    },
+    {
+      "value": "finale",
+      "label": "FiNALE (輝)"
+    },
+    {
+      "value": "dx",
+      "label": "でらっくす (熊)"
+    },
+    {
+      "value": "dx-plus",
+      "label": "でらっくす+ (華)"
+    },
+    {
+      "value": "dx-splash",
+      "label": "Splash (爽)"
+    },
+    {
+      "value": "dx-splash-plus",
+      "label": "Splash+ (煌)"
+    },
+    {
+      "value": "dx-universe",
+      "label": "UNiVERSE (宙)"
+    },
+    {
+      "value": "dx-universe-plus",
+      "label": "UNiVERSE+ (星)"
+    },
+    {
+      "value": "maimai",
+      "label": "maimai (真)"
+    },
+    {
+      "value": "green-plus",
+      "label": "GreeN+ (檄)"
+    },
+    {
+      "value": "maimai-plus",
+      "label": "maimai+ (真)"
+    },
+    {
+      "value": "pink-plus",
+      "label": "PiNK+ (舞)"
+    },
+    {
+      "value": "pink",
+      "label": "PiNK (桃)"
+    },
+    {
+      "value": "dx-festival",
+      "label": "FESTiVAL (祭)"
+    },
+    {
+      "value": "dx-buddies",
+      "label": "BUDDiES (双)"
+    },
+    {
+      "value": "dx-circle",
+      "label": "CiRCLE (丸)"
+    },
+    {
+      "value": "dx-festival-plus",
+      "label": "FESTiVAL+ (祝)"
+    },
+    {
+      "value": "dx-buddies-plus",
+      "label": "BUDDiES+ (宴)"
+    },
+    {
+      "value": "dx-prism",
+      "label": "PRiSM (鏡)"
+    },
+    {
+      "value": "dx-prism-plus",
+      "label": "PRiSM+ (彩)"
+    },
+    {
+      "value": "dx-circle-plus",
+      "label": "CiRCLE+"
+    }
+  ],
+  "difficulties": [
+    {
+      "value": "basic",
+      "label": "BASIC",
+      "color": "#22bb5b"
+    },
+    {
+      "value": "advanced",
+      "label": "ADVANCED",
+      "color": "#fb9c2d"
+    },
+    {
+      "value": "expert",
+      "label": "EXPERT",
+      "color": "#f64861"
+    },
+    {
+      "value": "master",
+      "label": "MASTER",
+      "color": "#9e45e2"
+    },
+    {
+      "value": "【即】",
+      "label": "【即】",
+      "color": "#888"
+    },
+    {
+      "value": "【星】",
+      "label": "【星】",
+      "color": "#888"
+    },
+    {
+      "value": "【覚】",
+      "label": "【覚】",
+      "color": "#888"
+    },
+    {
+      "value": "【逆】",
+      "label": "【逆】",
+      "color": "#888"
+    },
+    {
+      "value": "【撫】",
+      "label": "【撫】",
+      "color": "#888"
+    },
+    {
+      "value": "【耐】",
+      "label": "【耐】",
+      "color": "#888"
+    },
+    {
+      "value": "【蛸】",
+      "label": "【蛸】",
+      "color": "#888"
+    },
+    {
+      "value": "【傾】",
+      "label": "【傾】",
+      "color": "#888"
+    },
+    {
+      "value": "【蔵】",
+      "label": "【蔵】",
+      "color": "#888"
+    },
+    {
+      "value": "【宴】",
+      "label": "【宴】",
+      "color": "#888"
+    },
+    {
+      "value": "【協】",
+      "label": "【協】",
+      "color": "#888"
+    },
+    {
+      "value": "【狂】",
+      "label": "【狂】",
+      "color": "#888"
+    },
+    {
+      "value": "【奏】",
+      "label": "【奏】",
+      "color": "#888"
+    },
+    {
+      "value": "【回】",
+      "label": "【回】",
+      "color": "#888"
+    },
+    {
+      "value": "【疑】",
+      "label": "【疑】",
+      "color": "#888"
+    },
+    {
+      "value": "【息】",
+      "label": "【息】",
+      "color": "#888"
+    },
+    {
+      "value": "【両】",
+      "label": "【両】",
+      "color": "#888"
+    },
+    {
+      "value": "【習】",
+      "label": "【習】",
+      "color": "#888"
+    },
+    {
+      "value": "【嘘】",
+      "label": "【嘘】",
+      "color": "#888"
+    },
+    {
+      "value": "【片】",
+      "label": "【片】",
+      "color": "#888"
+    },
+    {
+      "value": "【甘】",
+      "label": "【甘】",
+      "color": "#888"
+    },
+    {
+      "value": "【助】",
+      "label": "【助】",
+      "color": "#888"
+    },
+    {
+      "value": "【好】",
+      "label": "【好】",
+      "color": "#888"
+    },
+    {
+      "value": "【譜】",
+      "label": "【譜】",
+      "color": "#888"
+    },
+    {
+      "value": "【面】",
+      "label": "【面】",
+      "color": "#888"
+    },
+    {
+      "value": "【発】",
+      "label": "【発】",
+      "color": "#888"
+    },
+    {
+      "value": "【表】",
+      "label": "【表】",
+      "color": "#888"
+    },
+    {
+      "value": "【龍】",
+      "label": "【龍】",
+      "color": "#888"
+    },
+    {
+      "value": "【騒】",
+      "label": "【騒】",
+      "color": "#888"
+    },
+    {
+      "value": "【音】",
+      "label": "【音】",
+      "color": "#888"
+    },
+    {
+      "value": "【藍】",
+      "label": "【藍】",
+      "color": "#888"
+    },
+    {
+      "value": "【一】",
+      "label": "【一】",
+      "color": "#888"
+    },
+    {
+      "value": "【充】",
+      "label": "【充】",
+      "color": "#888"
+    },
+    {
+      "value": "【破】",
+      "label": "【破】",
+      "color": "#888"
+    },
+    {
+      "value": "remaster",
+      "label": "Re:MASTER",
+      "color": "#ba67f8"
+    },
+    {
+      "value": "【邪】",
+      "label": "【邪】",
+      "color": "#888"
+    },
+    {
+      "value": "【光】",
+      "label": "【光】",
+      "color": "#888"
+    },
+    {
+      "value": "【は】",
+      "label": "【は】",
+      "color": "#888"
+    },
+    {
+      "value": "【玉】",
+      "label": "【玉】",
+      "color": "#888"
+    },
+    {
+      "value": "【某】",
+      "label": "【某】",
+      "color": "#888"
+    },
+    {
+      "value": "【鏡】",
+      "label": "【鏡】",
+      "color": "#888"
+    },
+    {
+      "value": "【幸】",
+      "label": "【幸】",
+      "color": "#888"
+    },
+    {
+      "value": "【右】",
+      "label": "【右】",
+      "color": "#888"
+    },
+    {
+      "value": "【爆】",
+      "label": "【爆】",
+      "color": "#888"
+    },
+    {
+      "value": "【X】",
+      "label": "【X】",
+      "color": "#888"
+    },
+    {
+      "value": "【餡】",
+      "label": "【餡】",
+      "color": "#888"
+    },
+    {
+      "value": "【匿】",
+      "label": "【匿】",
+      "color": "#888"
+    },
+    {
+      "value": "【J】",
+      "label": "【J】",
+      "color": "#888"
+    },
+    {
+      "value": "【r】",
+      "label": "【r】",
+      "color": "#888"
+    }
+  ],
+  "types": [
+    {
+      "value": "dx",
+      "label": "DX"
+    },
+    {
+      "value": "std",
+      "label": "STD"
+    },
+    {
+      "value": "utage",
+      "label": "宴"
+    }
+  ],
+  "internalLevelRange": {
+    "min": 1,
+    "max": 15,
+    "values": [
+      1, 2, 3, 4, 5, 6, 7, 7.6, 8, 8.2, 8.5, 8.6, 8.7, 8.8, 9, 9.2, 9.5, 9.6, 9.7, 9.8, 10, 10.2,
+      10.5, 10.6, 10.7, 10.8, 11, 11.2, 11.4, 11.5, 11.6, 11.7, 11.8, 11.9, 12, 12.1, 12.2, 12.3,
+      12.4, 12.5, 12.6, 12.7, 12.8, 12.9, 13, 13.1, 13.2, 13.3, 13.4, 13.5, 13.6, 13.7, 13.8, 13.9,
+      14, 14.1, 14.2, 14.3, 14.4, 14.5, 14.6, 14.7, 14.8, 14.9, 15
+    ]
+  },
+  "levels": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "7+",
+    "8",
+    "8+",
+    "9",
+    "9+",
+    "10+",
+    "10",
+    "11+",
+    "11?",
+    "11+?",
+    "11",
+    "12",
+    "12+?",
+    "12?",
+    "12+",
+    "13+?",
+    "13?",
+    "13",
+    "13+",
+    "14?",
+    "14+?",
+    "14+",
+    "14",
+    "15",
+    "*"
+  ],
+  "bpmRange": {
+    "min": 55,
+    "max": 339,
+    "values": [
+      55, 57, 70, 74, 79, 83, 85, 86, 88, 90, 91, 92, 93, 94, 95, 96, 98, 99, 100, 102, 103, 104,
+      105, 106, 107, 108, 109, 110, 112, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125,
+      126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144,
+      145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163,
+      164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182,
+      183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 198, 199, 200, 201, 202,
+      203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 215, 216, 217, 220, 221, 222, 224, 225,
+      226, 227, 230, 234, 235, 236, 237, 238, 239, 240, 242, 243, 245, 246, 250, 252, 256, 257, 260,
+      262, 264, 266, 268, 270, 271, 276, 280, 288, 292, 300, 310, 339
+    ]
+  },
+  "regions": [
+    {
+      "value": "jp",
+      "label": "JP"
+    },
+    {
+      "value": "intl",
+      "label": "INTL"
+    },
+    {
+      "value": "usa",
+      "label": "USA"
+    },
+    {
+      "value": "cn",
+      "label": "CN"
+    }
+  ],
+  "statuses": [
+    {
+      "value": "new",
+      "label": "New"
+    },
+    {
+      "value": "locked",
+      "label": "Locked"
+    }
+  ]
+}

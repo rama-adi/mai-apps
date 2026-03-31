@@ -1,10 +1,18 @@
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { ALIASES_URL } from "../constants.js";
 import { SONGS_JSON_PATH } from "../shared/paths.js";
-import type { MaiDbSong } from "../schema.js";
+import type { MaiDbSong } from "../types/song.js";
 
 function countAlphaChars(s: string): number {
   return (s.match(/[a-zA-Z]/g) ?? []).length;
+}
+
+function longestLatinRun(s: string): number {
+  let max = 0;
+  for (const m of s.matchAll(/[a-zA-Z]+/g)) {
+    if (m[0].length > max) max = m[0].length;
+  }
+  return max;
 }
 
 function cleanTitle(s: string): string {
@@ -22,6 +30,7 @@ function slugify(s: string): string {
 
 function slugifyArtist(s: string): string {
   const base = s.replace(/\s*feat\..*$/i, "").trim();
+  if (longestLatinRun(base) < 6) return "";
   const slug = slugify(base);
   return slug.length >= 3 ? slug : "";
 }
@@ -70,19 +79,20 @@ async function main() {
 
     let titleSlug = slugify(title);
     const isFullyNonLatin = countAlphaChars(title) === 0;
+    const hasShortLatinRuns = longestLatinRun(title) < 6;
 
-    if ((isFullyNonLatin || titleSlug.length < 6) && aliases.length > 0) {
+    if ((isFullyNonLatin || hasShortLatinRuns) && aliases.length > 0) {
       let bestTitle = aliases[0];
       let bestAlpha = countAlphaChars(aliases[0]);
       for (let i = 1; i < aliases.length; i++) {
         const alpha = countAlphaChars(aliases[i]);
-        if (alpha > bestAlpha) {
+        if (alpha > bestAlpha * 1.5) {
           bestTitle = aliases[i];
           bestAlpha = alpha;
         }
       }
       const aliasSlug = slugify(bestTitle);
-      if (isFullyNonLatin || aliasSlug.length >= 6) {
+      if (isFullyNonLatin || aliasSlug.length > titleSlug.length) {
         titleSlug = aliasSlug;
       }
     }

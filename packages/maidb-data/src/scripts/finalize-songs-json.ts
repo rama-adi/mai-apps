@@ -6,7 +6,7 @@ import {
   LATEST_JSON_PATH,
 } from "../shared/paths.js";
 import { CATEGORIES, VERSIONS, EXPORTED_METADATA } from "../constants.js";
-import type { MaiDbSong, Receipt } from "../schema.js";
+import type { MaiDbSong, Receipt } from "../types/song.js";
 
 const categorySlugMap = new Map(CATEGORIES.map((c) => [c.category, c.slug]));
 const versionSlugMap = new Map(VERSIONS.map((v) => [v.version, v.slug]));

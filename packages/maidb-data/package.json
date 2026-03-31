@@ -22,6 +22,7 @@
     "./data/songs/songs.json": "./data/songs/songs.json",
     "./data/songs/metadata.json": "./data/songs/metadata.json",
     "./data/songs/latest-only.json": "./data/songs/latest-only.json",
+    "./data/songs/filters.json": "./data/songs/filters.json",
     "./package.json": "./package.json"
   },
   "publishConfig": {
@@ -37,6 +38,7 @@
     "create-images": "tsx src/scripts/create-image-assets.ts",
     "upload": "tsx src/scripts/upload-to-s3.ts",
     "create-slugs": "tsx src/scripts/create-slugs.ts",
+    "create-filters": "tsx src/scripts/create-filters.ts",
     "finalize": "tsx src/scripts/finalize-songs-json.ts",
     "sync": "tsx src/scripts/sync.ts"
   },

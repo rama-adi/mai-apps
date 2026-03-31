@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { SONG_DATA_URL, ALIASES_URL } from "../constants.js";
 import { SONGS_JSON_PATH } from "../shared/paths.js";
-import type { MaiDbSong } from "../schema.js";
+import type { MaiDbSong } from "../types/song.js";
 
 function normalizeTitle(title: string): string {
   return title

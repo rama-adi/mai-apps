@@ -96,6 +96,8 @@ export function SongBrowser({
   const maxBpm = controlledSearch.maxBpm;
   const minLevel = controlledSearch.minLevel;
   const maxLevel = controlledSearch.maxLevel;
+  const minInternalLevel = controlledSearch.minInternalLevel;
+  const maxInternalLevel = controlledSearch.maxInternalLevel;
   const isNew = controlledSearch.isNew;
 
   const activeFilterCount = [
@@ -108,6 +110,8 @@ export function SongBrowser({
     maxBpm != null ? "y" : "",
     minLevel != null ? "y" : "",
     maxLevel != null ? "y" : "",
+    minInternalLevel != null ? "y" : "",
+    maxInternalLevel != null ? "y" : "",
     isNew != null ? "y" : "",
   ].filter(Boolean).length;
 
@@ -122,6 +126,8 @@ export function SongBrowser({
     ...(maxBpm != null ? { maxBpm } : {}),
     ...(minLevel != null ? { minLevel } : {}),
     ...(maxLevel != null ? { maxLevel } : {}),
+    ...(minInternalLevel != null ? { minInternalLevel } : {}),
+    ...(maxInternalLevel != null ? { maxInternalLevel } : {}),
     ...(isNew != null ? { isNew } : {}),
   };
 
