@@ -18,7 +18,7 @@ type SongListPayload = {
 };
 
 export async function loadSongList(): Promise<SongListPayload> {
-  const cachedSongs = await env.SONGS_CACHE.get(SONGS_CACHE_KEY, "text");
+  const cachedSongs = await env.MAIAPP_SONGS_CACHE.get(SONGS_CACHE_KEY, "text");
   if (cachedSongs) {
     return { songs: JSON.parse(cachedSongs) as MaiDbSong[], source: "kv" };
   }
@@ -26,7 +26,7 @@ export async function loadSongList(): Promise<SongListPayload> {
   const r2Object = await env.SONG_DATA_BUCKET.get(SONGS_OBJECT_KEY);
   if (r2Object) {
     const songsText = await r2Object.text();
-    await env.SONGS_CACHE.put(SONGS_CACHE_KEY, songsText, {
+    await env.MAIAPP_SONGS_CACHE.put(SONGS_CACHE_KEY, songsText, {
       expirationTtl: SONGS_CACHE_TTL_SECONDS,
     });
     return { songs: JSON.parse(songsText) as MaiDbSong[], source: "r2" };
