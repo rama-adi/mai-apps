@@ -14,6 +14,8 @@ export default defineConfig({
       "components/ui/collapsible": "src/components/ui/collapsible.tsx",
       "components/ui/dialog": "src/components/ui/dialog.tsx",
       "components/ui/tabs": "src/components/ui/tabs.tsx",
+      "components/ui/switch": "src/components/ui/switch.tsx",
+      "components/ui/toggle": "src/components/ui/toggle.tsx",
     },
     dts: {
       tsgo: true,

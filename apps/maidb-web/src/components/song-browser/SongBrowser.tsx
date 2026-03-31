@@ -29,6 +29,7 @@ type SongBrowserContextValue = {
   setSearchInput: (value: string) => void;
   songs?: MaiDbSong[];
   totalCount?: number;
+  useChartConstant: boolean;
 };
 
 const SongBrowserContext = createContext<SongBrowserContextValue | null>(null);
@@ -164,6 +165,7 @@ export function SongBrowser({
     setSearchInput,
     songs: visibleSongs,
     totalCount: allSongs?.length,
+    useChartConstant: controlledSearch.useChartConstant ?? false,
   };
 
   return <SongBrowserContext value={value}>{children}</SongBrowserContext>;

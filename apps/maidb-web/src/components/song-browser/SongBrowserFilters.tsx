@@ -1,9 +1,10 @@
-import { ChevronDown, ChevronUp, Minus, Plus, SlidersHorizontal, X } from "lucide-react";
-import { useCallback, useState, type ReactNode } from "react";
+import { Toggle } from "@packages/ui/components/ui/toggle";
+import { ChevronDown, ChevronUp, SlidersHorizontal, X } from "lucide-react";
+import { useState, type ReactNode } from "react";
 import { useSongBrowser } from "./SongBrowser";
 
 const selectClass =
-  "h-9 w-full rounded-md border bg-background px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50";
+  "h-8 w-full rounded-md border bg-background px-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50";
 
 export function SongBrowserFilters() {
   const { activeFilterCount, filterOptions, search, setFilter, totalCount, isLoading } =
@@ -30,10 +31,9 @@ export function SongBrowserFilters() {
     setFilter("isNew", undefined);
   };
 
-  const toggleChartConstant = () => {
-    const next = !useChartConstant;
-    setFilter("useChartConstant", next || undefined);
-    if (next) {
+  const toggleChartConstant = (pressed: boolean) => {
+    setFilter("useChartConstant", pressed || undefined);
+    if (pressed) {
       setFilter("minLevel", undefined);
       setFilter("maxLevel", undefined);
     } else {
@@ -42,7 +42,6 @@ export function SongBrowserFilters() {
     }
   };
 
-  // Deduplicated integer levels from internal level values for the regular level stepper
   const integerLevels = filterOptions.internalLevelRange.values
     .map((v) => Math.floor(v))
     .filter((v, i, arr) => arr.indexOf(v) === i);
@@ -86,155 +85,162 @@ export function SongBrowserFilters() {
       </div>
 
       {isOpen && (
-        <div className="mt-2 grid gap-x-4 gap-y-3 rounded-lg border bg-card p-4 sm:grid-cols-2 lg:grid-cols-3">
-          <FilterField label="Category">
-            <select
-              value={search.category ?? ""}
-              onChange={(event) => setFilter("category", event.target.value || undefined)}
-              className={selectClass}
-            >
-              <option value="">All</option>
-              {filterOptions.categories.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-          </FilterField>
+        <div className="mt-2 space-y-3 rounded-lg border bg-card p-3">
+          {/* Dropdowns row */}
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <FilterField label="Category">
+              <select
+                value={search.category ?? ""}
+                onChange={(event) => setFilter("category", event.target.value || undefined)}
+                className={selectClass}
+              >
+                <option value="">All</option>
+                {filterOptions.categories.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            </FilterField>
 
-          <FilterField label="Version">
-            <select
-              value={search.version ?? ""}
-              onChange={(event) => setFilter("version", event.target.value || undefined)}
-              className={selectClass}
-            >
-              <option value="">All</option>
-              {filterOptions.versions.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-          </FilterField>
+            <FilterField label="Version">
+              <select
+                value={search.version ?? ""}
+                onChange={(event) => setFilter("version", event.target.value || undefined)}
+                className={selectClass}
+              >
+                <option value="">All</option>
+                {filterOptions.versions.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            </FilterField>
 
-          <FilterField label="Difficulty">
-            <select
-              value={search.difficulty ?? ""}
-              onChange={(event) => setFilter("difficulty", event.target.value || undefined)}
-              className={selectClass}
-            >
-              <option value="">All</option>
-              {filterOptions.difficulties.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-          </FilterField>
+            <FilterField label="Difficulty">
+              <select
+                value={search.difficulty ?? ""}
+                onChange={(event) => setFilter("difficulty", event.target.value || undefined)}
+                className={selectClass}
+              >
+                <option value="">All</option>
+                {filterOptions.difficulties.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            </FilterField>
 
-          <FilterField label="Type">
-            <select
-              value={search.type ?? ""}
-              onChange={(event) => setFilter("type", event.target.value || undefined)}
-              className={selectClass}
-            >
-              <option value="">All</option>
-              {filterOptions.types.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-          </FilterField>
+            <FilterField label="Type">
+              <select
+                value={search.type ?? ""}
+                onChange={(event) => setFilter("type", event.target.value || undefined)}
+                className={selectClass}
+              >
+                <option value="">All</option>
+                {filterOptions.types.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            </FilterField>
+          </div>
 
-          <FilterField
-            label={
-              <span className="flex items-center gap-2">
-                {useChartConstant ? "Internal Level" : "Level Range"}
-                <button
-                  type="button"
-                  onClick={toggleChartConstant}
-                  className={`rounded px-1.5 py-0.5 text-[9px] font-bold uppercase leading-none transition-colors ${
-                    useChartConstant
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  Chart Constant
-                </button>
-              </span>
-            }
-          >
-            {useChartConstant ? (
-              <StepperRange
-                values={filterOptions.internalLevelRange.values}
-                minValue={search.minInternalLevel}
-                maxValue={search.maxInternalLevel}
-                onMinChange={(v) => setFilter("minInternalLevel", v)}
-                onMaxChange={(v) => setFilter("maxInternalLevel", v)}
-                formatValue={(v) => v.toFixed(1)}
+          {/* Level + BPM row */}
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <FilterField
+              label={
+                <span className="flex items-center gap-2">
+                  {useChartConstant ? "Chart Constant" : "Level"}
+                  <Toggle
+                    size="sm"
+                    variant="outline"
+                    pressed={useChartConstant}
+                    onPressedChange={toggleChartConstant}
+                    className="h-5 px-1.5 text-[9px] font-bold uppercase tracking-wider"
+                  >
+                    Constant
+                  </Toggle>
+                </span>
+              }
+            >
+              {useChartConstant ? (
+                <MinMaxSelect
+                  values={filterOptions.internalLevelRange.values}
+                  minValue={search.minInternalLevel}
+                  maxValue={search.maxInternalLevel}
+                  onMinChange={(v) => setFilter("minInternalLevel", v)}
+                  onMaxChange={(v) => setFilter("maxInternalLevel", v)}
+                  formatValue={(v) => v.toFixed(1)}
+                />
+              ) : (
+                <MinMaxSelect
+                  values={integerLevels}
+                  minValue={search.minLevel}
+                  maxValue={search.maxLevel}
+                  onMinChange={(v) => setFilter("minLevel", v)}
+                  onMaxChange={(v) => setFilter("maxLevel", v)}
+                  formatValue={(v) => String(v)}
+                />
+              )}
+            </FilterField>
+
+            <FilterField label="BPM">
+              <MinMaxInput
+                min={filterOptions.bpmRange.min}
+                max={filterOptions.bpmRange.max}
+                minValue={search.minBpm}
+                maxValue={search.maxBpm}
+                onMinChange={(v) => setFilter("minBpm", v)}
+                onMaxChange={(v) => setFilter("maxBpm", v)}
               />
-            ) : (
-              <StepperRange
-                values={integerLevels}
-                minValue={search.minLevel}
-                maxValue={search.maxLevel}
-                onMinChange={(v) => setFilter("minLevel", v)}
-                onMaxChange={(v) => setFilter("maxLevel", v)}
-                formatValue={(v) => String(v)}
-              />
-            )}
-          </FilterField>
+            </FilterField>
 
-          <FilterField label="BPM Range">
-            <StepperRange
-              values={filterOptions.bpmRange.values}
-              minValue={search.minBpm}
-              maxValue={search.maxBpm}
-              onMinChange={(v) => setFilter("minBpm", v)}
-              onMaxChange={(v) => setFilter("maxBpm", v)}
-              formatValue={(v) => String(v)}
-            />
-          </FilterField>
+            <FilterField label="Region">
+              <select
+                value={search.region ?? ""}
+                onChange={(event) => setFilter("region", event.target.value || undefined)}
+                className={selectClass}
+              >
+                <option value="">All</option>
+                {filterOptions.regions.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            </FilterField>
+          </div>
 
-          <FilterField label="Region">
-            <select
-              value={search.region ?? ""}
-              onChange={(event) => setFilter("region", event.target.value || undefined)}
-              className={selectClass}
-            >
-              <option value="">All</option>
-              {filterOptions.regions.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-          </FilterField>
-
-          <FilterField label="Status">
-            <select
-              value={search.isNew == null ? "" : search.isNew ? "new" : "not-new"}
-              onChange={(event) => {
-                const value = event.target.value;
-                setFilter("isNew", value === "" ? undefined : value === "new");
-              }}
-              className={selectClass}
-            >
-              <option value="">All</option>
-              <option value="new">New only</option>
-              <option value="not-new">Not new</option>
-            </select>
-          </FilterField>
+          {/* Status row */}
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <FilterField label="Status">
+              <select
+                value={search.isNew == null ? "" : search.isNew ? "new" : "not-new"}
+                onChange={(event) => {
+                  const value = event.target.value;
+                  setFilter("isNew", value === "" ? undefined : value === "new");
+                }}
+                className={selectClass}
+              >
+                <option value="">All</option>
+                <option value="new">New only</option>
+                <option value="not-new">Not new</option>
+              </select>
+            </FilterField>
+          </div>
         </div>
       )}
     </>
   );
 }
 
-// -- Stepper Range Component --------------------------------------------------
+// -- Min/Max Select Dropdowns -------------------------------------------------
 
-function StepperRange({
+function MinMaxSelect({
   values,
   minValue,
   maxValue,
@@ -249,101 +255,92 @@ function StepperRange({
   onMaxChange: (value: number | undefined) => void;
   formatValue: (value: number) => string;
 }) {
-  const stepMin = useCallback(
-    (direction: 1 | -1) => {
-      if (minValue == null) {
-        onMinChange(direction === 1 ? values[0] : values[values.length - 1]);
-        return;
-      }
-      const currentIdx = values.indexOf(minValue);
-      const nextIdx = currentIdx + direction;
-      if (nextIdx < 0 || nextIdx >= values.length) {
-        onMinChange(undefined);
-        return;
-      }
-      onMinChange(values[nextIdx]);
-    },
-    [minValue, values, onMinChange],
-  );
-
-  const stepMax = useCallback(
-    (direction: 1 | -1) => {
-      if (maxValue == null) {
-        onMaxChange(direction === 1 ? values[0] : values[values.length - 1]);
-        return;
-      }
-      const currentIdx = values.indexOf(maxValue);
-      const nextIdx = currentIdx + direction;
-      if (nextIdx < 0 || nextIdx >= values.length) {
-        onMaxChange(undefined);
-        return;
-      }
-      onMaxChange(values[nextIdx]);
-    },
-    [maxValue, values, onMaxChange],
-  );
-
   return (
-    <div className="flex gap-2">
-      <StepperInput
-        value={minValue}
-        onStep={stepMin}
-        onClear={() => onMinChange(undefined)}
-        formatValue={formatValue}
-        placeholder="Min"
-      />
-      <StepperInput
-        value={maxValue}
-        onStep={stepMax}
-        onClear={() => onMaxChange(undefined)}
-        formatValue={formatValue}
-        placeholder="Max"
-      />
+    <div className="flex items-center gap-1.5">
+      <select
+        value={minValue != null ? String(minValue) : ""}
+        onChange={(event) => {
+          const v = event.target.value;
+          onMinChange(v ? Number(v) : undefined);
+        }}
+        className={selectClass}
+      >
+        <option value="">Min</option>
+        {values.map((v) => (
+          <option key={v} value={String(v)}>
+            {formatValue(v)}
+          </option>
+        ))}
+      </select>
+      <span className="text-xs text-muted-foreground">–</span>
+      <select
+        value={maxValue != null ? String(maxValue) : ""}
+        onChange={(event) => {
+          const v = event.target.value;
+          onMaxChange(v ? Number(v) : undefined);
+        }}
+        className={selectClass}
+      >
+        <option value="">Max</option>
+        {values.map((v) => (
+          <option key={v} value={String(v)}>
+            {formatValue(v)}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }
 
-function StepperInput({
-  value,
-  onStep,
-  onClear,
-  formatValue,
-  placeholder,
+// -- Min/Max Numeric Input ----------------------------------------------------
+
+function MinMaxInput({
+  min,
+  max,
+  minValue,
+  maxValue,
+  onMinChange,
+  onMaxChange,
 }: {
-  value: number | undefined;
-  onStep: (direction: 1 | -1) => void;
-  onClear: () => void;
-  formatValue: (value: number) => string;
-  placeholder: string;
+  min: number;
+  max: number;
+  minValue: number | undefined;
+  maxValue: number | undefined;
+  onMinChange: (value: number | undefined) => void;
+  onMaxChange: (value: number | undefined) => void;
 }) {
+  const inputClass =
+    "h-8 w-full rounded-md border bg-background px-2.5 text-sm tabular-nums text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50";
+
   return (
-    <div className="flex h-9 w-full items-center rounded-md border bg-background">
-      <button
-        type="button"
-        onClick={() => onStep(-1)}
-        className="flex h-full items-center px-2 text-muted-foreground transition-colors hover:text-foreground"
-      >
-        <Minus className="h-3 w-3" />
-      </button>
-      <button
-        type="button"
-        onClick={value != null ? onClear : undefined}
-        className="min-w-0 flex-1 text-center text-sm tabular-nums text-foreground"
-        title={value != null ? "Click to clear" : undefined}
-      >
-        {value != null ? (
-          formatValue(value)
-        ) : (
-          <span className="text-muted-foreground">{placeholder}</span>
-        )}
-      </button>
-      <button
-        type="button"
-        onClick={() => onStep(1)}
-        className="flex h-full items-center px-2 text-muted-foreground transition-colors hover:text-foreground"
-      >
-        <Plus className="h-3 w-3" />
-      </button>
+    <div className="flex items-center gap-1.5">
+      <input
+        type="number"
+        inputMode="numeric"
+        placeholder={`Min (${min})`}
+        min={min}
+        max={max}
+        value={minValue ?? ""}
+        onChange={(event) => {
+          const v = event.target.value;
+          onMinChange(v ? Number(v) : undefined);
+        }}
+        className={inputClass}
+      />
+      <span className="text-xs text-muted-foreground">–</span>
+      <input
+        type="number"
+        inputMode="numeric"
+        placeholder={`Max (${max})`}
+        min={min}
+        max={max}
+        value={maxValue ?? ""}
+        onChange={(event) => {
+          const v = event.target.value;
+          onMaxChange(v ? Number(v) : undefined);
+        }}
+        className={inputClass}
+      />
     </div>
   );
 }

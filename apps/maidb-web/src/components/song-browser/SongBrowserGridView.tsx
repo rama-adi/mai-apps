@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { Music } from "lucide-react";
 import type { MaiDbSong } from "maidb-data";
 import { SongCard, SongCardSkeleton } from "../SongCard";
@@ -13,37 +13,40 @@ export function SongBrowserGridView({
   emptyTitle?: string;
   onSongSelect?: (song: MaiDbSong, trigger?: HTMLElement | null) => void;
 }) {
-  const { canLoadMore, isFiltered, isLoading, loadMore, songs, totalCount } = useSongBrowser();
+  const { canLoadMore, isFiltered, isLoading, loadMore, songs, totalCount, useChartConstant } =
+    useSongBrowser();
   const sentinelRef = useRef<HTMLDivElement | null>(null);
-  const isAdvancingRef = useRef(false);
-  const songCount = songs?.length ?? 0;
+  const loadingRef = useRef(false);
+
+  const handleLoadMore = useCallback(() => {
+    if (loadingRef.current) return;
+    loadingRef.current = true;
+    loadMore();
+    // Allow next load after a short debounce
+    requestAnimationFrame(() => {
+      loadingRef.current = false;
+    });
+  }, [loadMore]);
 
   useEffect(() => {
-    isAdvancingRef.current = false;
-  }, [songCount]);
+    loadingRef.current = false;
+  }, [songs?.length]);
 
   useEffect(() => {
     if (!canLoadMore || !sentinelRef.current) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const isIntersecting = entries.some((entry) => entry.isIntersecting);
-        if (!isIntersecting) {
-          isAdvancingRef.current = false;
-          return;
-        }
-
-        if (!isAdvancingRef.current) {
-          isAdvancingRef.current = true;
-          loadMore();
+        if (entries.some((entry) => entry.isIntersecting)) {
+          handleLoadMore();
         }
       },
-      { rootMargin: "320px 0px" },
+      { rootMargin: "400px 0px" },
     );
 
     observer.observe(sentinelRef.current);
     return () => observer.disconnect();
-  }, [canLoadMore, loadMore, songCount]);
+  }, [canLoadMore, handleLoadMore]);
 
   return (
     <section className="mt-4">
@@ -52,7 +55,12 @@ export function SongBrowserGridView({
           ? Array.from({ length: 12 }).map((_, index) => <SongCardSkeleton key={index} />)
           : songs && songs.length > 0
             ? songs.map((song) => (
-                <SongCard key={song.songId} song={song} onSelect={onSongSelect} />
+                <SongCard
+                  key={song.songId}
+                  song={song}
+                  onSelect={onSongSelect}
+                  useChartConstant={useChartConstant}
+                />
               ))
             : null}
       </div>

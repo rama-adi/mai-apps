@@ -7,27 +7,41 @@ const THUMBNAIL_BASE = "https://maisongdb-blob.onebyteworks.my.id/thumb";
 
 const DIFF_ORDER = ["basic", "advanced", "expert", "master", "remaster"];
 
-function getTopDifficulties(song: MaiDbSong) {
-  const best = new Map<string, string>();
+function getTopDifficulties(song: MaiDbSong, useChartConstant: boolean) {
+  const best = new Map<string, { level: string; internalLevelValue: number; levelValue: number }>();
   for (const s of song.sheets) {
     if (s.type === "utage" || s.isSpecial) continue;
-    if (!best.has(s.difficulty) || s.levelValue > (Number(best.get(s.difficulty)) || 0)) {
-      best.set(s.difficulty, s.level);
+    const existing = best.get(s.difficulty);
+    if (!existing || s.levelValue > existing.levelValue) {
+      best.set(s.difficulty, {
+        level: s.level,
+        internalLevelValue: s.internalLevelValue,
+        levelValue: s.levelValue,
+      });
     }
   }
-  return DIFF_ORDER.filter((d) => best.has(d)).map((d) => ({
-    difficulty: d,
-    level: best.get(d)!,
-    color: DIFFICULTY_COLORS[d] ?? "#888",
-  }));
+  return DIFF_ORDER.filter((d) => best.has(d)).map((d) => {
+    const entry = best.get(d)!;
+    const displayValue =
+      useChartConstant && entry.internalLevelValue > 0
+        ? entry.internalLevelValue.toFixed(1)
+        : entry.level;
+    return {
+      difficulty: d,
+      level: displayValue,
+      color: DIFFICULTY_COLORS[d] ?? "#888",
+    };
+  });
 }
 
 export function SongCard({
   song,
   onSelect,
+  useChartConstant = false,
 }: {
   song: MaiDbSong;
   onSelect?: (song: MaiDbSong, trigger?: HTMLElement | null) => void;
+  useChartConstant?: boolean;
 }) {
   const [imgError, setImgError] = useState(false);
   const search = useLocation({ select: (location) => location.search });
@@ -35,7 +49,7 @@ export function SongCard({
     ? `${THUMBNAIL_BASE}/${song.internalImageId}.png`
     : null;
   const catColor = CATEGORY_BY_SLUG[song.category]?.color ?? "#888";
-  const diffs = getTopDifficulties(song);
+  const diffs = getTopDifficulties(song, useChartConstant);
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!song.slug) return;
