@@ -36,15 +36,15 @@ const loadMetadataJson = lazyJson<Metadata>(
   () => import("maidb-data/data/songs/metadata.json") as Promise<LazyJsonModule<Metadata>>,
 );
 
-const SONGS_OBJECT_KEY = "songs/songs.json";
-const LATEST_OBJECT_KEY = "songs/latest-only.json";
-const METADATA_OBJECT_KEY = "songs/metadata.json";
-const CHARTS_OBJECT_KEY = "mai-charts/charts.json";
+const SONGS_OBJECT_KEY = "data/songs/songs.json";
+const LATEST_OBJECT_KEY = "data/songs/latest-only.json";
+const METADATA_OBJECT_KEY = "data/songs/metadata.json";
+const CHARTS_OBJECT_KEY = "data/mai-charts/charts.json";
 
-const SONGS_CACHE_KEY = "songs/songs.json";
-const LATEST_CACHE_KEY = "songs/latest-only.json";
-const METADATA_CACHE_KEY = "songs/metadata.json";
-const CHARTS_CACHE_KEY = "mai-charts/charts.json";
+const SONGS_CACHE_KEY = "data/songs/songs.json";
+const LATEST_CACHE_KEY = "data/songs/latest-only.json";
+const METADATA_CACHE_KEY = "data/songs/metadata.json";
+const CHARTS_CACHE_KEY = "data/mai-charts/charts.json";
 
 const JSON_CACHE_TTL_SECONDS = 60 * 60;
 

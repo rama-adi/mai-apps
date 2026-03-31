@@ -1,14 +1,53 @@
 import { spawn } from "node:child_process";
+import { mkdtemp, rm } from "node:fs/promises";
+import { join } from "node:path";
+import { tmpdir } from "node:os";
 
-const CACHE_KEYS = [
-  "songs/songs.json",
-  "songs/latest-only.json",
-  "songs/metadata.json",
-  "mai-charts/charts.json",
+const CACHE_OBJECTS = [
+  "data/songs/songs.json",
+  "data/songs/latest-only.json",
+  "data/songs/metadata.json",
+  "data/mai-charts/charts.json",
 ];
 
-for (const key of CACHE_KEYS) {
-  await runWrangler(["kv", "key", "delete", key, "--binding", "MAIAPP_SONGS_CACHE", "--remote"]);
+const tempDir = await mkdtemp(join(tmpdir(), "maidb-song-cache-"));
+
+try {
+  for (const objectKey of CACHE_OBJECTS) {
+    const tempPath = join(tempDir, objectKey.replaceAll("/", "__"));
+
+    await runWrangler([
+      "kv",
+      "key",
+      "delete",
+      objectKey,
+      "--binding",
+      "MAIAPP_SONGS_CACHE",
+      "--remote",
+    ]);
+    await runWrangler([
+      "r2",
+      "object",
+      "get",
+      `maisongdb-data/${objectKey}`,
+      "--remote",
+      "--file",
+      tempPath,
+    ]);
+    await runWrangler([
+      "kv",
+      "key",
+      "put",
+      objectKey,
+      "--binding",
+      "MAIAPP_SONGS_CACHE",
+      "--remote",
+      "--path",
+      tempPath,
+    ]);
+  }
+} finally {
+  await rm(tempDir, { recursive: true, force: true });
 }
 
 function runWrangler(args) {

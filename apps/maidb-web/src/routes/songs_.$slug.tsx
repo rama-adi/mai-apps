@@ -49,6 +49,10 @@ function buildSongSeoDescription(song: MaiDbSong): string {
   return `${song.title} by ${song.artist} — ${chartTypes} charts for maimai. BPM: ${song.bpm}. Difficulties: ${difficulties}. Version: ${versionName}. Category: ${categoryName}. Available in: ${regions}.${song.releaseDate ? ` Released: ${song.releaseDate}.` : ""}`;
 }
 
+function buildSongOgDescription(song: MaiDbSong): string {
+  return `View ${song.title} by ${song.artist} on MaiDB.`;
+}
+
 function buildJsonLd(song: MaiDbSong) {
   const imageUrl = song.internalImageId
     ? `${OG_IMAGE_BASE}/${song.internalImageId}.jpg`
@@ -99,6 +103,7 @@ export const Route = createFileRoute("/songs_/$slug")({
     }
 
     const description = buildSongSeoDescription(song);
+    const ogDescription = buildSongOgDescription(song);
     const canonicalUrl = `${SITE_URL}/songs/${song.slug}`;
     const imageUrl = song.internalImageId
       ? `${OG_IMAGE_BASE}/${song.internalImageId}.jpg`
@@ -113,23 +118,21 @@ export const Route = createFileRoute("/songs_/$slug")({
         // Open Graph
         { property: "og:type", content: "music.song" },
         { property: "og:title", content: title },
-        { property: "og:description", content: description },
+        { property: "og:description", content: ogDescription },
         { property: "og:url", content: canonicalUrl },
         { property: "og:site_name", content: "MaiDB" },
         ...(imageUrl
           ? [
               { property: "og:image", content: imageUrl },
-              { property: "og:image:width", content: "200" },
-              { property: "og:image:height", content: "200" },
               { property: "og:image:alt", content: `${song.title} album art` },
             ]
           : []),
         { property: "music:musician", content: song.artist },
 
         // Twitter Card
-        { name: "twitter:card", content: "summary" },
+        { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: title },
-        { name: "twitter:description", content: description },
+        { name: "twitter:description", content: ogDescription },
         ...(imageUrl ? [{ name: "twitter:image", content: imageUrl }] : []),
 
         // Additional SEO
