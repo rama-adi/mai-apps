@@ -33,24 +33,10 @@
     "dev": "vp pack --watch",
     "test": "vp test",
     "check": "vp check",
-    "prepublishOnly": "vp run build",
-    "append-songs": "tsx src/scripts/append-songs.ts",
-    "create-images": "tsx src/scripts/create-image-assets.ts",
-    "upload": "tsx src/scripts/upload-to-s3.ts",
-    "create-slugs": "tsx src/scripts/create-slugs.ts",
-    "create-filters": "tsx src/scripts/create-filters.ts",
-    "finalize": "tsx src/scripts/finalize-songs-json.ts",
-    "sync": "tsx src/scripts/sync.ts"
+    "prepublishOnly": "vp run build"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "catalog:",
-    "@resvg/resvg-js": "catalog:",
-    "dotenv": "catalog:",
     "fuse.js": "catalog:",
-    "nanoid": "catalog:",
-    "satori": "catalog:",
-    "sharp": "catalog:",
-    "tsx": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {

@@ -1,0 +1,29 @@
+{
+  "name": "song-scraper",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "append-songs": "tsx append-songs.ts",
+    "create-images": "tsx create-image-assets.ts",
+    "upload": "tsx upload-to-s3.ts",
+    "create-slugs": "tsx create-slugs.ts",
+    "create-filters": "tsx create-filters.ts",
+    "finalize": "tsx finalize-songs-json.ts",
+    "sync": "tsx sync.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "catalog:",
+    "@resvg/resvg-js": "catalog:",
+    "dotenv": "catalog:",
+    "maidb-data": "workspace:*",
+    "nanoid": "catalog:",
+    "satori": "catalog:",
+    "sharp": "catalog:",
+    "tsx": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0"
+  }
+}

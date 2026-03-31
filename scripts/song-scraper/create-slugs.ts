@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, existsSync } from "fs";
-import { ALIASES_URL } from "../constants.js";
-import { SONGS_JSON_PATH } from "../shared/paths.js";
-import type { MaiDbSong } from "../types/song.js";
+import { ALIASES_URL } from "maidb-data";
+import { SONGS_JSON_PATH } from "./shared/paths.js";
+import type { MaiDbSong } from "maidb-data";
 
 function countAlphaChars(s: string): number {
   return (s.match(/[a-zA-Z]/g) ?? []).length;

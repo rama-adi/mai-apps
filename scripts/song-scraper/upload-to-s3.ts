@@ -1,9 +1,9 @@
 import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join } from "path";
-import { THUMB_DIR, OG_DIR, RECEIPTS_PATH } from "../shared/paths.js";
-import { createS3Client } from "../shared/s3.js";
-import type { Receipt } from "../types/song.js";
+import { THUMB_DIR, OG_DIR, RECEIPTS_PATH } from "./shared/paths.js";
+import { createS3Client } from "./shared/s3.js";
+import type { Receipt } from "maidb-data";
 
 const { s3, bucket: S3_BUCKET } = createS3Client();
 

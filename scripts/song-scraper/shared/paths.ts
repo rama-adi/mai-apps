@@ -1,6 +1,6 @@
 import { join } from "path";
 
-export const PKG_ROOT = join(import.meta.dirname, "../..");
+export const PKG_ROOT = join(import.meta.dirname, "../../../packages/maidb-data");
 export const SCRATCH_DIR = join(PKG_ROOT, "scratch");
 export const ASSETS_DIR = join(PKG_ROOT, "assets");
 export const DATA_DIR = join(PKG_ROOT, "data/songs");

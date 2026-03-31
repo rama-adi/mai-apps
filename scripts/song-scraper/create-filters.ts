@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync, existsSync } from "fs";
-import { SONGS_JSON_PATH, FILTERS_JSON_PATH } from "../shared/paths.js";
+import { SONGS_JSON_PATH, FILTERS_JSON_PATH } from "./shared/paths.js";
 import {
   CATEGORY_BY_SLUG,
   VERSION_BY_SLUG,
@@ -7,9 +7,9 @@ import {
   DIFFICULTY_COLORS,
   TYPE_NAMES,
   REGION_LABELS,
-} from "../constants.js";
-import type { MaiDbSong } from "../types/song.js";
-import type { SongFiltersData, RangeFilter } from "../types/filters.js";
+} from "maidb-data";
+import type { MaiDbSong } from "maidb-data";
+import type { SongFiltersData, RangeFilter } from "maidb-data";
 
 function buildRange(rawValues: number[]): RangeFilter {
   const sorted = [...new Set(rawValues)].sort((a, b) => a - b);

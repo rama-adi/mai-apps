@@ -3,7 +3,7 @@ import { readFileSync } from "fs";
 import satori from "satori";
 import { Resvg } from "@resvg/resvg-js";
 import sharp from "sharp";
-import { CATEGORIES, DIFFICULTY_COLORS, REGION_LABELS } from "../constants.js";
+import { CATEGORIES, DIFFICULTY_COLORS, REGION_LABELS } from "maidb-data";
 
 const CATEGORY_COLORS: Record<string, string> = Object.fromEntries(
   CATEGORIES.map((c) => [c.category, c.color]),

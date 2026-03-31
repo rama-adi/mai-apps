@@ -23,7 +23,7 @@ function main() {
     try {
       execSync(`tsx ${script} ${extraArgs}`, {
         stdio: "inherit",
-        cwd: join(SCRIPTS_DIR, "../.."),
+        cwd: join(SCRIPTS_DIR, "../../packages/maidb-data"),
       });
     } catch {
       console.error(`\nFATAL: ${step.name} failed`);
