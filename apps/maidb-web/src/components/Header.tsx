@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Music, Search } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
@@ -28,6 +29,7 @@ export default function Header() {
             <Search className="h-4 w-4" />
             <span className="sr-only">Search songs</span>
           </button>
+          <ThemeToggle />
         </div>
       </nav>
     </header>

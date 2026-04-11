@@ -19,10 +19,23 @@ export const Route = createRootRoute({
   shellComponent: RootDocument,
 });
 
+const themeInitScript = `
+  (function() {
+    try {
+      const theme = localStorage.getItem("theme");
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      const effectiveTheme = theme === "auto" || !theme ? systemTheme : theme;
+      document.documentElement.classList.add(effectiveTheme);
+      document.documentElement.style.colorScheme = effectiveTheme;
+    } catch (e) {}
+  })();
+`;
+
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <HeadContent />
       </head>
       <body className="min-h-screen font-sans antialiased">
