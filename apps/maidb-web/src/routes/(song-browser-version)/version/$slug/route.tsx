@@ -1,5 +1,5 @@
 import { createFileRoute, Outlet, useNavigate, useRouter } from "@tanstack/react-router";
-import { VERSION_BY_SLUG, sortSongsByReleaseDate, type MaiDbSong, type Metadata } from "maidb-data";
+import { VERSION_BY_SLUG, type MaiDbSong, type Metadata } from "maidb-data";
 import { ArrowLeft, ArrowRight, CalendarDays } from "lucide-react";
 import { SongCard, SongCardSkeleton } from "../../../../components/SongCard";
 import { SongBrowser } from "../../../../components/song-browser/SongBrowser";
@@ -105,13 +105,7 @@ function VersionPage() {
         </div>
       </section>
 
-      <SongBrowser
-        initialSongs={loaderSongs}
-        paginationMode="all"
-        resolveHydratedSongs={(songs) =>
-          sortSongsByReleaseDate(songs.filter((song) => song.version === slug))
-        }
-      >
+      <SongBrowser initialSongs={loaderSongs} paginationMode="all">
         <SongBrowserResults>
           {({ isLoading, songs, totalCount }) => {
             const weeks = songs ? groupSongsByWeek(songs) : [];

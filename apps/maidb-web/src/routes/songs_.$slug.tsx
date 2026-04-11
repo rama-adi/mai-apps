@@ -11,7 +11,6 @@ import {
 import { useMemo, useState } from "react";
 import { getSongBySlug, getMaiNotesCharts } from "./-server/songs";
 import type { MaiNotesEntry } from "../lib/song-data.server";
-import { useSongBySlug } from "../lib/use-songs";
 import {
   ArrowLeft,
   Check,
@@ -177,10 +176,7 @@ function SongPage() {
     song: MaiDbSong | null;
     maiNotesCharts: MaiNotesEntry | null;
   };
-  const { slug } = Route.useParams();
-
-  const clientSong = useSongBySlug(slug);
-  const song = clientSong ?? loaderData.song;
+  const song = loaderData.song;
   const maiNotesCharts = loaderData.maiNotesCharts;
   const catColor = useMemo(
     () => (song ? (CATEGORY_BY_SLUG[song.category]?.color ?? "#888") : null),

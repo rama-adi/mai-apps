@@ -6,7 +6,6 @@ import {
   validateSongBrowserSearch,
   type SongBrowserSearchParams,
 } from "../../components/song-browser/song-browser.types";
-import { useSongBySlug } from "../../lib/use-songs";
 import { getSongBySlug } from "../-server/songs";
 
 export const Route = createFileRoute("/(song-browser-home)/modal/$slug")({
@@ -16,12 +15,9 @@ export const Route = createFileRoute("/(song-browser-home)/modal/$slug")({
 });
 
 function HomeSongModalRoute() {
-  const loaderSong = Route.useLoaderData() as MaiDbSong | null;
+  const song = Route.useLoaderData() as MaiDbSong | null;
   const search = Route.useSearch() as SongBrowserSearchParams;
-  const { slug } = Route.useParams();
   const navigate = useNavigate({ from: "/modal/$slug" });
-  const clientSong = useSongBySlug(slug);
-  const song = clientSong ?? loaderSong;
   const [isClosing, setIsClosing] = useState(false);
 
   const closeModal = () => {

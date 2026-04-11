@@ -48,22 +48,112 @@ const CHARTS_CACHE_KEY = "data/mai-charts/charts.json";
 
 const JSON_CACHE_TTL_SECONDS = 60 * 60;
 
+type JsonSource = "kv" | "r2" | "local";
+
 type SongListPayload = {
   songs: MaiDbSong[];
-  source: "kv" | "r2" | "local";
+  source: JsonSource;
 };
 
-export async function loadSongList(): Promise<SongListPayload> {
-  const songsFromCache = await loadCachedJsonText<MaiDbSong[]>(
-    SONGS_CACHE_KEY,
-    SONGS_OBJECT_KEY,
-    loadSongsJson,
-  );
-  if (songsFromCache.source !== "local") {
-    return { songs: songsFromCache.data, source: songsFromCache.source };
+type CachedJsonResult<T> = {
+  data: T;
+  source: JsonSource;
+};
+
+function createCachedJsonResource<T>(
+  cacheKey: string,
+  objectKey: string,
+  loadLocal: () => Promise<T>,
+) {
+  let cachedResultPromise: Promise<CachedJsonResult<T>> | null = null;
+
+  return async () => {
+    if (!cachedResultPromise) {
+      cachedResultPromise = loadCachedJsonText(cacheKey, objectKey, loadLocal).catch((error) => {
+        cachedResultPromise = null;
+        throw error;
+      });
+    }
+
+    return cachedResultPromise;
+  };
+}
+
+const loadSongListResource = createCachedJsonResource(
+  SONGS_CACHE_KEY,
+  SONGS_OBJECT_KEY,
+  loadSongsJson,
+);
+const loadLatestSongsResource = createCachedJsonResource(
+  LATEST_CACHE_KEY,
+  LATEST_OBJECT_KEY,
+  loadLatestJson,
+);
+const loadMetadataResource = createCachedJsonResource(
+  METADATA_CACHE_KEY,
+  METADATA_OBJECT_KEY,
+  loadMetadataJson,
+);
+const loadChartsResource = createCachedJsonResource(
+  CHARTS_CACHE_KEY,
+  CHARTS_OBJECT_KEY,
+  async () =>
+    unwrapLazyJsonModule(await import("maidb-data/data/mai-charts/charts.json")) as Record<
+      string,
+      MaiNotesEntry
+    >,
+);
+
+type SongCatalogIndex = {
+  bySlug: Map<string, MaiDbSong>;
+  byVersion: Map<string, MaiDbSong[]>;
+  filterOptions: FilterOptions;
+  filtersData: SongFiltersData;
+  slugs: string[];
+};
+
+let songCatalogIndexPromise: Promise<SongCatalogIndex> | null = null;
+
+async function getSongCatalogIndex(): Promise<SongCatalogIndex> {
+  if (!songCatalogIndexPromise) {
+    songCatalogIndexPromise = (async () => {
+      const { songs } = await loadSongList();
+      const bySlug = new Map<string, MaiDbSong>();
+      const byVersion = new Map<string, MaiDbSong[]>();
+
+      for (const song of songs) {
+        bySlug.set(song.slug, song);
+        const songsForVersion = byVersion.get(song.version);
+        if (songsForVersion) {
+          songsForVersion.push(song);
+        } else {
+          byVersion.set(song.version, [song]);
+        }
+      }
+
+      for (const [versionSlug, songsForVersion] of byVersion.entries()) {
+        byVersion.set(versionSlug, sortSongsByReleaseDate(songsForVersion));
+      }
+
+      return {
+        bySlug,
+        byVersion,
+        filterOptions: buildFilterOptions(songs),
+        filtersData: buildSongFiltersData(songs),
+        slugs: songs.map((song) => song.slug),
+      };
+    })().catch((error) => {
+      songCatalogIndexPromise = null;
+      throw error;
+    });
   }
 
-  return { songs: songsFromCache.data, source: "local" };
+  return songCatalogIndexPromise;
+}
+
+export async function loadSongList(): Promise<SongListPayload> {
+  const songsFromCache = await loadSongListResource();
+  return { songs: songsFromCache.data, source: songsFromCache.source };
 }
 
 export async function loadSongListResponse(): Promise<Response> {
@@ -79,36 +169,36 @@ export async function loadSongListResponse(): Promise<Response> {
 }
 
 export async function getLatestSongs(): Promise<MaiDbSong[]> {
-  return loadCachedJson(LATEST_CACHE_KEY, LATEST_OBJECT_KEY, loadLatestJson);
+  return (await loadLatestSongsResource()).data;
 }
 
 export async function getMetadata(): Promise<Metadata> {
-  return loadCachedJson(METADATA_CACHE_KEY, METADATA_OBJECT_KEY, loadMetadataJson);
+  return (await loadMetadataResource()).data;
 }
 
 export async function getSongsByVersion(versionSlug: string): Promise<MaiDbSong[]> {
-  const { songs } = await loadSongList();
-  return sortSongsByReleaseDate(songs.filter((song) => song.version === versionSlug));
+  const index = await getSongCatalogIndex();
+  return index.byVersion.get(versionSlug) ?? [];
 }
 
 export async function getSongBySlug(slug: string): Promise<MaiDbSong | null> {
-  const { songs } = await loadSongList();
-  return songs.find((song) => song.slug === slug) ?? null;
+  const index = await getSongCatalogIndex();
+  return index.bySlug.get(slug) ?? null;
 }
 
 export async function getAllSlugs(): Promise<string[]> {
-  const { songs } = await loadSongList();
-  return songs.map((song) => song.slug);
+  const index = await getSongCatalogIndex();
+  return index.slugs;
 }
 
 export async function getFilterOptions(): Promise<FilterOptions> {
-  const { songs } = await loadSongList();
-  return buildFilterOptions(songs);
+  const index = await getSongCatalogIndex();
+  return index.filterOptions;
 }
 
 export async function getSongFiltersData(): Promise<SongFiltersData> {
-  const { songs } = await loadSongList();
-  return buildSongFiltersData(songs);
+  const index = await getSongCatalogIndex();
+  return index.filtersData;
 }
 
 function buildSongFiltersData(songs: MaiDbSong[]): SongFiltersData {
@@ -265,48 +355,28 @@ export type MaiNotesEntry = {
   charts: MaiNotesChart[];
 };
 
-let chartsData: Record<string, MaiNotesEntry> | null = null;
-
 async function loadChartsData(): Promise<Record<string, MaiNotesEntry>> {
-  if (!chartsData) {
-    chartsData = await loadCachedJson(
-      CHARTS_CACHE_KEY,
-      CHARTS_OBJECT_KEY,
-      async () =>
-        unwrapLazyJsonModule(await import("maidb-data/data/mai-charts/charts.json")) as Record<
-          string,
-          MaiNotesEntry
-        >,
-    );
-  }
-  return chartsData;
-}
-
-async function loadCachedJson<T>(
-  cacheKey: string,
-  objectKey: string,
-  loadLocal: () => Promise<T>,
-): Promise<T> {
-  const result = await loadCachedJsonText(cacheKey, objectKey, loadLocal);
-  return result.data;
+  return (await loadChartsResource()).data;
 }
 
 async function loadCachedJsonText<T>(
   cacheKey: string,
   objectKey: string,
   loadLocal: () => Promise<T>,
-): Promise<{ data: T; source: "kv" | "r2" | "local" }> {
-  const cachedText = await env.MAIAPP_SONGS_CACHE.get(cacheKey, "text");
-  if (cachedText) {
+): Promise<CachedJsonResult<T>> {
+  const cachedText = await env.MAIAPP_SONGS_CACHE?.get(cacheKey, "text");
+  if (cachedText != null) {
     return { data: JSON.parse(cachedText) as T, source: "kv" };
   }
 
-  const r2Object = await env.SONG_DATA_BUCKET.get(objectKey);
-  if (r2Object) {
+  const r2Object = await env.SONG_DATA_BUCKET?.get(objectKey);
+  if (r2Object != null) {
     const text = await r2Object.text();
-    await env.MAIAPP_SONGS_CACHE.put(cacheKey, text, {
-      expirationTtl: JSON_CACHE_TTL_SECONDS,
-    });
+    if (env.MAIAPP_SONGS_CACHE) {
+      await env.MAIAPP_SONGS_CACHE.put(cacheKey, text, {
+        expirationTtl: JSON_CACHE_TTL_SECONDS,
+      });
+    }
     return { data: JSON.parse(text) as T, source: "r2" };
   }
 

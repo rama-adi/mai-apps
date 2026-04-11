@@ -1,9 +1,9 @@
 import { Search } from "lucide-react";
-import { useSongs } from "../../lib/use-songs";
+import { useSongCatalog } from "../../lib/song-catalog";
 import { useSongBrowser } from "./SongBrowser";
 
 export function SongBrowserSearchBar() {
-  const { isLoading: isHydrating } = useSongs();
+  const { isLoading: isHydrating } = useSongCatalog();
   const { searchInput, setSearchInput } = useSongBrowser();
 
   return (

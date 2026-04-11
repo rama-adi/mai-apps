@@ -9,7 +9,7 @@ import {
   type ReactNode,
 } from "react";
 import { filterSongs, type MaiDbSong, type SongFilters } from "maidb-data";
-import { useSongs } from "../../lib/use-songs";
+import { useSongCatalog } from "../../lib/song-catalog";
 import type { SongBrowserFilterOptions, SongBrowserSearchParams } from "./song-browser.types";
 
 type SongBrowserPaginationMode = "infinite" | "all";
@@ -58,7 +58,7 @@ export function SongBrowser({
   search?: SongBrowserSearchParams;
 }) {
   const controlledSearch = search ?? {};
-  const { songs: hydratedSongs } = useSongs();
+  const { songs: catalogSongs } = useSongCatalog();
   const [searchInput, setSearchInput] = useState(controlledSearch.q ?? "");
   const deferredSearch = useDeferredValue(searchInput);
   const [visibleCount, setVisibleCount] = useState(pageSize);
@@ -68,12 +68,12 @@ export function SongBrowser({
   }, [controlledSearch.q]);
 
   const baseSongs = useMemo(() => {
-    if (hydratedSongs) {
-      return resolveHydratedSongs ? resolveHydratedSongs(hydratedSongs) : hydratedSongs;
+    if (catalogSongs) {
+      return resolveHydratedSongs ? resolveHydratedSongs(catalogSongs) : catalogSongs;
     }
 
     return initialSongs;
-  }, [hydratedSongs, initialSongs, resolveHydratedSongs]);
+  }, [catalogSongs, initialSongs, resolveHydratedSongs]);
 
   const searchQuery = deferredSearch.trim();
 

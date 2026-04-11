@@ -36,7 +36,6 @@ function HomePage() {
   };
   const navigate = useNavigate({ from: "/" });
   const featuredSongs = latestSongs.slice(0, 12);
-  const featuredSongIds = new Set(featuredSongs.map((song) => song.songId));
 
   const catColors = metadata.categories.map((c) => c.color);
 
@@ -133,22 +132,7 @@ function HomePage() {
             </Link>
           </div>
 
-          <SongBrowser
-            initialSongs={featuredSongs}
-            paginationMode="all"
-            resolveHydratedSongs={(songs) =>
-              featuredSongs
-                .map((featuredSong) => songs.find((song) => song.songId === featuredSong.songId))
-                .filter((song): song is MaiDbSong => song != null)
-                .concat(
-                  songs.filter(
-                    (song) =>
-                      featuredSongIds.has(song.songId) &&
-                      !featuredSongs.some((featuredSong) => featuredSong.songId === song.songId),
-                  ),
-                )
-            }
-          >
+          <SongBrowser initialSongs={featuredSongs} paginationMode="all">
             <SongBrowserGridView onSongSelect={openSongModal} />
           </SongBrowser>
         </section>

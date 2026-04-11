@@ -5,6 +5,7 @@ import { SongBrowser } from "../../../components/song-browser/SongBrowser";
 import { SongBrowserFilters } from "../../../components/song-browser/SongBrowserFilters";
 import { SongBrowserGridView } from "../../../components/song-browser/SongBrowserGridView";
 import { SongBrowserSearchBar } from "../../../components/song-browser/SongBrowserSearchBar";
+import { SongCatalogProvider } from "../../../lib/song-catalog";
 import {
   validateSongBrowserSearch,
   type SongBrowserFilterOptions,
@@ -71,32 +72,34 @@ function SongBrowserPage() {
   };
 
   return (
-    <main className="mx-auto max-w-5xl flex-1 px-4 pb-12 pt-6" data-song-browser-surface="">
-      {/* Back nav */}
-      <Link
-        to="/"
-        className="mb-4 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-      >
-        <ArrowLeft className="h-3.5 w-3.5" />
-        Home
-      </Link>
+    <SongCatalogProvider>
+      <main className="mx-auto max-w-5xl flex-1 px-4 pb-12 pt-6" data-song-browser-surface="">
+        {/* Back nav */}
+        <Link
+          to="/"
+          className="mb-4 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ArrowLeft className="h-3.5 w-3.5" />
+          Home
+        </Link>
 
-      {/* Search bar — sticks below the navbar */}
-      <SongBrowser
-        initialSongs={loaderSongs}
-        filterOptions={filterOptions}
-        search={search}
-        onSearchChange={navigateWithSearch}
-        paginationMode="infinite"
-        resolveHydratedSongs={sortSongsByReleaseDate}
-      >
-        <section className="sticky top-[53px] z-10 -mx-4 border-b bg-background/80 px-4 pb-3 pt-2 backdrop-blur-lg">
-          <SongBrowserSearchBar />
-          <SongBrowserFilters />
-        </section>
-        <SongBrowserGridView onSongSelect={openSongModal} />
-      </SongBrowser>
-      <Outlet />
-    </main>
+        {/* Search bar — sticks below the navbar */}
+        <SongBrowser
+          initialSongs={loaderSongs}
+          filterOptions={filterOptions}
+          search={search}
+          onSearchChange={navigateWithSearch}
+          paginationMode="infinite"
+          resolveHydratedSongs={sortSongsByReleaseDate}
+        >
+          <section className="sticky top-[53px] z-10 -mx-4 border-b bg-background/80 px-4 pb-3 pt-2 backdrop-blur-lg">
+            <SongBrowserSearchBar />
+            <SongBrowserFilters />
+          </section>
+          <SongBrowserGridView onSongSelect={openSongModal} />
+        </SongBrowser>
+        <Outlet />
+      </main>
+    </SongCatalogProvider>
   );
 }

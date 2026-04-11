@@ -1,7 +1,6 @@
 import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
-import { SongsProvider } from "../lib/use-songs";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -40,12 +39,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   return (
-    <SongsProvider>
-      <div className="flex min-h-screen flex-col">
-        <Header />
-        <Outlet />
-        <Footer />
-      </div>
-    </SongsProvider>
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <Outlet />
+      <Footer />
+    </div>
   );
 }
