@@ -443,12 +443,18 @@ export function SongBrowserFilters() {
         <span className="ml-auto text-xs tabular-nums text-muted-foreground">{resultLabel}</span>
       </div>
 
-      {/* Desktop: Expanded inline filter panel */}
-      {isOpen && (
-        <div className="hidden sm:block mt-2 rounded-xl border border-border/60 bg-card/80 p-3">
-          {filterContent}
-        </div>
-      )}
+      {/* Desktop: Expanded inline filter panel with smooth animation */}
+      <div
+        className={[
+          "hidden sm:grid mt-2 rounded-xl border border-border/60 bg-card/80 overflow-hidden",
+          "transition-all duration-300 ease-out motion-reduce:transition-none motion-reduce:duration-0",
+          isOpen
+            ? "grid-rows-[1fr] opacity-100"
+            : "grid-rows-[0fr] opacity-0 border-transparent bg-transparent motion-reduce:grid-rows-[1fr] motion-reduce:opacity-100 motion-reduce:border-border/60 motion-reduce:bg-card/80",
+        ].join(" ")}
+      >
+        <div className="min-h-0 p-3">{filterContent}</div>
+      </div>
     </section>
   );
 }
