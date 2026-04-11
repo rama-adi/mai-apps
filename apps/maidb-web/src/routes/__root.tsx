@@ -24,7 +24,7 @@ const themeInitScript = `
     try {
       const theme = localStorage.getItem("theme");
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      const effectiveTheme = theme === "auto" || !theme ? systemTheme : theme;
+      const effectiveTheme = theme === "light" || theme === "dark" ? theme : systemTheme;
       document.documentElement.classList.add(effectiveTheme);
       document.documentElement.style.colorScheme = effectiveTheme;
     } catch (e) {}
