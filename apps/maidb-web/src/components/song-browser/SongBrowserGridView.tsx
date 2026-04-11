@@ -107,6 +107,7 @@ export function SongBrowserGridView({
                   key={song.songId}
                   song={song}
                   onSelect={onSongSelect}
+                  currentSearch={search}
                   useChartConstant={useChartConstant}
                   difficulty={search.difficulty}
                   type={search.type}

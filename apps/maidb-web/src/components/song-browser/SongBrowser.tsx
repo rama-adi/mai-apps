@@ -1,10 +1,11 @@
 import {
   createContext,
   startTransition,
+  useCallback,
   useContext,
-  useDeferredValue,
   useEffect,
   useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
@@ -14,12 +15,30 @@ import type { SongBrowserFilterOptions, SongBrowserSearchParams } from "./song-b
 
 type SongBrowserPaginationMode = "infinite" | "all";
 
+type LocalFilters = {
+  category: string;
+  version: string;
+  difficulty: string;
+  type: string;
+  region: string;
+  minBpm: number | undefined;
+  maxBpm: number | undefined;
+  minLevel: number | undefined;
+  maxLevel: number | undefined;
+  minInternalLevel: number | undefined;
+  maxInternalLevel: number | undefined;
+  isNew: boolean | undefined;
+};
+
 type SongBrowserContextValue = {
   activeFilterCount: number;
   canLoadMore: boolean;
+  clearAllFilters: () => void;
   filterOptions?: SongBrowserFilterOptions;
   isFiltered: boolean;
   isLoading: boolean;
+  isPending: boolean;
+  localFilters: LocalFilters;
   loadMore: (pageCount?: number) => void;
   maxInternalLevel?: number;
   maxLevel?: number;
@@ -64,8 +83,54 @@ export function SongBrowser({
   const controlledSearch = search ?? {};
   const { songs: catalogSongs } = useSongCatalog();
   const [searchInput, setSearchInput] = useState(controlledSearch.q ?? "");
-  const deferredSearch = useDeferredValue(searchInput);
   const [visibleCount, setVisibleCount] = useState(pageSize);
+
+  // Immediate UI state for filters (for responsive inputs)
+  const [localFilters, setLocalFilters] = useState({
+    category: controlledSearch.category ?? "",
+    version: controlledSearch.version ?? "",
+    difficulty: controlledSearch.difficulty ?? "",
+    type: controlledSearch.type ?? "",
+    region: controlledSearch.region ?? "",
+    minBpm: controlledSearch.minBpm,
+    maxBpm: controlledSearch.maxBpm,
+    minLevel: controlledSearch.minLevel,
+    maxLevel: controlledSearch.maxLevel,
+    minInternalLevel: controlledSearch.minInternalLevel,
+    maxInternalLevel: controlledSearch.maxInternalLevel,
+    isNew: controlledSearch.isNew,
+  });
+
+  // Sync local filters when URL changes (e.g., back button)
+  useEffect(() => {
+    setLocalFilters({
+      category: controlledSearch.category ?? "",
+      version: controlledSearch.version ?? "",
+      difficulty: controlledSearch.difficulty ?? "",
+      type: controlledSearch.type ?? "",
+      region: controlledSearch.region ?? "",
+      minBpm: controlledSearch.minBpm,
+      maxBpm: controlledSearch.maxBpm,
+      minLevel: controlledSearch.minLevel,
+      maxLevel: controlledSearch.maxLevel,
+      minInternalLevel: controlledSearch.minInternalLevel,
+      maxInternalLevel: controlledSearch.maxInternalLevel,
+      isNew: controlledSearch.isNew,
+    });
+  }, [
+    controlledSearch.category,
+    controlledSearch.version,
+    controlledSearch.difficulty,
+    controlledSearch.type,
+    controlledSearch.region,
+    controlledSearch.minBpm,
+    controlledSearch.maxBpm,
+    controlledSearch.minLevel,
+    controlledSearch.maxLevel,
+    controlledSearch.minInternalLevel,
+    controlledSearch.maxInternalLevel,
+    controlledSearch.isNew,
+  ]);
 
   useEffect(() => {
     setSearchInput(controlledSearch.q ?? "");
@@ -79,83 +144,229 @@ export function SongBrowser({
     return initialSongs;
   }, [catalogSongs, initialSongs, resolveHydratedSongs]);
 
-  const searchQuery = deferredSearch.trim();
+  const searchQuery = searchInput.trim();
 
+  const filterDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const searchDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const flushFilterDebounce = useCallback(() => {
+    if (filterDebounceRef.current) {
+      clearTimeout(filterDebounceRef.current);
+      filterDebounceRef.current = null;
+    }
+  }, []);
+
+  const flushSearchDebounce = useCallback(() => {
+    if (searchDebounceRef.current) {
+      clearTimeout(searchDebounceRef.current);
+      searchDebounceRef.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      flushFilterDebounce();
+      flushSearchDebounce();
+    };
+  }, [flushFilterDebounce, flushSearchDebounce]);
+
+  // Debounced search URL update
   useEffect(() => {
     if (!onSearchChange) return;
     if (searchQuery === (controlledSearch.q ?? "")) return;
-    onSearchChange((prev) => ({ ...prev, q: searchQuery || undefined }));
-  }, [controlledSearch.q, onSearchChange, searchQuery]);
+
+    flushSearchDebounce();
+    searchDebounceRef.current = setTimeout(() => {
+      startTransition(() => {
+        onSearchChange((prev) => ({ ...prev, q: searchQuery || undefined }));
+      });
+    }, 150);
+
+    return () => {
+      flushSearchDebounce();
+    };
+  }, [controlledSearch.q, onSearchChange, searchQuery, flushSearchDebounce]);
 
   const setFilter = <K extends keyof SongBrowserSearchParams>(
     key: K,
     value: SongBrowserSearchParams[K],
   ) => {
-    onSearchChange?.((prev) => ({ ...prev, [key]: value }));
+    // Update local state immediately for responsive UI
+    setLocalFilters((prev) => ({ ...prev, [key]: value }));
+
+    // Debounce the URL/filter update
+    flushFilterDebounce();
+    filterDebounceRef.current = setTimeout(() => {
+      startTransition(() => {
+        onSearchChange?.((prev) => ({ ...prev, [key]: value }));
+      });
+    }, 50);
   };
 
-  const category = controlledSearch.category ?? "";
-  const version = controlledSearch.version ?? "";
-  const difficulty = controlledSearch.difficulty ?? "";
-  const type = controlledSearch.type ?? "";
-  const region = controlledSearch.region ?? "";
-  const minBpm = controlledSearch.minBpm;
-  const maxBpm = controlledSearch.maxBpm;
-  const minLevel = controlledSearch.minLevel;
-  const maxLevel = controlledSearch.maxLevel;
-  const minInternalLevel = controlledSearch.minInternalLevel;
-  const maxInternalLevel = controlledSearch.maxInternalLevel;
-  const isNew = controlledSearch.isNew;
+  const clearAllFilters = useCallback(() => {
+    // Update all local state immediately for responsive UI
+    setLocalFilters({
+      category: "",
+      version: "",
+      difficulty: "",
+      type: "",
+      region: "",
+      minBpm: undefined,
+      maxBpm: undefined,
+      minLevel: undefined,
+      maxLevel: undefined,
+      minInternalLevel: undefined,
+      maxInternalLevel: undefined,
+      isNew: undefined,
+    });
 
-  const activeFilterCount = [
-    category,
-    version,
-    difficulty,
-    type,
-    region,
-    minBpm != null ? "y" : "",
-    maxBpm != null ? "y" : "",
-    minLevel != null ? "y" : "",
-    maxLevel != null ? "y" : "",
-    minInternalLevel != null ? "y" : "",
-    maxInternalLevel != null ? "y" : "",
-    isNew != null ? "y" : "",
-  ].filter(Boolean).length;
+    // Debounce a single URL update that clears all filters
+    flushFilterDebounce();
+    filterDebounceRef.current = setTimeout(() => {
+      startTransition(() => {
+        onSearchChange?.(() => ({
+          q: controlledSearch.q,
+        }));
+      });
+    }, 50);
+  }, [controlledSearch.q, flushFilterDebounce, onSearchChange]);
 
-  const filters: SongFilters = {
-    ...(searchQuery ? { q: searchQuery } : {}),
-    ...(category ? { category } : {}),
-    ...(version ? { version } : {}),
-    ...(difficulty ? { difficulty } : {}),
-    ...(type ? { type } : {}),
-    ...(region ? { region } : {}),
-    ...(minBpm != null ? { minBpm } : {}),
-    ...(maxBpm != null ? { maxBpm } : {}),
-    ...(minLevel != null ? { minLevel } : {}),
-    ...(maxLevel != null ? { maxLevel } : {}),
-    ...(minInternalLevel != null ? { minInternalLevel } : {}),
-    ...(maxInternalLevel != null ? { maxInternalLevel } : {}),
-    ...(isNew != null ? { isNew } : {}),
-  };
+  // Use localFilters for responsive UI - these update immediately
+  const category = localFilters.category;
+  const version = localFilters.version;
+  const difficulty = localFilters.difficulty;
+  const type = localFilters.type;
+  const region = localFilters.region;
+  const minBpm = localFilters.minBpm;
+  const maxBpm = localFilters.maxBpm;
+  const minLevel = localFilters.minLevel;
+  const maxLevel = localFilters.maxLevel;
+  const minInternalLevel = localFilters.minInternalLevel;
+  const maxInternalLevel = localFilters.maxInternalLevel;
+  const isNew = localFilters.isNew;
 
-  const isFiltered = searchQuery.length > 0 || activeFilterCount > 0;
+  const activeFilterCount = useMemo(
+    () =>
+      [
+        category,
+        version,
+        difficulty,
+        type,
+        region,
+        minBpm != null ? "y" : "",
+        maxBpm != null ? "y" : "",
+        minLevel != null ? "y" : "",
+        maxLevel != null ? "y" : "",
+        minInternalLevel != null ? "y" : "",
+        maxInternalLevel != null ? "y" : "",
+        isNew != null ? "y" : "",
+      ].filter(Boolean).length,
+    [
+      category,
+      version,
+      difficulty,
+      type,
+      region,
+      minBpm,
+      maxBpm,
+      minLevel,
+      maxLevel,
+      minInternalLevel,
+      maxInternalLevel,
+      isNew,
+    ],
+  );
 
-  const allSongs = useMemo(() => {
-    if (!baseSongs) return undefined;
-    return isFiltered ? filterSongs(baseSongs, filters) : baseSongs;
+  const filters = useMemo<SongFilters>(
+    () => ({
+      ...(searchQuery ? { q: searchQuery } : {}),
+      ...(category ? { category } : {}),
+      ...(version ? { version } : {}),
+      ...(difficulty ? { difficulty } : {}),
+      ...(type ? { type } : {}),
+      ...(region ? { region } : {}),
+      ...(minBpm != null ? { minBpm } : {}),
+      ...(maxBpm != null ? { maxBpm } : {}),
+      ...(minLevel != null ? { minLevel } : {}),
+      ...(maxLevel != null ? { maxLevel } : {}),
+      ...(minInternalLevel != null ? { minInternalLevel } : {}),
+      ...(maxInternalLevel != null ? { maxInternalLevel } : {}),
+      ...(isNew != null ? { isNew } : {}),
+    }),
+    [
+      searchQuery,
+      category,
+      version,
+      difficulty,
+      type,
+      region,
+      minBpm,
+      maxBpm,
+      minLevel,
+      maxLevel,
+      minInternalLevel,
+      maxInternalLevel,
+      isNew,
+    ],
+  );
+
+  const isFiltered = useMemo(
+    () => searchQuery.length > 0 || activeFilterCount > 0,
+    [searchQuery, activeFilterCount],
+  );
+
+  // Async filtering with debounce to keep UI responsive
+  const [filteredSongs, setFilteredSongs] = useState<MaiDbSong[] | undefined>(baseSongs);
+  const [isPending, setIsPending] = useState(false);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    if (!baseSongs) {
+      setFilteredSongs(undefined);
+      return;
+    }
+
+    if (!isFiltered) {
+      setFilteredSongs(baseSongs);
+      setIsPending(false);
+      return;
+    }
+
+    // Clear previous debounce
+    if (debounceRef.current) {
+      clearTimeout(debounceRef.current);
+    }
+
+    setIsPending(true);
+
+    // Debounce the filtering to allow UI to update first
+    debounceRef.current = setTimeout(() => {
+      startTransition(() => {
+        const result = filterSongs(baseSongs, filters);
+        setFilteredSongs(result);
+        setIsPending(false);
+      });
+    }, 50);
+
+    return () => {
+      if (debounceRef.current) {
+        clearTimeout(debounceRef.current);
+      }
+    };
   }, [baseSongs, filters, isFiltered]);
+
+  const allSongs = filteredSongs;
 
   useEffect(() => {
     setVisibleCount(pageSize);
   }, [allSongs, pageSize, paginationMode]);
 
-  const shouldShowAllSongs = paginationMode === "all" || isFiltered;
+  const shouldShowAllSongs = paginationMode === "all";
 
   const visibleSongs = shouldShowAllSongs || !allSongs ? allSongs : allSongs.slice(0, visibleCount);
 
   const canLoadMore =
     paginationMode === "infinite" &&
-    !isFiltered &&
     allSongs != null &&
     visibleSongs != null &&
     visibleSongs.length < allSongs.length;
@@ -163,9 +374,12 @@ export function SongBrowser({
   const value: SongBrowserContextValue = {
     activeFilterCount,
     canLoadMore,
+    clearAllFilters,
     filterOptions,
     isFiltered,
     isLoading: allSongs === undefined,
+    isPending,
+    localFilters,
     loadMore: (pageCount = 1) =>
       startTransition(() => {
         setVisibleCount((count) => count + pageSize * Math.max(1, pageCount));

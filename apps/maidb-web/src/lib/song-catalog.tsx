@@ -28,6 +28,13 @@ export function SongCatalogProvider({
   const [isLoading, setIsLoading] = useState(shouldHydrate && initialSongs == null);
 
   useEffect(() => {
+    // Don't fetch if we already have initial songs
+    if (initialSongs != null) {
+      setSongs(initialSongs);
+      setIsLoading(false);
+      return;
+    }
+
     if (!shouldHydrate) {
       setSongs(initialSongs);
       setIsLoading(false);

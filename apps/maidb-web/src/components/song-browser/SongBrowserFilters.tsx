@@ -1,5 +1,5 @@
 import { ChevronDown, ChevronUp, SlidersHorizontal, Sparkles, X } from "lucide-react";
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import {
   Sheet,
   SheetContent,
@@ -23,8 +23,16 @@ type ActiveFilterChip = {
 };
 
 export function SongBrowserFilters() {
-  const { activeFilterCount, filterOptions, search, setFilter, totalCount, isLoading } =
-    useSongBrowser();
+  const {
+    activeFilterCount,
+    clearAllFilters,
+    filterOptions,
+    localFilters,
+    search,
+    setFilter,
+    totalCount,
+    isLoading,
+  } = useSongBrowser();
   const [isOpen, setIsOpen] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
 
@@ -32,21 +40,19 @@ export function SongBrowserFilters() {
 
   const useChartConstant = search.useChartConstant ?? false;
 
-  const clearFilters = () => {
-    setFilter("category", undefined);
-    setFilter("version", undefined);
-    setFilter("difficulty", undefined);
-    setFilter("type", undefined);
-    setFilter("region", undefined);
-    setFilter("minBpm", undefined);
-    setFilter("maxBpm", undefined);
-    setFilter("minLevel", undefined);
-    setFilter("maxLevel", undefined);
-    setFilter("minInternalLevel", undefined);
-    setFilter("maxInternalLevel", undefined);
-    setFilter("useChartConstant", undefined);
-    setFilter("isNew", undefined);
-  };
+  // Use localFilters for form values so UI updates immediately
+  const formCategory = localFilters.category;
+  const formVersion = localFilters.version;
+  const formDifficulty = localFilters.difficulty;
+  const formType = localFilters.type;
+  const formRegion = localFilters.region;
+  const formMinBpm = localFilters.minBpm;
+  const formMaxBpm = localFilters.maxBpm;
+  const formMinLevel = localFilters.minLevel;
+  const formMaxLevel = localFilters.maxLevel;
+  const formMinInternalLevel = localFilters.minInternalLevel;
+  const formMaxInternalLevel = localFilters.maxInternalLevel;
+  const formIsNew = localFilters.isNew;
 
   const toggleChartConstant = (on: boolean) => {
     setFilter("useChartConstant", on || undefined);
@@ -168,7 +174,7 @@ export function SongBrowserFilters() {
       <div className="grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         <FilterField label="Category">
           <select
-            value={search.category ?? ""}
+            value={formCategory}
             onChange={(event) => setFilter("category", event.target.value || undefined)}
             className={selectClass}
           >
@@ -183,7 +189,7 @@ export function SongBrowserFilters() {
 
         <FilterField label="Version">
           <select
-            value={search.version ?? ""}
+            value={formVersion}
             onChange={(event) => setFilter("version", event.target.value || undefined)}
             className={selectClass}
           >
@@ -198,7 +204,7 @@ export function SongBrowserFilters() {
 
         <FilterField label="Difficulty">
           <select
-            value={search.difficulty ?? ""}
+            value={formDifficulty}
             onChange={(event) => setFilter("difficulty", event.target.value || undefined)}
             className={selectClass}
           >
@@ -213,7 +219,7 @@ export function SongBrowserFilters() {
 
         <FilterField label="Type">
           <select
-            value={search.type ?? ""}
+            value={formType}
             onChange={(event) => setFilter("type", event.target.value || undefined)}
             className={selectClass}
           >
@@ -228,7 +234,7 @@ export function SongBrowserFilters() {
 
         <FilterField label="Region">
           <select
-            value={search.region ?? ""}
+            value={formRegion}
             onChange={(event) => setFilter("region", event.target.value || undefined)}
             className={selectClass}
           >
@@ -284,8 +290,8 @@ export function SongBrowserFilters() {
           {useChartConstant ? (
             <MinMaxSelect
               values={filterOptions.internalLevelRange.values}
-              minValue={search.minInternalLevel}
-              maxValue={search.maxInternalLevel}
+              minValue={formMinInternalLevel}
+              maxValue={formMaxInternalLevel}
               onMinChange={(value) => setFilter("minInternalLevel", value)}
               onMaxChange={(value) => setFilter("maxInternalLevel", value)}
               formatValue={(value) => value.toFixed(1)}
@@ -293,8 +299,8 @@ export function SongBrowserFilters() {
           ) : (
             <MinMaxSelect
               values={integerLevels}
-              minValue={search.minLevel}
-              maxValue={search.maxLevel}
+              minValue={formMinLevel}
+              maxValue={formMaxLevel}
               onMinChange={(value) => setFilter("minLevel", value)}
               onMaxChange={(value) => setFilter("maxLevel", value)}
               formatValue={(value) => String(value)}
@@ -312,8 +318,8 @@ export function SongBrowserFilters() {
           <MinMaxInput
             min={filterOptions.bpmRange.min}
             max={filterOptions.bpmRange.max}
-            minValue={search.minBpm}
-            maxValue={search.maxBpm}
+            minValue={formMinBpm}
+            maxValue={formMaxBpm}
             onMinChange={(value) => setFilter("minBpm", value)}
             onMaxChange={(value) => setFilter("maxBpm", value)}
           />
@@ -328,22 +334,19 @@ export function SongBrowserFilters() {
           </div>
           <div className="flex gap-1">
             <SegmentButton
-              isActive={search.isNew == null}
+              isActive={formIsNew == null}
               onClick={() => setFilter("isNew", undefined)}
             >
               All
             </SegmentButton>
             <SegmentButton
-              isActive={search.isNew === true}
+              isActive={formIsNew === true}
               onClick={() => setFilter("isNew", true)}
               icon={<Sparkles className="h-3 w-3" />}
             >
               New
             </SegmentButton>
-            <SegmentButton
-              isActive={search.isNew === false}
-              onClick={() => setFilter("isNew", false)}
-            >
+            <SegmentButton isActive={formIsNew === false} onClick={() => setFilter("isNew", false)}>
               Existing
             </SegmentButton>
           </div>
@@ -433,7 +436,7 @@ export function SongBrowserFilters() {
         {activeFilters.length > 0 && (
           <button
             type="button"
-            onClick={clearFilters}
+            onClick={clearAllFilters}
             className="text-xs font-medium text-muted-foreground transition-colors hover:text-red-500"
           >
             Clear all
@@ -501,11 +504,13 @@ function MinMaxSelect({
         className={selectClass}
       >
         <option value="">Max</option>
-        {values.map((value) => (
-          <option key={value} value={String(value)}>
-            {formatValue(value)}
-          </option>
-        ))}
+        {values
+          .filter((value) => minValue == null || value >= minValue)
+          .map((value) => (
+            <option key={value} value={String(value)}>
+              {formatValue(value)}
+            </option>
+          ))}
       </select>
     </div>
   );
@@ -526,6 +531,36 @@ function MinMaxInput({
   onMinChange: (value: number | undefined) => void;
   onMaxChange: (value: number | undefined) => void;
 }) {
+  // Local state for responsive typing - updates immediately
+  const [localMin, setLocalMin] = useState(minValue ?? "");
+  const [localMax, setLocalMax] = useState(maxValue ?? "");
+
+  // Sync local state when external values change (e.g., from URL or clear all)
+  useEffect(() => {
+    setLocalMin(minValue ?? "");
+  }, [minValue]);
+
+  useEffect(() => {
+    setLocalMax(maxValue ?? "");
+  }, [maxValue]);
+
+  // Debounce the actual filter updates
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const parsedMin = localMin === "" ? undefined : Number(localMin);
+      const parsedMax = localMax === "" ? undefined : Number(localMax);
+
+      if (parsedMin !== minValue) {
+        onMinChange(parsedMin);
+      }
+      if (parsedMax !== maxValue) {
+        onMaxChange(parsedMax);
+      }
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, [localMin, localMax, minValue, maxValue, onMinChange, onMaxChange]);
+
   return (
     <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
       <input
@@ -534,11 +569,8 @@ function MinMaxInput({
         placeholder={`${min}`}
         min={min}
         max={max}
-        value={minValue ?? ""}
-        onChange={(event) => {
-          const value = event.target.value;
-          onMinChange(value ? Number(value) : undefined);
-        }}
+        value={localMin}
+        onChange={(event) => setLocalMin(event.target.value)}
         className={inputClass}
       />
       <span className="text-[10px] font-semibold text-muted-foreground/60">—</span>
@@ -548,11 +580,8 @@ function MinMaxInput({
         placeholder={`${max}`}
         min={min}
         max={max}
-        value={maxValue ?? ""}
-        onChange={(event) => {
-          const value = event.target.value;
-          onMaxChange(value ? Number(value) : undefined);
-        }}
+        value={localMax}
+        onChange={(event) => setLocalMax(event.target.value)}
         className={inputClass}
       />
     </div>

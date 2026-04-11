@@ -12,10 +12,15 @@ import {
   type SongBrowserSearchParams,
   validateSongBrowserSearch,
 } from "../../../components/song-browser/song-browser.types";
-import { getSongsPageFiltersData, getSongsPageSongs } from "../../-server/songs-index";
+import {
+  getSongsPageFilterOptions,
+  getSongsPageFiltersData,
+  getSongsPageSongs,
+} from "../../-server/songs-index";
 
 export const Route = createFileRoute("/(song-browser-songs)/songs")({
   validateSearch: validateSongBrowserSearch,
+  shouldReload: false,
   head: () => ({
     meta: [
       { title: "Browse Songs - MaiDB" },
@@ -27,11 +32,19 @@ export const Route = createFileRoute("/(song-browser-songs)/songs")({
     ],
   }),
   loader: async () => {
-    const [songs, filterOptions] = await Promise.all([
+    const [songs, filterOptions, filtersData] = await Promise.all([
       getSongsPageSongs(),
+      getSongsPageFilterOptions(),
       getSongsPageFiltersData(),
     ]);
-    return { songs, filterOptions };
+    const mergedFilterOptions = {
+      ...(filterOptions as object),
+      ...(filtersData as object),
+    } as SongBrowserFilterOptions;
+    return {
+      songs,
+      filterOptions: mergedFilterOptions,
+    };
   },
   component: SongBrowserPage,
 });

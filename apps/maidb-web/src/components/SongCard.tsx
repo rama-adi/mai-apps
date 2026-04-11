@@ -1,6 +1,6 @@
-import { Link, useLocation } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { Music } from "lucide-react";
-import { type MouseEvent, useState } from "react";
+import { memo, type MouseEvent, useState } from "react";
 import { CATEGORY_BY_SLUG, DIFFICULTY_COLORS, VERSION_BY_SLUG, type MaiDbSong } from "maidb-data";
 
 const THUMBNAIL_BASE = "https://maisongdb-blob.onebyteworks.my.id/thumb";
@@ -143,9 +143,10 @@ function getDisplayedDifficulties(
   });
 }
 
-export function SongCard({
+export const SongCard = memo(function SongCard({
   song,
   onSelect,
+  currentSearch,
   useChartConstant = false,
   difficulty,
   type,
@@ -157,6 +158,7 @@ export function SongCard({
 }: {
   song: MaiDbSong;
   onSelect?: (song: MaiDbSong, trigger?: HTMLElement | null) => void;
+  currentSearch?: Record<string, unknown>;
   useChartConstant?: boolean;
   difficulty?: string;
   type?: string;
@@ -167,7 +169,6 @@ export function SongCard({
   maxInternalLevel?: number;
 }) {
   const [imgError, setImgError] = useState(false);
-  const search = useLocation({ select: (location) => location.search });
   const thumbnailUrl = song.internalImageId
     ? `${THUMBNAIL_BASE}/${song.internalImageId}.png`
     : null;
@@ -204,7 +205,7 @@ export function SongCard({
     <Link
       to="/songs/$slug"
       params={{ slug: song.slug }}
-      search={search}
+      search={currentSearch}
       resetScroll={false}
       className="group relative flex cursor-pointer flex-col overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
       style={{ borderColor: `color-mix(in oklch, ${catColor} 25%, transparent)` }}
@@ -263,7 +264,7 @@ export function SongCard({
       </div>
     </Link>
   );
-}
+});
 
 export function SongCardSkeleton() {
   return (
