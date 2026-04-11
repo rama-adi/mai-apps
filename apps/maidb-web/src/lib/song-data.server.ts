@@ -1,16 +1,7 @@
 import { env } from "cloudflare:workers";
 import type { MaiDbSong, Metadata, SongFiltersData } from "maidb-data";
 
-import {
-  buildFilterOptions,
-  CHART_TYPES,
-  CATEGORIES,
-  DIFFICULTIES,
-  REGIONS,
-  sortSongsByReleaseDate,
-  type FilterOptions,
-  VERSIONS,
-} from "maidb-data";
+import { buildFilterOptions, sortSongsByReleaseDate, type FilterOptions } from "maidb-data";
 
 type LazyJsonModule<T> = T & { default?: T };
 
@@ -139,7 +130,7 @@ async function getSongCatalogIndex(): Promise<SongCatalogIndex> {
         bySlug,
         byVersion,
         filterOptions: buildFilterOptions(songs),
-        filtersData: buildSongFiltersData(songs),
+        filtersData: await buildSongFiltersData(songs),
         slugs: songs.map((song) => song.slug),
       };
     })().catch((error) => {
@@ -201,7 +192,9 @@ export async function getSongFiltersData(): Promise<SongFiltersData> {
   return index.filtersData;
 }
 
-function buildSongFiltersData(songs: MaiDbSong[]): SongFiltersData {
+async function buildSongFiltersData(songs: MaiDbSong[]): Promise<SongFiltersData> {
+  const metadata = await getMetadata();
+
   const categories = new Set<string>();
   const versions = new Set<string>();
   const difficulties = new Set<string>();
@@ -240,20 +233,24 @@ function buildSongFiltersData(songs: MaiDbSong[]): SongFiltersData {
     }
   }
 
-  const knownCategories = new Set(CATEGORIES.map((category) => category.category));
-  const knownVersions = new Set(VERSIONS.map((version) => version.version));
-  const knownDifficulties = new Set(DIFFICULTIES.map((difficulty) => difficulty.difficulty));
-  const knownTypes = new Set(CHART_TYPES.map((type) => type.type));
-  const knownRegions = new Set(REGIONS.map((region) => region.region));
+  const knownCategories = new Set(metadata.categories.map((category) => category.slug));
+  const knownVersions = new Set(metadata.versions.map((version) => version.slug));
+  const knownDifficulties = new Set(
+    metadata.difficulties.map((difficulty) => difficulty.difficulty),
+  );
+  const knownTypes = new Set(metadata.chart_types.map((type) => type.type));
+  const knownRegions = new Set(metadata.regions.map((region) => region.region));
   const sortedBpms = sortNumbers(bpms);
   const sortedInternalLevels = sortNumbers(internalLevels);
 
   return {
     categories: [
-      ...CATEGORIES.filter((category) => categories.has(category.category)).map((category) => ({
-        value: category.category,
-        label: category.category,
-      })),
+      ...metadata.categories
+        .filter((category) => categories.has(category.slug))
+        .map((category) => ({
+          value: category.slug,
+          label: category.category,
+        })),
       ...sortStrings([...categories].filter((category) => !knownCategories.has(category))).map(
         (category) => ({
           value: category,
@@ -262,10 +259,12 @@ function buildSongFiltersData(songs: MaiDbSong[]): SongFiltersData {
       ),
     ],
     versions: [
-      ...VERSIONS.filter((version) => versions.has(version.version)).map((version) => ({
-        value: version.version,
-        label: version.abbr,
-      })),
+      ...metadata.versions
+        .filter((version) => versions.has(version.slug))
+        .map((version) => ({
+          value: version.slug,
+          label: version.abbr,
+        })),
       ...sortStrings([...versions].filter((version) => !knownVersions.has(version))).map(
         (version) => ({
           value: version,
@@ -274,13 +273,13 @@ function buildSongFiltersData(songs: MaiDbSong[]): SongFiltersData {
       ),
     ],
     difficulties: [
-      ...DIFFICULTIES.filter((difficulty) => difficulties.has(difficulty.difficulty)).map(
-        (difficulty) => ({
+      ...metadata.difficulties
+        .filter((difficulty) => difficulties.has(difficulty.difficulty))
+        .map((difficulty) => ({
           value: difficulty.difficulty,
           label: difficulty.name,
           color: difficulty.color,
-        }),
-      ),
+        })),
       ...sortStrings(
         [...difficulties].filter((difficulty) => !knownDifficulties.has(difficulty)),
       ).map((difficulty) => ({
@@ -290,10 +289,12 @@ function buildSongFiltersData(songs: MaiDbSong[]): SongFiltersData {
       })),
     ],
     types: [
-      ...CHART_TYPES.filter((type) => types.has(type.type)).map((type) => ({
-        value: type.type,
-        label: type.abbr ?? type.name,
-      })),
+      ...metadata.chart_types
+        .filter((type) => types.has(type.type))
+        .map((type) => ({
+          value: type.type,
+          label: type.abbr ?? type.name,
+        })),
       ...sortStrings([...types].filter((type) => !knownTypes.has(type))).map((type) => ({
         value: type,
         label: type,
@@ -313,10 +314,12 @@ function buildSongFiltersData(songs: MaiDbSong[]): SongFiltersData {
       values: sortedBpms,
     },
     regions: [
-      ...REGIONS.filter((region) => regions.has(region.region)).map((region) => ({
-        value: region.region,
-        label: region.label,
-      })),
+      ...metadata.regions
+        .filter((region) => regions.has(region.region))
+        .map((region) => ({
+          value: region.region,
+          label: region.label,
+        })),
       ...sortStrings([...regions].filter((region) => !knownRegions.has(region))).map((region) => ({
         value: region,
         label: region.toUpperCase(),

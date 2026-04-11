@@ -90,7 +90,10 @@ export function SongBrowserGridView({
 
   return (
     <section className="mt-4">
-      <div ref={gridRef} className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div
+        ref={gridRef}
+        className="grid w-full gap-3 sm:grid-cols-[repeat(2,minmax(0,1fr))] lg:grid-cols-[repeat(3,minmax(0,1fr))]"
+      >
         {isLoading
           ? Array.from({ length: 12 }).map((_, index) => <SongCardSkeleton key={index} />)
           : songs && songs.length > 0

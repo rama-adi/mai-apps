@@ -25,6 +25,7 @@
     "./components/ui/input": "./dist/components/ui/input.mjs",
     "./components/ui/select": "./dist/components/ui/select.mjs",
     "./components/ui/separator": "./dist/components/ui/separator.mjs",
+    "./components/ui/sheet": "./dist/components/ui/sheet.mjs",
     "./components/ui/skeleton": "./dist/components/ui/skeleton.mjs",
     "./components/ui/switch": "./dist/components/ui/switch.mjs",
     "./components/ui/tabs": "./dist/components/ui/tabs.mjs",
@@ -36,7 +37,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "vp pack",
+    "build": "vp pack --exports",
     "dev": "vp pack --watch",
     "test": "vp test",
     "check": "vp check",

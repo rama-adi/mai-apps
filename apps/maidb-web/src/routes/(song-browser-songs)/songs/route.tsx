@@ -73,7 +73,10 @@ function SongBrowserPage() {
 
   return (
     <SongCatalogProvider>
-      <main className="mx-auto max-w-5xl flex-1 px-4 pb-12 pt-6" data-song-browser-surface="">
+      <main
+        className="mx-auto w-full max-w-5xl flex-1 px-4 pb-12 pt-6"
+        data-song-browser-surface=""
+      >
         {/* Back nav */}
         <Link
           to="/"
