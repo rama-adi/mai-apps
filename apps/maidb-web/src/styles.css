@@ -3,6 +3,10 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/figtree";
 
+/* Scan the UI package for Tailwind classes */
+@source "../../../packages/ui/dist/**/*.{js,mjs}";
+@source "../../../packages/ui/src/**/*.{ts,tsx}";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

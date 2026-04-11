@@ -403,11 +403,12 @@ export function SongBrowserFilters() {
               )}
             </button>
           </SheetTrigger>
-          <SheetContent side="bottom" className="h-[85vh] px-4 pb-6">
-            <SheetHeader className="px-0 pb-2">
+          <SheetContent side="bottom" className="px-4 pb-8 pt-2">
+            <div className="mx-auto mb-4 h-1.5 w-12 rounded-full bg-muted" />
+            <SheetHeader className="px-0 pb-4">
               <SheetTitle>Filters</SheetTitle>
             </SheetHeader>
-            <div className="overflow-y-auto pr-1">{filterContent}</div>
+            <div className="max-h-[60dvh] overflow-y-auto pr-1">{filterContent}</div>
           </SheetContent>
         </Sheet>
 
