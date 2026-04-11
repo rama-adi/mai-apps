@@ -68,8 +68,105 @@ export function searchSongsByKeyword(songs: MaiDbSong[], query: string): MaiDbSo
   return sortSongsByReleaseDate(fuse.search(trimmedQuery).map((result) => result.item));
 }
 
+function isBrowsableSheet(sheet: MaiDbSong["sheets"][number]): boolean {
+  return sheet.type !== "utage" && !sheet.isSpecial;
+}
+
+function matchesSheetFilters(sheet: MaiDbSong["sheets"][number], filters: SongFilters): boolean {
+  if (!isBrowsableSheet(sheet)) return false;
+  if (filters.difficulty && sheet.difficulty !== filters.difficulty) return false;
+  if (filters.type && sheet.type !== filters.type) return false;
+  if (filters.region) {
+    const region = filters.region as keyof typeof sheet.regions;
+    if (!sheet.regions[region]) return false;
+  }
+  if (filters.minLevel != null && sheet.levelValue < filters.minLevel) return false;
+  if (filters.maxLevel != null && sheet.levelValue > filters.maxLevel) return false;
+  if (filters.minInternalLevel != null) {
+    if (sheet.internalLevelValue <= 0 || sheet.internalLevelValue < filters.minInternalLevel) {
+      return false;
+    }
+  }
+  if (filters.maxInternalLevel != null) {
+    if (sheet.internalLevelValue <= 0 || sheet.internalLevelValue > filters.maxInternalLevel) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function getClosestLevelDistance(song: MaiDbSong, filters: SongFilters): number {
+  let minDistance = Number.POSITIVE_INFINITY;
+  for (const sh of song.sheets) {
+    if (
+      !matchesSheetFilters(sh, {
+        difficulty: filters.difficulty,
+        type: filters.type,
+        region: filters.region,
+      })
+    ) {
+      continue;
+    }
+
+    const candidates = [
+      {
+        active: filters.minLevel != null || filters.maxLevel != null,
+        min: filters.minLevel,
+        max: filters.maxLevel,
+        value: sh.levelValue,
+      },
+      {
+        active: filters.minInternalLevel != null || filters.maxInternalLevel != null,
+        min: filters.minInternalLevel,
+        max: filters.maxInternalLevel,
+        value: sh.internalLevelValue,
+        skip: sh.internalLevelValue <= 0,
+      },
+    ];
+
+    let distance = 0;
+    let hasActiveRange = false;
+
+    for (const candidate of candidates) {
+      if (!candidate.active) continue;
+      if (candidate.skip) {
+        distance = Number.POSITIVE_INFINITY;
+        hasActiveRange = true;
+        break;
+      }
+
+      hasActiveRange = true;
+      const targetMin = candidate.min ?? -Number.POSITIVE_INFINITY;
+      const targetMax = candidate.max ?? Number.POSITIVE_INFINITY;
+      const targetCenter =
+        candidate.min != null && candidate.max != null
+          ? (candidate.min + candidate.max) / 2
+          : (candidate.min ?? candidate.max ?? 0);
+
+      if (candidate.value >= targetMin && candidate.value <= targetMax) {
+        distance += Math.abs(candidate.value - targetCenter);
+      } else if (candidate.value < targetMin) {
+        distance += targetMin - candidate.value + 100;
+      } else {
+        distance += candidate.value - targetMax + 100;
+      }
+    }
+
+    if (hasActiveRange) {
+      minDistance = Math.min(minDistance, distance);
+    }
+  }
+
+  return minDistance;
+}
+
 export function filterSongs(songs: MaiDbSong[], filters: SongFilters): MaiDbSong[] {
-  let result = songs;
+  const hasKeyword = Boolean(filters.q?.trim());
+  const hasLevelFilter = filters.minLevel != null || filters.maxLevel != null;
+  const hasInternalFilter = filters.minInternalLevel != null || filters.maxInternalLevel != null;
+
+  let result = hasKeyword ? searchSongsByKeyword(songs, filters.q!) : [...songs];
 
   if (filters.category) {
     result = result.filter((s) => s.category === filters.category);
@@ -77,51 +174,29 @@ export function filterSongs(songs: MaiDbSong[], filters: SongFilters): MaiDbSong
   if (filters.version) {
     result = result.filter((s) => s.version === filters.version);
   }
-  if (filters.difficulty) {
-    const d = filters.difficulty;
-    result = result.filter((s) => s.sheets.some((sh) => sh.difficulty === d));
-  }
-  if (filters.type) {
-    const t = filters.type;
-    result = result.filter((s) => s.sheets.some((sh) => sh.type === t));
-  }
-  if (filters.region) {
-    const r = filters.region as keyof MaiDbSong["sheets"][number]["regions"];
-    result = result.filter((s) => s.sheets.some((sh) => sh.regions[r]));
-  }
   if (filters.minBpm != null) {
     result = result.filter((s) => s.bpm >= filters.minBpm!);
   }
   if (filters.maxBpm != null) {
     result = result.filter((s) => s.bpm <= filters.maxBpm!);
   }
-  if (filters.minLevel != null) {
-    const min = filters.minLevel;
-    result = result.filter((s) => s.sheets.some((sh) => sh.levelValue >= min));
-  }
-  if (filters.maxLevel != null) {
-    const max = filters.maxLevel;
-    result = result.filter((s) => s.sheets.some((sh) => sh.levelValue <= max));
-  }
-  if (filters.minInternalLevel != null) {
-    const min = filters.minInternalLevel;
-    result = result.filter((s) =>
-      s.sheets.some((sh) => sh.internalLevelValue > 0 && sh.internalLevelValue >= min),
-    );
-  }
-  if (filters.maxInternalLevel != null) {
-    const max = filters.maxInternalLevel;
-    result = result.filter((s) =>
-      s.sheets.some((sh) => sh.internalLevelValue > 0 && sh.internalLevelValue <= max),
+  if (filters.difficulty || filters.type || filters.region || hasLevelFilter || hasInternalFilter) {
+    result = result.filter((song) =>
+      song.sheets.some((sheet) => matchesSheetFilters(sheet, filters)),
     );
   }
   if (filters.isNew != null) {
     result = result.filter((s) => s.isNew === filters.isNew);
   }
 
-  if (filters.q) {
-    result = searchSongsByKeyword(result, filters.q);
-  } else {
+  if (!hasKeyword && (hasLevelFilter || hasInternalFilter)) {
+    result = [...result].sort((a, b) => {
+      const distA = getClosestLevelDistance(a, filters);
+      const distB = getClosestLevelDistance(b, filters);
+      if (distA !== distB) return distA - distB;
+      return compareReleaseDatesDesc(a, b);
+    });
+  } else if (!hasKeyword) {
     result = sortSongsByReleaseDate(result);
   }
 

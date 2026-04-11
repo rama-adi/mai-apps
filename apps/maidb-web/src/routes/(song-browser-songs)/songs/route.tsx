@@ -8,11 +8,11 @@ import { SongBrowserGridView } from "../../../components/song-browser/SongBrowse
 import { SongBrowserSearchBar } from "../../../components/song-browser/SongBrowserSearchBar";
 import { SongCatalogProvider } from "../../../lib/song-catalog";
 import {
-  validateSongBrowserSearch,
   type SongBrowserFilterOptions,
   type SongBrowserSearchParams,
+  validateSongBrowserSearch,
 } from "../../../components/song-browser/song-browser.types";
-import { getSongsPageLatest, getSongsPageFiltersData } from "../../-server/songs-index";
+import { getSongsPageFiltersData, getSongsPageSongs } from "../../-server/songs-index";
 
 export const Route = createFileRoute("/(song-browser-songs)/songs")({
   validateSearch: validateSongBrowserSearch,
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/(song-browser-songs)/songs")({
   }),
   loader: async () => {
     const [songs, filterOptions] = await Promise.all([
-      getSongsPageLatest(),
+      getSongsPageSongs(),
       getSongsPageFiltersData(),
     ]);
     return { songs, filterOptions };
@@ -115,7 +115,7 @@ function SongBrowserPage() {
   };
 
   return (
-    <SongCatalogProvider>
+    <SongCatalogProvider initialSongs={loaderSongs}>
       <main
         className="mx-auto w-full max-w-5xl flex-1 px-4 pb-12 pt-6"
         data-song-browser-surface=""

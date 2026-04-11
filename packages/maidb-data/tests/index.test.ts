@@ -117,3 +117,111 @@ test("filterSongs returns searched matches newest first", () => {
     ["newest-song", "oldest-song"],
   );
 });
+
+test("filterSongs applies keyword search before level filtering", () => {
+  const keywordAndLevelMatch = createSong({
+    songId: "keyword-and-level-match",
+    title: "Aurora Expert",
+    slug: "aurora-expert",
+    keyword: "aurora expert",
+    sheets: [
+      {
+        ...createSong({}).sheets[0],
+        difficulty: "expert",
+        level: "12",
+        levelValue: 12,
+      },
+    ],
+  });
+  const levelOnlyMatch = createSong({
+    songId: "level-only-match",
+    title: "Completely Different",
+    slug: "different-song",
+    keyword: "different song",
+    releaseDate: "2025-06-01",
+    sheets: [
+      {
+        ...createSong({}).sheets[0],
+        difficulty: "expert",
+        level: "12",
+        levelValue: 12,
+      },
+    ],
+  });
+
+  expect(
+    filterSongs([levelOnlyMatch, keywordAndLevelMatch], {
+      q: "aurora",
+      minLevel: 12,
+      maxLevel: 12,
+    }).map((song) => song.songId),
+  ).toEqual(["keyword-and-level-match"]);
+});
+
+test("filterSongs requires the same visible chart to satisfy difficulty and level filters", () => {
+  const mismatchedSong = createSong({
+    songId: "mismatched-song",
+    slug: "mismatched-song",
+    sheets: [
+      {
+        ...createSong({}).sheets[0],
+        difficulty: "basic",
+        level: "12",
+        levelValue: 12,
+      },
+      {
+        ...createSong({}).sheets[0],
+        difficulty: "expert",
+        level: "8",
+        levelValue: 8,
+      },
+    ],
+  });
+  const matchingSong = createSong({
+    songId: "matching-song",
+    slug: "matching-song",
+    sheets: [
+      {
+        ...createSong({}).sheets[0],
+        difficulty: "expert",
+        level: "12",
+        levelValue: 12,
+      },
+    ],
+  });
+
+  expect(
+    filterSongs([mismatchedSong, matchingSong], {
+      difficulty: "expert",
+      minLevel: 12,
+      maxLevel: 12,
+    }).map((song) => song.songId),
+  ).toEqual(["matching-song"]);
+});
+
+test("filterSongs excludes utage or special-only matches from level results", () => {
+  const utageOnlyMatch = createSong({
+    songId: "utage-only-match",
+    slug: "utage-only-match",
+    sheets: [
+      {
+        ...createSong({}).sheets[0],
+        type: "utage",
+        isSpecial: true,
+        level: "12",
+        levelValue: 12,
+      },
+    ],
+  });
+  const normalMatch = createSong({
+    songId: "normal-match",
+    slug: "normal-match",
+  });
+
+  expect(
+    filterSongs([utageOnlyMatch, normalMatch], {
+      minLevel: 12,
+      maxLevel: 12,
+    }).map((song) => song.songId),
+  ).toEqual(["normal-match"]);
+});

@@ -1,13 +1,14 @@
 import { createServerFn } from "@tanstack/react-start";
 import {
   getFilterOptions as getFilterOptionsServer,
-  getLatestSongs as getLatestSongsServer,
+  loadSongList as loadSongListServer,
   getSongFiltersData as getSongFiltersDataServer,
 } from "../../lib/song-data.server";
 import type { FilterOptions, SongFiltersData } from "maidb-data";
 
-export const getSongsPageLatest = createServerFn({ method: "GET" }).handler((async () => {
-  return getLatestSongsServer();
+export const getSongsPageSongs = createServerFn({ method: "GET" }).handler((async () => {
+  const { songs } = await loadSongListServer();
+  return songs;
 }) as never);
 
 export const getSongsPageFilterOptions = createServerFn({ method: "GET" }).handler(

@@ -21,6 +21,10 @@ type SongBrowserContextValue = {
   isFiltered: boolean;
   isLoading: boolean;
   loadMore: (pageCount?: number) => void;
+  maxInternalLevel?: number;
+  maxLevel?: number;
+  minInternalLevel?: number;
+  minLevel?: number;
   pageSize: number;
   search: SongBrowserSearchParams;
   searchInput: string;
@@ -166,6 +170,10 @@ export function SongBrowser({
       startTransition(() => {
         setVisibleCount((count) => count + pageSize * Math.max(1, pageCount));
       }),
+    maxInternalLevel,
+    maxLevel,
+    minInternalLevel,
+    minLevel,
     pageSize,
     search: controlledSearch,
     searchInput,

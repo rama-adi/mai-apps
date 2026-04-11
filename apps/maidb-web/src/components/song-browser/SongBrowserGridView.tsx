@@ -17,9 +17,14 @@ export function SongBrowserGridView({
 }) {
   const {
     canLoadMore,
+    search,
     isFiltered,
     isLoading,
     loadMore,
+    maxInternalLevel,
+    maxLevel,
+    minInternalLevel,
+    minLevel,
     pageSize,
     songs,
     totalCount,
@@ -103,6 +108,13 @@ export function SongBrowserGridView({
                   song={song}
                   onSelect={onSongSelect}
                   useChartConstant={useChartConstant}
+                  difficulty={search.difficulty}
+                  type={search.type}
+                  region={search.region}
+                  minLevel={minLevel}
+                  maxLevel={maxLevel}
+                  minInternalLevel={minInternalLevel}
+                  maxInternalLevel={maxInternalLevel}
                 />
               ))
             : null}

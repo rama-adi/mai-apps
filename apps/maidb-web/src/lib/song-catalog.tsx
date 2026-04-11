@@ -15,15 +15,25 @@ const DEFAULT_SONG_CATALOG_URL = "/songlist";
 
 export function SongCatalogProvider({
   children,
+  initialSongs = null,
+  shouldHydrate = true,
   url = DEFAULT_SONG_CATALOG_URL,
 }: {
   children: ReactNode;
+  initialSongs?: MaiDbSong[] | null;
+  shouldHydrate?: boolean;
   url?: string;
 }) {
-  const [songs, setSongs] = useState<MaiDbSong[] | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [songs, setSongs] = useState<MaiDbSong[] | null>(initialSongs);
+  const [isLoading, setIsLoading] = useState(shouldHydrate && initialSongs == null);
 
   useEffect(() => {
+    if (!shouldHydrate) {
+      setSongs(initialSongs);
+      setIsLoading(false);
+      return;
+    }
+
     let isMounted = true;
 
     setIsLoading(true);
@@ -49,7 +59,7 @@ export function SongCatalogProvider({
     return () => {
       isMounted = false;
     };
-  }, [url]);
+  }, [initialSongs, shouldHydrate, url]);
 
   return <SongCatalogContext value={{ songs, isLoading }}>{children}</SongCatalogContext>;
 }

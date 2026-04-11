@@ -7,19 +7,128 @@ const THUMBNAIL_BASE = "https://maisongdb-blob.onebyteworks.my.id/thumb";
 
 const DIFF_ORDER = ["basic", "advanced", "expert", "master", "remaster"];
 
-function getTopDifficulties(song: MaiDbSong, useChartConstant: boolean) {
-  const best = new Map<string, { level: string; internalLevelValue: number; levelValue: number }>();
-  for (const s of song.sheets) {
-    if (s.type === "utage" || s.isSpecial) continue;
-    const existing = best.get(s.difficulty);
-    if (!existing || s.levelValue > existing.levelValue) {
-      best.set(s.difficulty, {
-        level: s.level,
-        internalLevelValue: s.internalLevelValue,
-        levelValue: s.levelValue,
-      });
+interface ChartFilters {
+  difficulty?: string;
+  type?: string;
+  region?: string;
+  minLevel?: number;
+  maxLevel?: number;
+  minInternalLevel?: number;
+  maxInternalLevel?: number;
+}
+
+function isBrowsableSheet(sheet: MaiDbSong["sheets"][number]): boolean {
+  return sheet.type !== "utage" && !sheet.isSpecial;
+}
+
+function matchesChartFilters(sheet: MaiDbSong["sheets"][number], filters: ChartFilters): boolean {
+  if (!isBrowsableSheet(sheet)) return false;
+  if (filters.difficulty && sheet.difficulty !== filters.difficulty) return false;
+  if (filters.type && sheet.type !== filters.type) return false;
+  if (filters.region) {
+    const region = filters.region as keyof typeof sheet.regions;
+    if (!sheet.regions[region]) return false;
+  }
+  if (filters.minLevel != null && sheet.levelValue < filters.minLevel) return false;
+  if (filters.maxLevel != null && sheet.levelValue > filters.maxLevel) return false;
+  if (filters.minInternalLevel != null) {
+    if (sheet.internalLevelValue <= 0 || sheet.internalLevelValue < filters.minInternalLevel) {
+      return false;
     }
   }
+  if (filters.maxInternalLevel != null) {
+    if (sheet.internalLevelValue <= 0 || sheet.internalLevelValue > filters.maxInternalLevel) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function hasActiveChartFilters(filters: ChartFilters): boolean {
+  return (
+    filters.difficulty != null ||
+    filters.type != null ||
+    filters.region != null ||
+    filters.minLevel != null ||
+    filters.maxLevel != null ||
+    filters.minInternalLevel != null ||
+    filters.maxInternalLevel != null
+  );
+}
+
+function getChartDistance(sheet: MaiDbSong["sheets"][number], filters: ChartFilters): number {
+  const candidates = [
+    {
+      active: filters.minLevel != null || filters.maxLevel != null,
+      min: filters.minLevel,
+      max: filters.maxLevel,
+      value: sheet.levelValue,
+    },
+    {
+      active: filters.minInternalLevel != null || filters.maxInternalLevel != null,
+      min: filters.minInternalLevel,
+      max: filters.maxInternalLevel,
+      value: sheet.internalLevelValue,
+      skip: sheet.internalLevelValue <= 0,
+    },
+  ];
+
+  let distance = 0;
+  for (const candidate of candidates) {
+    if (!candidate.active) continue;
+    if (candidate.skip) return Number.POSITIVE_INFINITY;
+
+    const targetMin = candidate.min ?? -Number.POSITIVE_INFINITY;
+    const targetMax = candidate.max ?? Number.POSITIVE_INFINITY;
+    const targetCenter =
+      candidate.min != null && candidate.max != null
+        ? (candidate.min + candidate.max) / 2
+        : (candidate.min ?? candidate.max ?? 0);
+
+    if (candidate.value >= targetMin && candidate.value <= targetMax) {
+      distance += Math.abs(candidate.value - targetCenter);
+    } else if (candidate.value < targetMin) {
+      distance += targetMin - candidate.value + 100;
+    } else {
+      distance += candidate.value - targetMax + 100;
+    }
+  }
+
+  return distance;
+}
+
+function getDisplayedDifficulties(
+  song: MaiDbSong,
+  useChartConstant: boolean,
+  filters: ChartFilters = {},
+) {
+  const best = new Map<
+    string,
+    { level: string; internalLevelValue: number; levelValue: number; distance: number }
+  >();
+  const useFilteredCharts = hasActiveChartFilters(filters);
+
+  for (const sheet of song.sheets) {
+    if (!isBrowsableSheet(sheet)) continue;
+    if (useFilteredCharts && !matchesChartFilters(sheet, filters)) continue;
+
+    const entry = {
+      level: sheet.level,
+      internalLevelValue: sheet.internalLevelValue,
+      levelValue: sheet.levelValue,
+      distance: useFilteredCharts ? getChartDistance(sheet, filters) : -sheet.levelValue,
+    };
+    const existing = best.get(sheet.difficulty);
+    if (
+      !existing ||
+      entry.distance < existing.distance ||
+      (entry.distance === existing.distance && entry.levelValue > existing.levelValue)
+    ) {
+      best.set(sheet.difficulty, entry);
+    }
+  }
+
   return DIFF_ORDER.filter((d) => best.has(d)).map((d) => {
     const entry = best.get(d)!;
     const displayValue =
@@ -38,10 +147,24 @@ export function SongCard({
   song,
   onSelect,
   useChartConstant = false,
+  difficulty,
+  type,
+  region,
+  minLevel,
+  maxLevel,
+  minInternalLevel,
+  maxInternalLevel,
 }: {
   song: MaiDbSong;
   onSelect?: (song: MaiDbSong, trigger?: HTMLElement | null) => void;
   useChartConstant?: boolean;
+  difficulty?: string;
+  type?: string;
+  region?: string;
+  minLevel?: number;
+  maxLevel?: number;
+  minInternalLevel?: number;
+  maxInternalLevel?: number;
 }) {
   const [imgError, setImgError] = useState(false);
   const search = useLocation({ select: (location) => location.search });
@@ -49,7 +172,15 @@ export function SongCard({
     ? `${THUMBNAIL_BASE}/${song.internalImageId}.png`
     : null;
   const catColor = CATEGORY_BY_SLUG[song.category]?.color ?? "#888";
-  const diffs = getTopDifficulties(song, useChartConstant);
+  const diffs = getDisplayedDifficulties(song, useChartConstant, {
+    difficulty,
+    type,
+    region,
+    minLevel,
+    maxLevel,
+    minInternalLevel,
+    maxInternalLevel,
+  });
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!song.slug) return;

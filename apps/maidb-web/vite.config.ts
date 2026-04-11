@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import { cloudflare } from "@cloudflare/vite-plugin";
 import { devtools } from "@tanstack/devtools-vite";
+import { fileURLToPath, URL } from "node:url";
 
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 
@@ -26,6 +27,14 @@ const config = defineConfig({
     viteReact(),
   ],
   resolve: {
+    alias: [
+      {
+        find: /^maidb-data$/,
+        replacement: fileURLToPath(
+          new URL("../../packages/maidb-data/src/index.ts", import.meta.url),
+        ),
+      },
+    ],
     tsconfigPaths: true,
   },
 });
