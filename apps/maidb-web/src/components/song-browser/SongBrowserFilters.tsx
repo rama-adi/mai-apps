@@ -1,5 +1,5 @@
 import { ChevronDown, ChevronUp, SlidersHorizontal, Sparkles, X } from "lucide-react";
-import { useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
 import {
   Sheet,
   SheetContent,
@@ -8,6 +8,7 @@ import {
   SheetTrigger,
 } from "@packages/ui/components/ui/sheet";
 import { useSongBrowser } from "./SongBrowser";
+import type { SongBrowserSearchParams } from "./song-browser.types";
 
 const selectClass =
   "h-8 w-full rounded-md border border-border/60 bg-background px-2.5 text-sm text-foreground transition-colors outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20";
@@ -30,9 +31,21 @@ export function SongBrowserFilters() {
     localFilters,
     search,
     setFilter,
+    setFilters,
     totalCount,
     isLoading,
   } = useSongBrowser();
+
+  // Helper to clear range filters in a single batch update
+  const clearRangeFilter = useCallback(
+    (
+      minKey: "minBpm" | "minLevel" | "minInternalLevel",
+      maxKey: "maxBpm" | "maxLevel" | "maxInternalLevel",
+    ) => {
+      setFilters({ [minKey]: undefined, [maxKey]: undefined } as Partial<SongBrowserSearchParams>);
+    },
+    [setFilters],
+  );
   const [isOpen, setIsOpen] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
 
@@ -55,14 +68,13 @@ export function SongBrowserFilters() {
   const formIsNew = localFilters.isNew;
 
   const toggleChartConstant = (on: boolean) => {
-    setFilter("useChartConstant", on || undefined);
-    if (on) {
-      setFilter("minLevel", undefined);
-      setFilter("maxLevel", undefined);
-    } else {
-      setFilter("minInternalLevel", undefined);
-      setFilter("maxInternalLevel", undefined);
-    }
+    setFilters({
+      useChartConstant: on || undefined,
+      minLevel: undefined,
+      maxLevel: undefined,
+      minInternalLevel: undefined,
+      maxInternalLevel: undefined,
+    });
   };
 
   const integerLevels = filterOptions.internalLevelRange.values
@@ -114,20 +126,14 @@ export function SongBrowserFilters() {
             filterOptions.bpmRange.min,
             filterOptions.bpmRange.max,
           )}`,
-          onClear: () => {
-            setFilter("minBpm", undefined);
-            setFilter("maxBpm", undefined);
-          },
+          onClear: () => clearRangeFilter("minBpm", "maxBpm"),
         }
       : null,
     search.minLevel != null || search.maxLevel != null
       ? {
           key: "level",
           label: `Level: ${formatRange(search.minLevel, search.maxLevel)}`,
-          onClear: () => {
-            setFilter("minLevel", undefined);
-            setFilter("maxLevel", undefined);
-          },
+          onClear: () => clearRangeFilter("minLevel", "maxLevel"),
         }
       : null,
     search.minInternalLevel != null || search.maxInternalLevel != null
@@ -140,10 +146,7 @@ export function SongBrowserFilters() {
             undefined,
             (value) => value.toFixed(1),
           )}`,
-          onClear: () => {
-            setFilter("minInternalLevel", undefined);
-            setFilter("maxInternalLevel", undefined);
-          },
+          onClear: () => clearRangeFilter("minInternalLevel", "maxInternalLevel"),
         }
       : null,
     search.isNew != null

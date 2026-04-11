@@ -96,8 +96,25 @@ function matchesSheetFilters(sheet: MaiDbSong["sheets"][number], filters: SongFi
   return true;
 }
 
-function getClosestLevelDistance(song: MaiDbSong, filters: SongFilters): number {
-  let minDistance = Number.POSITIVE_INFINITY;
+/**
+ * Get the minimum matching value for sorting.
+ * Returns the smallest matching BPM, level, or internal level value.
+ */
+function getMinMatchingValue(song: MaiDbSong, filters: SongFilters): number {
+  let minValue = Number.POSITIVE_INFINITY;
+  let hasActiveFilter = false;
+
+  // Check BPM filters
+  if (filters.minBpm != null || filters.maxBpm != null) {
+    hasActiveFilter = true;
+    const bpmMin = filters.minBpm ?? -Number.POSITIVE_INFINITY;
+    const bpmMax = filters.maxBpm ?? Number.POSITIVE_INFINITY;
+    if (song.bpm >= bpmMin && song.bpm <= bpmMax) {
+      minValue = Math.min(minValue, song.bpm);
+    }
+  }
+
+  // Check level/internal filters on sheets
   for (const sh of song.sheets) {
     if (
       !matchesSheetFilters(sh, {
@@ -109,62 +126,38 @@ function getClosestLevelDistance(song: MaiDbSong, filters: SongFilters): number 
       continue;
     }
 
-    const candidates = [
-      {
-        active: filters.minLevel != null || filters.maxLevel != null,
-        min: filters.minLevel,
-        max: filters.maxLevel,
-        value: sh.levelValue,
-      },
-      {
-        active: filters.minInternalLevel != null || filters.maxInternalLevel != null,
-        min: filters.minInternalLevel,
-        max: filters.maxInternalLevel,
-        value: sh.internalLevelValue,
-        skip: sh.internalLevelValue <= 0,
-      },
-    ];
-
-    let distance = 0;
-    let hasActiveRange = false;
-
-    for (const candidate of candidates) {
-      if (!candidate.active) continue;
-      if (candidate.skip) {
-        distance = Number.POSITIVE_INFINITY;
-        hasActiveRange = true;
-        break;
-      }
-
-      hasActiveRange = true;
-      const targetMin = candidate.min ?? -Number.POSITIVE_INFINITY;
-      const targetMax = candidate.max ?? Number.POSITIVE_INFINITY;
-      const targetCenter =
-        candidate.min != null && candidate.max != null
-          ? (candidate.min + candidate.max) / 2
-          : (candidate.min ?? candidate.max ?? 0);
-
-      if (candidate.value >= targetMin && candidate.value <= targetMax) {
-        distance += Math.abs(candidate.value - targetCenter);
-      } else if (candidate.value < targetMin) {
-        distance += targetMin - candidate.value + 100;
-      } else {
-        distance += candidate.value - targetMax + 100;
+    // Check level filter
+    if (filters.minLevel != null || filters.maxLevel != null) {
+      hasActiveFilter = true;
+      const lvlMin = filters.minLevel ?? -Number.POSITIVE_INFINITY;
+      const lvlMax = filters.maxLevel ?? Number.POSITIVE_INFINITY;
+      if (sh.levelValue >= lvlMin && sh.levelValue <= lvlMax) {
+        minValue = Math.min(minValue, sh.levelValue);
       }
     }
 
-    if (hasActiveRange) {
-      minDistance = Math.min(minDistance, distance);
+    // Check internal level filter
+    if (filters.minInternalLevel != null || filters.maxInternalLevel != null) {
+      if (sh.internalLevelValue > 0) {
+        hasActiveFilter = true;
+        const intMin = filters.minInternalLevel ?? -Number.POSITIVE_INFINITY;
+        const intMax = filters.maxInternalLevel ?? Number.POSITIVE_INFINITY;
+        if (sh.internalLevelValue >= intMin && sh.internalLevelValue <= intMax) {
+          minValue = Math.min(minValue, sh.internalLevelValue);
+        }
+      }
     }
   }
 
-  return minDistance;
+  return hasActiveFilter ? minValue : Number.POSITIVE_INFINITY;
 }
 
 export function filterSongs(songs: MaiDbSong[], filters: SongFilters): MaiDbSong[] {
   const hasKeyword = Boolean(filters.q?.trim());
   const hasLevelFilter = filters.minLevel != null || filters.maxLevel != null;
   const hasInternalFilter = filters.minInternalLevel != null || filters.maxInternalLevel != null;
+  const hasBpmFilter = filters.minBpm != null || filters.maxBpm != null;
+  const hasActiveRangeFilter = hasLevelFilter || hasInternalFilter || hasBpmFilter;
 
   let result = hasKeyword ? searchSongsByKeyword(songs, filters.q!) : [...songs];
 
@@ -189,14 +182,20 @@ export function filterSongs(songs: MaiDbSong[], filters: SongFilters): MaiDbSong
     result = result.filter((s) => s.isNew === filters.isNew);
   }
 
-  if (!hasKeyword && (hasLevelFilter || hasInternalFilter)) {
+  // Sort by smallest matching value when range filters are applied
+  if (hasActiveRangeFilter) {
     result = [...result].sort((a, b) => {
-      const distA = getClosestLevelDistance(a, filters);
-      const distB = getClosestLevelDistance(b, filters);
-      if (distA !== distB) return distA - distB;
-      return compareReleaseDatesDesc(a, b);
+      const minA = getMinMatchingValue(a, filters);
+      const minB = getMinMatchingValue(b, filters);
+      if (minA !== minB) return minA - minB;
+      // If no keyword search, fall back to release date for tie-breaking
+      if (!hasKeyword) {
+        return compareReleaseDatesDesc(a, b);
+      }
+      return 0;
     });
   } else if (!hasKeyword) {
+    // No range filters and no keyword: sort by release date
     result = sortSongsByReleaseDate(result);
   }
 

@@ -51,6 +51,7 @@ type SongBrowserContextValue = {
     key: K,
     value: SongBrowserSearchParams[K],
   ) => void;
+  setFilters: (updates: Partial<SongBrowserSearchParams>) => void;
   setSearchInput: (value: string) => void;
   songs?: MaiDbSong[];
   totalCount?: number;
@@ -199,6 +200,39 @@ export function SongBrowser({
     filterDebounceRef.current = setTimeout(() => {
       startTransition(() => {
         onSearchChange?.((prev) => ({ ...prev, [key]: value }));
+      });
+    }, 50);
+  };
+
+  const setFilters = (updates: Partial<SongBrowserSearchParams>) => {
+    setLocalFilters((prev) => ({
+      ...prev,
+      ...(updates.category !== undefined ? { category: updates.category ?? "" } : {}),
+      ...(updates.version !== undefined ? { version: updates.version ?? "" } : {}),
+      ...(updates.difficulty !== undefined ? { difficulty: updates.difficulty ?? "" } : {}),
+      ...(updates.type !== undefined ? { type: updates.type ?? "" } : {}),
+      ...(updates.region !== undefined ? { region: updates.region ?? "" } : {}),
+      ...(updates.minBpm !== undefined || "minBpm" in updates ? { minBpm: updates.minBpm } : {}),
+      ...(updates.maxBpm !== undefined || "maxBpm" in updates ? { maxBpm: updates.maxBpm } : {}),
+      ...(updates.minLevel !== undefined || "minLevel" in updates
+        ? { minLevel: updates.minLevel }
+        : {}),
+      ...(updates.maxLevel !== undefined || "maxLevel" in updates
+        ? { maxLevel: updates.maxLevel }
+        : {}),
+      ...(updates.minInternalLevel !== undefined || "minInternalLevel" in updates
+        ? { minInternalLevel: updates.minInternalLevel }
+        : {}),
+      ...(updates.maxInternalLevel !== undefined || "maxInternalLevel" in updates
+        ? { maxInternalLevel: updates.maxInternalLevel }
+        : {}),
+      ...(updates.isNew !== undefined || "isNew" in updates ? { isNew: updates.isNew } : {}),
+    }));
+
+    flushFilterDebounce();
+    filterDebounceRef.current = setTimeout(() => {
+      startTransition(() => {
+        onSearchChange?.((prev) => ({ ...prev, ...updates }));
       });
     }, 50);
   };
@@ -392,6 +426,7 @@ export function SongBrowser({
     search: controlledSearch,
     searchInput,
     setFilter,
+    setFilters,
     setSearchInput,
     songs: visibleSongs,
     totalCount: allSongs?.length,
