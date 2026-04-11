@@ -7,6 +7,10 @@ const THUMBNAIL_BASE = "https://maisongdb-blob.onebyteworks.my.id/thumb";
 
 const DIFF_ORDER = ["basic", "advanced", "expert", "master", "remaster"];
 
+// Utage color from constants (宴会場 = #888888)
+const UTAGE_COLOR = "#888888";
+const UTAGE_KANJI = "宴";
+
 interface ChartFilters {
   difficulty?: string;
   type?: string;
@@ -19,6 +23,40 @@ interface ChartFilters {
 
 function isBrowsableSheet(sheet: MaiDbSong["sheets"][number]): boolean {
   return sheet.type !== "utage" && !sheet.isSpecial;
+}
+
+function getUtageDisplayInfo(song: MaiDbSong, useChartConstant: boolean) {
+  const utageSheets = song.sheets.filter((s) => s.type === "utage");
+  if (utageSheets.length === 0) return null;
+
+  // Get the best utage sheet to display (prefer one with level > 0)
+  const bestSheet = utageSheets.find((s) => s.levelValue > 0) ?? utageSheets[0];
+
+  // Display the difficulty if it's not a standard difficulty, otherwise show level
+  const hasSpecialDifficulty = !["basic", "advanced", "expert", "master", "remaster"].includes(
+    bestSheet.difficulty,
+  );
+
+  let displayText: string;
+  if (hasSpecialDifficulty && bestSheet.difficulty) {
+    // Show the special difficulty (e.g., "【即】", "【星】")
+    displayText = bestSheet.difficulty;
+  } else if (bestSheet.levelValue > 0) {
+    // Show level value
+    displayText =
+      useChartConstant && bestSheet.internalLevelValue > 0
+        ? bestSheet.internalLevelValue.toFixed(1)
+        : bestSheet.level;
+  } else {
+    // Fallback to utage kanji
+    displayText = UTAGE_KANJI;
+  }
+
+  return {
+    text: displayText,
+    color: UTAGE_COLOR,
+    difficulty: bestSheet.difficulty,
+  };
 }
 
 function matchesChartFilters(sheet: MaiDbSong["sheets"][number], filters: ChartFilters): boolean {
@@ -110,7 +148,10 @@ function getDisplayedDifficulties(
   const useFilteredCharts = hasActiveChartFilters(filters);
 
   for (const sheet of song.sheets) {
-    if (!isBrowsableSheet(sheet)) continue;
+    // Skip utage sheets unless explicitly filtering by utage type
+    if (sheet.type === "utage" && filters.type !== "utage") continue;
+    // Skip special/non-browsable sheets (except utage when filtering for it)
+    if (!isBrowsableSheet(sheet) && !(sheet.type === "utage" && filters.type === "utage")) continue;
     if (useFilteredCharts && !matchesChartFilters(sheet, filters)) continue;
 
     const entry = {
@@ -182,6 +223,10 @@ export const SongCard = memo(function SongCard({
     minInternalLevel,
     maxInternalLevel,
   });
+
+  // Get utage display info if this song has utage sheets
+  // Show utage chip when: filtering by utage type, or song has utage sheets
+  const utageInfo = type === "utage" ? getUtageDisplayInfo(song, useChartConstant) : null;
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!song.slug) return;
@@ -256,6 +301,16 @@ export const SongCard = memo(function SongCard({
                 {d.level}
               </span>
             ))}
+            {/* Utage chip - displayed separately from regular difficulties */}
+            {utageInfo && (
+              <span
+                className="inline-flex min-w-[1.75rem] items-center justify-center rounded px-1 py-[1px] text-[10px] font-bold leading-tight text-white"
+                style={{ backgroundColor: utageInfo.color }}
+                title="utage"
+              >
+                {utageInfo.text}
+              </span>
+            )}
             <span className="ml-auto text-[10px] text-muted-foreground">
               {VERSION_BY_SLUG[song.version]?.abbr ?? song.version}
             </span>

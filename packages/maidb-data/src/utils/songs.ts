@@ -73,7 +73,9 @@ function isBrowsableSheet(sheet: MaiDbSong["sheets"][number]): boolean {
 }
 
 function matchesSheetFilters(sheet: MaiDbSong["sheets"][number], filters: SongFilters): boolean {
-  if (!isBrowsableSheet(sheet)) return false;
+  // When explicitly filtering by utage type, include utage sheets
+  // Otherwise, exclude utage and special sheets from normal filtering
+  if (filters.type !== "utage" && !isBrowsableSheet(sheet)) return false;
   if (filters.difficulty && sheet.difficulty !== filters.difficulty) return false;
   if (filters.type && sheet.type !== filters.type) return false;
   if (filters.region) {

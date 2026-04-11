@@ -1,5 +1,5 @@
 import { ChevronDown, ChevronUp, SlidersHorizontal, Sparkles, X } from "lucide-react";
-import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import {
   Sheet,
   SheetContent,
@@ -67,6 +67,12 @@ export function SongBrowserFilters() {
   const formMaxInternalLevel = localFilters.maxInternalLevel;
   const formIsNew = localFilters.isNew;
 
+  // Track previous type for mode switch handling
+  const prevTypeRef = useRef(formType);
+  useEffect(() => {
+    prevTypeRef.current = formType;
+  }, [formType]);
+
   const toggleChartConstant = (on: boolean) => {
     setFilters({
       useChartConstant: on || undefined,
@@ -103,7 +109,7 @@ export function SongBrowserFilters() {
           onClear: () => setFilter("difficulty", undefined),
         }
       : null,
-    search.type
+    search.type && search.type !== "utage"
       ? {
           key: "type",
           label: `Type: ${getOptionLabel(filterOptions.types, search.type)}`,
@@ -212,28 +218,37 @@ export function SongBrowserFilters() {
             className={selectClass}
           >
             <option value="">All</option>
-            {filterOptions.difficulties.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
+            {filterOptions.difficulties
+              .filter((option) => {
+                const isUtageDifficulty =
+                  option.value.startsWith("【") && option.value.endsWith("】");
+                return formType === "utage" ? isUtageDifficulty : !isUtageDifficulty;
+              })
+              .map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
           </select>
         </FilterField>
 
-        <FilterField label="Type">
-          <select
-            value={formType}
-            onChange={(event) => setFilter("type", event.target.value || undefined)}
-            className={selectClass}
-          >
-            <option value="">All</option>
-            {filterOptions.types.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </FilterField>
+        {/* Chart Type - hidden in utage mode since utage sheets don't have std/dx types */}
+        {formType !== "utage" && (
+          <FilterField label="Type">
+            <select
+              value={formType}
+              onChange={(event) => setFilter("type", event.target.value || undefined)}
+              className={selectClass}
+            >
+              <option value="">All</option>
+              {filterOptions.types.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </FilterField>
+        )}
 
         <FilterField label="Region">
           <select
@@ -253,6 +268,45 @@ export function SongBrowserFilters() {
 
       {/* Divider */}
       <div className="my-3 border-t border-border/40" />
+
+      {/* Mobile-only: Utage Toggle */}
+      <div className="flex sm:hidden items-center justify-between px-2 py-1">
+        <span className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+          Show Utage Songs
+        </span>
+        <button
+          type="button"
+          onClick={() => {
+            const turningOnUtage = formType !== "utage";
+
+            if (turningOnUtage) {
+              // Switching TO utage: set type and clear difficulty
+              setFilters({
+                type: "utage",
+                difficulty: undefined,
+              });
+            } else {
+              // Switching FROM utage: clear type and difficulty
+              setFilters({
+                type: undefined,
+                difficulty: undefined,
+              });
+            }
+          }}
+          className={[
+            "relative inline-flex h-5 w-9 items-center rounded-full transition-colors",
+            formType === "utage" ? "bg-primary" : "bg-muted",
+          ].join(" ")}
+          aria-pressed={formType === "utage"}
+        >
+          <span
+            className={[
+              "inline-block h-4 w-4 transform rounded-full bg-background transition-transform",
+              formType === "utage" ? "translate-x-5" : "translate-x-0.5",
+            ].join(" ")}
+          />
+        </button>
+      </div>
 
       <div className="grid gap-x-6 gap-y-4 sm:grid-cols-2 xl:grid-cols-3">
         {/* Level / Chart Constant */}
@@ -387,6 +441,43 @@ export function SongBrowserFilters() {
             <ChevronDown className="h-3.5 w-3.5 opacity-50" />
           )}
         </button>
+
+        {/* Normal/Utage Toggle */}
+        <div className="hidden sm:flex items-center gap-2 rounded-lg border border-border/70 bg-card px-2 py-1 pr-3">
+          <span className="text-[11px] font-medium text-muted-foreground">Utage</span>
+          <button
+            type="button"
+            onClick={() => {
+              const turningOnUtage = formType !== "utage";
+
+              if (turningOnUtage) {
+                // Switching TO utage: set type and clear difficulty
+                setFilters({
+                  type: "utage",
+                  difficulty: undefined,
+                });
+              } else {
+                // Switching FROM utage: clear type and difficulty
+                setFilters({
+                  type: undefined,
+                  difficulty: undefined,
+                });
+              }
+            }}
+            className={[
+              "relative inline-flex h-5 w-9 items-center rounded-full transition-colors",
+              formType === "utage" ? "bg-primary" : "bg-muted",
+            ].join(" ")}
+            aria-pressed={formType === "utage"}
+          >
+            <span
+              className={[
+                "inline-block h-4 w-4 transform rounded-full bg-background transition-transform",
+                formType === "utage" ? "translate-x-[18px]" : "translate-x-0.5",
+              ].join(" ")}
+            />
+          </button>
+        </div>
 
         {/* Mobile: Sheet trigger */}
         <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>

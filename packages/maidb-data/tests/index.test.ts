@@ -225,3 +225,65 @@ test("filterSongs excludes utage or special-only matches from level results", ()
     }).map((song) => song.songId),
   ).toEqual(["normal-match"]);
 });
+
+test("filterSongs includes utage songs when filtering by type 'utage'", () => {
+  const utageSong = createSong({
+    songId: "utage-song",
+    slug: "utage-song",
+    sheets: [
+      {
+        ...createSong({}).sheets[0],
+        type: "utage",
+        isSpecial: true,
+        level: "12",
+        levelValue: 12,
+      },
+    ],
+  });
+  const normalSong = createSong({
+    songId: "normal-song",
+    slug: "normal-song",
+  });
+
+  // When filtering by type "utage", only utage songs should be returned
+  expect(
+    filterSongs([utageSong, normalSong], {
+      type: "utage",
+    }).map((song) => song.songId),
+  ).toEqual(["utage-song"]);
+});
+
+test("filterSongs includes songs with both utage and regular sheets when filtering by type 'utage'", () => {
+  const mixedSong = createSong({
+    songId: "mixed-song",
+    slug: "mixed-song",
+    sheets: [
+      {
+        ...createSong({}).sheets[0],
+        type: "std",
+        difficulty: "expert",
+        level: "12",
+        levelValue: 12,
+      },
+      {
+        ...createSong({}).sheets[0],
+        type: "utage",
+        isSpecial: true,
+        difficulty: "remaster",
+        level: "14",
+        levelValue: 14,
+      },
+    ],
+  });
+  const normalSong = createSong({
+    songId: "normal-song",
+    slug: "normal-song",
+  });
+
+  // When filtering by type "utage", songs with utage sheets should be included
+  expect(
+    filterSongs([mixedSong, normalSong], {
+      type: "utage",
+    }).map((song) => song.songId),
+  ).toEqual(["mixed-song"]);
+});

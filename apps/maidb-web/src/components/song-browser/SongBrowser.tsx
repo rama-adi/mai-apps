@@ -199,7 +199,14 @@ export function SongBrowser({
     flushFilterDebounce();
     filterDebounceRef.current = setTimeout(() => {
       startTransition(() => {
-        onSearchChange?.((prev) => ({ ...prev, [key]: value }));
+        onSearchChange?.((prev) => {
+          // If value is undefined, remove the key from search params
+          if (value === undefined) {
+            const { [key]: _, ...rest } = prev;
+            return rest as SongBrowserSearchParams;
+          }
+          return { ...prev, [key]: value };
+        });
       });
     }, 50);
   };
@@ -232,7 +239,19 @@ export function SongBrowser({
     flushFilterDebounce();
     filterDebounceRef.current = setTimeout(() => {
       startTransition(() => {
-        onSearchChange?.((prev) => ({ ...prev, ...updates }));
+        onSearchChange?.((prev) => {
+          // Start with previous values
+          const result = { ...prev };
+          // Apply updates - remove keys set to undefined, add/update others
+          for (const [key, value] of Object.entries(updates)) {
+            if (value === undefined) {
+              delete (result as Record<string, unknown>)[key];
+            } else {
+              (result as Record<string, unknown>)[key] = value;
+            }
+          }
+          return result as SongBrowserSearchParams;
+        });
       });
     }, 50);
   };
@@ -285,7 +304,7 @@ export function SongBrowser({
         category,
         version,
         difficulty,
-        type,
+        type && type !== "utage" ? type : "",
         region,
         minBpm != null ? "y" : "",
         maxBpm != null ? "y" : "",
@@ -345,8 +364,8 @@ export function SongBrowser({
   );
 
   const isFiltered = useMemo(
-    () => searchQuery.length > 0 || activeFilterCount > 0,
-    [searchQuery, activeFilterCount],
+    () => searchQuery.length > 0 || activeFilterCount > 0 || type === "utage",
+    [searchQuery, activeFilterCount, type],
   );
 
   // Async filtering with debounce to keep UI responsive
