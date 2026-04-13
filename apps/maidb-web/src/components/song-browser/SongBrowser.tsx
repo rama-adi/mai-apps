@@ -137,13 +137,23 @@ export function SongBrowser({
     setSearchInput(controlledSearch.q ?? "");
   }, [controlledSearch.q]);
 
+  const typeFilter = controlledSearch.type ?? "";
+
   const baseSongs = useMemo(() => {
+    let songs: MaiDbSong[] | undefined;
     if (catalogSongs) {
-      return resolveHydratedSongs ? resolveHydratedSongs(catalogSongs) : catalogSongs;
+      songs = resolveHydratedSongs ? resolveHydratedSongs(catalogSongs) : catalogSongs;
+    } else {
+      songs = initialSongs;
     }
 
-    return initialSongs;
-  }, [catalogSongs, initialSongs, resolveHydratedSongs]);
+    // Exclude utage-category songs unless explicitly filtering by utage type
+    if (songs && typeFilter !== "utage") {
+      songs = songs.filter((s) => s.category !== "utage");
+    }
+
+    return songs;
+  }, [catalogSongs, initialSongs, resolveHydratedSongs, typeFilter]);
 
   const searchQuery = searchInput.trim();
 

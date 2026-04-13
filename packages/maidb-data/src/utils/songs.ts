@@ -163,6 +163,11 @@ export function filterSongs(songs: MaiDbSong[], filters: SongFilters): MaiDbSong
 
   let result = hasKeyword ? searchSongsByKeyword(songs, filters.q!) : [...songs];
 
+  // Exclude utage-category songs unless explicitly filtering by utage type
+  if (filters.type !== "utage") {
+    result = result.filter((s) => s.category !== "utage");
+  }
+
   if (filters.category) {
     result = result.filter((s) => s.category === filters.category);
   }

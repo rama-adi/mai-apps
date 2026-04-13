@@ -25,38 +25,59 @@ function isBrowsableSheet(sheet: MaiDbSong["sheets"][number]): boolean {
   return sheet.type !== "utage" && !sheet.isSpecial;
 }
 
-function getUtageDisplayInfo(song: MaiDbSong, useChartConstant: boolean) {
+/** Strip 【】 brackets for compact chip display */
+function stripBrackets(s: string): string {
+  return s.replace(/^【/, "").replace(/】$/, "");
+}
+
+function getUtageDisplayChips(song: MaiDbSong, useChartConstant: boolean) {
   const utageSheets = song.sheets.filter((s) => s.type === "utage");
-  if (utageSheets.length === 0) return null;
+  if (utageSheets.length === 0) return [];
 
-  // Get the best utage sheet to display (prefer one with level > 0)
-  const bestSheet = utageSheets.find((s) => s.levelValue > 0) ?? utageSheets[0];
+  // Group by difficulty to deduplicate (prefer sheet with levelValue > 0)
+  const byDifficulty = new Map<
+    string,
+    { sheet: MaiDbSong["sheets"][number]; isUnavailable: boolean }
+  >();
 
-  // Display the difficulty if it's not a standard difficulty, otherwise show level
-  const hasSpecialDifficulty = !["basic", "advanced", "expert", "master", "remaster"].includes(
-    bestSheet.difficulty,
-  );
-
-  let displayText: string;
-  if (hasSpecialDifficulty && bestSheet.difficulty) {
-    // Show the special difficulty (e.g., "【即】", "【星】")
-    displayText = bestSheet.difficulty;
-  } else if (bestSheet.levelValue > 0) {
-    // Show level value
-    displayText =
-      useChartConstant && bestSheet.internalLevelValue > 0
-        ? bestSheet.internalLevelValue.toFixed(1)
-        : bestSheet.level;
-  } else {
-    // Fallback to utage kanji
-    displayText = UTAGE_KANJI;
+  for (const sheet of utageSheets) {
+    const existing = byDifficulty.get(sheet.difficulty);
+    // Prefer the sheet with a real level over * (levelValue 0)
+    if (!existing || (existing.sheet.levelValue === 0 && sheet.levelValue > 0)) {
+      byDifficulty.set(sheet.difficulty, {
+        sheet,
+        isUnavailable: sheet.level === "*" && sheet.levelValue === 0,
+      });
+    }
   }
 
-  return {
-    text: displayText,
-    color: UTAGE_COLOR,
-    difficulty: bestSheet.difficulty,
-  };
+  return [...byDifficulty.values()].map(({ sheet, isUnavailable }) => {
+    const hasSpecialDifficulty = !["basic", "advanced", "expert", "master", "remaster"].includes(
+      sheet.difficulty,
+    );
+
+    let displayText: string;
+    if (isUnavailable) {
+      // Sheet with * level — no longer available
+      displayText = hasSpecialDifficulty ? stripBrackets(sheet.difficulty) : UTAGE_KANJI;
+    } else if (hasSpecialDifficulty && sheet.difficulty) {
+      displayText = stripBrackets(sheet.difficulty);
+    } else if (sheet.levelValue > 0) {
+      displayText =
+        useChartConstant && sheet.internalLevelValue > 0
+          ? sheet.internalLevelValue.toFixed(1)
+          : sheet.level;
+    } else {
+      displayText = UTAGE_KANJI;
+    }
+
+    return {
+      text: displayText,
+      color: UTAGE_COLOR,
+      difficulty: sheet.difficulty,
+      isUnavailable,
+    };
+  });
 }
 
 function matchesChartFilters(sheet: MaiDbSong["sheets"][number], filters: ChartFilters): boolean {
@@ -224,9 +245,8 @@ export const SongCard = memo(function SongCard({
     maxInternalLevel,
   });
 
-  // Get utage display info if this song has utage sheets
-  // Show utage chip when: filtering by utage type, or song has utage sheets
-  const utageInfo = type === "utage" ? getUtageDisplayInfo(song, useChartConstant) : null;
+  // Get utage chips when filtering by utage type
+  const utageChips = type === "utage" ? getUtageDisplayChips(song, useChartConstant) : [];
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!song.slug) return;
@@ -289,29 +309,39 @@ export const SongCard = memo(function SongCard({
             <p className="m-0 mt-0.5 truncate text-xs text-muted-foreground">{song.artist}</p>
           </div>
 
-          {/* Difficulty chips — the most useful info at a glance */}
-          <div className="mt-1.5 flex items-center gap-1">
-            {diffs.map((d) => (
-              <span
-                key={d.difficulty}
-                className="inline-flex min-w-[1.75rem] items-center justify-center rounded px-1 py-[1px] text-[10px] font-bold leading-tight text-white"
-                style={{ backgroundColor: d.color }}
-                title={d.difficulty}
-              >
-                {d.level}
-              </span>
-            ))}
-            {/* Utage chip - displayed separately from regular difficulties */}
-            {utageInfo && (
-              <span
-                className="inline-flex min-w-[1.75rem] items-center justify-center rounded px-1 py-[1px] text-[10px] font-bold leading-tight text-white"
-                style={{ backgroundColor: utageInfo.color }}
-                title="utage"
-              >
-                {utageInfo.text}
-              </span>
-            )}
-            <span className="ml-auto text-[10px] text-muted-foreground">
+          {/* Difficulty chips + version */}
+          <div className="mt-1.5 flex items-start gap-1">
+            <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1">
+              {diffs.map((d) => (
+                <span
+                  key={d.difficulty}
+                  className="inline-flex min-w-[1.75rem] items-center justify-center rounded px-1 py-[1px] text-[10px] font-bold leading-tight text-white"
+                  style={{ backgroundColor: d.color }}
+                  title={d.difficulty}
+                >
+                  {d.level}
+                </span>
+              ))}
+              {/* Utage chips - one per unique difficulty */}
+              {utageChips.map((chip) => (
+                <span
+                  key={chip.difficulty}
+                  className={[
+                    "inline-flex min-w-[1.75rem] items-center justify-center rounded px-1 py-[1px] text-[10px] font-bold leading-tight text-white",
+                    chip.isUnavailable ? "opacity-40 line-through" : "",
+                  ].join(" ")}
+                  style={{ backgroundColor: chip.color }}
+                  title={
+                    chip.isUnavailable
+                      ? `${chip.difficulty} (no longer available)`
+                      : chip.difficulty
+                  }
+                >
+                  {chip.text}
+                </span>
+              ))}
+            </div>
+            <span className="shrink-0 text-[10px] text-muted-foreground">
               {VERSION_BY_SLUG[song.version]?.abbr ?? song.version}
             </span>
           </div>

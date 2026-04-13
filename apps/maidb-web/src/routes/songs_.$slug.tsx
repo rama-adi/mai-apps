@@ -392,23 +392,56 @@ function SongWikiContent({
             </Link>
           )}
 
-          <section>
-            <SectionHeading color={catColor}>Charts</SectionHeading>
-            <div className="mt-4 space-y-6">
-              {song.isLocked && (
-                <div className="flex items-center gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 px-3 py-2.5 text-sm text-amber-600 dark:text-amber-400">
-                  <Lock className="h-4 w-4 flex-shrink-0" />
-                  <span>This song requires certain conditions to be playable.</span>
-                </div>
-              )}
+          {isUtage ? (
+            <section>
+              <SectionHeading color={catColor}>Charts</SectionHeading>
+              <div className="mt-4 space-y-1">
+                {utageSheets
+                  .sort((a, b) => a.levelValue - b.levelValue)
+                  .map((sheet, i) => (
+                    <ChartRow key={i} sheet={sheet} song={song} maiNotesLookup={maiNotesLookup} />
+                  ))}
+              </div>
+            </section>
+          ) : (
+            <>
+              <section>
+                <SectionHeading color={catColor}>Charts</SectionHeading>
+                <div className="mt-4 space-y-6">
+                  {song.isLocked && (
+                    <div className="flex items-center gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 px-3 py-2.5 text-sm text-amber-600 dark:text-amber-400">
+                      <Lock className="h-4 w-4 flex-shrink-0" />
+                      <span>This song requires certain conditions to be playable.</span>
+                    </div>
+                  )}
 
-              {[...sheetsByType.entries()].map(([type, sheets]) => (
-                <div key={type}>
-                  <h3 className="m-0 mb-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-                    {TYPE_NAMES[type] ?? type}
-                  </h3>
-                  <div className="space-y-1">
-                    {sheets
+                  {[...sheetsByType.entries()].map(([type, sheets]) => (
+                    <div key={type}>
+                      <h3 className="m-0 mb-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+                        {TYPE_NAMES[type] ?? type}
+                      </h3>
+                      <div className="space-y-1">
+                        {sheets
+                          .sort((a, b) => a.levelValue - b.levelValue)
+                          .map((sheet, i) => (
+                            <ChartRow
+                              key={i}
+                              sheet={sheet}
+                              song={song}
+                              maiNotesLookup={maiNotesLookup}
+                            />
+                          ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {utageSheets.length > 0 && (
+                <section>
+                  <SectionHeading color={catColor}>Utage Charts</SectionHeading>
+                  <div className="mt-4 space-y-1">
+                    {utageSheets
                       .sort((a, b) => a.levelValue - b.levelValue)
                       .map((sheet, i) => (
                         <ChartRow
@@ -419,22 +452,9 @@ function SongWikiContent({
                         />
                       ))}
                   </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {utageSheets.length > 0 && (
-            <section>
-              <SectionHeading color={catColor}>Utage Charts</SectionHeading>
-              <div className="mt-4 space-y-1">
-                {utageSheets
-                  .sort((a, b) => a.levelValue - b.levelValue)
-                  .map((sheet, i) => (
-                    <ChartRow key={i} sheet={sheet} song={song} maiNotesLookup={maiNotesLookup} />
-                  ))}
-              </div>
-            </section>
+                </section>
+              )}
+            </>
           )}
 
           {maiNotesCharts && (maiNotesCharts.gamerch_id || maiNotesCharts.simai_id) && (

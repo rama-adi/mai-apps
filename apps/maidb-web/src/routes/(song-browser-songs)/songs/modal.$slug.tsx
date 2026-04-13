@@ -51,5 +51,27 @@ function SongsPageModalRoute() {
     }, 180);
   };
 
-  return <SongBrowserModal song={song} isClosing={isClosing} onClose={closeModal} />;
+  const navigateToSong = (slug: string) => {
+    void navigate({
+      to: "/songs/modal/$slug",
+      params: { slug },
+      search,
+      replace: true,
+      resetScroll: false,
+      mask: {
+        to: "/songs/$slug",
+        params: { slug },
+        unmaskOnReload: true,
+      },
+    });
+  };
+
+  return (
+    <SongBrowserModal
+      song={song}
+      isClosing={isClosing}
+      onClose={closeModal}
+      onSongNavigate={navigateToSong}
+    />
+  );
 }

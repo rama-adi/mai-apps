@@ -12,8 +12,7 @@ import {
   Lock,
   ArrowRight,
 } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSongCatalog } from "../../lib/song-catalog";
 
 const THUMBNAIL_BASE = "https://maisongdb-blob.onebyteworks.my.id/thumb";
@@ -22,10 +21,12 @@ const REGION_KEYS = ["jp", "intl", "usa", "cn"] as const;
 export function SongBrowserModal({
   isClosing,
   onClose,
+  onSongNavigate,
   song,
 }: {
   isClosing: boolean;
   onClose: () => void;
+  onSongNavigate?: (slug: string) => void;
   song: MaiDbSong | null;
 }) {
   useEffect(() => {
@@ -46,6 +47,13 @@ export function SongBrowserModal({
     };
   }, []);
 
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Scroll modal back to top when song changes
+  useEffect(() => {
+    scrollRef.current?.scrollTo(0, 0);
+  }, [song?.slug]);
+
   return (
     <div
       className={`fixed inset-0 z-50 bg-black/70 backdrop-blur-sm duration-200 ${
@@ -54,6 +62,7 @@ export function SongBrowserModal({
       onClick={onClose}
     >
       <div
+        ref={scrollRef}
         className={`fixed left-1/2 top-1/2 z-[60] max-h-[85vh] w-[calc(100%-2rem)] max-w-lg -translate-x-1/2 -translate-y-1/2 overflow-y-auto overflow-x-hidden rounded-3xl border bg-background shadow-2xl duration-200 ${
           isClosing
             ? "animate-out zoom-out-95 slide-out-to-bottom-4 fade-out-0"
@@ -71,7 +80,13 @@ export function SongBrowserModal({
         </button>
 
         <h2 className="sr-only">{song?.title ?? "Song details"}</h2>
-        {song ? <SongBrowserModalContent song={song} /> : <SongBrowserModalSkeleton />}
+        {song ? (
+          <div key={song.slug} className="animate-in fade-in-0 duration-200">
+            <SongBrowserModalContent song={song} onSongNavigate={onSongNavigate} />
+          </div>
+        ) : (
+          <SongBrowserModalSkeleton />
+        )}
       </div>
     </div>
   );
@@ -81,7 +96,13 @@ function youtubeSearchUrl(query: string) {
   return `https://www.youtube.com/results?search_query=${encodeURIComponent(query).replace(/%20/g, "+")}`;
 }
 
-function SongBrowserModalContent({ song }: { song: MaiDbSong }) {
+function SongBrowserModalContent({
+  song,
+  onSongNavigate,
+}: {
+  song: MaiDbSong;
+  onSongNavigate?: (slug: string) => void;
+}) {
   const [imgError, setImgError] = useState(false);
   const { songs: allSongs } = useSongCatalog();
   const thumbnailUrl = song.internalImageId
@@ -209,10 +230,10 @@ function SongBrowserModalContent({ song }: { song: MaiDbSong }) {
 
       <div className="space-y-4 px-5 pb-5">
         {counterpart && (
-          <Link
-            to="/songs/$slug"
-            params={{ slug: counterpart.slug }}
-            className="flex items-center gap-3 rounded-lg border px-3 py-2.5 transition-colors hover:bg-accent/30"
+          <button
+            type="button"
+            onClick={() => onSongNavigate?.(counterpart.slug)}
+            className="flex w-full items-center gap-3 rounded-lg border px-3 py-2.5 text-left transition-colors hover:bg-accent/30"
             style={{
               borderColor: isUtage
                 ? `color-mix(in oklch, ${catColor} 30%, transparent)`
@@ -230,24 +251,35 @@ function SongBrowserModalContent({ song }: { song: MaiDbSong }) {
               {isUtage ? "View regular charts" : "View utage (宴会場) charts"}
             </span>
             <ArrowRight className="h-3.5 w-3.5 flex-shrink-0 text-muted-foreground" />
-          </Link>
+          </button>
         )}
-        <SheetSection
-          title={null}
-          song={song}
-          groupedSheets={groupedSheets}
-          emptyText="No standard charts available."
-          showLockNotice={song.isLocked}
-        />
-        {hasUtage ? (
+        {isUtage ? (
           <SheetSection
-            title="Utage"
+            title={null}
             song={song}
             groupedSheets={groupSheetsByType(utageSheets)}
             emptyText="No utage charts available."
-            accent="secondary"
           />
-        ) : null}
+        ) : (
+          <>
+            <SheetSection
+              title={null}
+              song={song}
+              groupedSheets={groupedSheets}
+              emptyText="No standard charts available."
+              showLockNotice={song.isLocked}
+            />
+            {hasUtage ? (
+              <SheetSection
+                title="Utage"
+                song={song}
+                groupedSheets={groupSheetsByType(utageSheets)}
+                emptyText="No utage charts available."
+                accent="secondary"
+              />
+            ) : null}
+          </>
+        )}
       </div>
     </div>
   );
