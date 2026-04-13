@@ -1,8 +1,20 @@
 import type { MaiDbSong, Sheet } from "maidb-data";
 import { CATEGORY_BY_SLUG, DIFFICULTY_COLORS, REGION_LABELS, VERSION_BY_SLUG } from "maidb-data";
 import { DIFFICULTY_NAMES, TYPE_NAMES } from "maidb-data";
-import { Music, X, Zap, Youtube, Share2, ClipboardCheck, Clock, Lock } from "lucide-react";
-import { useEffect, useState } from "react";
+import {
+  Music,
+  X,
+  Zap,
+  Youtube,
+  Share2,
+  ClipboardCheck,
+  Clock,
+  Lock,
+  ArrowRight,
+} from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { Link } from "@tanstack/react-router";
+import { useSongCatalog } from "../../lib/song-catalog";
 
 const THUMBNAIL_BASE = "https://maisongdb-blob.onebyteworks.my.id/thumb";
 const REGION_KEYS = ["jp", "intl", "usa", "cn"] as const;
@@ -71,17 +83,25 @@ function youtubeSearchUrl(query: string) {
 
 function SongBrowserModalContent({ song }: { song: MaiDbSong }) {
   const [imgError, setImgError] = useState(false);
+  const { songs: allSongs } = useSongCatalog();
   const thumbnailUrl = song.internalImageId
     ? `${THUMBNAIL_BASE}/${song.internalImageId}.png`
     : null;
   const catMeta = CATEGORY_BY_SLUG[song.category];
   const catColor = catMeta?.color ?? "#888";
   const verMeta = VERSION_BY_SLUG[song.version];
+  const isUtage = song.songId.startsWith("_utage_.");
   const nonUtageSheets = song.sheets.filter((s) => s.type !== "utage");
   const utageSheets = song.sheets.filter((s) => s.type === "utage");
   const groupedSheets = groupSheetsByType(nonUtageSheets);
   const regionAvailability = getRegionAvailability(song.sheets);
   const hasUtage = utageSheets.length > 0;
+
+  const counterpart = useMemo(() => {
+    if (!allSongs) return null;
+    const counterpartId = isUtage ? song.songId.slice("_utage_.".length) : `_utage_.${song.songId}`;
+    return allSongs.find((s) => s.songId === counterpartId) ?? null;
+  }, [allSongs, song.songId, isUtage]);
 
   return (
     <div className="flex flex-col">
@@ -188,6 +208,30 @@ function SongBrowserModalContent({ song }: { song: MaiDbSong }) {
       </div>
 
       <div className="space-y-4 px-5 pb-5">
+        {counterpart && (
+          <Link
+            to="/songs/$slug"
+            params={{ slug: counterpart.slug }}
+            className="flex items-center gap-3 rounded-lg border px-3 py-2.5 transition-colors hover:bg-accent/30"
+            style={{
+              borderColor: isUtage
+                ? `color-mix(in oklch, ${catColor} 30%, transparent)`
+                : "color-mix(in oklch, #dc39b8 30%, transparent)",
+              backgroundColor: isUtage ? undefined : "color-mix(in oklch, #dc39b8 5%, transparent)",
+            }}
+          >
+            <span
+              className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded text-[10px] font-bold text-white"
+              style={{ backgroundColor: isUtage ? catColor : "#dc39b8" }}
+            >
+              {isUtage ? "♪" : "宴"}
+            </span>
+            <span className="min-w-0 flex-1 text-xs font-medium text-foreground">
+              {isUtage ? "View regular charts" : "View utage (宴会場) charts"}
+            </span>
+            <ArrowRight className="h-3.5 w-3.5 flex-shrink-0 text-muted-foreground" />
+          </Link>
+        )}
         <SheetSection
           title={null}
           song={song}

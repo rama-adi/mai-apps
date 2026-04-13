@@ -1,5 +1,6 @@
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from "fs";
 import { join } from "path";
+import { availableParallelism } from "os";
 import sharp from "sharp";
 import { nanoid } from "nanoid";
 import { COVER_BASE_URL } from "maidb-data";
@@ -8,11 +9,14 @@ import { toDataUrl, generateOgImage } from "./shared/og-image.js";
 import type { MaiDbSong, Receipt } from "maidb-data";
 
 async function main() {
+  const cpus = availableParallelism();
+  sharp.concurrency(cpus);
+
   const args = process.argv.slice(2);
   const limitIdx = args.indexOf("--limit");
   const limit = limitIdx !== -1 ? parseInt(args[limitIdx + 1]) : undefined;
   const concurrencyIdx = args.indexOf("--concurrency");
-  const concurrency = concurrencyIdx !== -1 ? parseInt(args[concurrencyIdx + 1]) : 5;
+  const concurrency = concurrencyIdx !== -1 ? parseInt(args[concurrencyIdx + 1]) : 50;
 
   if (!existsSync(SONGS_JSON_PATH)) {
     console.error("songs.json not found — run append-songs first");
@@ -146,7 +150,7 @@ async function main() {
     const thumbPath = join(THUMB_DIR, `${id}.png`);
     writeFileSync(thumbPath, thumbBuffer);
 
-    const ogJpeg = await generateOgImage(song, song.sheets, thumbPath, fonts, chartBadges);
+    const ogJpeg = await generateOgImage(song, song.sheets, thumbBuffer, fonts, chartBadges);
     const ogPath = join(OG_DIR, `${id}.jpg`);
     writeFileSync(ogPath, ogJpeg);
 
@@ -163,7 +167,7 @@ async function main() {
     }
   }
 
-  const genConcurrency = Math.max(2, Math.ceil(concurrency / 2));
+  const genConcurrency = cpus;
   for (let i = 0; i < fetched.length; i += genConcurrency) {
     const batch = fetched.slice(i, i + genConcurrency);
     const results = await Promise.allSettled(batch.map(generateForEntry));

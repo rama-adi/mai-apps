@@ -97,6 +97,7 @@ const loadChartsResource = createCachedJsonResource(
 
 type SongCatalogIndex = {
   bySlug: Map<string, MaiDbSong>;
+  bySongId: Map<string, MaiDbSong>;
   byVersion: Map<string, MaiDbSong[]>;
   filterOptions: FilterOptions;
   filtersData: SongFiltersData;
@@ -110,10 +111,12 @@ async function getSongCatalogIndex(): Promise<SongCatalogIndex> {
     songCatalogIndexPromise = (async () => {
       const { songs } = await loadSongList();
       const bySlug = new Map<string, MaiDbSong>();
+      const bySongId = new Map<string, MaiDbSong>();
       const byVersion = new Map<string, MaiDbSong[]>();
 
       for (const song of songs) {
         bySlug.set(song.slug, song);
+        bySongId.set(song.songId, song);
         const songsForVersion = byVersion.get(song.version);
         if (songsForVersion) {
           songsForVersion.push(song);
@@ -128,6 +131,7 @@ async function getSongCatalogIndex(): Promise<SongCatalogIndex> {
 
       return {
         bySlug,
+        bySongId,
         byVersion,
         filterOptions: buildFilterOptions(songs),
         filtersData: await buildSongFiltersData(songs),
@@ -180,6 +184,13 @@ export async function getSongBySlug(slug: string): Promise<MaiDbSong | null> {
 export async function getAllSlugs(): Promise<string[]> {
   const index = await getSongCatalogIndex();
   return index.slugs;
+}
+
+export async function getCounterpartSong(songId: string): Promise<MaiDbSong | null> {
+  const index = await getSongCatalogIndex();
+  const isUtage = songId.startsWith("_utage_.");
+  const counterpartId = isUtage ? songId.slice("_utage_.".length) : `_utage_.${songId}`;
+  return index.bySongId.get(counterpartId) ?? null;
 }
 
 export async function getFilterOptions(): Promise<FilterOptions> {

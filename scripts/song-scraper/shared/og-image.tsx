@@ -1,9 +1,8 @@
 /** @jsxImportSource ./satori-jsx */
-import { readFileSync } from "fs";
 import satori from "satori";
 import { Resvg } from "@resvg/resvg-js";
 import sharp from "sharp";
-import { CATEGORIES, DIFFICULTY_COLORS, REGION_LABELS } from "maidb-data";
+import { CATEGORIES, DIFFICULTY_COLORS } from "maidb-data";
 
 const CATEGORY_COLORS: Record<string, string> = Object.fromEntries(
   CATEGORIES.map((c) => [c.category, c.color]),
@@ -69,12 +68,17 @@ export function OgImage({ song, sheets, thumbDataUrl, chartBadges }: OgMarkupPro
       }));
   }
 
-  const regionAvail: Record<string, boolean> = { jp: false, intl: false, usa: false, cn: false };
-  for (const s of sheets) {
-    for (const r of Object.keys(regionAvail)) {
-      if (s.regions[r]) regionAvail[r] = true;
-    }
-  }
+  const lastUpdated =
+    new Date().toLocaleString("en-CA", {
+      timeZone: "Asia/Tokyo",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    }) + " JST";
 
   const titleFontSize = song.title.length > 30 ? 40 : song.title.length > 18 ? 52 : 64;
 
@@ -133,6 +137,23 @@ export function OgImage({ song, sheets, thumbDataUrl, chartBadges }: OgMarkupPro
         }}
       />
 
+      {/* Last updated bottom-left */}
+      <div
+        style={{
+          display: "flex",
+          position: "absolute",
+          bottom: "10px",
+          left: "40px",
+          color: "rgba(255,255,255,0.4)",
+          padding: "8px 24px",
+          borderRadius: "12px 12px 0 0",
+          fontSize: "22px",
+          fontWeight: 400,
+        }}
+      >
+        Last updated: {lastUpdated}
+      </div>
+
       {/* Watermark badge bottom-right */}
       <div
         style={{
@@ -161,7 +182,7 @@ export function OgImage({ song, sheets, thumbDataUrl, chartBadges }: OgMarkupPro
           alignItems: "center",
         }}
       >
-        {/* Left: thumbnail */}
+        {/* Left: thumbnail + last updated */}
         <div
           style={{
             display: "flex",
@@ -281,56 +302,6 @@ export function OgImage({ song, sheets, thumbDataUrl, chartBadges }: OgMarkupPro
               </div>
             ))}
           </div>
-
-          {/* Bottom: regions + utage badge */}
-          <div style={{ display: "flex", alignItems: "center", gap: "18px", flexWrap: "wrap" }}>
-            {Object.entries(regionAvail).map(([key, avail]) => (
-              <div
-                key={key}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  fontSize: "20px",
-                  fontWeight: 700,
-                  color: avail ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.25)",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    width: "24px",
-                    height: "24px",
-                    borderRadius: "6px",
-                    fontSize: "14px",
-                    backgroundColor: avail ? "#4be071" : "rgba(255,255,255,0.08)",
-                    color: avail ? "white" : "transparent",
-                  }}
-                >
-                  ✓
-                </div>
-                {REGION_LABELS[key]}
-              </div>
-            ))}
-            {isUtage && (
-              <div
-                style={{
-                  display: "flex",
-                  backgroundColor: "#dc39b8",
-                  color: "white",
-                  padding: "6px 16px",
-                  borderRadius: "14px",
-                  fontSize: "18px",
-                  fontWeight: 700,
-                  marginLeft: "4px",
-                }}
-              >
-                宴会場
-              </div>
-            )}
-          </div>
         </div>
       </div>
     </div>
@@ -344,12 +315,11 @@ export type SatoriFont = { name: string; data: ArrayBuffer; weight: number; styl
 export async function generateOgImage(
   song: any,
   sheets: any[],
-  thumbPath: string,
+  thumbPngBuffer: Buffer,
   fonts: SatoriFont[],
   chartBadges: Record<string, string>,
 ): Promise<Buffer> {
-  const thumbBuffer = readFileSync(thumbPath);
-  const thumbDataUrl = toDataUrl(thumbBuffer, "image/png");
+  const thumbDataUrl = toDataUrl(thumbPngBuffer, "image/png");
 
   const markup = OgImage({ song, sheets, thumbDataUrl, chartBadges });
 

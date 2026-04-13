@@ -7,8 +7,8 @@ const THUMBNAIL_BASE = "https://maisongdb-blob.onebyteworks.my.id/thumb";
 
 const DIFF_ORDER = ["basic", "advanced", "expert", "master", "remaster"];
 
-// Utage color from constants (宴会場 = #888888)
-const UTAGE_COLOR = "#888888";
+// Utage color from constants (宴会場)
+const UTAGE_COLOR = "#dc39b8";
 const UTAGE_KANJI = "宴";
 
 interface ChartFilters {

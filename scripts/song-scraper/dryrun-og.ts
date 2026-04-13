@@ -100,7 +100,7 @@ async function main() {
   writeFileSync(thumbPath, thumbBuffer);
 
   console.log("Generating OG image...");
-  const ogJpeg = await generateOgImage(song, song.sheets, thumbPath, fonts, chartBadges);
+  const ogJpeg = await generateOgImage(song, song.sheets, thumbBuffer, fonts, chartBadges);
 
   const outPath = join(dryrunDir, `${songId.replace(/[^a-zA-Z0-9._-]/g, "_")}.jpg`);
   writeFileSync(outPath, ogJpeg);

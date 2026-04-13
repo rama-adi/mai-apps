@@ -9,10 +9,11 @@ import {
   VERSION_BY_SLUG,
 } from "maidb-data";
 import { useMemo, useState } from "react";
-import { getSongBySlug, getMaiNotesCharts } from "./-server/songs";
+import { getSongBySlug, getMaiNotesCharts, getCounterpartSong } from "./-server/songs";
 import type { MaiNotesEntry } from "../lib/song-data.server";
 import {
   ArrowLeft,
+  ArrowRight,
   Check,
   ClipboardCheck,
   Clock,
@@ -166,7 +167,11 @@ export const Route = createFileRoute("/songs_/$slug")({
       getSongBySlug({ data: { slug: params.slug } }),
       getMaiNotesCharts({ data: { slug: params.slug } }),
     ]);
-    return { song, maiNotesCharts };
+    const typedSong = song as MaiDbSong | null;
+    const counterpart = typedSong
+      ? await getCounterpartSong({ data: { songId: typedSong.songId } })
+      : null;
+    return { song: typedSong, maiNotesCharts, counterpart };
   },
   component: SongPage,
 });
@@ -175,9 +180,11 @@ function SongPage() {
   const loaderData = Route.useLoaderData() as {
     song: MaiDbSong | null;
     maiNotesCharts: MaiNotesEntry | null;
+    counterpart: MaiDbSong | null;
   };
   const song = loaderData.song;
   const maiNotesCharts = loaderData.maiNotesCharts;
+  const counterpart = loaderData.counterpart;
   const catColor = useMemo(
     () => (song ? (CATEGORY_BY_SLUG[song.category]?.color ?? "#888") : null),
     [song],
@@ -204,7 +211,7 @@ function SongPage() {
         </Link>
 
         {song ? (
-          <SongWikiContent song={song} maiNotesCharts={maiNotesCharts} />
+          <SongWikiContent song={song} maiNotesCharts={maiNotesCharts} counterpart={counterpart} />
         ) : (
           <SongWikiPageSkeleton />
         )}
@@ -216,15 +223,18 @@ function SongPage() {
 function SongWikiContent({
   song,
   maiNotesCharts,
+  counterpart,
 }: {
   song: MaiDbSong;
   maiNotesCharts: MaiNotesEntry | null;
+  counterpart: MaiDbSong | null;
 }) {
   const chartTypes = [...new Set(song.sheets.map((s) => s.type))];
   const catMeta = CATEGORY_BY_SLUG[song.category];
   const catColor = catMeta?.color ?? "#888";
   const verMeta = VERSION_BY_SLUG[song.version];
 
+  const isUtage = song.songId.startsWith("_utage_.");
   const nonUtageSheets = song.sheets.filter((s) => s.type !== "utage");
   const utageSheets = song.sheets.filter((s) => s.type === "utage");
   const sheetsByType = groupSheetsByType(nonUtageSheets);
@@ -355,6 +365,33 @@ function SongWikiContent({
         </aside>
 
         <div className="min-w-0 space-y-8">
+          {counterpart && (
+            <Link
+              to="/songs/$slug"
+              params={{ slug: counterpart.slug }}
+              className="flex items-center gap-3 rounded-lg border px-4 py-3 transition-colors hover:bg-accent/30"
+              style={{
+                borderColor: isUtage
+                  ? `color-mix(in oklch, ${catColor} 30%, transparent)`
+                  : "color-mix(in oklch, #dc39b8 30%, transparent)",
+                backgroundColor: isUtage
+                  ? undefined
+                  : "color-mix(in oklch, #dc39b8 5%, transparent)",
+              }}
+            >
+              <span
+                className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md text-xs font-bold text-white"
+                style={{ backgroundColor: isUtage ? catColor : "#dc39b8" }}
+              >
+                {isUtage ? "♪" : "宴"}
+              </span>
+              <span className="min-w-0 flex-1 text-sm font-medium text-foreground">
+                {isUtage ? "View regular charts" : "View utage (宴会場) charts"}
+              </span>
+              <ArrowRight className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
+            </Link>
+          )}
+
           <section>
             <SectionHeading color={catColor}>Charts</SectionHeading>
             <div className="mt-4 space-y-6">
