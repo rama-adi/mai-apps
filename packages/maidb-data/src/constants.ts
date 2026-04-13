@@ -22,7 +22,7 @@ export const CATEGORIES: Category[] = [
   { category: "ゲーム＆バラエティ", color: "#4be071", slug: "game-variety" },
   { category: "maimai", color: "#f64849", slug: "maimai" },
   { category: "オンゲキ＆CHUNITHM", color: "#3583fe", slug: "ongeki-chunithm" },
-  { category: "宴会場", color: "#888888", slug: "utage" },
+  { category: "宴会場", color: "#dc39b8", slug: "utage" },
 ];
 
 export const VERSIONS: Version[] = [

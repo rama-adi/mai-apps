@@ -3,13 +3,26 @@ import { SONG_DATA_URL, ALIASES_URL } from "maidb-data";
 import { SONGS_JSON_PATH } from "./shared/paths.js";
 import type { MaiDbSong } from "maidb-data";
 
+function stripUtageLevelPrefix(title: string, sheets: any[]): string {
+  // Method 1: derive prefix from sheet difficulty, e.g. "【宴】" -> "[宴]"
+  for (const sheet of sheets) {
+    const m = sheet.difficulty?.match(/^【(.*?)】/);
+    if (m) {
+      const prefix = `[${m[1]}]`;
+      if (title.startsWith(prefix)) {
+        return title.slice(prefix.length).trim();
+      }
+    }
+  }
+  // Method 2: strip any leading [xxx] prefix (for utage with regular difficulty names)
+  return title.replace(/^\[.*?\]/, "").trim();
+}
+
 function normalizeTitle(title: string): string {
   return title
-    .replace("[宴]", "")
-    .replace("(宴)", "")
     .trim()
     .toLowerCase()
-    .replace(/[^\w\s]/g, "")
+    .replace(/[^\p{L}\p{N}\s]/gu, "")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -78,23 +91,26 @@ async function main() {
     if (!titleIndex.has(n)) titleIndex.set(n, song);
   }
 
-  // Match utage songs to their regular counterparts
-  const utageSheetsBySongId = new Map<string, any[]>();
-  const utageTitlesBySongId = new Map<string, string[]>();
+  // Group utage songs by their matched regular counterpart
+  const utageGroups = new Map<string, any[]>();
   const unmatchedUtage: any[] = [];
 
   for (const u of utageSongs) {
-    const matched = titleIndex.get(normalizeTitle(u.title));
+    const cleanTitle = stripUtageLevelPrefix(u.title, u.sheets);
+    const matched = titleIndex.get(normalizeTitle(cleanTitle));
     if (matched) {
-      const sheets = utageSheetsBySongId.get(matched.songId) ?? [];
-      sheets.push(...u.sheets);
-      utageSheetsBySongId.set(matched.songId, sheets);
-
-      const titles = utageTitlesBySongId.get(matched.songId) ?? [];
-      if (u.title !== matched.title) titles.push(u.title);
-      utageTitlesBySongId.set(matched.songId, titles);
+      const group = utageGroups.get(matched.songId) ?? [];
+      group.push(u);
+      utageGroups.set(matched.songId, group);
     } else {
       unmatchedUtage.push(u);
+    }
+  }
+
+  if (unmatchedUtage.length > 0) {
+    console.log("Unmatched utage songs:");
+    for (const u of unmatchedUtage) {
+      console.log(`  [${u.songId}] ${u.title}`);
     }
   }
 
@@ -103,19 +119,45 @@ async function main() {
       `(${utageSongs.length - unmatchedUtage.length} matched, ${unmatchedUtage.length} unmatched)`,
   );
 
-  // Build all upstream songs
-  const allUpstream = [
-    ...regularSongs.map((raw) => ({
+  // Build all upstream entries
+  type UpstreamEntry = { songId: string; raw: any; sheets: any[]; keyword: string };
+  const allUpstream: UpstreamEntry[] = [];
+
+  // Regular songs (no utage sheets mixed in)
+  for (const raw of regularSongs) {
+    const aliases = aliasMap.get(raw.title) ?? [];
+    allUpstream.push({
+      songId: raw.songId,
       raw,
-      extraSheets: utageSheetsBySongId.get(raw.songId) ?? [],
-      extraTitles: utageTitlesBySongId.get(raw.songId) ?? [],
-    })),
-    ...unmatchedUtage.map((raw) => ({
-      raw,
-      extraSheets: [] as any[],
-      extraTitles: [] as string[],
-    })),
-  ];
+      sheets: raw.sheets.map((s: any) => transformSheet(s)),
+      keyword: [raw.title, ...aliases].join("\t"),
+    });
+  }
+
+  // Matched utage — one entry per regular song, prefixed _utage_.<regularSongId>
+  for (const [regularSongId, songs] of utageGroups) {
+    const first = songs[0];
+    const allSheets = songs.flatMap((u: any) => u.sheets.map((s: any) => transformSheet(s)));
+    const allTitles = [...new Set(songs.map((u: any) => u.title))];
+    const allAliases = allTitles.flatMap((t: string) => aliasMap.get(t) ?? []);
+    allUpstream.push({
+      songId: `_utage_.${regularSongId}`,
+      raw: first,
+      sheets: allSheets,
+      keyword: [...allTitles, ...allAliases].join("\t"),
+    });
+  }
+
+  // Unmatched utage — each gets its own prefixed entry
+  for (const u of unmatchedUtage) {
+    const aliases = aliasMap.get(u.title) ?? [];
+    allUpstream.push({
+      songId: `_utage_.${u.songId}`,
+      raw: u,
+      sheets: u.sheets.map((s: any) => transformSheet(s)),
+      keyword: [u.title, ...aliases].join("\t"),
+    });
+  }
 
   // Load existing songs.json
   let existing: MaiDbSong[] = [];
@@ -135,17 +177,8 @@ async function main() {
   let added = 0;
   let updated = 0;
 
-  for (const { raw, extraSheets, extraTitles } of allUpstream) {
-    const sheets = [
-      ...raw.sheets.map((s: any) => transformSheet(s)),
-      ...extraSheets.map((s: any) => transformSheet(s)),
-    ];
-
-    const aliases = aliasMap.get(raw.title) ?? [];
-    const utageAliases = extraTitles.flatMap((t) => aliasMap.get(t) ?? []);
-    const keyword = [raw.title, ...extraTitles, ...aliases, ...utageAliases].join("\t");
-
-    const prev = existingById.get(raw.songId);
+  for (const { songId, raw, sheets, keyword } of allUpstream) {
+    const prev = existingById.get(songId);
     if (prev) {
       // Update mutable fields only — preserve slug and internalImageId
       prev.isNew = raw.isNew;
@@ -156,7 +189,7 @@ async function main() {
     } else {
       // New song — append
       existing.push({
-        songId: raw.songId,
+        songId,
         category: raw.category,
         title: raw.title,
         artist: raw.artist,

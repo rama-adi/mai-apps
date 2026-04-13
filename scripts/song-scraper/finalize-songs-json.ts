@@ -24,15 +24,15 @@ async function main() {
     const receipts: Receipt[] = JSON.parse(readFileSync(RECEIPTS_PATH, "utf-8"));
     const uploadedReceipts = receipts.filter((r) => r.isUploaded);
 
-    const receiptByImage = new Map<string, Receipt>();
+    const receiptBySongId = new Map<string, Receipt>();
     for (const r of uploadedReceipts) {
-      receiptByImage.set(r.imageName, r);
+      receiptBySongId.set(r.songId, r);
     }
 
     let merged = 0;
     for (const song of songs) {
       if (song.internalImageId) continue;
-      const receipt = receiptByImage.get(song.imageName);
+      const receipt = receiptBySongId.get(song.songId);
       if (receipt) {
         song.internalImageId = receipt.internalId;
         merged++;

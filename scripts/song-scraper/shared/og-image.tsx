@@ -26,28 +26,48 @@ interface OgMarkupProps {
 
 export function OgImage({ song, sheets, thumbDataUrl, chartBadges }: OgMarkupProps) {
   const catColor = CATEGORY_COLORS[song.category] ?? "#888888";
-  const hasUtage = sheets.some((s: any) => s.difficulty === "utage" || s.isSpecial);
+  const isUtage = song.songId?.startsWith("_utage_.");
 
   const typeSet = new Set<string>();
   for (const s of sheets) {
-    if (s.difficulty !== "utage" && !s.isSpecial) typeSet.add(s.type);
+    if (!isUtage && (s.difficulty === "utage" || s.isSpecial)) continue;
+    typeSet.add(s.type);
   }
   const types = Array.from(typeSet);
 
-  const diffMap = new Map<string, { level: number; type: string }>();
-  for (const s of sheets) {
-    const key = s.difficulty;
-    if (key === "utage" || s.isSpecial || !DIFFICULTY_COLORS[key]) continue;
-    const val = s.internalLevelValue ?? s.levelValue;
-    const existing = diffMap.get(key);
-    if (!existing || val > existing.level) {
-      diffMap.set(key, { level: val, type: s.type });
+  // Build difficulty chips — utage shows custom difficulty label, regular shows standard
+  let diffs: { name: string; label: string; color: string; wide: boolean }[];
+
+  if (isUtage) {
+    diffs = sheets
+      .filter((s: any) => s.level !== "*")
+      .map((s: any) => ({
+        name: s.difficulty,
+        label: `${s.difficulty} (${s.level})`,
+        color: "#dc39b8",
+        wide: true,
+      }));
+  } else {
+    const diffMap = new Map<string, { level: number; type: string }>();
+    for (const s of sheets) {
+      const key = s.difficulty;
+      if (key === "utage" || s.isSpecial || !DIFFICULTY_COLORS[key]) continue;
+      const val = s.internalLevelValue ?? s.levelValue;
+      const existing = diffMap.get(key);
+      if (!existing || val > existing.level) {
+        diffMap.set(key, { level: val, type: s.type });
+      }
     }
+    const diffOrder = ["basic", "advanced", "expert", "master", "remaster"];
+    diffs = diffOrder
+      .filter((d) => diffMap.has(d))
+      .map((d) => ({
+        name: d,
+        label: diffMap.get(d)!.level.toFixed(1),
+        color: DIFFICULTY_COLORS[d],
+        wide: false,
+      }));
   }
-  const diffOrder = ["basic", "advanced", "expert", "master", "remaster"];
-  const diffs = diffOrder
-    .filter((d) => diffMap.has(d))
-    .map((d) => ({ name: d, ...diffMap.get(d)! }));
 
   const regionAvail: Record<string, boolean> = { jp: false, intl: false, usa: false, cn: false };
   for (const s of sheets) {
@@ -237,31 +257,32 @@ export function OgImage({ song, sheets, thumbDataUrl, chartBadges }: OgMarkupPro
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  width: "84px",
-                  height: "68px",
+                  ...(d.wide
+                    ? { padding: "8px 18px", height: "68px" }
+                    : { width: "84px", height: "68px" }),
                   borderRadius: "16px",
-                  fontSize: "30px",
+                  fontSize: d.wide ? "24px" : "30px",
                   fontWeight: 900,
                   ...(d.name === "remaster"
                     ? {
                         backgroundColor: "white",
-                        color: DIFFICULTY_COLORS[d.name],
-                        border: `5px solid ${DIFFICULTY_COLORS[d.name]}`,
-                        boxShadow: `0 4px 20px ${DIFFICULTY_COLORS[d.name]}44`,
+                        color: d.color,
+                        border: `5px solid ${d.color}`,
+                        boxShadow: `0 4px 20px ${d.color}44`,
                       }
                     : {
-                        backgroundColor: DIFFICULTY_COLORS[d.name],
+                        backgroundColor: d.color,
                         color: "white",
-                        boxShadow: `0 4px 20px ${DIFFICULTY_COLORS[d.name]}44`,
+                        boxShadow: `0 4px 20px ${d.color}44`,
                       }),
                 }}
               >
-                {d.level.toFixed(1)}
+                {d.label}
               </div>
             ))}
           </div>
 
-          {/* Bottom: regions + utage */}
+          {/* Bottom: regions + utage badge */}
           <div style={{ display: "flex", alignItems: "center", gap: "18px", flexWrap: "wrap" }}>
             {Object.entries(regionAvail).map(([key, avail]) => (
               <div
@@ -293,11 +314,11 @@ export function OgImage({ song, sheets, thumbDataUrl, chartBadges }: OgMarkupPro
                 {REGION_LABELS[key]}
               </div>
             ))}
-            {hasUtage && (
+            {isUtage && (
               <div
                 style={{
                   display: "flex",
-                  backgroundColor: "#ff4466",
+                  backgroundColor: "#dc39b8",
                   color: "white",
                   padding: "6px 16px",
                   borderRadius: "14px",

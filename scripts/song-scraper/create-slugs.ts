@@ -16,7 +16,7 @@ function longestLatinRun(s: string): number {
 }
 
 function cleanTitle(s: string): string {
-  return s.replace(/^\[宴\]/, "").trim();
+  return s.replace(/^\[.*?\]/, "").trim();
 }
 
 function slugify(s: string): string {
@@ -73,7 +73,7 @@ async function main() {
   const existingSlugs = new Set(songs.filter((s) => s.slug).map((s) => s.slug!));
 
   for (const song of needsSlugs) {
-    const isUtage = song.title.startsWith("[宴]");
+    const isUtage = song.songId.startsWith("_utage_.");
     const title = cleanTitle(song.title);
     const aliases = aliasMap.get(song.title) ?? aliasMap.get(title) ?? [];
 
@@ -96,7 +96,7 @@ async function main() {
         titleSlug = aliasSlug;
       }
     }
-    if (isUtage) titleSlug += "-utage";
+    if (isUtage) titleSlug = "utage-" + titleSlug;
 
     const artistSlug = slugifyArtist(song.artist);
 

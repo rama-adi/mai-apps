@@ -28,8 +28,8 @@ async function main() {
   let existingReceipts: Receipt[] = [];
   if (existsSync(RECEIPTS_PATH)) {
     existingReceipts = JSON.parse(readFileSync(RECEIPTS_PATH, "utf-8"));
-    const receiptedImages = new Set(existingReceipts.map((r) => r.imageName));
-    entries = entries.filter((s) => !receiptedImages.has(s.imageName));
+    const receiptedSongs = new Set(existingReceipts.map((r) => r.songId));
+    entries = entries.filter((s) => !receiptedSongs.has(s.songId));
   }
 
   if (entries.length === 0) {
@@ -150,7 +150,13 @@ async function main() {
     const ogPath = join(OG_DIR, `${id}.jpg`);
     writeFileSync(ogPath, ogJpeg);
 
-    newReceipts.push({ imageName: song.imageName, internalId: id, isUploaded: false, jacketFound });
+    newReceipts.push({
+      songId: song.songId,
+      imageName: song.imageName,
+      internalId: id,
+      isUploaded: false,
+      jacketFound,
+    });
 
     if (idx % 50 === 0 || idx === fetched.length) {
       console.log(`  generated ${idx}/${fetched.length}`);

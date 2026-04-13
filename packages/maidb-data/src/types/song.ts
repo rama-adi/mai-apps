@@ -4,6 +4,7 @@ import { CATEGORIES, CHART_TYPES, DIFFICULTIES, REGIONS, VERSIONS } from "../con
 // -- Receipt schema (image upload tracking) -----------------------------------
 
 export const receiptSchema = z.object({
+  songId: z.string(),
   imageName: z.string(),
   internalId: z.string(),
   isUploaded: z.boolean(),
