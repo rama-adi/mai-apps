@@ -184,8 +184,12 @@ function groupSongsByWeek(songs: MaiDbSong[]): WeekGroup[] {
   }));
 }
 
-function getWeekLabel(input: string): string {
+const UNKNOWN_WEEK_LABEL = "Unknown release date";
+
+function getWeekLabel(input: string | null | undefined): string {
+  if (!input) return UNKNOWN_WEEK_LABEL;
   const date = new Date(`${input}T00:00:00Z`);
+  if (Number.isNaN(date.getTime())) return UNKNOWN_WEEK_LABEL;
   const day = date.getUTCDay();
   const mondayOffset = (day + 6) % 7;
   const start = new Date(date);
