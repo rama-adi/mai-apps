@@ -53,19 +53,72 @@ export function buildFilterOptions(songs: MaiDbSong[]): FilterOptions {
 
 // -- Client-side filtering ----------------------------------------------------
 
-const SONG_SEARCH_OPTIONS = {
+// Fuzzy fallback across title and keyword, used only when no substring matches.
+const FUZZY_SEARCH_OPTIONS = {
   ignoreLocation: true,
   includeScore: true,
-  keys: [{ name: "keyword", weight: 1 }],
-  threshold: 0.2,
+  keys: [
+    { name: "title", weight: 0.7 },
+    { name: "keyword", weight: 0.3 },
+  ],
+  threshold: 0.4,
 } satisfies IFuseOptions<MaiDbSong>;
 
 export function searchSongsByKeyword(songs: MaiDbSong[], query: string): MaiDbSong[] {
   const trimmedQuery = query.trim();
   if (!trimmedQuery) return songs;
 
-  const fuse = new Fuse(songs, SONG_SEARCH_OPTIONS);
-  return sortSongsByReleaseDate(fuse.search(trimmedQuery).map((result) => result.item));
+  const lowerQuery = trimmedQuery.toLowerCase();
+
+  // Bucket matches by strength so short queries (e.g. "pp") surface exact-token
+  // hits before any song that merely contains "pp" as a substring.
+  // Keyword field is tab-delimited; each token is an alias for exact matching.
+  const exact: MaiDbSong[] = [];
+  const startsWith: MaiDbSong[] = [];
+  const substring: MaiDbSong[] = [];
+
+  for (const song of songs) {
+    const lowerTitle = song.title.toLowerCase();
+    const tokens = song.keyword.toLowerCase().split("\t").filter(Boolean);
+
+    if (lowerTitle === lowerQuery || tokens.some((t) => t === lowerQuery)) {
+      exact.push(song);
+    } else if (lowerTitle.startsWith(lowerQuery) || tokens.some((t) => t.startsWith(lowerQuery))) {
+      startsWith.push(song);
+    } else if (lowerTitle.includes(lowerQuery) || tokens.some((t) => t.includes(lowerQuery))) {
+      substring.push(song);
+    }
+  }
+
+  let results: MaiDbSong[];
+  if (exact.length > 0 || startsWith.length > 0 || substring.length > 0) {
+    // Within each strength bucket, surface the newest release first.
+    results = [
+      ...exact.sort(compareReleaseDatesDesc),
+      ...startsWith.sort(compareReleaseDatesDesc),
+      ...substring.sort(compareReleaseDatesDesc),
+    ];
+  } else {
+    // Fuzzy fallback for typos / approximate matches.
+    const fuzzyFuse = new Fuse(songs, FUZZY_SEARCH_OPTIONS);
+    results = fuzzyFuse.search(trimmedQuery).map((r) => r.item);
+  }
+
+  // Deprioritize removed songs (not available in any region)
+  const available: MaiDbSong[] = [];
+  const removed: MaiDbSong[] = [];
+  for (const song of results) {
+    const inAnyRegion = song.sheets.some(
+      (s) => s.regions.jp || s.regions.intl || s.regions.usa || s.regions.cn,
+    );
+    if (inAnyRegion) {
+      available.push(song);
+    } else {
+      removed.push(song);
+    }
+  }
+
+  return [...available, ...removed];
 }
 
 function isBrowsableSheet(sheet: MaiDbSong["sheets"][number]): boolean {

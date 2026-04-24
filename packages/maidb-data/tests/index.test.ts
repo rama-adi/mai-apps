@@ -97,7 +97,7 @@ test("searchSongsByKeyword uses a stricter fuse threshold", () => {
   ).toEqual(["matching-song"]);
 });
 
-test("filterSongs returns searched matches newest first", () => {
+test("filterSongs surfaces exact title matches before partial matches", () => {
   const oldestSong = createSong({
     songId: "oldest-song",
     title: "Aurora",
@@ -113,8 +113,9 @@ test("filterSongs returns searched matches newest first", () => {
     keyword: "aurora burst",
   });
 
+  // Exact title match wins over a newer partial match.
   expect(filterSongs([oldestSong, newestSong], { q: "aurora" }).map((song) => song.songId)).toEqual(
-    ["newest-song", "oldest-song"],
+    ["oldest-song", "newest-song"],
   );
 });
 
