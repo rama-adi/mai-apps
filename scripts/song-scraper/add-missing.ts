@@ -16,7 +16,6 @@ const BLOB_BASE = "https://maisongdb-blob.onebyteworks.my.id";
 const DEPLOYED_SONGS_URL = `${BLOB_BASE}/data/songs/songs.json`;
 
 const SCRIPTS_DIR = import.meta.dirname;
-const PKG_CWD = join(SCRIPTS_DIR, "../../packages/maidb-data");
 
 // Reverse-slug maps: deployed blob stores slugs for category/version, but the
 // pipeline scripts (append-songs, finalize) expect the raw label strings.
@@ -90,7 +89,7 @@ function runStep(file: string, extraArgs: string[]) {
   const script = join(SCRIPTS_DIR, file);
   const argStr = extraArgs.join(" ");
   console.log(`\n--- [${file}] ---`);
-  execSync(`tsx ${script} ${argStr}`, { stdio: "inherit", cwd: PKG_CWD });
+  execSync(`tsx ${script} ${argStr}`, { stdio: "inherit", cwd: SCRIPTS_DIR });
 }
 
 async function uploadJson(
