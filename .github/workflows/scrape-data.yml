@@ -30,7 +30,10 @@ jobs:
 
       - name: Build maidb-data
         working-directory: packages/maidb-data
-        run: vp run build
+        run: |
+          vp run build
+          vp pack
+          ls -la dist
 
       - name: Add missing songs (song-scraper)
         working-directory: scripts/song-scraper
