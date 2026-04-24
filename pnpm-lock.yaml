@@ -300,6 +300,12 @@ importers:
 
   scripts/mai-chart:
     dependencies:
+      '@aws-sdk/client-s3':
+        specifier: 'catalog:'
+        version: 3.1014.0
+      dotenv:
+        specifier: 'catalog:'
+        version: 17.3.1
       maidb-data:
         specifier: workspace:*
         version: link:../../packages/maidb-data

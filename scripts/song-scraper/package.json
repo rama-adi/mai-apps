@@ -11,6 +11,7 @@
     "create-filters": "tsx create-filters.ts",
     "finalize": "tsx finalize-songs-json.ts",
     "sync": "tsx sync.ts",
+    "add-missing": "tsx add-missing.ts",
     "nuke-r2": "tsx nuke-r2.ts",
     "dryrun-og": "tsx dryrun-og.ts"
   },

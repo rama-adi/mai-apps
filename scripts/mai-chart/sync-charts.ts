@@ -1,12 +1,47 @@
 import { readFileSync, writeFileSync } from "fs";
 import { join } from "path";
+import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import "dotenv/config";
 import { MaiChartMetadataResponse } from "../../packages/maidb-data/src/types/maichart-metadata.js";
 import type { MaiDbSong } from "../../packages/maidb-data/src/types/song.js";
 
 const PKG_ROOT = join(import.meta.dirname, "../../packages/maidb-data");
 const SONGS_JSON_PATH = join(PKG_ROOT, "data/songs/songs.json");
 const CHARTS_JSON_PATH = join(PKG_ROOT, "data/mai-charts/charts.json");
+const CHARTS_R2_KEY = "data/mai-charts/charts.json";
 const MANIFEST_URL = "https://mai-notes.com/data/manifest.json";
+
+async function uploadChartsToR2(path: string): Promise<void> {
+  const accessKeyId = process.env.S3_ACCESS_KEY_ID;
+  const secretAccessKey = process.env.S3_SECRET_ACCESS_KEY;
+  const bucket = process.env.S3_BUCKET;
+  const endpoint = process.env.S3_ENDPOINT;
+  const region = process.env.S3_REGION ?? "auto";
+
+  if (!accessKeyId || !secretAccessKey || !bucket || !endpoint) {
+    console.warn("Skipping R2 upload: S3_* env vars not set.");
+    return;
+  }
+
+  const s3 = new S3Client({
+    credentials: { accessKeyId, secretAccessKey },
+    endpoint,
+    region,
+    forcePathStyle: true,
+  });
+
+  const body = readFileSync(path);
+  await s3.send(
+    new PutObjectCommand({
+      Bucket: bucket,
+      Key: CHARTS_R2_KEY,
+      Body: body,
+      ContentType: "application/json",
+      CacheControl: "public, max-age=60",
+    }),
+  );
+  console.log(`Uploaded ${CHARTS_R2_KEY} (${body.length} bytes) to R2`);
+}
 
 interface ChartEntry {
   title: string;
@@ -119,6 +154,11 @@ async function main() {
   console.log(
     `Wrote ${Object.keys(sorted).length} entries to charts.json (matched: ${matched}, unmatched: ${unmatched})`,
   );
+
+  const skipUpload = process.argv.includes("--skip-upload");
+  if (!skipUpload) {
+    await uploadChartsToR2(CHARTS_JSON_PATH);
+  }
 }
 
 main().catch((err) => {
