@@ -1,0 +1,71 @@
+name: Deploy maidb-web
+
+on:
+  workflow_run:
+    workflows: ["Scrape maimai song data"]
+    types: [completed]
+    branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - "apps/maidb-web/**"
+      - "packages/maidb-data/src/**"
+      - "packages/ui/**"
+      - "pnpm-lock.yaml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 2
+
+      - name: Check for deploy-worthy changes
+        id: changes
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "deploy=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          SHA="${{ github.event.workflow_run.head_sha || github.sha }}"
+          if git diff --name-only "$SHA^" "$SHA" | grep -qE '^(apps/maidb-web/|packages/maidb-data/|packages/ui/|pnpm-lock\.yaml)'; then
+            echo "deploy=true" >> $GITHUB_OUTPUT
+          else
+            echo "deploy=false" >> $GITHUB_OUTPUT
+            echo "No deploy-worthy changes — skipping."
+          fi
+
+      - uses: voidzero-dev/setup-vp@v1
+        if: steps.changes.outputs.deploy == 'true'
+        with:
+          node-version: "22"
+          cache: true
+
+      - if: steps.changes.outputs.deploy == 'true'
+        run: vp install
+
+      - name: Build maidb-data
+        if: steps.changes.outputs.deploy == 'true'
+        working-directory: packages/maidb-data
+        run: vp run build
+
+      - name: Build @packages/ui
+        if: steps.changes.outputs.deploy == 'true'
+        working-directory: packages/ui
+        run: vp run build
+
+      - name: Deploy to Cloudflare
+        if: steps.changes.outputs.deploy == 'true'
+        working-directory: apps/maidb-web
+        run: vp run deploy
