@@ -1,19 +1,19 @@
 {
   "categories": [
     {
-      "value": "POPS＆アニメ",
+      "value": "pops-anime",
       "label": "POPS＆アニメ"
     },
     {
-      "value": "ゲーム＆バラエティ",
+      "value": "game-variety",
       "label": "ゲーム＆バラエティ"
     },
     {
-      "value": "niconico＆ボーカロイド",
+      "value": "niconico-vocaloid",
       "label": "niconico＆ボーカロイド"
     },
     {
-      "value": "オンゲキ＆CHUNITHM",
+      "value": "ongeki-chunithm",
       "label": "オンゲキ＆CHUNITHM"
     },
     {
@@ -21,122 +21,122 @@
       "label": "maimai"
     },
     {
-      "value": "東方Project",
+      "value": "touhou",
       "label": "東方Project"
     },
     {
-      "value": "宴会場",
+      "value": "utage",
       "label": "宴会場"
     }
   ],
   "versions": [
     {
-      "value": "GreeN",
-      "label": "GreeN"
+      "value": "green",
+      "label": "GreeN (超)"
     },
     {
-      "value": "ORANGE PLUS",
-      "label": "ORANGE PLUS"
+      "value": "orange-plus",
+      "label": "ORANGE+ (暁)"
     },
     {
-      "value": "ORANGE",
-      "label": "ORANGE"
+      "value": "orange",
+      "label": "ORANGE (橙)"
     },
     {
-      "value": "MiLK PLUS",
-      "label": "MiLK PLUS"
+      "value": "milk-plus",
+      "label": "MiLK+ (雪)"
     },
     {
-      "value": "MURASAKi",
-      "label": "MURASAKi"
+      "value": "murasaki",
+      "label": "MURASAKi (紫)"
     },
     {
-      "value": "MURASAKi PLUS",
-      "label": "MURASAKi PLUS"
+      "value": "murasaki-plus",
+      "label": "MURASAKi+ (菫)"
     },
     {
-      "value": "MiLK",
-      "label": "MiLK"
+      "value": "milk",
+      "label": "MiLK (白)"
     },
     {
-      "value": "FiNALE",
-      "label": "FiNALE"
+      "value": "finale",
+      "label": "FiNALE (輝)"
     },
     {
-      "value": "maimaiでらっくす",
-      "label": "maimaiでらっくす"
+      "value": "dx",
+      "label": "でらっくす (熊)"
     },
     {
-      "value": "maimaiでらっくす PLUS",
-      "label": "maimaiでらっくす PLUS"
+      "value": "dx-plus",
+      "label": "でらっくす+ (華)"
     },
     {
-      "value": "Splash",
-      "label": "Splash"
+      "value": "dx-splash",
+      "label": "Splash (爽)"
     },
     {
-      "value": "Splash PLUS",
-      "label": "Splash PLUS"
+      "value": "dx-splash-plus",
+      "label": "Splash+ (煌)"
     },
     {
-      "value": "UNiVERSE",
-      "label": "UNiVERSE"
+      "value": "dx-universe",
+      "label": "UNiVERSE (宙)"
     },
     {
-      "value": "UNiVERSE PLUS",
-      "label": "UNiVERSE PLUS"
+      "value": "dx-universe-plus",
+      "label": "UNiVERSE+ (星)"
     },
     {
       "value": "maimai",
       "label": "maimai (真)"
     },
     {
-      "value": "GreeN PLUS",
-      "label": "GreeN PLUS"
+      "value": "green-plus",
+      "label": "GreeN+ (檄)"
     },
     {
-      "value": "maimai PLUS",
-      "label": "maimai PLUS"
+      "value": "maimai-plus",
+      "label": "maimai+ (真)"
     },
     {
-      "value": "PiNK PLUS",
-      "label": "PiNK PLUS"
+      "value": "pink-plus",
+      "label": "PiNK+ (舞)"
     },
     {
-      "value": "PiNK",
-      "label": "PiNK"
+      "value": "pink",
+      "label": "PiNK (桃)"
     },
     {
-      "value": "FESTiVAL",
-      "label": "FESTiVAL"
+      "value": "dx-festival",
+      "label": "FESTiVAL (祭)"
     },
     {
-      "value": "BUDDiES",
-      "label": "BUDDiES"
+      "value": "dx-buddies",
+      "label": "BUDDiES (双)"
     },
     {
-      "value": "FESTiVAL PLUS",
-      "label": "FESTiVAL PLUS"
+      "value": "dx-festival-plus",
+      "label": "FESTiVAL+ (祝)"
     },
     {
-      "value": "BUDDiES PLUS",
-      "label": "BUDDiES PLUS"
+      "value": "dx-buddies-plus",
+      "label": "BUDDiES+ (宴)"
     },
     {
-      "value": "PRiSM",
-      "label": "PRiSM"
+      "value": "dx-prism",
+      "label": "PRiSM (鏡)"
     },
     {
-      "value": "PRiSM PLUS",
-      "label": "PRiSM PLUS"
+      "value": "dx-prism-plus",
+      "label": "PRiSM+ (彩)"
     },
     {
-      "value": "CiRCLE",
-      "label": "CiRCLE"
+      "value": "dx-circle",
+      "label": "CiRCLE (丸)"
     },
     {
-      "value": "CiRCLE PLUS",
-      "label": "CiRCLE PLUS"
+      "value": "dx-circle-plus",
+      "label": "CiRCLE+"
     }
   ],
   "difficulties": [
@@ -500,12 +500,12 @@
   ],
   "statuses": [
     {
-      "value": "new",
-      "label": "New"
-    },
-    {
       "value": "locked",
       "label": "Locked"
+    },
+    {
+      "value": "new",
+      "label": "New"
     }
   ]
 }
