@@ -28,6 +28,10 @@ jobs:
 
       - run: vp install
 
+      - name: Build maidb-data
+        working-directory: packages/maidb-data
+        run: vp run build
+
       - name: Add missing songs (song-scraper)
         working-directory: scripts/song-scraper
         run: vp run add-missing
