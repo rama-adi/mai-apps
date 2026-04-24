@@ -137,9 +137,12 @@ async function main() {
 
   const missing = [...upstreamIds].filter((id) => !deployedIds.has(id));
   const stale = [...deployedIds].filter((id) => !upstreamIds.has(id));
+  const brokenImageIds = deployed
+    .filter((s) => upstreamIds.has(s.songId) && !s.internalImageId)
+    .map((s) => s.songId);
 
   console.log(
-    `\nUpstream: ${upstreamIds.size}  Deployed: ${deployedIds.size}  Missing: ${missing.length}  Stale: ${stale.length}`,
+    `\nUpstream: ${upstreamIds.size}  Deployed: ${deployedIds.size}  Missing: ${missing.length}  Stale: ${stale.length}  Broken imageId: ${brokenImageIds.length}`,
   );
 
   if (missing.length > 0) {
@@ -147,11 +150,16 @@ async function main() {
     for (const id of missing.slice(0, 30)) console.log(`  ${id}`);
     if (missing.length > 30) console.log(`  ... +${missing.length - 30} more`);
   }
+  if (brokenImageIds.length > 0) {
+    console.log(`\nDeployed songs with null internalImageId (first 30):`);
+    for (const id of brokenImageIds.slice(0, 30)) console.log(`  ${id}`);
+    if (brokenImageIds.length > 30) console.log(`  ... +${brokenImageIds.length - 30} more`);
+  }
   if (stale.length > 0) {
     console.log(`\nNote: ${stale.length} deployed song(s) not in upstream — left untouched.`);
   }
 
-  if (missing.length === 0) {
+  if (missing.length === 0 && brokenImageIds.length === 0) {
     console.log("\nNothing missing. No action taken.");
     return;
   }
