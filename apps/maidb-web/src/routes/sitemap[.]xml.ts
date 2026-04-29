@@ -8,6 +8,7 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const lastmod = todayIso();
         const body = buildSitemapIndex([
+          { loc: `${SITE_URL}/sitemaps/meta.xml`, lastmod },
           { loc: `${SITE_URL}/sitemaps/songs.xml`, lastmod },
           { loc: `${SITE_URL}/sitemaps/versions.xml`, lastmod },
         ]);

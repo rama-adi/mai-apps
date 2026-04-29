@@ -6,8 +6,8 @@ import {
   validateSongBrowserSearch,
   type SongBrowserSearchParams,
 } from "../../components/song-browser/song-browser.types";
-import { getSongBySlug } from "../-server/songs";
 import { SITE_URL } from "../../lib/site";
+import { getSongBySlug } from "../-server/songs";
 
 export const Route = createFileRoute("/(song-browser-home)/modal/$slug")({
   validateSearch: validateSongBrowserSearch,
@@ -50,6 +50,11 @@ function HomeSongModalRoute() {
       search,
       replace: true,
       resetScroll: false,
+      mask: {
+        to: "/songs/$slug",
+        params: { slug },
+        unmaskOnReload: true,
+      },
     });
   };
 
