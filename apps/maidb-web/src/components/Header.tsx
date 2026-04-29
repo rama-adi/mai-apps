@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Music, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
@@ -10,7 +10,7 @@ export default function Header() {
           to="/"
           className="inline-flex items-center gap-2 text-base font-semibold tracking-tight text-foreground no-underline"
         >
-          <Music className="h-5 w-5 text-primary" />
+          <img src="/assets/logo.png" alt="MaiDB logo" className="h-7 w-7" />
           MaiDB
         </Link>
 
