@@ -109,14 +109,27 @@ function buildBreadcrumbJsonLd(song: MaiDbSong) {
   };
 }
 
+function stripHtml(input: string): string {
+  return input
+    .replace(/<[^>]*>/g, "")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function buildFaqJsonLd(faq: SongSeoEntry["schema"]["faq"]) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faq.map((item) => ({
       "@type": "Question",
-      name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
+      name: stripHtml(item.q),
+      acceptedAnswer: { "@type": "Answer", text: stripHtml(item.a) },
     })),
   };
 }
@@ -178,7 +191,7 @@ export const Route = createFileRoute("/songs/$slug")({
 
     const rawTitle = seo ? `${seo.schema.seoTitle} | MaiDB` : fallbackTitle;
     const title = rawTitle.length > 70 ? `${rawTitle.slice(0, 67)}...` : rawTitle;
-    const rawDescription = seo?.schema.metaDescription ?? fallbackDescription;
+    const rawDescription = seo ? stripHtml(seo.schema.metaDescription) : fallbackDescription;
     const description =
       rawDescription.length > 160 ? `${rawDescription.slice(0, 157)}...` : rawDescription;
 
@@ -599,9 +612,10 @@ function OverviewSection({ seo, color }: { seo: SongSeoEntry; color: string }) {
     <section>
       <SectionHeading color={color}>Overview</SectionHeading>
       <Collapsible peek={200}>
-        <p className="mt-4 whitespace-pre-line text-justify text-sm leading-relaxed text-foreground/90 hyphens-auto">
-          {seo.schema.overview}
-        </p>
+        <div
+          className="mt-4 whitespace-pre-line text-justify text-sm leading-relaxed text-foreground/90 hyphens-auto [&_a]:text-primary [&_a]:underline [&_strong]:font-semibold [&_em]:italic"
+          dangerouslySetInnerHTML={{ __html: seo.schema.overview }}
+        />
       </Collapsible>
     </section>
   );
@@ -734,9 +748,9 @@ function TriviaSection({ trivia, color }: { trivia: string[]; color: string }) {
     <section>
       <SectionHeading color={color}>Trivia</SectionHeading>
       <Collapsible peek={220}>
-        <ul className="mt-4 list-disc space-y-2 pl-5 text-justify text-sm leading-relaxed text-foreground/90 hyphens-auto">
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-justify text-sm leading-relaxed text-foreground/90 hyphens-auto [&_a]:text-primary [&_a]:underline [&_strong]:font-semibold [&_em]:italic">
           {trivia.map((item, i) => (
-            <li key={i}>{item}</li>
+            <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
           ))}
         </ul>
       </Collapsible>
@@ -752,10 +766,14 @@ function FaqSection({ faq, color }: { faq: { q: string; a: string }[]; color: st
         <dl className="mt-4 space-y-4">
           {faq.map((item, i) => (
             <div key={i} className="rounded-lg border bg-card px-4 py-3">
-              <dt className="text-sm font-bold text-foreground">{item.q}</dt>
-              <dd className="mt-1.5 whitespace-pre-line text-justify text-sm leading-relaxed text-foreground/80 hyphens-auto">
-                {item.a}
-              </dd>
+              <dt
+                className="text-sm font-bold text-foreground [&_a]:text-primary [&_a]:underline [&_strong]:font-semibold [&_em]:italic"
+                dangerouslySetInnerHTML={{ __html: item.q }}
+              />
+              <dd
+                className="mt-1.5 whitespace-pre-line text-justify text-sm leading-relaxed text-foreground/80 hyphens-auto [&_a]:text-primary [&_a]:underline [&_strong]:font-semibold [&_em]:italic"
+                dangerouslySetInnerHTML={{ __html: item.a }}
+              />
             </div>
           ))}
         </dl>
