@@ -1,9 +1,11 @@
-import { Link } from "@tanstack/react-router";
-import { ArrowRight, Search } from "lucide-react";
+import { Search } from "lucide-react";
+import { useOmnisearch } from "../../../components/omnisearch/useOmnisearch";
 
 const RISE = "home-rise 0.6s cubic-bezier(0.2,0.7,0.2,1) backwards";
 
 export function HomeHero() {
+  const omnisearch = useOmnisearch();
+
   return (
     <section className="relative -mt-8 overflow-hidden border-b border-border bg-primary/[0.025] dark:bg-transparent">
       <div
@@ -84,22 +86,17 @@ export function HomeHero() {
             data-home-anim
             style={{ animation: RISE, animationDelay: "240ms" }}
           >
-            <Link
-              to="/songs"
+            <button
+              type="button"
+              onClick={() => omnisearch.open()}
               className="group inline-flex items-center gap-2 border border-primary bg-primary px-6 py-3 text-sm font-bold tracking-wide text-primary-foreground transition-colors hover:bg-primary/90"
             >
               <Search className="h-4 w-4 transition-transform duration-300 group-hover:rotate-[-8deg]" />
-              Browse all songs
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-            <Link
-              to="/songs"
-              search={{ isNew: true }}
-              className="group inline-flex items-center gap-2 border border-border bg-background px-6 py-3 text-sm font-bold tracking-wide text-foreground transition-all duration-200 hover:border-primary hover:text-primary"
-            >
-              See what&rsquo;s new
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-            </Link>
+              Search songs
+              <kbd className="ml-1 hidden rounded border border-primary-foreground/30 bg-primary-foreground/10 px-1.5 py-0.5 font-mono text-[10px] font-semibold tracking-wider text-primary-foreground/80 sm:inline-block">
+                ⌘K
+              </kbd>
+            </button>
           </div>
         </div>
 

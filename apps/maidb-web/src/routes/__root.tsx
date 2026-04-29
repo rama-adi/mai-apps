@@ -3,6 +3,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { OmnisearchProvider } from "../components/omnisearch/OmnisearchProvider";
 
 import appCss from "../styles.css?url";
 
@@ -60,10 +61,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <Header />
-      <Outlet />
-      <Footer />
-    </div>
+    <OmnisearchProvider>
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+    </OmnisearchProvider>
   );
 }
