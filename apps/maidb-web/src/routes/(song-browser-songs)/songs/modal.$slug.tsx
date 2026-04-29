@@ -7,9 +7,14 @@ import {
   type SongBrowserSearchParams,
 } from "../../../components/song-browser/song-browser.types";
 import { getSongBySlug } from "../../-server/songs";
+import { SITE_URL } from "../../../lib/site";
 
 export const Route = createFileRoute("/(song-browser-songs)/songs/modal/$slug")({
   validateSearch: validateSongBrowserSearch,
+  head: ({ params }) => ({
+    meta: [{ name: "robots", content: "noindex,follow" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/songs/${params.slug}` }],
+  }),
   loader: async ({ params }) => getSongBySlug({ data: { slug: params.slug } }),
   component: SongsPageModalRoute,
 });

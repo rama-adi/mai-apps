@@ -9,8 +9,8 @@ import {
   VERSION_BY_SLUG,
 } from "maidb-data";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { getSongBySlug, getMaiNotesCharts, getCounterpartSong, getSongSeo } from "./-server/songs";
-import type { MaiNotesEntry } from "../lib/song-data.server";
+import { getSongBySlug, getMaiNotesCharts, getCounterpartSong, getSongSeo } from "../-server/songs";
+import type { MaiNotesEntry } from "../../lib/song-data.server";
 import {
   ArrowLeft,
   ArrowRight,
@@ -27,10 +27,8 @@ import {
   Youtube,
   Zap,
 } from "lucide-react";
-import { SongImage } from "../components/song-detail/shared";
-
-const SITE_URL = "https://maidb.onebyteworks.my.id";
-const OG_IMAGE_BASE = "https://maisongdb-blob.onebyteworks.my.id/og-v1";
+import { SongImage } from "../../components/song-detail/shared";
+import { OG_IMAGE_BASE, OG_IMAGE_FALLBACK, SITE_LOCALE, SITE_NAME, SITE_URL } from "../../lib/site";
 
 function buildSongSeoDescription(song: MaiDbSong): string {
   const difficulties = song.sheets
@@ -61,14 +59,13 @@ function buildJsonLd(song: MaiDbSong) {
     ? `${OG_IMAGE_BASE}/${song.internalImageId}.jpg`
     : undefined;
 
-  return {
+  const json: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "MusicComposition",
     name: song.title,
     composer: { "@type": "Person", name: song.artist },
-    ...(imageUrl ? { image: imageUrl } : {}),
     identifier: song.songId,
-    datePublished: song.releaseDate || undefined,
+    inLanguage: "en",
     genre: CATEGORY_BY_SLUG[song.category]?.category ?? song.category,
     url: `${SITE_URL}/songs/${song.slug}`,
     additionalProperty: [
@@ -88,6 +85,26 @@ function buildJsonLd(song: MaiDbSong) {
         name: `${TYPE_NAMES[s.type] ?? s.type} ${DIFFICULTY_NAMES[s.difficulty] ?? s.difficulty}`,
         value: s.internalLevelValue > 0 ? String(s.internalLevelValue) : s.level,
       })),
+    ],
+  };
+  if (imageUrl) json.image = imageUrl;
+  if (song.releaseDate) json.datePublished = song.releaseDate;
+  return json;
+}
+
+function buildBreadcrumbJsonLd(song: MaiDbSong) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: "Songs", item: `${SITE_URL}/songs` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: song.title,
+        item: `${SITE_URL}/songs/${song.slug}`,
+      },
     ],
   };
 }
@@ -134,7 +151,7 @@ function videoTypeLabel(type: SeoVideo["type"]): string {
   }
 }
 
-export const Route = createFileRoute("/songs_/$slug")({
+export const Route = createFileRoute("/songs/$slug")({
   staleTime: Infinity,
   head: ({ loaderData }) => {
     const data = loaderData as unknown as {
@@ -152,19 +169,32 @@ export const Route = createFileRoute("/songs_/$slug")({
     const fallbackDescription = buildSongSeoDescription(song);
     const ogDescription = buildSongOgDescription(song);
     const canonicalUrl = `${SITE_URL}/songs/${song.slug}`;
-    const imageUrl = song.internalImageId
+    const songImage = song.internalImageId
       ? `${OG_IMAGE_BASE}/${song.internalImageId}.jpg`
       : undefined;
-    const fallbackTitle = `${song.title} by ${song.artist} - maimai Chart Database | MaiDB`;
+    const ogImage = songImage ?? OG_IMAGE_FALLBACK;
+    const versionName = VERSION_BY_SLUG[song.version]?.version ?? song.version;
+    const fallbackTitle = `${song.title} (${versionName}) by ${song.artist} | MaiDB`;
 
-    const title = seo ? `${seo.schema.seoTitle} | MaiDB` : fallbackTitle;
-    const description = seo?.schema.metaDescription ?? fallbackDescription;
-    const seoTags = seo?.schema.tags ?? [];
+    const rawTitle = seo ? `${seo.schema.seoTitle} | MaiDB` : fallbackTitle;
+    const title = rawTitle.length > 70 ? `${rawTitle.slice(0, 67)}...` : rawTitle;
+    const rawDescription = seo?.schema.metaDescription ?? fallbackDescription;
+    const description =
+      rawDescription.length > 160 ? `${rawDescription.slice(0, 157)}...` : rawDescription;
+
+    // Pages without an AI-generated SEO entry render only the chart table +
+    // infobox, which is too thin to index on its own. Noindex until the SEO
+    // backfill catches up; the page stays crawlable and link equity flows.
+    const robotsContent = seo ? "index,follow" : "noindex,follow";
 
     const scripts: { type: string; children: string }[] = [
       {
         type: "application/ld+json",
         children: JSON.stringify(buildJsonLd(song)),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(buildBreadcrumbJsonLd(song)),
       },
     ];
     if (seo && seo.schema.faq.length > 0) {
@@ -178,45 +208,24 @@ export const Route = createFileRoute("/songs_/$slug")({
       meta: [
         { title },
         { name: "description", content: description },
+        { name: "robots", content: robotsContent },
 
         // Open Graph
         { property: "og:type", content: "music.song" },
         { property: "og:title", content: title },
         { property: "og:description", content: ogDescription },
         { property: "og:url", content: canonicalUrl },
-        { property: "og:site_name", content: "MaiDB" },
-        ...(imageUrl
-          ? [
-              { property: "og:image", content: imageUrl },
-              { property: "og:image:alt", content: `${song.title} album art` },
-            ]
-          : []),
+        { property: "og:site_name", content: SITE_NAME },
+        { property: "og:locale", content: SITE_LOCALE },
+        { property: "og:image", content: ogImage },
+        { property: "og:image:alt", content: `${song.title} album art` },
         { property: "music:musician", content: song.artist },
 
         // Twitter Card
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: ogDescription },
-        ...(imageUrl ? [{ name: "twitter:image", content: imageUrl }] : []),
-
-        // Additional SEO
-        {
-          name: "keywords",
-          content: [
-            song.title,
-            song.artist,
-            "maimai",
-            "chart",
-            CATEGORY_BY_SLUG[song.category]?.category ?? song.category,
-            VERSION_BY_SLUG[song.version]?.version ?? song.version,
-            ...song.sheets.map((s) => DIFFICULTY_NAMES[s.difficulty] ?? s.difficulty),
-            ...song.sheets.map((s) => `level ${s.level}`),
-            "rhythm game",
-            "arcade",
-            "SEGA",
-            ...seoTags,
-          ].join(", "),
-        },
+        { name: "twitter:image", content: ogImage },
       ],
       links: [{ rel: "canonical", href: canonicalUrl }],
       scripts,

@@ -10,11 +10,15 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SonglistRouteImport } from './routes/songlist'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as songBrowserHomeRouteRouteImport } from './routes/(song-browser-home)/route'
 import { Route as VersionIndexRouteImport } from './routes/version/index'
 import { Route as songBrowserHomeIndexRouteImport } from './routes/(song-browser-home)/index'
-import { Route as SongsSlugRouteImport } from './routes/songs_.$slug'
+import { Route as SongsSlugRouteImport } from './routes/songs/$slug'
+import { Route as SitemapsVersionsDotxmlRouteImport } from './routes/sitemaps/versions[.]xml'
+import { Route as SitemapsSongsDotxmlRouteImport } from './routes/sitemaps/songs[.]xml'
 import { Route as songBrowserSongsSongsRouteRouteImport } from './routes/(song-browser-songs)/songs/route'
 import { Route as songBrowserHomeModalSlugRouteImport } from './routes/(song-browser-home)/modal.$slug'
 import { Route as songBrowserVersionVersionSlugRouteRouteImport } from './routes/(song-browser-version)/version/$slug/route'
@@ -23,6 +27,12 @@ import { Route as songBrowserVersionVersionSlugModalSongSlugRouteImport } from '
 
 const SonglistRoute = SonglistRouteImport.update({
             id: '/songlist',path: '/songlist',getParentRoute: () => rootRouteImport
+          }as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+            id: '/sitemap.xml',path: '/sitemap.xml',getParentRoute: () => rootRouteImport
+          }as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+            id: '/robots.txt',path: '/robots.txt',getParentRoute: () => rootRouteImport
           }as any)
 const AboutRoute = AboutRouteImport.update({
             id: '/about',path: '/about',getParentRoute: () => rootRouteImport
@@ -37,7 +47,13 @@ const songBrowserHomeIndexRoute = songBrowserHomeIndexRouteImport.update({
             id: '/',path: '/',getParentRoute: () => songBrowserHomeRouteRoute
           }as any)
 const SongsSlugRoute = SongsSlugRouteImport.update({
-            id: '/songs_/$slug',path: '/songs/$slug',getParentRoute: () => rootRouteImport
+            id: '/songs/$slug',path: '/songs/$slug',getParentRoute: () => rootRouteImport
+          }as any)
+const SitemapsVersionsDotxmlRoute = SitemapsVersionsDotxmlRouteImport.update({
+            id: '/sitemaps/versions.xml',path: '/sitemaps/versions.xml',getParentRoute: () => rootRouteImport
+          }as any)
+const SitemapsSongsDotxmlRoute = SitemapsSongsDotxmlRouteImport.update({
+            id: '/sitemaps/songs.xml',path: '/sitemaps/songs.xml',getParentRoute: () => rootRouteImport
           }as any)
 const songBrowserSongsSongsRouteRoute = songBrowserSongsSongsRouteRouteImport.update({
             id: '/(song-browser-songs)/songs',path: '/songs',getParentRoute: () => rootRouteImport
@@ -56,25 +72,25 @@ const songBrowserVersionVersionSlugModalSongSlugRoute = songBrowserVersionVersio
           }as any)
 
 export interface FileRoutesByFullPath {
-'/about': typeof AboutRoute,'/songlist': typeof SonglistRoute,'/songs': typeof songBrowserSongsSongsRouteRouteWithChildren,'/songs/$slug': typeof SongsSlugRoute,'/': typeof songBrowserHomeIndexRoute,'/version/': typeof VersionIndexRoute,'/version/$slug': typeof songBrowserVersionVersionSlugRouteRouteWithChildren,'/modal/$slug': typeof songBrowserHomeModalSlugRoute,'/songs/modal/$slug': typeof songBrowserSongsSongsModalSlugRoute,'/version/$slug/modal/$songSlug': typeof songBrowserVersionVersionSlugModalSongSlugRoute
+'/about': typeof AboutRoute,'/robots.txt': typeof RobotsDottxtRoute,'/sitemap.xml': typeof SitemapDotxmlRoute,'/songlist': typeof SonglistRoute,'/songs': typeof songBrowserSongsSongsRouteRouteWithChildren,'/sitemaps/songs.xml': typeof SitemapsSongsDotxmlRoute,'/sitemaps/versions.xml': typeof SitemapsVersionsDotxmlRoute,'/songs/$slug': typeof SongsSlugRoute,'/': typeof songBrowserHomeIndexRoute,'/version/': typeof VersionIndexRoute,'/version/$slug': typeof songBrowserVersionVersionSlugRouteRouteWithChildren,'/modal/$slug': typeof songBrowserHomeModalSlugRoute,'/songs/modal/$slug': typeof songBrowserSongsSongsModalSlugRoute,'/version/$slug/modal/$songSlug': typeof songBrowserVersionVersionSlugModalSongSlugRoute
 }
 export interface FileRoutesByTo {
-'/about': typeof AboutRoute,'/songlist': typeof SonglistRoute,'/songs': typeof songBrowserSongsSongsRouteRouteWithChildren,'/songs/$slug': typeof SongsSlugRoute,'/': typeof songBrowserHomeIndexRoute,'/version': typeof VersionIndexRoute,'/version/$slug': typeof songBrowserVersionVersionSlugRouteRouteWithChildren,'/modal/$slug': typeof songBrowserHomeModalSlugRoute,'/songs/modal/$slug': typeof songBrowserSongsSongsModalSlugRoute,'/version/$slug/modal/$songSlug': typeof songBrowserVersionVersionSlugModalSongSlugRoute
+'/about': typeof AboutRoute,'/robots.txt': typeof RobotsDottxtRoute,'/sitemap.xml': typeof SitemapDotxmlRoute,'/songlist': typeof SonglistRoute,'/songs': typeof songBrowserSongsSongsRouteRouteWithChildren,'/sitemaps/songs.xml': typeof SitemapsSongsDotxmlRoute,'/sitemaps/versions.xml': typeof SitemapsVersionsDotxmlRoute,'/songs/$slug': typeof SongsSlugRoute,'/': typeof songBrowserHomeIndexRoute,'/version': typeof VersionIndexRoute,'/version/$slug': typeof songBrowserVersionVersionSlugRouteRouteWithChildren,'/modal/$slug': typeof songBrowserHomeModalSlugRoute,'/songs/modal/$slug': typeof songBrowserSongsSongsModalSlugRoute,'/version/$slug/modal/$songSlug': typeof songBrowserVersionVersionSlugModalSongSlugRoute
 }
 export interface FileRoutesById {
 '__root__': typeof rootRouteImport,
-'/(song-browser-home)': typeof songBrowserHomeRouteRouteWithChildren,'/about': typeof AboutRoute,'/songlist': typeof SonglistRoute,'/(song-browser-songs)/songs': typeof songBrowserSongsSongsRouteRouteWithChildren,'/songs_/$slug': typeof SongsSlugRoute,'/(song-browser-home)/': typeof songBrowserHomeIndexRoute,'/version/': typeof VersionIndexRoute,'/(song-browser-version)/version/$slug': typeof songBrowserVersionVersionSlugRouteRouteWithChildren,'/(song-browser-home)/modal/$slug': typeof songBrowserHomeModalSlugRoute,'/(song-browser-songs)/songs/modal/$slug': typeof songBrowserSongsSongsModalSlugRoute,'/(song-browser-version)/version/$slug/modal/$songSlug': typeof songBrowserVersionVersionSlugModalSongSlugRoute
+'/(song-browser-home)': typeof songBrowserHomeRouteRouteWithChildren,'/about': typeof AboutRoute,'/robots.txt': typeof RobotsDottxtRoute,'/sitemap.xml': typeof SitemapDotxmlRoute,'/songlist': typeof SonglistRoute,'/(song-browser-songs)/songs': typeof songBrowserSongsSongsRouteRouteWithChildren,'/sitemaps/songs.xml': typeof SitemapsSongsDotxmlRoute,'/sitemaps/versions.xml': typeof SitemapsVersionsDotxmlRoute,'/songs/$slug': typeof SongsSlugRoute,'/(song-browser-home)/': typeof songBrowserHomeIndexRoute,'/version/': typeof VersionIndexRoute,'/(song-browser-version)/version/$slug': typeof songBrowserVersionVersionSlugRouteRouteWithChildren,'/(song-browser-home)/modal/$slug': typeof songBrowserHomeModalSlugRoute,'/(song-browser-songs)/songs/modal/$slug': typeof songBrowserSongsSongsModalSlugRoute,'/(song-browser-version)/version/$slug/modal/$songSlug': typeof songBrowserVersionVersionSlugModalSongSlugRoute
 }
 export interface FileRouteTypes {
 fileRoutesByFullPath: FileRoutesByFullPath
-fullPaths: '/about'|'/songlist'|'/songs'|'/songs/$slug'|'/'|'/version/'|'/version/$slug'|'/modal/$slug'|'/songs/modal/$slug'|'/version/$slug/modal/$songSlug'
+fullPaths: '/about'|'/robots.txt'|'/sitemap.xml'|'/songlist'|'/songs'|'/sitemaps/songs.xml'|'/sitemaps/versions.xml'|'/songs/$slug'|'/'|'/version/'|'/version/$slug'|'/modal/$slug'|'/songs/modal/$slug'|'/version/$slug/modal/$songSlug'
 fileRoutesByTo: FileRoutesByTo
-to: '/about'|'/songlist'|'/songs'|'/songs/$slug'|'/'|'/version'|'/version/$slug'|'/modal/$slug'|'/songs/modal/$slug'|'/version/$slug/modal/$songSlug'
-id: '__root__'|'/(song-browser-home)'|'/about'|'/songlist'|'/(song-browser-songs)/songs'|'/songs_/$slug'|'/(song-browser-home)/'|'/version/'|'/(song-browser-version)/version/$slug'|'/(song-browser-home)/modal/$slug'|'/(song-browser-songs)/songs/modal/$slug'|'/(song-browser-version)/version/$slug/modal/$songSlug'
+to: '/about'|'/robots.txt'|'/sitemap.xml'|'/songlist'|'/songs'|'/sitemaps/songs.xml'|'/sitemaps/versions.xml'|'/songs/$slug'|'/'|'/version'|'/version/$slug'|'/modal/$slug'|'/songs/modal/$slug'|'/version/$slug/modal/$songSlug'
+id: '__root__'|'/(song-browser-home)'|'/about'|'/robots.txt'|'/sitemap.xml'|'/songlist'|'/(song-browser-songs)/songs'|'/sitemaps/songs.xml'|'/sitemaps/versions.xml'|'/songs/$slug'|'/(song-browser-home)/'|'/version/'|'/(song-browser-version)/version/$slug'|'/(song-browser-home)/modal/$slug'|'/(song-browser-songs)/songs/modal/$slug'|'/(song-browser-version)/version/$slug/modal/$songSlug'
 fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-songBrowserHomeRouteRoute: typeof songBrowserHomeRouteRouteWithChildren,AboutRoute: typeof AboutRoute,SonglistRoute: typeof SonglistRoute,songBrowserSongsSongsRouteRoute: typeof songBrowserSongsSongsRouteRouteWithChildren,SongsSlugRoute: typeof SongsSlugRoute,VersionIndexRoute: typeof VersionIndexRoute,songBrowserVersionVersionSlugRouteRoute: typeof songBrowserVersionVersionSlugRouteRouteWithChildren
+songBrowserHomeRouteRoute: typeof songBrowserHomeRouteRouteWithChildren,AboutRoute: typeof AboutRoute,RobotsDottxtRoute: typeof RobotsDottxtRoute,SitemapDotxmlRoute: typeof SitemapDotxmlRoute,SonglistRoute: typeof SonglistRoute,songBrowserSongsSongsRouteRoute: typeof songBrowserSongsSongsRouteRouteWithChildren,SitemapsSongsDotxmlRoute: typeof SitemapsSongsDotxmlRoute,SitemapsVersionsDotxmlRoute: typeof SitemapsVersionsDotxmlRoute,SongsSlugRoute: typeof SongsSlugRoute,VersionIndexRoute: typeof VersionIndexRoute,songBrowserVersionVersionSlugRouteRoute: typeof songBrowserVersionVersionSlugRouteRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -84,6 +100,20 @@ declare module '@tanstack/react-router' {
           path: '/songlist'
           fullPath: '/songlist'
           preLoaderRoute: typeof SonglistRouteImport
+          parentRoute: typeof rootRouteImport
+        }
+'/sitemap.xml': {
+          id: '/sitemap.xml'
+          path: '/sitemap.xml'
+          fullPath: '/sitemap.xml'
+          preLoaderRoute: typeof SitemapDotxmlRouteImport
+          parentRoute: typeof rootRouteImport
+        }
+'/robots.txt': {
+          id: '/robots.txt'
+          path: '/robots.txt'
+          fullPath: '/robots.txt'
+          preLoaderRoute: typeof RobotsDottxtRouteImport
           parentRoute: typeof rootRouteImport
         }
 '/about': {
@@ -114,11 +144,25 @@ declare module '@tanstack/react-router' {
           preLoaderRoute: typeof songBrowserHomeIndexRouteImport
           parentRoute: typeof songBrowserHomeRouteRoute
         }
-'/songs_/$slug': {
-          id: '/songs_/$slug'
+'/songs/$slug': {
+          id: '/songs/$slug'
           path: '/songs/$slug'
           fullPath: '/songs/$slug'
           preLoaderRoute: typeof SongsSlugRouteImport
+          parentRoute: typeof rootRouteImport
+        }
+'/sitemaps/versions.xml': {
+          id: '/sitemaps/versions.xml'
+          path: '/sitemaps/versions.xml'
+          fullPath: '/sitemaps/versions.xml'
+          preLoaderRoute: typeof SitemapsVersionsDotxmlRouteImport
+          parentRoute: typeof rootRouteImport
+        }
+'/sitemaps/songs.xml': {
+          id: '/sitemaps/songs.xml'
+          path: '/sitemaps/songs.xml'
+          fullPath: '/sitemaps/songs.xml'
+          preLoaderRoute: typeof SitemapsSongsDotxmlRouteImport
           parentRoute: typeof rootRouteImport
         }
 '/(song-browser-songs)/songs': {
@@ -194,7 +238,7 @@ const songBrowserVersionVersionSlugRouteRouteChildren: songBrowserVersionVersion
 const songBrowserVersionVersionSlugRouteRouteWithChildren = songBrowserVersionVersionSlugRouteRoute._addFileChildren(songBrowserVersionVersionSlugRouteRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
-  songBrowserHomeRouteRoute: songBrowserHomeRouteRouteWithChildren,AboutRoute: AboutRoute,SonglistRoute: SonglistRoute,songBrowserSongsSongsRouteRoute: songBrowserSongsSongsRouteRouteWithChildren,SongsSlugRoute: SongsSlugRoute,VersionIndexRoute: VersionIndexRoute,songBrowserVersionVersionSlugRouteRoute: songBrowserVersionVersionSlugRouteRouteWithChildren
+  songBrowserHomeRouteRoute: songBrowserHomeRouteRouteWithChildren,AboutRoute: AboutRoute,RobotsDottxtRoute: RobotsDottxtRoute,SitemapDotxmlRoute: SitemapDotxmlRoute,SonglistRoute: SonglistRoute,songBrowserSongsSongsRouteRoute: songBrowserSongsSongsRouteRouteWithChildren,SitemapsSongsDotxmlRoute: SitemapsSongsDotxmlRoute,SitemapsVersionsDotxmlRoute: SitemapsVersionsDotxmlRoute,SongsSlugRoute: SongsSlugRoute,VersionIndexRoute: VersionIndexRoute,songBrowserVersionVersionSlugRouteRoute: songBrowserVersionVersionSlugRouteRouteWithChildren
 }
 export const routeTree = rootRouteImport._addFileChildren(rootRouteChildren)._addFileTypes<FileRouteTypes>()
 
