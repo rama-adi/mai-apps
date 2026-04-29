@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const StructuredOutputData = z.object({
+export const structuredOutputSchema = z.object({
   seoTitle: z.string(),
   metaDescription: z.string(),
   tags: z.array(z.string()),
@@ -26,11 +26,14 @@ export const StructuredOutputData = z.object({
     }),
   ),
 });
+export type StructuredOutput = z.infer<typeof structuredOutputSchema>;
 
-export const SongSeoEntry = z.object({
+export const songSeoEntrySchema = z.object({
   songId: z.string(),
   slug: z.string(),
-  schema: StructuredOutputData,
+  schema: structuredOutputSchema,
 });
+export type SongSeoEntry = z.infer<typeof songSeoEntrySchema>;
 
-export const SongSeoData = z.array(SongSeoEntry);
+export const songSeoDataSchema = z.array(songSeoEntrySchema);
+export type SongSeoData = z.infer<typeof songSeoDataSchema>;

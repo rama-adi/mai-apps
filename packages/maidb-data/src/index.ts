@@ -38,3 +38,5 @@ export {
   filterSongs,
   searchSongsByKeyword,
 } from "./utils/songs.js";
+export { structuredOutputSchema, songSeoEntrySchema, songSeoDataSchema } from "./types/seo.js";
+export type { StructuredOutput, SongSeoEntry, SongSeoData } from "./types/seo.js";

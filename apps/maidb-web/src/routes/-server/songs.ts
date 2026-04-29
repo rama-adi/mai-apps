@@ -4,6 +4,7 @@ import {
   getMaiNotesCharts as getMaiNotesChartsServer,
   getCounterpartSong as getCounterpartSongServer,
 } from "../../lib/song-data.server";
+import { getSongSeoBySlug as getSongSeoBySlugServer } from "../../lib/song-seo.server";
 
 export const getSongBySlug = createServerFn({ method: "GET" })
   .inputValidator((data: { slug: string }) => data)
@@ -21,4 +22,10 @@ export const getCounterpartSong = createServerFn({ method: "GET" })
   .inputValidator((data: { songId: string }) => data)
   .handler((async ({ data }: { data: { songId: string } }) => {
     return getCounterpartSongServer(data.songId);
+  }) as never);
+
+export const getSongSeo = createServerFn({ method: "GET" })
+  .inputValidator((data: { slug: string }) => data)
+  .handler((async ({ data }: { data: { slug: string } }) => {
+    return getSongSeoBySlugServer(data.slug);
   }) as never);

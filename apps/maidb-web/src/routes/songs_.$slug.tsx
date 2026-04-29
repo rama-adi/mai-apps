@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import type { MaiDbSong, Sheet } from "maidb-data";
+import type { MaiDbSong, Sheet, SongSeoEntry } from "maidb-data";
 import {
   CATEGORY_BY_SLUG,
   DIFFICULTY_COLORS,
@@ -8,16 +8,19 @@ import {
   TYPE_NAMES,
   VERSION_BY_SLUG,
 } from "maidb-data";
-import { useMemo, useState } from "react";
-import { getSongBySlug, getMaiNotesCharts, getCounterpartSong } from "./-server/songs";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { getSongBySlug, getMaiNotesCharts, getCounterpartSong, getSongSeo } from "./-server/songs";
 import type { MaiNotesEntry } from "../lib/song-data.server";
 import {
   ArrowLeft,
   ArrowRight,
   Check,
+  ChevronDown,
+  ChevronUp,
   ClipboardCheck,
   Clock,
   ExternalLink,
+  Link2,
   Lock,
   Share2,
   X,
@@ -89,26 +92,87 @@ function buildJsonLd(song: MaiDbSong) {
   };
 }
 
+function buildFaqJsonLd(faq: SongSeoEntry["schema"]["faq"]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+}
+
 function youtubeSearchUrl(query: string) {
   return `https://www.youtube.com/results?search_query=${encodeURIComponent(query).replace(/%20/g, "+")}`;
 }
 
+type SeoVideo = SongSeoEntry["schema"]["youtubeVideos"][number];
+
+function getYoutubeVideoId(url: string): string | null {
+  const match = url.match(
+    /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{11})/,
+  );
+  return match ? match[1]! : null;
+}
+
+function videoTypeLabel(type: SeoVideo["type"]): string {
+  switch (type) {
+    case "official-video":
+      return "Official PV";
+    case "chart-basic":
+      return "Basic chart";
+    case "chart-advanced":
+      return "Advanced chart";
+    case "chart-expert":
+      return "Expert chart";
+    case "chart-master":
+      return "Master chart";
+    case "chart-remaster":
+      return "Re:MASTER chart";
+  }
+}
+
 export const Route = createFileRoute("/songs_/$slug")({
+  staleTime: Infinity,
   head: ({ loaderData }) => {
-    const song = (loaderData as unknown as { song: MaiDbSong | null })?.song ?? null;
+    const data = loaderData as unknown as {
+      song: MaiDbSong | null;
+      seo: SongSeoEntry | null;
+    } | null;
+    const song = data?.song ?? null;
+    const seo = data?.seo ?? null;
     if (!song) {
       return {
         meta: [{ title: "Song Not Found - MaiDB" }, { name: "robots", content: "noindex" }],
       };
     }
 
-    const description = buildSongSeoDescription(song);
+    const fallbackDescription = buildSongSeoDescription(song);
     const ogDescription = buildSongOgDescription(song);
     const canonicalUrl = `${SITE_URL}/songs/${song.slug}`;
     const imageUrl = song.internalImageId
       ? `${OG_IMAGE_BASE}/${song.internalImageId}.jpg`
       : undefined;
-    const title = `${song.title} by ${song.artist} - maimai Chart Database | MaiDB`;
+    const fallbackTitle = `${song.title} by ${song.artist} - maimai Chart Database | MaiDB`;
+
+    const title = seo ? `${seo.schema.seoTitle} | MaiDB` : fallbackTitle;
+    const description = seo?.schema.metaDescription ?? fallbackDescription;
+    const seoTags = seo?.schema.tags ?? [];
+
+    const scripts: { type: string; children: string }[] = [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(buildJsonLd(song)),
+      },
+    ];
+    if (seo && seo.schema.faq.length > 0) {
+      scripts.push({
+        type: "application/ld+json",
+        children: JSON.stringify(buildFaqJsonLd(seo.schema.faq)),
+      });
+    }
 
     return {
       meta: [
@@ -150,28 +214,30 @@ export const Route = createFileRoute("/songs_/$slug")({
             "rhythm game",
             "arcade",
             "SEGA",
+            ...seoTags,
           ].join(", "),
         },
       ],
       links: [{ rel: "canonical", href: canonicalUrl }],
-      scripts: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify(buildJsonLd(song)),
-        },
-      ],
+      scripts,
     };
   },
   loader: async ({ params }) => {
-    const [song, maiNotesCharts] = await Promise.all([
+    const [song, maiNotesCharts, seo] = await Promise.all([
       getSongBySlug({ data: { slug: params.slug } }),
       getMaiNotesCharts({ data: { slug: params.slug } }),
+      getSongSeo({ data: { slug: params.slug } }),
     ]);
     const typedSong = song as MaiDbSong | null;
     const counterpart = typedSong
       ? await getCounterpartSong({ data: { songId: typedSong.songId } })
       : null;
-    return { song: typedSong, maiNotesCharts, counterpart };
+    return {
+      song: typedSong,
+      maiNotesCharts,
+      counterpart,
+      seo: seo as SongSeoEntry | null,
+    };
   },
   component: SongPage,
 });
@@ -181,10 +247,12 @@ function SongPage() {
     song: MaiDbSong | null;
     maiNotesCharts: MaiNotesEntry | null;
     counterpart: MaiDbSong | null;
+    seo: SongSeoEntry | null;
   };
   const song = loaderData.song;
   const maiNotesCharts = loaderData.maiNotesCharts;
   const counterpart = loaderData.counterpart;
+  const seo = loaderData.seo;
   const catColor = useMemo(
     () => (song ? (CATEGORY_BY_SLUG[song.category]?.color ?? "#888") : null),
     [song],
@@ -211,7 +279,12 @@ function SongPage() {
         </Link>
 
         {song ? (
-          <SongWikiContent song={song} maiNotesCharts={maiNotesCharts} counterpart={counterpart} />
+          <SongWikiContent
+            song={song}
+            maiNotesCharts={maiNotesCharts}
+            counterpart={counterpart}
+            seo={seo}
+          />
         ) : (
           <SongWikiPageSkeleton />
         )}
@@ -224,10 +297,12 @@ function SongWikiContent({
   song,
   maiNotesCharts,
   counterpart,
+  seo,
 }: {
   song: MaiDbSong;
   maiNotesCharts: MaiNotesEntry | null;
   counterpart: MaiDbSong | null;
+  seo: SongSeoEntry | null;
 }) {
   const chartTypes = [...new Set(song.sheets.map((s) => s.type))];
   const catMeta = CATEGORY_BY_SLUG[song.category];
@@ -255,6 +330,12 @@ function SongWikiContent({
       if (sheet.regions[key]) regions[key] = true;
     }
   }
+
+  const seoVideos = seo?.schema.youtubeVideos ?? [];
+  const officialVideo = seoVideos.find((v) => v.type === "official-video");
+  const sidebarVideoUrl =
+    officialVideo?.url ?? youtubeSearchUrl(`${song.title} ${song.artist} maimai`);
+  const sidebarVideoLabel = officialVideo ? "Official PV" : "YouTube";
 
   return (
     <div className="space-y-8">
@@ -296,13 +377,13 @@ function SongWikiContent({
               </div>
               <div className="flex gap-1.5">
                 <a
-                  href={youtubeSearchUrl(`${song.title} ${song.artist} maimai`)}
+                  href={sidebarVideoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 rounded-md bg-red-600 px-2.5 py-1 text-xs font-semibold text-white transition-colors hover:bg-red-700"
                 >
                   <Youtube className="h-3.5 w-3.5" />
-                  YouTube
+                  {sidebarVideoLabel}
                 </a>
                 <ShareButton slug={song.slug} />
               </div>
@@ -392,6 +473,10 @@ function SongWikiContent({
             </Link>
           )}
 
+          {seo && <OverviewSection seo={seo} color={catColor} />}
+
+          {seoVideos.length > 0 && <VideoCarousel videos={seoVideos} color={catColor} />}
+
           {isUtage ? (
             <section>
               <SectionHeading color={catColor}>Charts</SectionHeading>
@@ -457,6 +542,12 @@ function SongWikiContent({
             </>
           )}
 
+          {seo && seo.schema.trivia.length > 0 && (
+            <TriviaSection trivia={seo.schema.trivia} color={catColor} />
+          )}
+
+          {seo && seo.schema.faq.length > 0 && <FaqSection faq={seo.schema.faq} color={catColor} />}
+
           {maiNotesCharts && (maiNotesCharts.gamerch_id || maiNotesCharts.simai_id) && (
             <section>
               <SectionHeading color={catColor}>External Links</SectionHeading>
@@ -490,6 +581,240 @@ function SongWikiContent({
           )}
         </div>
       </div>
+    </div>
+  );
+}
+
+function OverviewSection({ seo, color }: { seo: SongSeoEntry; color: string }) {
+  return (
+    <section>
+      <SectionHeading color={color}>Overview</SectionHeading>
+      <Collapsible peek={200}>
+        <p className="mt-4 whitespace-pre-line text-justify text-sm leading-relaxed text-foreground/90 hyphens-auto">
+          {seo.schema.overview}
+        </p>
+      </Collapsible>
+    </section>
+  );
+}
+
+function VideoCarousel({ videos, color }: { videos: SeoVideo[]; color: string }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const items = useMemo(
+    () =>
+      videos
+        .map((v) => ({ ...v, ytId: getYoutubeVideoId(v.url) }))
+        .filter((v): v is SeoVideo & { ytId: string } => v.ytId !== null),
+    [videos],
+  );
+
+  if (items.length === 0) return null;
+
+  const scroll = (dir: -1 | 1) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>("[data-video-card]");
+    const step = card ? card.offsetWidth + 12 : el.clientWidth;
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
+  };
+
+  return (
+    <section>
+      <div className="flex items-center justify-between gap-3 border-b pb-2">
+        <div className="flex items-center gap-3">
+          <div className="h-4 w-1 rounded-full" style={{ backgroundColor: color }} />
+          <h2 className="m-0 text-lg font-black text-foreground">Videos</h2>
+        </div>
+        {items.length > 1 && (
+          <div className="flex items-center gap-0.5 text-muted-foreground">
+            <button
+              type="button"
+              aria-label="Previous video"
+              onClick={() => scroll(-1)}
+              className="inline-flex h-7 w-7 items-center justify-center rounded-md transition-colors hover:bg-accent hover:text-foreground"
+            >
+              <ArrowLeft className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              aria-label="Next video"
+              onClick={() => scroll(1)}
+              className="inline-flex h-7 w-7 items-center justify-center rounded-md transition-colors hover:bg-accent hover:text-foreground"
+            >
+              <ArrowRight className="h-4 w-4" />
+            </button>
+          </div>
+        )}
+      </div>
+      <div
+        ref={scrollRef}
+        className="mt-4 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {items.map((v, i) => (
+          <VideoCard key={i} video={v} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function VideoCard({ video }: { video: SeoVideo & { ytId: string } }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    void navigator.clipboard.writeText(video.url).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
+  const label = videoTypeLabel(video.type);
+
+  return (
+    <div
+      data-video-card
+      className="min-w-full shrink-0 snap-start rounded-lg border bg-muted/30 p-2 sm:min-w-[28rem]"
+    >
+      <div className="aspect-video w-full overflow-hidden rounded-md bg-black">
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${video.ytId}`}
+          title={label}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          loading="lazy"
+          className="h-full w-full"
+        />
+      </div>
+      <div className="mt-2 flex items-center justify-between gap-2 px-0.5">
+        <p className="m-0 text-xs font-semibold text-muted-foreground">{label}</p>
+        <div className="flex items-center gap-1">
+          <button
+            type="button"
+            onClick={handleCopy}
+            className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+          >
+            {copied ? (
+              <>
+                <ClipboardCheck className="h-3.5 w-3.5 text-green-500" />
+                Copied
+              </>
+            ) : (
+              <>
+                <Link2 className="h-3.5 w-3.5" />
+                Copy link
+              </>
+            )}
+          </button>
+          <a
+            href={video.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+          >
+            <ExternalLink className="h-3.5 w-3.5" />
+            Open
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TriviaSection({ trivia, color }: { trivia: string[]; color: string }) {
+  return (
+    <section>
+      <SectionHeading color={color}>Trivia</SectionHeading>
+      <Collapsible peek={220}>
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-justify text-sm leading-relaxed text-foreground/90 hyphens-auto">
+          {trivia.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+      </Collapsible>
+    </section>
+  );
+}
+
+function FaqSection({ faq, color }: { faq: { q: string; a: string }[]; color: string }) {
+  return (
+    <section>
+      <SectionHeading color={color}>FAQ</SectionHeading>
+      <Collapsible peek={280}>
+        <dl className="mt-4 space-y-4">
+          {faq.map((item, i) => (
+            <div key={i} className="rounded-lg border bg-card px-4 py-3">
+              <dt className="text-sm font-bold text-foreground">{item.q}</dt>
+              <dd className="mt-1.5 whitespace-pre-line text-justify text-sm leading-relaxed text-foreground/80 hyphens-auto">
+                {item.a}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </Collapsible>
+    </section>
+  );
+}
+
+function Collapsible({ children, peek = 240 }: { children: React.ReactNode; peek?: number }) {
+  const [open, setOpen] = useState(false);
+  const [needsCollapse, setNeedsCollapse] = useState(true);
+  const [contentHeight, setContentHeight] = useState<number | null>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const measure = () => {
+      const h = el.scrollHeight;
+      setContentHeight(h);
+      setNeedsCollapse(h > peek + 16);
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [peek]);
+
+  const collapsed = needsCollapse && !open;
+  // When open we add a small buffer so subpixel rounding can't clip the last line.
+  const expandedHeight = contentHeight != null ? contentHeight + 8 : undefined;
+  const maxHeight = needsCollapse ? (open ? expandedHeight : peek) : expandedHeight;
+
+  return (
+    <div>
+      <div
+        ref={wrapRef}
+        className="relative overflow-hidden transition-[max-height] duration-500 ease-in-out motion-reduce:transition-none"
+        style={{ maxHeight: maxHeight != null ? `${maxHeight}px` : undefined }}
+      >
+        {children}
+        <div
+          aria-hidden
+          className={`pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background via-background/85 to-transparent transition-opacity duration-300 ${
+            collapsed ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      </div>
+      {needsCollapse && (
+        <button
+          type="button"
+          onClick={() => setOpen((o) => !o)}
+          aria-expanded={open}
+          className="mt-3 inline-flex items-center gap-1 rounded-md border bg-card px-3 py-1.5 text-xs font-semibold text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
+        >
+          {open ? (
+            <>
+              Show less
+              <ChevronUp className="h-3.5 w-3.5" />
+            </>
+          ) : (
+            <>
+              Show more
+              <ChevronDown className="h-3.5 w-3.5" />
+            </>
+          )}
+        </button>
+      )}
     </div>
   );
 }
@@ -583,6 +908,7 @@ function ChartRow({
   const hasBreakdown = nc.tap != null || nc.hold != null;
   const designer = sheet.noteDesigner && sheet.noteDesigner !== "-" ? sheet.noteDesigner : "-";
   const maiNotesChart = maiNotesLookup.get(`${sheet.difficulty}|${sheet.level}`);
+  const chartSearchUrl = youtubeSearchUrl(`${song.title} maimai ${diffName}`);
 
   return (
     <div
@@ -649,7 +975,7 @@ function ChartRow({
             </a>
           )}
           <a
-            href={youtubeSearchUrl(`${song.title} maimai ${diffName}`)}
+            href={chartSearchUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded-md border border-red-500/30 bg-red-500/10 px-2.5 py-1.5 text-xs font-semibold text-red-600 transition-colors hover:border-red-500/50 hover:bg-red-500/15 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"

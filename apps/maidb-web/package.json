@@ -7,13 +7,14 @@
   },
   "scripts": {
     "dev": "vite dev --port 3000",
-    "build": "vite build",
+    "build": "node ./scripts/build-two-pass.mjs",
+    "build:single": "vite build",
     "preview": "vite preview",
     "test": "vite-plus test run",
     "cf-typegen": "vp exec wrangler types --config wrangler.jsonc worker-configuration.d.ts",
     "cf-dev": "vp exec wrangler dev",
     "refresh-song-data-cache": "node ./scripts/refresh-song-data-cache.mjs",
-    "deploy": "vite build && vp exec wrangler deploy && node ./scripts/refresh-song-data-cache.mjs"
+    "deploy": "node ./scripts/build-two-pass.mjs && vp exec wrangler deploy && node ./scripts/refresh-song-data-cache.mjs"
   },
   "dependencies": {
     "@fontsource-variable/figtree": "catalog:",
