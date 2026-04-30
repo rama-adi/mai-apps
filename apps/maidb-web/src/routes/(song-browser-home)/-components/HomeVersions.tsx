@@ -4,21 +4,26 @@ import { HomeSectionHeader } from "./HomeSectionHeader";
 
 interface HomeVersionsProps {
   versions: Metadata["versions"];
+  compact?: boolean;
 }
 
-export function HomeVersions({ versions }: HomeVersionsProps) {
+export function HomeVersions({ versions, compact = false }: HomeVersionsProps) {
   const reversed = [...versions].reverse();
   const total = versions.length;
 
   return (
-    <section className="relative mt-16">
-      <HomeSectionHeader
-        index="03"
-        title="Versions"
-        description="Every maimai release, newest first."
-      />
+    <section className={compact ? "relative" : "relative mt-16"}>
+      {compact ? null : (
+        <HomeSectionHeader title="Versions" description="Every maimai release, newest first." />
+      )}
 
-      <div className="grid grid-cols-1 border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">
+      <div
+        className={
+          compact
+            ? "grid grid-cols-1 border-l border-t border-border"
+            : "grid grid-cols-1 border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3"
+        }
+      >
         {reversed.map((ver, i) => (
           <Link
             key={ver.slug}

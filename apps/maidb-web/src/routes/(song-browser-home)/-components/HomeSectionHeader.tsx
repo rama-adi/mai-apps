@@ -4,7 +4,6 @@ import type { LinkProps } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
 interface HomeSectionHeaderProps {
-  index: string;
   title: string;
   description?: string;
   link?: {
@@ -15,30 +14,19 @@ interface HomeSectionHeaderProps {
   icon?: ReactNode;
 }
 
-export function HomeSectionHeader({
-  index,
-  title,
-  description,
-  link,
-  icon,
-}: HomeSectionHeaderProps) {
+export function HomeSectionHeader({ title, description, link, icon }: HomeSectionHeaderProps) {
   return (
     <div className="group/hdr mb-5 flex items-end justify-between gap-4 border-b border-border pb-3">
-      <div className="flex items-end gap-4">
-        <span className="text-[11px] font-black tabular-nums tracking-[0.18em] text-primary">
-          {index}
-        </span>
-        <div className="flex flex-col gap-1">
-          <div className="flex items-center gap-2.5">
-            {icon}
-            <h2 className="m-0 text-lg font-black uppercase tracking-wide text-foreground sm:text-xl">
-              {title}
-            </h2>
-          </div>
-          {description ? (
-            <p className="m-0 text-xs leading-relaxed text-muted-foreground">{description}</p>
-          ) : null}
+      <div className="flex flex-col gap-1">
+        <div className="flex items-center gap-2.5">
+          {icon}
+          <h2 className="m-0 text-lg font-black uppercase tracking-wide text-foreground sm:text-xl">
+            {title}
+          </h2>
         </div>
+        {description ? (
+          <p className="m-0 text-xs leading-relaxed text-muted-foreground">{description}</p>
+        ) : null}
       </div>
       {link ? (
         <Link

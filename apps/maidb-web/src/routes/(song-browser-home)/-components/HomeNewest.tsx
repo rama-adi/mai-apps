@@ -45,7 +45,6 @@ export function HomeNewest({ songs, onSongSelect }: HomeNewestProps) {
   return (
     <section className="relative mt-14">
       <HomeSectionHeader
-        index="01"
         title="Newest"
         description="Recently added songs and freshly charted updates."
         icon={<Sparkles className="h-4 w-4 text-primary" />}

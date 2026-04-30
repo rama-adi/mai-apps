@@ -10,7 +10,7 @@ interface HomeCategoriesProps {
 export function HomeCategories({ categories }: HomeCategoriesProps) {
   return (
     <section className="relative mt-16">
-      <HomeSectionHeader index="02" title="Categories" description="Browse the catalog by genre." />
+      <HomeSectionHeader title="Categories" description="Browse the catalog by genre." />
 
       <div className="grid grid-cols-1 border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">
         {categories.map((cat, idx) => (

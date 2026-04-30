@@ -46,9 +46,22 @@ function HomeIndexRoute() {
     <>
       <HomeHero />
       <div className="mx-auto max-w-5xl px-4 pb-20" data-song-browser-surface="">
-        <HomeNewest songs={featuredSongs} onSongSelect={openSongModal} />
-        <HomeCategories categories={metadata.categories} />
-        <HomeVersions versions={metadata.versions} />
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-12">
+          <main className="min-w-0">
+            <HomeNewest songs={featuredSongs} onSongSelect={openSongModal} />
+            <HomeCategories categories={metadata.categories} />
+          </main>
+
+          <aside className="lg:sticky lg:top-24 lg:self-start">
+            <div className="mt-14">
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.32em] text-muted-foreground">
+                Versions
+              </p>
+              <HomeVersions versions={metadata.versions} compact />
+            </div>
+          </aside>
+        </div>
+
         <HomeBanner />
       </div>
     </>
