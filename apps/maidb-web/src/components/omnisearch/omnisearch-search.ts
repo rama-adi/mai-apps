@@ -98,17 +98,22 @@ function rankText(query: string, candidates: string[]): number {
   return best;
 }
 
+function hasAvailableSheet(song: MaiDbSong): boolean {
+  return song.sheets.some((s) => s.level !== "*" && s.levelValue > 0);
+}
+
 export function searchOmnisearchResults(
   songs: MaiDbSong[] | null,
   query: string,
 ): OmnisearchResults {
   const trimmedQuery = query.trim();
+  const availableSongs = songs ? songs.filter(hasAvailableSheet) : null;
   const songMatches = trimmedQuery
-    ? songs
-      ? searchSongsByKeyword(songs, trimmedQuery)
+    ? availableSongs
+      ? searchSongsByKeyword(availableSongs, trimmedQuery)
       : []
-    : songs
-      ? [...songs]
+    : availableSongs
+      ? [...availableSongs]
           .sort((a, b) => {
             if (a.isNew !== b.isNew) return a.isNew ? -1 : 1;
             return (b.releaseDate ?? "").localeCompare(a.releaseDate ?? "");

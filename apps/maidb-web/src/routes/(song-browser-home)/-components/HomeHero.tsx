@@ -1,9 +1,8 @@
-import { Search } from "lucide-react";
-import { useOmnisearch } from "../../../components/omnisearch/useOmnisearch";
+import { Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
+import { InlineOmnibox } from "../../../components/omnisearch/InlineOmnibox";
 
 export function HomeHero() {
-  const omnisearch = useOmnisearch();
-
   return (
     <section className="relative overflow-hidden border-b border-border bg-primary/[0.025] dark:bg-transparent">
       <div
@@ -57,18 +56,15 @@ export function HomeHero() {
             Charts, difficulty levels, BPM, and version history.
           </p>
 
-          <div className="mt-5">
-            <button
-              type="button"
-              onClick={() => omnisearch.open()}
-              className="group inline-flex items-center gap-2 border border-primary bg-primary px-5 py-2.5 text-sm font-bold tracking-wide text-primary-foreground transition-colors hover:bg-primary/90"
+          <div className="relative z-10 mt-5">
+            <InlineOmnibox showLatestWhenEmpty={false} />
+            <Link
+              to="/songs"
+              className="group mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
             >
-              <Search className="h-4 w-4 transition-transform duration-300 group-hover:rotate-[-8deg]" />
-              Search songs
-              <kbd className="ml-1 hidden rounded border border-primary-foreground/30 bg-primary-foreground/10 px-1.5 py-0.5 font-mono text-[10px] font-semibold tracking-wider text-primary-foreground/80 sm:inline-block">
-                ⌘K
-              </kbd>
-            </button>
+              See all songs
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </Link>
           </div>
         </div>
 
