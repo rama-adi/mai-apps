@@ -1,0 +1,19 @@
+{
+  "name": "web-search",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "search": "tsx websearch.ts",
+    "fetch": "tsx webfetch.ts"
+  },
+  "dependencies": {
+    "dotenv": "catalog:",
+    "exa-js": "catalog:",
+    "maidb-data": "workspace:*",
+    "tsx": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0"
+  }
+}
