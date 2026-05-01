@@ -15,7 +15,8 @@
   "files": [
     "dist",
     "data/songs",
-    "data/mai-charts"
+    "data/mai-charts",
+    "data/openseo"
   ],
   "type": "module",
   "exports": {
@@ -25,6 +26,8 @@
     "./data/songs/latest-only.json": "./data/songs/latest-only.json",
     "./data/songs/filters.json": "./data/songs/filters.json",
     "./data/mai-charts/charts.json": "./data/mai-charts/charts.json",
+    "./data/openseo/versions.json": "./data/openseo/versions.json",
+    "./data/openseo/categories.json": "./data/openseo/categories.json",
     "./package.json": "./package.json"
   },
   "publishConfig": {

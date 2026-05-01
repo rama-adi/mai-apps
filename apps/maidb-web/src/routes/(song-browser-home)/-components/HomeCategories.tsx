@@ -16,8 +16,8 @@ export function HomeCategories({ categories }: HomeCategoriesProps) {
         {categories.map((cat, idx) => (
           <Link
             key={cat.slug}
-            to="/songs"
-            search={{ category: cat.slug }}
+            to="/category/$slug"
+            params={{ slug: cat.slug }}
             className="group relative flex items-center gap-4 border-b border-r border-border bg-card p-4 transition-all duration-300 hover:border-primary/40 hover:bg-accent/40"
           >
             <span

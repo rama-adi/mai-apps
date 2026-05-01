@@ -51,33 +51,35 @@ function getUtageDisplayChips(song: MaiDbSong, useChartConstant: boolean) {
     }
   }
 
-  return [...byDifficulty.values()].map(({ sheet, isUnavailable }) => {
-    const hasSpecialDifficulty = !["basic", "advanced", "expert", "master", "remaster"].includes(
-      sheet.difficulty,
-    );
+  return [...byDifficulty.values()]
+    .filter(({ isUnavailable }) => !isUnavailable)
+    .map(({ sheet, isUnavailable }) => {
+      const hasSpecialDifficulty = !["basic", "advanced", "expert", "master", "remaster"].includes(
+        sheet.difficulty,
+      );
 
-    let displayText: string;
-    if (isUnavailable) {
-      // Sheet with * level — no longer available
-      displayText = hasSpecialDifficulty ? stripBrackets(sheet.difficulty) : UTAGE_KANJI;
-    } else if (hasSpecialDifficulty && sheet.difficulty) {
-      displayText = stripBrackets(sheet.difficulty);
-    } else if (sheet.levelValue > 0) {
-      displayText =
-        useChartConstant && sheet.internalLevelValue > 0
-          ? sheet.internalLevelValue.toFixed(1)
-          : sheet.level;
-    } else {
-      displayText = UTAGE_KANJI;
-    }
+      let displayText: string;
+      if (isUnavailable) {
+        // Sheet with * level — no longer available
+        displayText = hasSpecialDifficulty ? stripBrackets(sheet.difficulty) : UTAGE_KANJI;
+      } else if (hasSpecialDifficulty && sheet.difficulty) {
+        displayText = stripBrackets(sheet.difficulty);
+      } else if (sheet.levelValue > 0) {
+        displayText =
+          useChartConstant && sheet.internalLevelValue > 0
+            ? sheet.internalLevelValue.toFixed(1)
+            : sheet.level;
+      } else {
+        displayText = UTAGE_KANJI;
+      }
 
-    return {
-      text: displayText,
-      color: UTAGE_COLOR,
-      difficulty: sheet.difficulty,
-      isUnavailable,
-    };
-  });
+      return {
+        text: displayText,
+        color: UTAGE_COLOR,
+        difficulty: sheet.difficulty,
+        isUnavailable,
+      };
+    });
 }
 
 function matchesChartFilters(sheet: MaiDbSong["sheets"][number], filters: ChartFilters): boolean {

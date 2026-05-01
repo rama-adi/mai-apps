@@ -99,6 +99,7 @@ type SongCatalogIndex = {
   bySlug: Map<string, MaiDbSong>;
   bySongId: Map<string, MaiDbSong>;
   byVersion: Map<string, MaiDbSong[]>;
+  byCategory: Map<string, MaiDbSong[]>;
   filterOptions: FilterOptions;
   filtersData: SongFiltersData;
   slugs: string[];
@@ -113,6 +114,7 @@ async function getSongCatalogIndex(): Promise<SongCatalogIndex> {
       const bySlug = new Map<string, MaiDbSong>();
       const bySongId = new Map<string, MaiDbSong>();
       const byVersion = new Map<string, MaiDbSong[]>();
+      const byCategory = new Map<string, MaiDbSong[]>();
 
       for (const song of songs) {
         bySlug.set(song.slug, song);
@@ -123,16 +125,27 @@ async function getSongCatalogIndex(): Promise<SongCatalogIndex> {
         } else {
           byVersion.set(song.version, [song]);
         }
+        const songsForCategory = byCategory.get(song.category);
+        if (songsForCategory) {
+          songsForCategory.push(song);
+        } else {
+          byCategory.set(song.category, [song]);
+        }
       }
 
       for (const [versionSlug, songsForVersion] of byVersion.entries()) {
         byVersion.set(versionSlug, sortSongsByReleaseDate(songsForVersion));
       }
 
+      for (const [categorySlug, songsForCategory] of byCategory.entries()) {
+        byCategory.set(categorySlug, sortSongsByReleaseDate(songsForCategory));
+      }
+
       return {
         bySlug,
         bySongId,
         byVersion,
+        byCategory,
         filterOptions: buildFilterOptions(songs),
         filtersData: await buildSongFiltersData(songs),
         slugs: songs.map((song) => song.slug),
@@ -174,6 +187,11 @@ export async function getMetadata(): Promise<Metadata> {
 export async function getSongsByVersion(versionSlug: string): Promise<MaiDbSong[]> {
   const index = await getSongCatalogIndex();
   return index.byVersion.get(versionSlug) ?? [];
+}
+
+export async function getSongsByCategory(categorySlug: string): Promise<MaiDbSong[]> {
+  const index = await getSongCatalogIndex();
+  return index.byCategory.get(categorySlug) ?? [];
 }
 
 export async function getSongBySlug(slug: string): Promise<MaiDbSong | null> {

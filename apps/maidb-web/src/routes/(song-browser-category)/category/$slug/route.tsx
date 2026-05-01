@@ -1,75 +1,74 @@
 import { createFileRoute, Outlet, useNavigate, useRouter } from "@tanstack/react-router";
 import {
-  VERSION_BY_SLUG,
+  CATEGORY_BY_SLUG,
   VERSIONS,
+  VERSION_BY_SLUG,
   type MaiDbSong,
   type Metadata,
   type OpenSeoEntry,
 } from "maidb-data";
-import { useMemo } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { SongCard, SongCardSkeleton } from "../../../../components/SongCard";
 import { SongBrowser } from "../../../../components/song-browser/SongBrowser";
 import { SongBrowserResults } from "../../../../components/song-browser/SongBrowserResults";
-import { getVersionPageData } from "../../../-server/version";
+import { getCategoryPageData } from "../../../-server/category";
 
-type WeekGroup = {
+type VersionGroup = {
   key: string;
   label: string;
   songs: MaiDbSong[];
 };
 
-export const Route = createFileRoute("/(song-browser-version)/version/$slug")({
+export const Route = createFileRoute("/(song-browser-category)/category/$slug")({
   head: ({ loaderData, params }) => {
     const data = loaderData as
       | {
           songs: MaiDbSong[];
-          version: Metadata["versions"][number] | null;
+          category: Metadata["categories"][number] | null;
           openSeo: OpenSeoEntry | null;
         }
       | undefined;
-    const version = data?.version;
-    const displayName = version?.version ?? VERSION_BY_SLUG[params.slug]?.version ?? params.slug;
+    const category = data?.category;
+    const displayName =
+      category?.category ?? CATEGORY_BY_SLUG[params.slug]?.category ?? params.slug;
 
     return {
       meta: [
         { title: `${displayName} - MaiDB` },
         {
           name: "description",
-          content: `Songs added in ${displayName}.`,
+          content: `Songs in the ${displayName} category.`,
         },
       ],
     };
   },
-  loader: async ({ params }) => getVersionPageData({ data: { slug: params.slug } }),
-  component: VersionPage,
+  loader: async ({ params }) => getCategoryPageData({ data: { slug: params.slug } }),
+  component: CategoryPage,
 });
 
-function VersionPage() {
+function CategoryPage() {
   const {
     songs: loaderSongs,
-    version,
+    category,
     openSeo,
   } = Route.useLoaderData() as {
     songs: MaiDbSong[];
-    version: Metadata["versions"][number] | null;
+    category: Metadata["categories"][number] | null;
     openSeo: OpenSeoEntry | null;
   };
   const { slug } = Route.useParams();
-  const navigate = useNavigate({ from: "/version/$slug" });
+  const navigate = useNavigate({ from: "/category/$slug" });
   const router = useRouter();
-  const displayName = version?.version ?? VERSION_BY_SLUG[slug]?.version ?? slug;
-  const displayAbbr = version?.abbr ?? VERSION_BY_SLUG[slug]?.abbr ?? slug;
-  const releaseDate = version?.releaseDate ?? VERSION_BY_SLUG[slug]?.releaseDate;
-  const accent = useMemo(() => versionAccent(slug), [slug]);
+  const displayName = category?.category ?? CATEGORY_BY_SLUG[slug]?.category ?? slug;
+  const accent = category?.color ?? CATEGORY_BY_SLUG[slug]?.color ?? "#3583fe";
 
   const openSongModal = (song: MaiDbSong) => {
     const from =
       typeof window !== "undefined"
         ? `${window.location.pathname}${window.location.search}${window.location.hash}`
-        : `/version/${slug}`;
+        : `/category/${slug}`;
     void navigate({
-      to: "/version/$slug/modal/$songSlug",
+      to: "/category/$slug/modal/$songSlug",
       params: { slug, songSlug: song.slug },
       search: { from },
       resetScroll: false,
@@ -108,26 +107,18 @@ function VersionPage() {
             className="text-[10px] font-bold uppercase tracking-[0.32em]"
             style={{ color: accent }}
           >
-            maimai version
+            Category
           </p>
           <h1 className="mt-2 text-4xl font-black tracking-tight text-foreground sm:text-5xl">
             {displayName}
           </h1>
           <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
-            <span className="font-mono">{displayAbbr}</span>
-            {releaseDate && (
-              <>
-                <span aria-hidden>·</span>
-                <span className="tabular-nums">{releaseDate}</span>
-              </>
-            )}
-            <span aria-hidden>·</span>
             <button
               type="button"
               onClick={() =>
                 void navigate({
                   to: "/songs",
-                  search: { version: slug },
+                  search: { category: slug },
                 })
               }
               className="group inline-flex cursor-pointer items-center gap-1 font-semibold underline decoration-dotted underline-offset-4 transition-colors hover:decoration-solid"
@@ -158,11 +149,12 @@ function VersionPage() {
         <SongBrowser
           initialSongs={loaderSongs}
           paginationMode="all"
-          resolveHydratedSongs={(all) => all.filter((song) => song.version === slug)}
+          search={slug === "utage" ? { type: "utage" } : undefined}
+          resolveHydratedSongs={(all) => all.filter((song) => song.category === slug)}
         >
           <SongBrowserResults>
             {({ isLoading, songs, totalCount }) => {
-              const weeks = songs ? groupSongsByWeek(songs) : [];
+              const groups = songs ? groupSongsByVersion(songs) : [];
 
               return (
                 <section>
@@ -190,8 +182,8 @@ function VersionPage() {
 
                   {!isLoading && (
                     <div className="space-y-10">
-                      {weeks.map((week) => (
-                        <div key={week.key}>
+                      {groups.map((group) => (
+                        <div key={group.key}>
                           <h3
                             className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground"
                             style={{
@@ -199,10 +191,10 @@ function VersionPage() {
                               paddingLeft: "0.625rem",
                             }}
                           >
-                            {week.label}
+                            {group.label}
                           </h3>
                           <div className="grid gap-3 sm:grid-cols-2">
-                            {week.songs.map((song) => (
+                            {group.songs.map((song) => (
                               <SongCard key={song.songId} song={song} onSelect={openSongModal} />
                             ))}
                           </div>
@@ -222,92 +214,34 @@ function VersionPage() {
   );
 }
 
-const VERSION_PALETTE = [
-  "#f64849",
-  "#ff7e36",
-  "#3aa64f",
-  "#22bb5b",
-  "#fb9c2d",
-  "#ffb74d",
-  "#ec4899",
-  "#f472b6",
-  "#9e45e2",
-  "#ba67f8",
-  "#94a3b8",
-  "#cbd5e1",
-  "#eab308",
-  "#a855f7",
-  "#ef4444",
-  "#06b6d4",
-  "#0ea5e9",
-  "#3583fe",
-  "#6366f1",
-  "#dc2626",
-  "#f97316",
-  "#fb923c",
-  "#dc39b8",
-  "#a855f7",
-  "#14b8a6",
-  "#0ea5e9",
-];
+const UNKNOWN_VERSION_LABEL = "Unknown version";
 
-function versionAccent(slug: string): string {
-  const index = VERSIONS.findIndex((v) => v.slug === slug);
-  if (index < 0) return "#3583fe";
-  return VERSION_PALETTE[index % VERSION_PALETTE.length] ?? "#3583fe";
-}
+const VERSION_ORDER_INDEX: Record<string, number> = Object.fromEntries(
+  VERSIONS.map((v, i) => [v.slug, i]),
+);
 
-function groupSongsByWeek(songs: MaiDbSong[]): WeekGroup[] {
-  const groups = new Map<string, { label: string; songs: MaiDbSong[] }>();
+function groupSongsByVersion(songs: MaiDbSong[]): VersionGroup[] {
+  const groups = new Map<string, MaiDbSong[]>();
 
   for (const song of songs) {
-    const { key, label } = getWeekKeyAndLabel(song.releaseDate);
+    const key = song.version || UNKNOWN_VERSION_LABEL;
     const existing = groups.get(key);
     if (existing) {
-      existing.songs.push(song);
+      existing.push(song);
     } else {
-      groups.set(key, { label, songs: [song] });
+      groups.set(key, [song]);
     }
   }
 
-  return [...groups.entries()]
-    .sort(([a], [b]) => {
-      if (a === UNKNOWN_WEEK_KEY) return 1;
-      if (b === UNKNOWN_WEEK_KEY) return -1;
-      return b.localeCompare(a);
-    })
-    .map(([key, value]) => ({
-      key,
-      label: value.label,
-      songs: value.songs,
-    }));
-}
+  const keys = Array.from(groups.keys()).sort((a, b) => {
+    const ai = VERSION_ORDER_INDEX[a] ?? -1;
+    const bi = VERSION_ORDER_INDEX[b] ?? -1;
+    return bi - ai;
+  });
 
-const UNKNOWN_WEEK_KEY = "__unknown__";
-const UNKNOWN_WEEK_LABEL = "Unknown release date";
-
-function getWeekKeyAndLabel(input: string | null | undefined): { key: string; label: string } {
-  if (!input) return { key: UNKNOWN_WEEK_KEY, label: UNKNOWN_WEEK_LABEL };
-  const date = new Date(`${input}T00:00:00Z`);
-  if (Number.isNaN(date.getTime())) return { key: UNKNOWN_WEEK_KEY, label: UNKNOWN_WEEK_LABEL };
-  const day = date.getUTCDay();
-  const mondayOffset = (day + 6) % 7;
-  const start = new Date(date);
-  start.setUTCDate(date.getUTCDate() - mondayOffset);
-  const end = new Date(start);
-  end.setUTCDate(start.getUTCDate() + 6);
-
-  return {
-    key: start.toISOString().slice(0, 10),
-    label: `${formatWeekDate(start)} – ${formatWeekDate(end)}`,
-  };
-}
-
-function formatWeekDate(date: Date): string {
-  return new Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(date);
+  return keys.map((key) => ({
+    key,
+    label: VERSION_BY_SLUG[key]?.version ?? key,
+    songs: groups.get(key) ?? [],
+  }));
 }

@@ -333,7 +333,9 @@ function SongWikiContent({
 
   const isUtage = song.songId.startsWith("_utage_.");
   const nonUtageSheets = song.sheets.filter((s) => s.type !== "utage");
-  const utageSheets = song.sheets.filter((s) => s.type === "utage");
+  const utageSheets = song.sheets.filter(
+    (s) => s.type === "utage" && !(s.level === "*" && s.levelValue === 0),
+  );
   const sheetsByType = groupSheetsByType(nonUtageSheets);
 
   // Build lookup: "difficulty|level" -> mai-notes chart (for Play links)

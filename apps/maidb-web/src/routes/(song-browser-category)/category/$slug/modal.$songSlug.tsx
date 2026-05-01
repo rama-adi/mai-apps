@@ -1,0 +1,66 @@
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import type { MaiDbSong } from "maidb-data";
+import { useState } from "react";
+import { SongBrowserModal } from "../../../../components/song-browser/SongBrowserModal";
+import {
+  validateSongBrowserSearch,
+  type SongBrowserSearchParams,
+} from "../../../../components/song-browser/song-browser.types";
+import { getSongBySlug } from "../../../-server/songs";
+import { SITE_URL } from "../../../../lib/site";
+
+export const Route = createFileRoute("/(song-browser-category)/category/$slug/modal/$songSlug")({
+  validateSearch: validateSongBrowserSearch,
+  head: ({ params }) => ({
+    meta: [{ name: "robots", content: "noindex,follow" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/songs/${params.songSlug}` }],
+  }),
+  loader: async ({ params }) => getSongBySlug({ data: { slug: params.songSlug } }),
+  component: CategoryPageModalRoute,
+});
+
+function CategoryPageModalRoute() {
+  const song = Route.useLoaderData() as MaiDbSong | null;
+  const search = Route.useSearch() as SongBrowserSearchParams;
+  const { slug } = Route.useParams();
+  const navigate = useNavigate({ from: "/category/$slug/modal/$songSlug" });
+  const [isClosing, setIsClosing] = useState(false);
+
+  const closeModal = () => {
+    if (isClosing) return;
+    setIsClosing(true);
+
+    if (search.from && window.history.length > 1) {
+      window.setTimeout(() => window.history.back(), 180);
+      return;
+    }
+
+    window.setTimeout(() => {
+      void navigate({
+        to: "/category/$slug",
+        params: { slug },
+        replace: true,
+        resetScroll: false,
+      });
+    }, 180);
+  };
+
+  const navigateToSong = (songSlug: string) => {
+    void navigate({
+      to: "/category/$slug/modal/$songSlug",
+      params: { slug, songSlug },
+      search,
+      replace: true,
+      resetScroll: false,
+    });
+  };
+
+  return (
+    <SongBrowserModal
+      song={song}
+      isClosing={isClosing}
+      onClose={closeModal}
+      onSongNavigate={navigateToSong}
+    />
+  );
+}

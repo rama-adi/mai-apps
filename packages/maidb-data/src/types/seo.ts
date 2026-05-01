@@ -37,3 +37,18 @@ export type SongSeoEntry = z.infer<typeof songSeoEntrySchema>;
 
 export const songSeoDataSchema = z.array(songSeoEntrySchema);
 export type SongSeoData = z.infer<typeof songSeoDataSchema>;
+
+// -- OpenSEO -----------------------------------------------------------------
+// Free-form descriptive content for versions and categories. The "version"
+// field stores the human-readable display name (Japanese for both versions
+// and categories), and "slug" matches the canonical slug from constants.
+
+export const openSeoEntrySchema = z.object({
+  version: z.string(),
+  slug: z.string(),
+  content: z.string(),
+});
+export type OpenSeoEntry = z.infer<typeof openSeoEntrySchema>;
+
+export const openSeoDataSchema = z.array(openSeoEntrySchema);
+export type OpenSeoData = z.infer<typeof openSeoDataSchema>;

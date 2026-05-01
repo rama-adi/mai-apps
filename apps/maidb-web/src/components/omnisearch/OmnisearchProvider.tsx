@@ -61,8 +61,8 @@ function OmnisearchDialog({
     }
 
     void navigate({
-      to: "/songs",
-      search: { category: result.slug },
+      to: "/category/$slug",
+      params: { slug: result.slug },
     });
   };
 

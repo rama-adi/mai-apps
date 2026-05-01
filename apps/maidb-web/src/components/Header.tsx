@@ -103,8 +103,8 @@ export default function Header() {
                     <li key={category.slug}>
                       <NavigationMenuLink asChild>
                         <Link
-                          to="/songs"
-                          search={{ category: category.slug }}
+                          to="/category/$slug"
+                          params={{ slug: category.slug }}
                           className={ACCENT_LINK_CLASS}
                           style={accentLinkStyle(category.color)}
                         >
@@ -241,8 +241,8 @@ export default function Header() {
                   {CATEGORIES.filter((c) => c.slug !== "utage").map((category) => (
                     <Link
                       key={category.slug}
-                      to="/songs"
-                      search={{ category: category.slug }}
+                      to="/category/$slug"
+                      params={{ slug: category.slug }}
                       onClick={closeMobile}
                       className="relative flex min-w-0 items-center gap-3 overflow-hidden rounded-md px-3 py-2 !no-underline hover:bg-muted"
                     >

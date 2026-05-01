@@ -17,10 +17,10 @@ export function HomeBanner() {
             An open index of every maimai song.
           </p>
           <Link
-            to="/songs"
+            to="/about"
             className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-primary transition-colors hover:text-primary/80"
           >
-            Open the catalog
+            About us
             <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>

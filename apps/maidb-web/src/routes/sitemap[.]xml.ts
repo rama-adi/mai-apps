@@ -11,6 +11,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { loc: `${SITE_URL}/sitemaps/meta.xml`, lastmod },
           { loc: `${SITE_URL}/sitemaps/songs.xml`, lastmod },
           { loc: `${SITE_URL}/sitemaps/versions.xml`, lastmod },
+          { loc: `${SITE_URL}/sitemaps/categories.xml`, lastmod },
         ]);
         return xmlResponse(body);
       },

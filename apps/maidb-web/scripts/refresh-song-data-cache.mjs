@@ -8,6 +8,8 @@ const CACHE_OBJECTS = [
   "data/songs/latest-only.json",
   "data/songs/metadata.json",
   "data/mai-charts/charts.json",
+  "data/openseo/versions.json",
+  "data/openseo/categories.json",
 ];
 
 const tempDir = await mkdtemp(join(tmpdir(), "maidb-song-cache-"));
