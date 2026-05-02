@@ -1,7 +1,35 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, ExternalLink, Heart, Info, Sparkles } from "lucide-react";
+import { OG_IMAGE_LOCAL_BASE, SITE_LOCALE, SITE_NAME, SITE_URL } from "../lib/site";
+
+const ABOUT_TITLE = "About - MaiDB";
+const ABOUT_DESCRIPTION =
+  "MaiDB is an unofficial, fan-built index of every maimai song. Compiled from many community sources into one fast, searchable catalog.";
+const ABOUT_CANONICAL = `${SITE_URL}/about`;
+const ABOUT_OG_IMAGE = `${OG_IMAGE_LOCAL_BASE}/meta-about.jpg`;
 
 export const Route = createFileRoute("/about")({
+  head: () => ({
+    meta: [
+      { title: ABOUT_TITLE },
+      { name: "description", content: ABOUT_DESCRIPTION },
+
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: ABOUT_TITLE },
+      { property: "og:description", content: ABOUT_DESCRIPTION },
+      { property: "og:url", content: ABOUT_CANONICAL },
+      { property: "og:site_name", content: SITE_NAME },
+      { property: "og:locale", content: SITE_LOCALE },
+      { property: "og:image", content: ABOUT_OG_IMAGE },
+      { property: "og:image:alt", content: "About MaiDB" },
+
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: ABOUT_TITLE },
+      { name: "twitter:description", content: ABOUT_DESCRIPTION },
+      { name: "twitter:image", content: ABOUT_OG_IMAGE },
+    ],
+    links: [{ rel: "canonical", href: ABOUT_CANONICAL }],
+  }),
   component: About,
 });
 

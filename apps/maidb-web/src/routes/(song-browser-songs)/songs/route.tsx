@@ -17,19 +17,37 @@ import {
   getSongsPageFiltersData,
   getSongsPageSongs,
 } from "../../-server/songs-index";
+import { OG_IMAGE_LOCAL_BASE, SITE_LOCALE, SITE_NAME, SITE_URL } from "../../../lib/site";
+
+const SONGS_TITLE = "Browse Songs - MaiDB";
+const SONGS_DESCRIPTION =
+  "Explore every maimai song and chart. Browse difficulty levels, BPM, version history, and more.";
+const SONGS_CANONICAL = `${SITE_URL}/songs`;
+const SONGS_OG_IMAGE = `${OG_IMAGE_LOCAL_BASE}/meta-songs.jpg`;
 
 export const Route = createFileRoute("/(song-browser-songs)/songs")({
   validateSearch: validateSongBrowserSearch,
   shouldReload: false,
   head: () => ({
     meta: [
-      { title: "Browse Songs - MaiDB" },
-      {
-        name: "description",
-        content:
-          "Explore every maimai song and chart. Browse difficulty levels, BPM, version history, and more.",
-      },
+      { title: SONGS_TITLE },
+      { name: "description", content: SONGS_DESCRIPTION },
+
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: SONGS_TITLE },
+      { property: "og:description", content: SONGS_DESCRIPTION },
+      { property: "og:url", content: SONGS_CANONICAL },
+      { property: "og:site_name", content: SITE_NAME },
+      { property: "og:locale", content: SITE_LOCALE },
+      { property: "og:image", content: SONGS_OG_IMAGE },
+      { property: "og:image:alt", content: "Browse all maimai songs on MaiDB" },
+
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: SONGS_TITLE },
+      { name: "twitter:description", content: SONGS_DESCRIPTION },
+      { name: "twitter:image", content: SONGS_OG_IMAGE },
     ],
+    links: [{ rel: "canonical", href: SONGS_CANONICAL }],
   }),
   loader: async () => {
     const [songs, filterOptions, filtersData] = await Promise.all([

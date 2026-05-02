@@ -12,6 +12,7 @@ import { SongCard, SongCardSkeleton } from "../../../../components/SongCard";
 import { SongBrowser } from "../../../../components/song-browser/SongBrowser";
 import { SongBrowserResults } from "../../../../components/song-browser/SongBrowserResults";
 import { getVersionPageData } from "../../../-server/version";
+import { OG_IMAGE_LOCAL_BASE, SITE_LOCALE, SITE_NAME, SITE_URL } from "../../../../lib/site";
 
 type WeekGroup = {
   key: string;
@@ -30,15 +31,31 @@ export const Route = createFileRoute("/(song-browser-version)/version/$slug")({
       | undefined;
     const version = data?.version;
     const displayName = version?.version ?? VERSION_BY_SLUG[params.slug]?.version ?? params.slug;
+    const title = `${displayName} - MaiDB`;
+    const description = `Songs added in ${displayName}.`;
+    const canonicalUrl = `${SITE_URL}/version/${params.slug}`;
+    const ogImage = `${OG_IMAGE_LOCAL_BASE}/version-${params.slug}.jpg`;
 
     return {
       meta: [
-        { title: `${displayName} - MaiDB` },
-        {
-          name: "description",
-          content: `Songs added in ${displayName}.`,
-        },
+        { title },
+        { name: "description", content: description },
+
+        { property: "og:type", content: "website" },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonicalUrl },
+        { property: "og:site_name", content: SITE_NAME },
+        { property: "og:locale", content: SITE_LOCALE },
+        { property: "og:image", content: ogImage },
+        { property: "og:image:alt", content: `${displayName} version on MaiDB` },
+
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: ogImage },
       ],
+      links: [{ rel: "canonical", href: canonicalUrl }],
     };
   },
   loader: async ({ params }) => getVersionPageData({ data: { slug: params.slug } }),

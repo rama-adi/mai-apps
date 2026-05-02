@@ -12,6 +12,7 @@ import { SongCard, SongCardSkeleton } from "../../../../components/SongCard";
 import { SongBrowser } from "../../../../components/song-browser/SongBrowser";
 import { SongBrowserResults } from "../../../../components/song-browser/SongBrowserResults";
 import { getCategoryPageData } from "../../../-server/category";
+import { OG_IMAGE_LOCAL_BASE, SITE_LOCALE, SITE_NAME, SITE_URL } from "../../../../lib/site";
 
 type VersionGroup = {
   key: string;
@@ -31,15 +32,31 @@ export const Route = createFileRoute("/(song-browser-category)/category/$slug")(
     const category = data?.category;
     const displayName =
       category?.category ?? CATEGORY_BY_SLUG[params.slug]?.category ?? params.slug;
+    const title = `${displayName} - MaiDB`;
+    const description = `Songs in the ${displayName} category.`;
+    const canonicalUrl = `${SITE_URL}/category/${params.slug}`;
+    const ogImage = `${OG_IMAGE_LOCAL_BASE}/category-${params.slug}.jpg`;
 
     return {
       meta: [
-        { title: `${displayName} - MaiDB` },
-        {
-          name: "description",
-          content: `Songs in the ${displayName} category.`,
-        },
+        { title },
+        { name: "description", content: description },
+
+        { property: "og:type", content: "website" },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonicalUrl },
+        { property: "og:site_name", content: SITE_NAME },
+        { property: "og:locale", content: SITE_LOCALE },
+        { property: "og:image", content: ogImage },
+        { property: "og:image:alt", content: `${displayName} category on MaiDB` },
+
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: ogImage },
       ],
+      links: [{ rel: "canonical", href: canonicalUrl }],
     };
   },
   loader: async ({ params }) => getCategoryPageData({ data: { slug: params.slug } }),
