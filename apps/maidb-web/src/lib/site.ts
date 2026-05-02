@@ -1,4 +1,4 @@
-export const SITE_URL = "https://maidb.onebyteworks.my.id";
+export const SITE_URL = "https://maidb.my.id";
 export const SITE_NAME = "MaiDB";
 export const SITE_LOCALE = "en_US";
 
