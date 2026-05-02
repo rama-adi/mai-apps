@@ -1,18 +1,18 @@
 [
   {
-    "songId": "Nine Point Eight",
+    "songId": "Operation☆DOTABATA!",
     "category": "game-variety",
-    "title": "Nine Point Eight",
-    "artist": "Mili",
-    "bpm": 164,
-    "imageName": "2465b7a20b162fc695dc9d6ec04d49e4d816d543d8886126ed7bcfb19bfa0de3.png",
+    "title": "Operation☆DOTABATA!",
+    "artist": "Mitsukiyo「ブルーアーカイブ -Blue Archive-」",
+    "bpm": null,
+    "imageName": "ee55e950f47a57481c9a4759dfbd51d6a620b52a87b4c61f2b7a91a8b2e1a284.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-04-17",
+    "releaseDate": "2026-05-01",
     "isNew": true,
     "isLocked": false,
     "comment": null,
-    "slug": "nine-point-eight-9qtoq",
-    "internalImageId": "img_Qiab0vXenxmb",
+    "slug": "operationdotabata-mitsukiyo-blue-archive-ejoti",
+    "internalImageId": "img_zXuZnRMEPyst",
     "sheets": [
       {
         "type": "dx",
@@ -23,12 +23,142 @@
         "internalLevelValue": 3,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": 136,
-          "hold": 11,
-          "slide": 4,
-          "touch": 20,
-          "break": 6,
-          "total": 177
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "11",
+        "levelValue": 11,
+        "internalLevel": null,
+        "internalLevelValue": 11,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13",
+        "levelValue": 13,
+        "internalLevel": "13.4",
+        "internalLevelValue": 13.4,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "Operation☆DOTABATA!"
+  },
+  {
+    "songId": "RE Aoharu",
+    "category": "game-variety",
+    "title": "RE Aoharu",
+    "artist": "Nor「ブルーアーカイブ -Blue Archive-」",
+    "bpm": 180,
+    "imageName": "f1a13c30bdcfaf2a110d19cf036875ad16d14bb4157c1f5d0f47522a6ba7e883.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-05-01",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "re-aoharu-nor-blue-archive-1i0g9",
+    "internalImageId": "img_zxpDr6L--Cou",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "3",
+        "levelValue": 3,
+        "internalLevel": null,
+        "internalLevelValue": 3,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -51,12 +181,12 @@
         "internalLevelValue": 7,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": 258,
-          "hold": 18,
-          "slide": 14,
-          "touch": 13,
-          "break": 8,
-          "total": 311
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -73,18 +203,148 @@
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "9+",
-        "levelValue": 9.6,
+        "level": "10+",
+        "levelValue": 10.6,
         "internalLevel": null,
-        "internalLevelValue": 9.6,
-        "noteDesigner": "Luxizhel",
+        "internalLevelValue": 10.6,
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 361,
-          "hold": 43,
-          "slide": 36,
-          "touch": 35,
-          "break": 10,
-          "total": 485
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.7",
+        "internalLevelValue": 13.7,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "RE Aoharu"
+  },
+  {
+    "songId": "Usagi Flap",
+    "category": "game-variety",
+    "title": "Usagi Flap",
+    "artist": "Nor「ブルーアーカイブ -Blue Archive-」",
+    "bpm": null,
+    "imageName": "4070328cdd7a9af16e5ac7c98a3bb57eab5335a7575d9a31f630cfb15ed8780e.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-05-01",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "usagi-flap-nor-blue-archive-6gj5w",
+    "internalImageId": "img_yvOessaIYYec",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "3",
+        "levelValue": 3,
+        "internalLevel": null,
+        "internalLevelValue": 3,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10",
+        "levelValue": 10,
+        "internalLevel": null,
+        "internalLevelValue": 10,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -103,16 +363,16 @@
         "difficulty": "master",
         "level": "13",
         "levelValue": 13,
-        "internalLevel": "13.4",
-        "internalLevelValue": 13.4,
-        "noteDesigner": "Jack",
+        "internalLevel": "13.2",
+        "internalLevelValue": 13.2,
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 555,
-          "hold": 51,
-          "slide": 95,
-          "touch": 16,
-          "break": 23,
-          "total": 740
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -127,266 +387,6 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "Nine Point Eight"
-  },
-  {
-    "songId": "Myosotis",
-    "category": "game-variety",
-    "title": "Myosotis",
-    "artist": "M2U / Arranger : M2U & NICODE / Vocal : Guriri & Lucy",
-    "bpm": 160,
-    "imageName": "e007c34273910447fdc05cde58a4aed1d17896c822bb2d3af9ac5f5ad1b4c6f0.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-04-17",
-    "isNew": true,
-    "isLocked": false,
-    "comment": null,
-    "slug": "myosotis-m2u-arranger-m2u-nicode-vocal-guriri-lucy-ytmca",
-    "internalImageId": "img_NIdM_ODMZkt7",
-    "sheets": [
-      {
-        "type": "dx",
-        "difficulty": "basic",
-        "level": "4",
-        "levelValue": 4,
-        "internalLevel": null,
-        "internalLevelValue": 4,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": 151,
-          "hold": 12,
-          "slide": 9,
-          "touch": 14,
-          "break": 6,
-          "total": 192
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "advanced",
-        "level": "8+",
-        "levelValue": 8.6,
-        "internalLevel": null,
-        "internalLevelValue": 8.6,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": 323,
-          "hold": 18,
-          "slide": 7,
-          "touch": 19,
-          "break": 10,
-          "total": 377
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "expert",
-        "level": "12",
-        "levelValue": 12,
-        "internalLevel": "12.0",
-        "internalLevelValue": 12,
-        "noteDesigner": "Luxizhel",
-        "noteCounts": {
-          "tap": 437,
-          "hold": 51,
-          "slide": 45,
-          "touch": 12,
-          "break": 32,
-          "total": 577
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "master",
-        "level": "14",
-        "levelValue": 14,
-        "internalLevel": "14.5",
-        "internalLevelValue": 14.5,
-        "noteDesigner": "サファ太",
-        "noteCounts": {
-          "tap": 683,
-          "hold": 65,
-          "slide": 74,
-          "touch": 113,
-          "break": 64,
-          "total": 999
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      }
-    ],
-    "keyword": "Myosotis"
-  },
-  {
-    "songId": "ANiMA",
-    "category": "game-variety",
-    "title": "ANiMA",
-    "artist": "xi",
-    "bpm": 183,
-    "imageName": "a0563e1ff57abad91cc93c2efd4ec849d94fdb957e9b463ab87de8f48cc16b3a.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-04-17",
-    "isNew": true,
-    "isLocked": true,
-    "comment": null,
-    "slug": "anima-m0sf0",
-    "internalImageId": "img_k1YpMndiRfkk",
-    "sheets": [
-      {
-        "type": "dx",
-        "difficulty": "basic",
-        "level": "6",
-        "levelValue": 6,
-        "internalLevel": null,
-        "internalLevelValue": 6,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": 167,
-          "hold": 9,
-          "slide": 4,
-          "touch": 15,
-          "break": 9,
-          "total": 204
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "advanced",
-        "level": "8",
-        "levelValue": 8,
-        "internalLevel": null,
-        "internalLevelValue": 8,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": 282,
-          "hold": 6,
-          "slide": 7,
-          "touch": 24,
-          "break": 10,
-          "total": 329
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "expert",
-        "level": "12+",
-        "levelValue": 12.6,
-        "internalLevel": "12.9",
-        "internalLevelValue": 12.9,
-        "noteDesigner": "はっぴー",
-        "noteCounts": {
-          "tap": 549,
-          "hold": 10,
-          "slide": 33,
-          "touch": 5,
-          "break": 32,
-          "total": 629
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "master",
-        "level": "14+",
-        "levelValue": 14.6,
-        "internalLevel": "14.7",
-        "internalLevelValue": 14.7,
-        "noteDesigner": "Safazhel",
-        "noteCounts": {
-          "tap": 622,
-          "hold": 47,
-          "slide": 67,
-          "touch": 97,
-          "break": 111,
-          "total": 944
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      }
-    ],
-    "keyword": "ANiMA"
+    "keyword": "Usagi Flap"
   }
 ]
