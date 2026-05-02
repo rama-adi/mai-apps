@@ -12,16 +12,19 @@ const BODY = [
   "",
 ].join("\n");
 
+const GET = async () =>
+  new Response(BODY, {
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "public, max-age=3600, s-maxage=86400",
+    },
+  });
+
 export const Route = createFileRoute("/robots.txt")({
   server: {
     handlers: {
-      GET: async () =>
-        new Response(BODY, {
-          headers: {
-            "Content-Type": "text/plain; charset=utf-8",
-            "Cache-Control": "public, max-age=3600, s-maxage=86400",
-          },
-        }),
+      GET,
+      HEAD: GET,
     },
   },
 });
