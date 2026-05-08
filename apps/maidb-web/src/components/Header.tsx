@@ -79,7 +79,7 @@ export default function Header() {
           to="/"
           className="inline-flex items-center gap-2 text-base font-semibold tracking-tight text-foreground no-underline"
         >
-          <img src="/assets/logo.png" alt="MaiDB logo" className="h-7 w-7" />
+          <img src="/assets/logo-128.png" alt="MaiDB logo" className="h-7 w-7" />
           MaiDB
         </Link>
 

@@ -11,6 +11,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 const SEO_VIRTUAL_ID = "virtual:songs-seo";
 const SEO_RESOLVED_ID = "\0" + SEO_VIRTUAL_ID;
+const SEO_SLUGS_VIRTUAL_ID = "virtual:songs-seo-slugs";
+const SEO_SLUGS_RESOLVED_ID = "\0" + SEO_SLUGS_VIRTUAL_ID;
 const SEO_FILE = fileURLToPath(new URL("./songs-seo.json", import.meta.url));
 
 function songsSeoPlugin(): Plugin {
@@ -22,16 +24,26 @@ function songsSeoPlugin(): Plugin {
     },
     resolveId(id) {
       if (id === SEO_VIRTUAL_ID) return SEO_RESOLVED_ID;
+      if (id === SEO_SLUGS_VIRTUAL_ID) return SEO_SLUGS_RESOLVED_ID;
       return null;
     },
     load(id) {
-      if (id !== SEO_RESOLVED_ID) return null;
-      const include = !isBuild || process.env.INCLUDE_SEO === "true";
+      if (id !== SEO_RESOLVED_ID && id !== SEO_SLUGS_RESOLVED_ID) return null;
       this.addWatchFile(SEO_FILE);
-      if (!include || !existsSync(SEO_FILE)) {
+      if (!existsSync(SEO_FILE)) {
         return "export default [];";
       }
+
       const raw = readFileSync(SEO_FILE, "utf8");
+      if (id === SEO_SLUGS_RESOLVED_ID) {
+        const slugs = (JSON.parse(raw) as Array<{ slug: string }>).map((entry) => entry.slug);
+        return `export default ${JSON.stringify(slugs)};`;
+      }
+
+      const include = !isBuild || process.env.INCLUDE_SEO === "true";
+      if (!include) {
+        return "export default [];";
+      }
       return `export default ${raw};`;
     },
     handleHotUpdate({ file, server }) {

@@ -6,7 +6,7 @@ export function HomeBanner() {
     <section className="group relative mt-16 overflow-hidden border border-border bg-card transition-colors duration-300 hover:border-primary/40">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:url(/assets/illustration/bg_pattern.png)] [background-size:380px]"
+        className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:url(/assets/illustration/bg_pattern-512.png)] [background-size:380px]"
       />
       <div className="relative grid grid-cols-1 items-center gap-4 px-6 py-6 sm:grid-cols-[1fr_auto] sm:gap-8 sm:px-10 sm:py-8">
         <div>

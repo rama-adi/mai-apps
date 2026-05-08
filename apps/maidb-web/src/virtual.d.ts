@@ -3,3 +3,8 @@ declare module "virtual:songs-seo" {
   const data: SongSeoData;
   export default data;
 }
+
+declare module "virtual:songs-seo-slugs" {
+  const slugs: string[];
+  export default slugs;
+}

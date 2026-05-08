@@ -7,7 +7,7 @@ export function HomeHero() {
     <section className="relative overflow-hidden border-b border-border bg-primary/[0.025] dark:bg-transparent">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.09] mix-blend-multiply [background-image:url(/assets/illustration/bg_pattern.png)] [background-size:420px] dark:opacity-[0.05] dark:mix-blend-screen"
+        className="pointer-events-none absolute inset-0 opacity-[0.09] mix-blend-multiply [background-image:url(/assets/illustration/bg_pattern-512.png)] [background-size:420px] dark:opacity-[0.05] dark:mix-blend-screen"
       />
       <div
         aria-hidden

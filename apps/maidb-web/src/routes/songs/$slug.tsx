@@ -999,7 +999,7 @@ function ChartRow({
               className="inline-flex items-center gap-1.5 rounded-md border border-cyan-500/30 bg-cyan-500/10 px-2.5 py-1.5 text-xs font-semibold text-cyan-600 transition-colors hover:border-cyan-500/50 hover:bg-cyan-500/15 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
               title="Preview chart on maiノーツ"
             >
-              <img src="/assets/mainotes-logo.png" alt="" className="h-3.5" />
+              <img src="/assets/mainotes-logo-240.png" alt="" className="h-3.5" />
               <span>View chart</span>
             </a>
           )}
