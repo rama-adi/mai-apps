@@ -7,6 +7,7 @@ const BODY = [
   "Disallow: /songs/modal/",
   "Disallow: /modal/",
   "Disallow: /version/*/modal/",
+  "Disallow: /*(song-browser-*)",
   "",
   `Sitemap: ${SITE_URL}/sitemap.xml`,
   "",

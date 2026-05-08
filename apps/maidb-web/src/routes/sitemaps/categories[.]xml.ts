@@ -5,7 +5,7 @@ import { buildUrlset, xmlResponse } from "../../lib/sitemap";
 
 const GET = async () => {
   const metadata = await getMetadata();
-  const locs = metadata.categories.map((c) => `${SITE_URL}/version/${c.slug}`);
+  const locs = metadata.categories.map((c) => `${SITE_URL}/category/${c.slug}`);
   return xmlResponse(buildUrlset(locs));
 };
 

@@ -1,4 +1,4 @@
-import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
+import { HeadContent, Outlet, Scripts, createRootRoute, redirect } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import Header from "../components/Header";
@@ -8,6 +8,17 @@ import { OmnisearchProvider } from "../components/omnisearch/OmnisearchProvider"
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
+  beforeLoad: ({ location }) => {
+    if (!location.pathname.includes("/(")) return;
+
+    const pathname = location.pathname
+      .split("/")
+      .filter((segment) => !/^\(song-browser-[^)]+\)$/.test(segment))
+      .join("/");
+    const href = `${pathname || "/"}${location.searchStr}${location.hash}`;
+
+    throw redirect({ href, statusCode: 301 });
+  },
   head: () => ({
     meta: [
       { charSet: "utf-8" },

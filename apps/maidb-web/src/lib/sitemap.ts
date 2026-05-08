@@ -19,6 +19,31 @@ export function buildSitemapIndex(sitemaps: SitemapRef[]): string {
   return `<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${items}</sitemapindex>`;
 }
 
+export type AtomEntry = {
+  id: string;
+  title: string;
+  link: string;
+  updated: string;
+};
+
+export type AtomFeed = {
+  id: string;
+  title: string;
+  selfLink: string;
+  updated: string;
+  entries: AtomEntry[];
+};
+
+export function buildAtomFeed(feed: AtomFeed): string {
+  const entries = feed.entries
+    .map(
+      (entry) =>
+        `<entry><id>${xmlEscape(entry.id)}</id><title>${xmlEscape(entry.title)}</title><link rel="alternate" href="${xmlEscape(entry.link)}"/><updated>${xmlEscape(entry.updated)}</updated></entry>`,
+    )
+    .join("");
+  return `<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><id>${xmlEscape(feed.id)}</id><title>${xmlEscape(feed.title)}</title><link rel="self" href="${xmlEscape(feed.selfLink)}"/><updated>${xmlEscape(feed.updated)}</updated>${entries}</feed>`;
+}
+
 const XML_HEADERS = {
   "Content-Type": "application/xml; charset=utf-8",
   "Cache-Control": "public, max-age=3600, s-maxage=86400",
