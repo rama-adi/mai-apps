@@ -1,34 +1,34 @@
 [
   {
-    "songId": "Operation☆DOTABATA!",
-    "category": "game-variety",
-    "title": "Operation☆DOTABATA!",
-    "artist": "Mitsukiyo「ブルーアーカイブ -Blue Archive-」",
+    "songId": "キスキツネ",
+    "category": "pops-anime",
+    "title": "キスキツネ",
+    "artist": "HIMEHINA",
     "bpm": null,
-    "imageName": "ee55e950f47a57481c9a4759dfbd51d6a620b52a87b4c61f2b7a91a8b2e1a284.png",
+    "imageName": "3411e61509c17e518a0999c90d7e18ce66ebeb18d20b8d19951d8b9d0eded299.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-05-01",
+    "releaseDate": "2026-05-14",
     "isNew": true,
     "isLocked": false,
     "comment": null,
-    "slug": "operationdotabata-mitsukiyo-blue-archive-ejoti",
-    "internalImageId": "img_zXuZnRMEPyst",
+    "slug": "himehina-4cp4l",
+    "internalImageId": "img_EQ-mONdyB4gp",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "3",
-        "levelValue": 3,
+        "level": "2",
+        "levelValue": 2,
         "internalLevel": null,
-        "internalLevelValue": 3,
-        "noteDesigner": "-",
+        "internalLevelValue": 2,
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 129,
-          "hold": 11,
-          "slide": 4,
-          "touch": 11,
-          "break": 7,
-          "total": 162
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -49,274 +49,14 @@
         "levelValue": 6,
         "internalLevel": null,
         "internalLevelValue": 6,
-        "noteDesigner": "-",
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 201,
-          "hold": 12,
-          "slide": 6,
-          "touch": 11,
-          "break": 8,
-          "total": 238
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "expert",
-        "level": "11",
-        "levelValue": 11,
-        "internalLevel": null,
-        "internalLevelValue": 11,
-        "noteDesigner": "サファ太",
-        "noteCounts": {
-          "tap": 266,
-          "hold": 36,
-          "slide": 29,
-          "touch": 40,
-          "break": 57,
-          "total": 428
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "master",
-        "level": "13",
-        "levelValue": 13,
-        "internalLevel": "13.4",
-        "internalLevelValue": 13.4,
-        "noteDesigner": "アマリリス",
-        "noteCounts": {
-          "tap": 475,
-          "hold": 53,
-          "slide": 61,
-          "touch": 18,
-          "break": 97,
-          "total": 704
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      }
-    ],
-    "keyword": "Operation☆DOTABATA!"
-  },
-  {
-    "songId": "RE Aoharu",
-    "category": "game-variety",
-    "title": "RE Aoharu",
-    "artist": "Nor「ブルーアーカイブ -Blue Archive-」",
-    "bpm": 180,
-    "imageName": "f1a13c30bdcfaf2a110d19cf036875ad16d14bb4157c1f5d0f47522a6ba7e883.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-05-01",
-    "isNew": true,
-    "isLocked": false,
-    "comment": null,
-    "slug": "re-aoharu-nor-blue-archive-1i0g9",
-    "internalImageId": "img_zxpDr6L--Cou",
-    "sheets": [
-      {
-        "type": "dx",
-        "difficulty": "basic",
-        "level": "3",
-        "levelValue": 3,
-        "internalLevel": null,
-        "internalLevelValue": 3,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": 160,
-          "hold": 13,
-          "slide": 4,
-          "touch": 6,
-          "break": 3,
-          "total": 186
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "advanced",
-        "level": "7",
-        "levelValue": 7,
-        "internalLevel": null,
-        "internalLevelValue": 7,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": 253,
-          "hold": 10,
-          "slide": 14,
-          "touch": 22,
-          "break": 6,
-          "total": 305
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "expert",
-        "level": "10+",
-        "levelValue": 10.6,
-        "internalLevel": null,
-        "internalLevelValue": 10.6,
-        "noteDesigner": "せめんともり",
-        "noteCounts": {
-          "tap": 405,
-          "hold": 40,
-          "slide": 44,
-          "touch": 5,
-          "break": 43,
-          "total": 537
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "master",
-        "level": "13+",
-        "levelValue": 13.6,
-        "internalLevel": "13.7",
-        "internalLevelValue": 13.7,
-        "noteDesigner": "はっぴー",
-        "noteCounts": {
-          "tap": 534,
-          "hold": 16,
-          "slide": 112,
-          "touch": 29,
-          "break": 41,
-          "total": 732
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      }
-    ],
-    "keyword": "RE Aoharu"
-  },
-  {
-    "songId": "Usagi Flap",
-    "category": "game-variety",
-    "title": "Usagi Flap",
-    "artist": "Nor「ブルーアーカイブ -Blue Archive-」",
-    "bpm": null,
-    "imageName": "4070328cdd7a9af16e5ac7c98a3bb57eab5335a7575d9a31f630cfb15ed8780e.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-05-01",
-    "isNew": true,
-    "isLocked": false,
-    "comment": null,
-    "slug": "usagi-flap-nor-blue-archive-6gj5w",
-    "internalImageId": "img_yvOessaIYYec",
-    "sheets": [
-      {
-        "type": "dx",
-        "difficulty": "basic",
-        "level": "3",
-        "levelValue": 3,
-        "internalLevel": null,
-        "internalLevelValue": 3,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": 123,
-          "hold": 13,
-          "slide": 4,
-          "touch": 19,
-          "break": 2,
-          "total": 161
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "advanced",
-        "level": "6",
-        "levelValue": 6,
-        "internalLevel": null,
-        "internalLevelValue": 6,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": 220,
-          "hold": 20,
-          "slide": 6,
-          "touch": 24,
-          "break": 4,
-          "total": 274
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -337,14 +77,14 @@
         "levelValue": 10,
         "internalLevel": null,
         "internalLevelValue": 10,
-        "noteDesigner": "Luxizhel",
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 302,
-          "hold": 60,
-          "slide": 29,
-          "touch": 27,
-          "break": 9,
-          "total": 427
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -361,18 +101,18 @@
       {
         "type": "dx",
         "difficulty": "master",
-        "level": "13",
-        "levelValue": 13,
-        "internalLevel": "13.2",
-        "internalLevelValue": 13.2,
-        "noteDesigner": "カマボコ君",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": null,
+        "internalLevelValue": 13.6,
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 430,
-          "hold": 80,
-          "slide": 91,
-          "touch": 60,
-          "break": 8,
-          "total": 669
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -387,31 +127,31 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "Usagi Flap"
+    "keyword": "キスキツネ"
   },
   {
-    "songId": "オールマスター",
-    "category": "maimai",
-    "title": "オールマスター",
-    "artist": "大漠波新 feat.ヲタみん",
+    "songId": "WWW",
+    "category": "pops-anime",
+    "title": "WWW",
+    "artist": "HIMEHINA",
     "bpm": null,
-    "imageName": "b2a215092f8580fd8b1d85245f0e9b22ff0b6eef42989cad1a77f2d71c7c4f75.png",
+    "imageName": "2d070018eebd26c7078e72411022912dff843315f727310f48769b0f74ca98a2.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-05-08",
+    "releaseDate": "2026-05-14",
     "isNew": true,
-    "isLocked": true,
+    "isLocked": false,
     "comment": null,
-    "slug": "wbt7v",
-    "internalImageId": "img_GO_p_4yY0fOD",
+    "slug": "www-himehina-pwq2f",
+    "internalImageId": "img_jz9P4zrV031e",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "4",
-        "levelValue": 4,
+        "level": "2",
+        "levelValue": 2,
         "internalLevel": null,
-        "internalLevelValue": 4,
-        "noteDesigner": "-",
+        "internalLevelValue": 2,
+        "noteDesigner": null,
         "noteCounts": {
           "tap": null,
           "hold": null,
@@ -439,137 +179,7 @@
         "levelValue": 6,
         "internalLevel": null,
         "internalLevelValue": 6,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "expert",
-        "level": "11",
-        "levelValue": 11,
-        "internalLevel": null,
-        "internalLevelValue": 11,
         "noteDesigner": null,
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "master",
-        "level": "13",
-        "levelValue": 13,
-        "internalLevel": null,
-        "internalLevelValue": 13,
-        "noteDesigner": null,
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      }
-    ],
-    "keyword": "オールマスター"
-  },
-  {
-    "songId": "STRAY",
-    "category": "maimai",
-    "title": "STRAY",
-    "artist": "umigame",
-    "bpm": null,
-    "imageName": "c13e4f00d799192dcade7fd028822f43d766653f1cd70b04143affa402f62d8d.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-05-08",
-    "isNew": true,
-    "isLocked": true,
-    "comment": null,
-    "slug": "stray-umigame-wz9d9",
-    "internalImageId": "img_d9bhvnfz_yc4",
-    "sheets": [
-      {
-        "type": "dx",
-        "difficulty": "basic",
-        "level": "3",
-        "levelValue": 3,
-        "internalLevel": null,
-        "internalLevelValue": 3,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "advanced",
-        "level": "6",
-        "levelValue": 6,
-        "internalLevel": null,
-        "internalLevelValue": 6,
-        "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
           "hold": null,
@@ -647,31 +257,31 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "STRAY"
+    "keyword": "WWW"
   },
   {
-    "songId": "クロノイデア",
-    "category": "maimai",
-    "title": "クロノイデア",
-    "artist": "iDEN LiLY feat.X-Fenriey",
+    "songId": "うたかたよいかないで",
+    "category": "pops-anime",
+    "title": "うたかたよいかないで",
+    "artist": "HIMEHINA",
     "bpm": null,
-    "imageName": "766a3d226224e0be0c6c4e03684d1540608586a3bef8e476904a9e7018b6ee3f.png",
+    "imageName": "cf170e57331a7da631134f4ff5248fb36cac2b0685aa685add3ed65bfb21c61c.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-05-08",
+    "releaseDate": "2026-05-14",
     "isNew": true,
-    "isLocked": true,
+    "isLocked": false,
     "comment": null,
-    "slug": "671st",
-    "internalImageId": "img_AvijuS1MYF-F",
+    "slug": "himehina-lovxj",
+    "internalImageId": "img_Q1zHBHHIbxS5",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "5",
-        "levelValue": 5,
+        "level": "3",
+        "levelValue": 3,
         "internalLevel": null,
-        "internalLevelValue": 5,
-        "noteDesigner": "-",
+        "internalLevelValue": 3,
+        "noteDesigner": null,
         "noteCounts": {
           "tap": null,
           "hold": null,
@@ -695,11 +305,11 @@
       {
         "type": "dx",
         "difficulty": "advanced",
-        "level": "8",
-        "levelValue": 8,
+        "level": "7",
+        "levelValue": 7,
         "internalLevel": null,
-        "internalLevelValue": 8,
-        "noteDesigner": "-",
+        "internalLevelValue": 7,
+        "noteDesigner": null,
         "noteCounts": {
           "tap": null,
           "hold": null,
@@ -723,10 +333,10 @@
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "11+",
-        "levelValue": 11.6,
+        "level": "10",
+        "levelValue": 10,
         "internalLevel": null,
-        "internalLevelValue": 11.6,
+        "internalLevelValue": 10,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -751,10 +361,10 @@
       {
         "type": "dx",
         "difficulty": "master",
-        "level": "14",
-        "levelValue": 14,
+        "level": "13",
+        "levelValue": 13,
         "internalLevel": null,
-        "internalLevelValue": 14,
+        "internalLevelValue": 13,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -777,6 +387,6 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "クロノイデア"
+    "keyword": "うたかたよいかないで"
   }
 ]
