@@ -1,18 +1,18 @@
 [
   {
-    "songId": "キスキツネ",
-    "category": "pops-anime",
-    "title": "キスキツネ",
-    "artist": "HIMEHINA",
+    "songId": "Intergalactic Bound",
+    "category": "niconico-vocaloid",
+    "title": "Intergalactic Bound",
+    "artist": "Yunosuke / CircusP",
     "bpm": null,
-    "imageName": "3411e61509c17e518a0999c90d7e18ce66ebeb18d20b8d19951d8b9d0eded299.png",
+    "imageName": "9a111be2df7e707637a4a5cfef3541f27c059f5620c323cf6b4b1a55d234b37e.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-05-14",
+    "releaseDate": "2026-05-29",
     "isNew": true,
     "isLocked": false,
     "comment": null,
-    "slug": "himehina-4cp4l",
-    "internalImageId": "img_EQ-mONdyB4gp",
+    "slug": "intergalactic-bound-yunosuke-circusp-l441t",
+    "internalImageId": "img_woVEvnryT0yw",
     "sheets": [
       {
         "type": "dx",
@@ -21,7 +21,7 @@
         "levelValue": 2,
         "internalLevel": null,
         "internalLevelValue": 2,
-        "noteDesigner": null,
+        "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
           "hold": null,
@@ -49,7 +49,7 @@
         "levelValue": 6,
         "internalLevel": null,
         "internalLevelValue": 6,
-        "noteDesigner": null,
+        "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
           "hold": null,
@@ -101,140 +101,10 @@
       {
         "type": "dx",
         "difficulty": "master",
-        "level": "13+",
-        "levelValue": 13.6,
-        "internalLevel": null,
-        "internalLevelValue": 13.6,
-        "noteDesigner": null,
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      }
-    ],
-    "keyword": "キスキツネ"
-  },
-  {
-    "songId": "WWW",
-    "category": "pops-anime",
-    "title": "WWW",
-    "artist": "HIMEHINA",
-    "bpm": null,
-    "imageName": "2d070018eebd26c7078e72411022912dff843315f727310f48769b0f74ca98a2.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-05-14",
-    "isNew": true,
-    "isLocked": false,
-    "comment": null,
-    "slug": "www-himehina-pwq2f",
-    "internalImageId": "img_jz9P4zrV031e",
-    "sheets": [
-      {
-        "type": "dx",
-        "difficulty": "basic",
-        "level": "2",
-        "levelValue": 2,
-        "internalLevel": null,
-        "internalLevelValue": 2,
-        "noteDesigner": null,
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "advanced",
-        "level": "6",
-        "levelValue": 6,
-        "internalLevel": null,
-        "internalLevelValue": 6,
-        "noteDesigner": null,
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "expert",
-        "level": "10+",
-        "levelValue": 10.6,
-        "internalLevel": null,
-        "internalLevelValue": 10.6,
-        "noteDesigner": null,
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "master",
         "level": "13",
         "levelValue": 13,
-        "internalLevel": null,
-        "internalLevelValue": 13,
+        "internalLevel": "13.1",
+        "internalLevelValue": 13.1,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -257,22 +127,22 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "WWW"
+    "keyword": "Intergalactic Bound"
   },
   {
-    "songId": "うたかたよいかないで",
-    "category": "pops-anime",
-    "title": "うたかたよいかないで",
-    "artist": "HIMEHINA",
+    "songId": "LEMON MELON COOKIE",
+    "category": "niconico-vocaloid",
+    "title": "LEMON MELON COOKIE",
+    "artist": "TAK",
     "bpm": null,
-    "imageName": "cf170e57331a7da631134f4ff5248fb36cac2b0685aa685add3ed65bfb21c61c.png",
+    "imageName": "421cbaa3be5bc280f7811f2475218f5fc0d104f094f853d3251ab0f49b33bab8.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-05-14",
+    "releaseDate": "2026-05-29",
     "isNew": true,
     "isLocked": false,
     "comment": null,
-    "slug": "himehina-lovxj",
-    "internalImageId": "img_Q1zHBHHIbxS5",
+    "slug": "lemon-melon-cookie-g8euz",
+    "internalImageId": "img_jC2wK8p6niIv",
     "sheets": [
       {
         "type": "dx",
@@ -281,7 +151,7 @@
         "levelValue": 3,
         "internalLevel": null,
         "internalLevelValue": 3,
-        "noteDesigner": null,
+        "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
           "hold": null,
@@ -309,7 +179,7 @@
         "levelValue": 7,
         "internalLevel": null,
         "internalLevelValue": 7,
-        "noteDesigner": null,
+        "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
           "hold": null,
@@ -333,10 +203,168 @@
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "10",
-        "levelValue": 10,
+        "level": "10+",
+        "levelValue": 10.6,
         "internalLevel": null,
-        "internalLevelValue": 10,
+        "internalLevelValue": 10.6,
+        "noteDesigner": "サファ太",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "11+",
+        "levelValue": 11.6,
+        "internalLevel": "11.7",
+        "internalLevelValue": 11.7,
+        "noteDesigner": "緑風犬三郎",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "remaster",
+        "level": "13",
+        "levelValue": 13,
+        "internalLevel": "13.3",
+        "internalLevelValue": 13.3,
+        "noteDesigner": "カマボコ君",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "LEMON MELON COOKIE"
+  },
+  {
+    "songId": "3rd Avenue",
+    "category": "game-variety",
+    "title": "3rd Avenue",
+    "artist": "Sound Souler",
+    "bpm": null,
+    "imageName": "97462087383ba7b75c27ab851e7382fb7b68460fcfc1962a3b510bb234207f44.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-05-29",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "3rd-avenue-sound-souler-3h9k3",
+    "internalImageId": "img_r4N2SeE9ObF9",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "3",
+        "levelValue": 3,
+        "internalLevel": null,
+        "internalLevelValue": 3,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "11",
+        "levelValue": 11,
+        "internalLevel": null,
+        "internalLevelValue": 11,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -361,10 +389,10 @@
       {
         "type": "dx",
         "difficulty": "master",
-        "level": "13",
-        "levelValue": 13,
-        "internalLevel": null,
-        "internalLevelValue": 13,
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.6",
+        "internalLevelValue": 13.6,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -387,6 +415,6 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "うたかたよいかないで"
+    "keyword": "3rd Avenue"
   }
 ]

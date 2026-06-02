@@ -666,20 +666,20 @@
     "gamerch_id": "534282",
     "charts": [
       {
-        "id": "bcb482bd-ec6d-44e0-a8ea-6a8093b4e962",
-        "difficulty": "advanced",
-        "level": "7",
-        "internal_level": 7,
+        "id": "cd2bd30c-d3cf-4519-b801-fa3416b6e420",
+        "difficulty": "basic",
+        "level": "5",
+        "internal_level": 5,
         "version": "でらっくす",
         "release_date": "2019-11-15T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": true
       },
       {
-        "id": "cd2bd30c-d3cf-4519-b801-fa3416b6e420",
-        "difficulty": "basic",
-        "level": "5",
-        "internal_level": 5,
+        "id": "bcb482bd-ec6d-44e0-a8ea-6a8093b4e962",
+        "difficulty": "advanced",
+        "level": "7",
+        "internal_level": 7,
         "version": "でらっくす",
         "release_date": "2019-11-15T01:00:00+00:00",
         "notes_designer": null,
@@ -958,16 +958,6 @@
         "has_chart_data": true
       },
       {
-        "id": "2e022a42-6c2b-43d2-9133-4ec166ec97ec",
-        "difficulty": "basic",
-        "level": "5",
-        "internal_level": 5,
-        "version": "でらっくす",
-        "release_date": "2019-11-15T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "47782aa7-3a38-430e-933b-93657492d824",
         "difficulty": "expert",
         "level": "10",
@@ -975,6 +965,16 @@
         "version": "でらっくす",
         "release_date": "2019-11-15T01:00:00+00:00",
         "notes_designer": "サファ太",
+        "has_chart_data": true
+      },
+      {
+        "id": "2e022a42-6c2b-43d2-9133-4ec166ec97ec",
+        "difficulty": "basic",
+        "level": "5",
+        "internal_level": 5,
+        "version": "でらっくす",
+        "release_date": "2019-11-15T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -1307,20 +1307,20 @@
         "has_chart_data": true
       },
       {
-        "id": "980635b3-eccc-4b3d-8d01-1b841b8157e3",
-        "difficulty": "basic",
-        "level": "4",
-        "internal_level": 4,
+        "id": "0af64866-ad83-4ca5-80f9-477071d160c0",
+        "difficulty": "advanced",
+        "level": "8",
+        "internal_level": 8.5,
         "version": "FiNALE",
         "release_date": "2019-05-10T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": true
       },
       {
-        "id": "0af64866-ad83-4ca5-80f9-477071d160c0",
-        "difficulty": "advanced",
-        "level": "8",
-        "internal_level": 8.5,
+        "id": "980635b3-eccc-4b3d-8d01-1b841b8157e3",
+        "difficulty": "basic",
+        "level": "4",
+        "internal_level": 4,
         "version": "FiNALE",
         "release_date": "2019-05-10T01:00:00+00:00",
         "notes_designer": null,
@@ -1505,16 +1505,6 @@
         "has_chart_data": false
       },
       {
-        "id": "fa7ee629-199b-43a7-80ca-2eff34526db0",
-        "difficulty": "master",
-        "level": "14+",
-        "internal_level": 14.7,
-        "version": "BUDDiES",
-        "release_date": "2023-12-09T01:00:00+00:00",
-        "notes_designer": "EL DiABLO",
-        "has_chart_data": true
-      },
-      {
         "id": "23903de3-6c08-4ff2-ba00-5ae3c7626638",
         "difficulty": "expert",
         "level": "13",
@@ -1522,6 +1512,16 @@
         "version": "BUDDiES",
         "release_date": "2023-12-09T01:00:00+00:00",
         "notes_designer": "鳩ホルダー",
+        "has_chart_data": true
+      },
+      {
+        "id": "fa7ee629-199b-43a7-80ca-2eff34526db0",
+        "difficulty": "master",
+        "level": "14+",
+        "internal_level": 14.7,
+        "version": "BUDDiES",
+        "release_date": "2023-12-09T01:00:00+00:00",
+        "notes_designer": "EL DiABLO",
         "has_chart_data": true
       }
     ]
@@ -2891,6 +2891,16 @@
         "has_chart_data": false
       },
       {
+        "id": "b28133d2-4a07-4969-abcf-67fed87f2342",
+        "difficulty": "master",
+        "level": "14",
+        "internal_level": 14,
+        "version": "FESTiVAL",
+        "release_date": "2023-02-03T01:00:00+00:00",
+        "notes_designer": "はっぴー",
+        "has_chart_data": true
+      },
+      {
         "id": "d3195a14-0622-4976-98b0-ee359d94131d",
         "difficulty": "basic",
         "level": "3",
@@ -2908,16 +2918,6 @@
         "version": "FESTiVAL",
         "release_date": "2023-02-03T01:00:00+00:00",
         "notes_designer": "翠楼屋",
-        "has_chart_data": true
-      },
-      {
-        "id": "b28133d2-4a07-4969-abcf-67fed87f2342",
-        "difficulty": "master",
-        "level": "14",
-        "internal_level": 14,
-        "version": "FESTiVAL",
-        "release_date": "2023-02-03T01:00:00+00:00",
-        "notes_designer": "はっぴー",
         "has_chart_data": true
       }
     ]
@@ -3250,16 +3250,6 @@
     "gamerch_id": "533842",
     "charts": [
       {
-        "id": "9c8c4324-8a3d-4492-ae3b-996d75231dcd",
-        "difficulty": "expert",
-        "level": "11",
-        "internal_level": 11.5,
-        "version": "でらっくす PLUS",
-        "release_date": "2020-01-23T01:00:00+00:00",
-        "notes_designer": "シチミヘルツ",
-        "has_chart_data": true
-      },
-      {
         "id": "0c032152-335d-4288-91e3-36c62b7f8091",
         "difficulty": "advanced",
         "level": "8",
@@ -3267,6 +3257,16 @@
         "version": "でらっくす PLUS",
         "release_date": "2020-01-23T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "9c8c4324-8a3d-4492-ae3b-996d75231dcd",
+        "difficulty": "expert",
+        "level": "11",
+        "internal_level": 11.5,
+        "version": "でらっくす PLUS",
+        "release_date": "2020-01-23T01:00:00+00:00",
+        "notes_designer": "シチミヘルツ",
         "has_chart_data": true
       },
       {
@@ -3646,6 +3646,16 @@
         "has_chart_data": false
       },
       {
+        "id": "3b7e48b1-098e-4c6a-a377-9f6ca77016de",
+        "difficulty": "remaster",
+        "level": "14",
+        "internal_level": 14.3,
+        "version": "でらっくす",
+        "release_date": "2019-09-20T01:00:00+00:00",
+        "notes_designer": "サファ太",
+        "has_chart_data": true
+      },
+      {
         "id": "e21d332c-8cb1-4edd-aaf2-473ad598cd0f",
         "difficulty": "basic",
         "level": "5",
@@ -3673,16 +3683,6 @@
         "version": "でらっくす",
         "release_date": "2019-08-09T01:00:00+00:00",
         "notes_designer": "はっぴー",
-        "has_chart_data": true
-      },
-      {
-        "id": "3b7e48b1-098e-4c6a-a377-9f6ca77016de",
-        "difficulty": "remaster",
-        "level": "14",
-        "internal_level": 14.3,
-        "version": "でらっくす",
-        "release_date": "2019-09-20T01:00:00+00:00",
-        "notes_designer": "サファ太",
         "has_chart_data": true
       }
     ]
@@ -3787,16 +3787,6 @@
     "gamerch_id": "534135",
     "charts": [
       {
-        "id": "c092d1af-99a6-4e70-8efa-6d98313a183e",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13.4,
-        "version": "でらっくす",
-        "release_date": "2020-01-10T01:00:00+00:00",
-        "notes_designer": "ロシェ@ペンギン",
-        "has_chart_data": true
-      },
-      {
         "id": "64b9fe93-c923-4dd3-8252-f8f80d0427a7",
         "difficulty": "basic",
         "level": "4",
@@ -3804,6 +3794,16 @@
         "version": "でらっくす",
         "release_date": "2020-01-10T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "c092d1af-99a6-4e70-8efa-6d98313a183e",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.4,
+        "version": "でらっくす",
+        "release_date": "2020-01-10T01:00:00+00:00",
+        "notes_designer": "ロシェ@ペンギン",
         "has_chart_data": true
       },
       {
@@ -4525,16 +4525,6 @@
         "has_chart_data": true
       },
       {
-        "id": "9c573aa7-de7a-40e1-b0c1-71ff995f6228",
-        "difficulty": "master",
-        "level": "14",
-        "internal_level": 14.2,
-        "version": "MURASAKi PLUS",
-        "release_date": "2017-12-05T01:00:00+00:00",
-        "notes_designer": "小鳥遊さん",
-        "has_chart_data": true
-      },
-      {
         "id": "6c887a09-e1be-410f-b35c-44a81e87ced9",
         "difficulty": "basic",
         "level": "7",
@@ -4542,6 +4532,16 @@
         "version": "MURASAKi PLUS",
         "release_date": "2017-12-05T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "9c573aa7-de7a-40e1-b0c1-71ff995f6228",
+        "difficulty": "master",
+        "level": "14",
+        "internal_level": 14.2,
+        "version": "MURASAKi PLUS",
+        "release_date": "2017-12-05T01:00:00+00:00",
+        "notes_designer": "小鳥遊さん",
         "has_chart_data": true
       }
     ]
@@ -4562,16 +4562,6 @@
         "has_chart_data": true
       },
       {
-        "id": "5829062f-7b02-4ea0-80c5-b18693901dae",
-        "difficulty": "expert",
-        "level": "12+",
-        "internal_level": 12.9,
-        "version": "ORANGE",
-        "release_date": "2015-03-05T01:00:00+00:00",
-        "notes_designer": "Jack vs mai-Star",
-        "has_chart_data": true
-      },
-      {
         "id": "809e1c60-fd28-4ec0-ad58-dd379608a428",
         "difficulty": "basic",
         "level": "5",
@@ -4579,6 +4569,16 @@
         "version": "ORANGE",
         "release_date": "2015-03-05T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "5829062f-7b02-4ea0-80c5-b18693901dae",
+        "difficulty": "expert",
+        "level": "12+",
+        "internal_level": 12.9,
+        "version": "ORANGE",
+        "release_date": "2015-03-05T01:00:00+00:00",
+        "notes_designer": "Jack vs mai-Star",
         "has_chart_data": true
       },
       {
@@ -4787,6 +4787,16 @@
     "gamerch_id": "534023",
     "charts": [
       {
+        "id": "28b95983-1d4f-4122-a5f6-2b1fab20d170",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.9,
+        "version": "UNiVERSE PLUS",
+        "release_date": "2022-04-08T01:00:00+00:00",
+        "notes_designer": "チェシャ猫とハートのジャック",
+        "has_chart_data": true
+      },
+      {
         "id": "8cd5b91a-5783-4290-b147-3a451ab102b1",
         "difficulty": "basic",
         "level": "3",
@@ -4815,16 +4825,6 @@
         "release_date": "2022-04-08T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": false
-      },
-      {
-        "id": "28b95983-1d4f-4122-a5f6-2b1fab20d170",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.9,
-        "version": "UNiVERSE PLUS",
-        "release_date": "2022-04-08T01:00:00+00:00",
-        "notes_designer": "チェシャ猫とハートのジャック",
-        "has_chart_data": true
       }
     ]
   },
@@ -4921,16 +4921,6 @@
     "gamerch_id": "533848",
     "charts": [
       {
-        "id": "7691d103-d666-47a6-999e-17f974eeadc3",
-        "difficulty": "expert",
-        "level": "11+",
-        "internal_level": 11.7,
-        "version": "でらっくす PLUS",
-        "release_date": "2020-06-11T01:00:00+00:00",
-        "notes_designer": "Jack",
-        "has_chart_data": true
-      },
-      {
         "id": "44f885e7-56c6-4b1e-b988-615a6d3cfbc9",
         "difficulty": "advanced",
         "level": "7+",
@@ -4938,6 +4928,16 @@
         "version": "でらっくす PLUS",
         "release_date": "2020-06-11T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "7691d103-d666-47a6-999e-17f974eeadc3",
+        "difficulty": "expert",
+        "level": "11+",
+        "internal_level": 11.7,
+        "version": "でらっくす PLUS",
+        "release_date": "2020-06-11T01:00:00+00:00",
+        "notes_designer": "Jack",
         "has_chart_data": true
       },
       {
@@ -5206,13 +5206,13 @@
     "gamerch_id": "534076",
     "charts": [
       {
-        "id": "18f73ca8-0e05-49e7-ae93-74a1b0592072",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.7,
+        "id": "ff0aef75-dcd1-4cc2-9c93-b8c2169ac728",
+        "difficulty": "basic",
+        "level": "4",
+        "internal_level": 4,
         "version": "でらっくす PLUS",
         "release_date": "2020-09-04T01:00:00+00:00",
-        "notes_designer": "華火職人",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -5226,16 +5226,6 @@
         "has_chart_data": true
       },
       {
-        "id": "ff0aef75-dcd1-4cc2-9c93-b8c2169ac728",
-        "difficulty": "basic",
-        "level": "4",
-        "internal_level": 4,
-        "version": "でらっくす PLUS",
-        "release_date": "2020-09-04T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "7ae0ddad-566b-495f-a645-2cd384e0217c",
         "difficulty": "advanced",
         "level": "8",
@@ -5243,6 +5233,16 @@
         "version": "でらっくす PLUS",
         "release_date": "2020-09-04T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "18f73ca8-0e05-49e7-ae93-74a1b0592072",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.7,
+        "version": "でらっくす PLUS",
+        "release_date": "2020-09-04T01:00:00+00:00",
+        "notes_designer": "華火職人",
         "has_chart_data": true
       }
     ]
@@ -5548,16 +5548,6 @@
         "has_chart_data": true
       },
       {
-        "id": "c8945533-afaf-4865-9783-7a98f6826b2f",
-        "difficulty": "basic",
-        "level": "7",
-        "internal_level": 7,
-        "version": "PiNK PLUS",
-        "release_date": "2016-10-20T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "a0b4d6f0-720e-4fef-a5be-9680667117c0",
         "difficulty": "expert",
         "level": "12+",
@@ -5565,6 +5555,16 @@
         "version": "PiNK PLUS",
         "release_date": "2016-10-20T01:00:00+00:00",
         "notes_designer": "ぴちネコ",
+        "has_chart_data": true
+      },
+      {
+        "id": "c8945533-afaf-4865-9783-7a98f6826b2f",
+        "difficulty": "basic",
+        "level": "7",
+        "internal_level": 7,
+        "version": "PiNK PLUS",
+        "release_date": "2016-10-20T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -5689,6 +5689,16 @@
     "gamerch_id": "534640",
     "charts": [
       {
+        "id": "cd55c849-929b-4b10-9bec-c5a2b960136d",
+        "difficulty": "advanced",
+        "level": "8",
+        "internal_level": 8.3,
+        "version": "MURASAKi",
+        "release_date": "2017-05-11T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "981d1112-f0d5-4e50-92b5-9ab3112fa45c",
         "difficulty": "expert",
         "level": "11",
@@ -5703,16 +5713,6 @@
         "difficulty": "basic",
         "level": "5",
         "internal_level": 5,
-        "version": "MURASAKi",
-        "release_date": "2017-05-11T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
-        "id": "cd55c849-929b-4b10-9bec-c5a2b960136d",
-        "difficulty": "advanced",
-        "level": "8",
-        "internal_level": 8.3,
         "version": "MURASAKi",
         "release_date": "2017-05-11T01:00:00+00:00",
         "notes_designer": null,
@@ -5971,6 +5971,16 @@
     "gamerch_id": "534503",
     "charts": [
       {
+        "id": "4b8eb608-9422-42f5-a5f2-f66ad2d1c39a",
+        "difficulty": "advanced",
+        "level": "7",
+        "internal_level": 7.2,
+        "version": "maimai",
+        "release_date": "2012-07-11T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "e244d742-a3e0-406e-8f69-e7e39b91f0ff",
         "difficulty": "expert",
         "level": "10",
@@ -5988,16 +5998,6 @@
         "version": "maimai",
         "release_date": "2012-07-11T01:00:00+00:00",
         "notes_designer": "ニャイン",
-        "has_chart_data": true
-      },
-      {
-        "id": "4b8eb608-9422-42f5-a5f2-f66ad2d1c39a",
-        "difficulty": "advanced",
-        "level": "7",
-        "internal_level": 7.2,
-        "version": "maimai",
-        "release_date": "2012-07-11T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -6340,16 +6340,6 @@
     "gamerch_id": "534634",
     "charts": [
       {
-        "id": "d6956c86-1cce-43d8-ba8b-19b1e92dd5ad",
-        "difficulty": "basic",
-        "level": "5",
-        "internal_level": 5,
-        "version": "ORANGE",
-        "release_date": "2015-01-08T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "f932e025-0c09-4483-adf3-148ff1048d98",
         "difficulty": "expert",
         "level": "10+",
@@ -6357,6 +6347,16 @@
         "version": "ORANGE",
         "release_date": "2015-01-08T01:00:00+00:00",
         "notes_designer": "mai-Star",
+        "has_chart_data": true
+      },
+      {
+        "id": "d6956c86-1cce-43d8-ba8b-19b1e92dd5ad",
+        "difficulty": "basic",
+        "level": "5",
+        "internal_level": 5,
+        "version": "ORANGE",
+        "release_date": "2015-01-08T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -6971,16 +6971,6 @@
         "has_chart_data": true
       },
       {
-        "id": "00974bd8-fc9a-4e57-9639-6e07d3b82e23",
-        "difficulty": "advanced",
-        "level": "7+",
-        "internal_level": 7.8,
-        "version": "MiLK PLUS",
-        "release_date": "2018-09-04T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "363c6ecd-0fe4-4c3e-9c8d-0f3ba77cb654",
         "difficulty": "expert",
         "level": "11+",
@@ -6988,6 +6978,16 @@
         "version": "MiLK PLUS",
         "release_date": "2018-09-04T01:00:00+00:00",
         "notes_designer": "はっぴー",
+        "has_chart_data": true
+      },
+      {
+        "id": "00974bd8-fc9a-4e57-9639-6e07d3b82e23",
+        "difficulty": "advanced",
+        "level": "7+",
+        "internal_level": 7.8,
+        "version": "MiLK PLUS",
+        "release_date": "2018-09-04T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -7575,16 +7575,6 @@
         "has_chart_data": false
       },
       {
-        "id": "f1fd9288-38a3-4333-962d-7c4fa70c5cc2",
-        "difficulty": "advanced",
-        "level": "8",
-        "internal_level": 8.2,
-        "version": "PRiSM PLUS",
-        "release_date": "2025-05-21T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
         "id": "c9db9dae-333e-49b7-aa4e-ca520daac77b",
         "difficulty": "master",
         "level": "14",
@@ -7593,6 +7583,16 @@
         "release_date": "2025-05-21T01:00:00+00:00",
         "notes_designer": "ぴちネコ",
         "has_chart_data": true
+      },
+      {
+        "id": "f1fd9288-38a3-4333-962d-7c4fa70c5cc2",
+        "difficulty": "advanced",
+        "level": "8",
+        "internal_level": 8.2,
+        "version": "PRiSM PLUS",
+        "release_date": "2025-05-21T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
       },
       {
         "id": "27f2782b-81fc-4685-8389-a6c6f4d4f297",
@@ -8363,16 +8363,6 @@
         "has_chart_data": false
       },
       {
-        "id": "d62aaad1-88f7-4155-ae6d-31580fd33c43",
-        "difficulty": "expert",
-        "level": "12+",
-        "internal_level": 12.6,
-        "version": "UNiVERSE PLUS",
-        "release_date": "2022-03-24T01:00:00+00:00",
-        "notes_designer": "翠楼屋",
-        "has_chart_data": true
-      },
-      {
         "id": "e241b96b-8795-4a2b-8f2b-f9b42d4cc1cd",
         "difficulty": "master",
         "level": "13+",
@@ -8380,6 +8370,16 @@
         "version": "UNiVERSE PLUS",
         "release_date": "2022-03-24T01:00:00+00:00",
         "notes_designer": "隅田川星人",
+        "has_chart_data": true
+      },
+      {
+        "id": "d62aaad1-88f7-4155-ae6d-31580fd33c43",
+        "difficulty": "expert",
+        "level": "12+",
+        "internal_level": 12.6,
+        "version": "UNiVERSE PLUS",
+        "release_date": "2022-03-24T01:00:00+00:00",
+        "notes_designer": "翠楼屋",
         "has_chart_data": true
       },
       {
@@ -8722,16 +8722,6 @@
         "has_chart_data": false
       },
       {
-        "id": "ce51b3ff-1d3f-4965-b1d3-401f4fcfbb7b",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.7,
-        "version": "CiRCLE",
-        "release_date": "2026-02-06T01:00:00+00:00",
-        "notes_designer": "サファ太",
-        "has_chart_data": true
-      },
-      {
         "id": "51247de3-02b6-46e0-869f-a0e5aa67a701",
         "difficulty": "basic",
         "level": "4",
@@ -8760,6 +8750,16 @@
         "release_date": "2026-02-06T01:00:00+00:00",
         "notes_designer": "はっぴー",
         "has_chart_data": false
+      },
+      {
+        "id": "ce51b3ff-1d3f-4965-b1d3-401f4fcfbb7b",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.7,
+        "version": "CiRCLE",
+        "release_date": "2026-02-06T01:00:00+00:00",
+        "notes_designer": "サファ太",
+        "has_chart_data": true
       }
     ]
   },
@@ -9252,16 +9252,6 @@
         "has_chart_data": false
       },
       {
-        "id": "a59fb734-5aad-4b6f-a6de-3ef6cc0ef409",
-        "difficulty": "expert",
-        "level": "11",
-        "internal_level": 11.2,
-        "version": "maimai PLUS",
-        "release_date": "2013-05-09T01:00:00+00:00",
-        "notes_designer": "はっぴー",
-        "has_chart_data": false
-      },
-      {
         "id": "fb592a0a-8e65-4666-b752-537697c57e13",
         "difficulty": "remaster",
         "level": "13",
@@ -9269,6 +9259,16 @@
         "version": "maimai PLUS",
         "release_date": "2019-06-21T01:00:00+00:00",
         "notes_designer": "Jack",
+        "has_chart_data": false
+      },
+      {
+        "id": "a59fb734-5aad-4b6f-a6de-3ef6cc0ef409",
+        "difficulty": "expert",
+        "level": "11",
+        "internal_level": 11.2,
+        "version": "maimai PLUS",
+        "release_date": "2013-05-09T01:00:00+00:00",
+        "notes_designer": "はっぴー",
         "has_chart_data": false
       },
       {
@@ -9423,10 +9423,10 @@
     "gamerch_id": "533843",
     "charts": [
       {
-        "id": "887597ce-1da1-4acb-ba34-24efa4558a6f",
-        "difficulty": "basic",
-        "level": "5",
-        "internal_level": 5,
+        "id": "8875d385-279c-4f9a-80a6-de7eeb41971f",
+        "difficulty": "advanced",
+        "level": "7",
+        "internal_level": 7.5,
         "version": "でらっくす PLUS",
         "release_date": "2020-02-07T01:00:00+00:00",
         "notes_designer": null,
@@ -9443,10 +9443,10 @@
         "has_chart_data": true
       },
       {
-        "id": "8875d385-279c-4f9a-80a6-de7eeb41971f",
-        "difficulty": "advanced",
-        "level": "7",
-        "internal_level": 7.5,
+        "id": "887597ce-1da1-4acb-ba34-24efa4558a6f",
+        "difficulty": "basic",
+        "level": "5",
+        "internal_level": 5,
         "version": "でらっくす PLUS",
         "release_date": "2020-02-07T01:00:00+00:00",
         "notes_designer": null,
@@ -9846,6 +9846,16 @@
     "gamerch_id": "860714",
     "charts": [
       {
+        "id": "c6842bdf-125c-4106-87e6-7b7e3f566882",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.6,
+        "version": "BUDDiES PLUS",
+        "release_date": "2024-07-05T01:00:00+00:00",
+        "notes_designer": "Jack",
+        "has_chart_data": true
+      },
+      {
         "id": "b2f1d7e6-914c-4190-8303-4faba042359c",
         "difficulty": "basic",
         "level": "5",
@@ -9874,16 +9884,6 @@
         "release_date": "2024-07-05T01:00:00+00:00",
         "notes_designer": "鳩ホルダー",
         "has_chart_data": false
-      },
-      {
-        "id": "c6842bdf-125c-4106-87e6-7b7e3f566882",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.6,
-        "version": "BUDDiES PLUS",
-        "release_date": "2024-07-05T01:00:00+00:00",
-        "notes_designer": "Jack",
-        "has_chart_data": true
       }
     ]
   },
@@ -10467,6 +10467,16 @@
     "gamerch_id": "533903",
     "charts": [
       {
+        "id": "390728c4-5e3c-4030-a875-a35f5a7f5cf3",
+        "difficulty": "advanced",
+        "level": "7+",
+        "internal_level": 7.7,
+        "version": "Splash",
+        "release_date": "2020-09-17T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "8010d0e1-d2e2-443f-a852-66645f409eb2",
         "difficulty": "basic",
         "level": "4",
@@ -10484,16 +10494,6 @@
         "version": "Splash",
         "release_date": "2020-09-17T01:00:00+00:00",
         "notes_designer": "Jack",
-        "has_chart_data": true
-      },
-      {
-        "id": "390728c4-5e3c-4030-a875-a35f5a7f5cf3",
-        "difficulty": "advanced",
-        "level": "7+",
-        "internal_level": 7.7,
-        "version": "Splash",
-        "release_date": "2020-09-17T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -10712,6 +10712,16 @@
     "gamerch_id": "533444",
     "charts": [
       {
+        "id": "0579f35b-d0d4-497b-9d52-7208b5485799",
+        "difficulty": "master",
+        "level": "12+",
+        "internal_level": 12.9,
+        "version": "MiLK PLUS",
+        "release_date": "2018-06-21T01:00:00+00:00",
+        "notes_designer": "玉子豆腐",
+        "has_chart_data": true
+      },
+      {
         "id": "9d45fd5b-0b90-4670-9f26-cd5d12854aa4",
         "difficulty": "basic",
         "level": "5",
@@ -10739,16 +10749,6 @@
         "version": "MiLK PLUS",
         "release_date": "2018-06-21T01:00:00+00:00",
         "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
-        "id": "0579f35b-d0d4-497b-9d52-7208b5485799",
-        "difficulty": "master",
-        "level": "12+",
-        "internal_level": 12.9,
-        "version": "MiLK PLUS",
-        "release_date": "2018-06-21T01:00:00+00:00",
-        "notes_designer": "玉子豆腐",
         "has_chart_data": true
       }
     ]
@@ -10806,6 +10806,16 @@
     "gamerch_id": "906745",
     "charts": [
       {
+        "id": "14fdbfd0-f3b0-4568-97b8-02928be2f8b2",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.8,
+        "version": "PRiSM",
+        "release_date": "2025-02-27T01:00:00+00:00",
+        "notes_designer": "Luxizhel",
+        "has_chart_data": true
+      },
+      {
         "id": "83b0033d-d42d-442d-8da1-b815363d0158",
         "difficulty": "basic",
         "level": "4",
@@ -10834,16 +10844,6 @@
         "release_date": "2025-02-27T01:00:00+00:00",
         "notes_designer": "サファ太",
         "has_chart_data": false
-      },
-      {
-        "id": "14fdbfd0-f3b0-4568-97b8-02928be2f8b2",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.8,
-        "version": "PRiSM",
-        "release_date": "2025-02-27T01:00:00+00:00",
-        "notes_designer": "Luxizhel",
-        "has_chart_data": true
       }
     ]
   },
@@ -10967,6 +10967,16 @@
         "has_chart_data": false
       },
       {
+        "id": "1aa65501-8fd0-4973-b688-cb8f53d68c75",
+        "difficulty": "master",
+        "level": "14",
+        "internal_level": 14.4,
+        "version": "FESTiVAL PLUS",
+        "release_date": "2023-03-23T01:00:00+00:00",
+        "notes_designer": "はっぴー",
+        "has_chart_data": true
+      },
+      {
         "id": "21b3d0e5-d544-4dad-9b01-fc89be2abfdb",
         "difficulty": "advanced",
         "level": "8",
@@ -10985,16 +10995,6 @@
         "release_date": "2023-03-23T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": false
-      },
-      {
-        "id": "1aa65501-8fd0-4973-b688-cb8f53d68c75",
-        "difficulty": "master",
-        "level": "14",
-        "internal_level": 14.4,
-        "version": "FESTiVAL PLUS",
-        "release_date": "2023-03-23T01:00:00+00:00",
-        "notes_designer": "はっぴー",
-        "has_chart_data": true
       }
     ]
   },
@@ -11098,16 +11098,6 @@
     "gamerch_id": "533411",
     "charts": [
       {
-        "id": "2eb5b250-fdd9-4fc9-a608-22458f351fc9",
-        "difficulty": "advanced",
-        "level": "9",
-        "internal_level": 9.3,
-        "version": "maimai PLUS",
-        "release_date": "2013-03-14T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "999edc1b-7c4e-410d-8e1d-2f1a0e40285b",
         "difficulty": "master",
         "level": "14",
@@ -11135,6 +11125,16 @@
         "version": "maimai PLUS",
         "release_date": "2013-03-14T01:00:00+00:00",
         "notes_designer": "ニャイン",
+        "has_chart_data": true
+      },
+      {
+        "id": "2eb5b250-fdd9-4fc9-a608-22458f351fc9",
+        "difficulty": "advanced",
+        "level": "9",
+        "internal_level": 9.3,
+        "version": "maimai PLUS",
+        "release_date": "2013-03-14T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -11390,6 +11390,16 @@
     "gamerch_id": "797004",
     "charts": [
       {
+        "id": "c6cb8f29-9773-454c-9166-90c964b44306",
+        "difficulty": "master",
+        "level": "14",
+        "internal_level": 14.4,
+        "version": "BUDDiES",
+        "release_date": "2023-09-14T01:00:00+00:00",
+        "notes_designer": "ロシェ@ペンギン",
+        "has_chart_data": true
+      },
+      {
         "id": "3cc2daee-9c02-405e-b2e5-ff0188ac7863",
         "difficulty": "basic",
         "level": "4",
@@ -11418,16 +11428,6 @@
         "release_date": "2023-09-14T01:00:00+00:00",
         "notes_designer": "みそかつ侍",
         "has_chart_data": false
-      },
-      {
-        "id": "c6cb8f29-9773-454c-9166-90c964b44306",
-        "difficulty": "master",
-        "level": "14",
-        "internal_level": 14.4,
-        "version": "BUDDiES",
-        "release_date": "2023-09-14T01:00:00+00:00",
-        "notes_designer": "ロシェ@ペンギン",
-        "has_chart_data": true
       }
     ]
   },
@@ -12665,16 +12665,6 @@
         "has_chart_data": false
       },
       {
-        "id": "34a35243-88fe-4a08-83c8-b2c9e6f22af3",
-        "difficulty": "master",
-        "level": "14+",
-        "internal_level": 14.8,
-        "version": "Splash PLUS",
-        "release_date": "2021-03-18T01:00:00+00:00",
-        "notes_designer": "The ALiEN",
-        "has_chart_data": true
-      },
-      {
         "id": "02535660-7825-41f3-90c9-b6d844f5e318",
         "difficulty": "expert",
         "level": "12+",
@@ -12682,6 +12672,16 @@
         "version": "Splash PLUS",
         "release_date": "2021-03-18T01:00:00+00:00",
         "notes_designer": "小鳥遊さん",
+        "has_chart_data": true
+      },
+      {
+        "id": "34a35243-88fe-4a08-83c8-b2c9e6f22af3",
+        "difficulty": "master",
+        "level": "14+",
+        "internal_level": 14.8,
+        "version": "Splash PLUS",
+        "release_date": "2021-03-18T01:00:00+00:00",
+        "notes_designer": "The ALiEN",
         "has_chart_data": true
       }
     ]
@@ -12880,16 +12880,6 @@
     "gamerch_id": "534621",
     "charts": [
       {
-        "id": "5fb9bd2c-23e6-494b-8abe-0bffefa69e90",
-        "difficulty": "basic",
-        "level": "6",
-        "internal_level": 6,
-        "version": "GreeN",
-        "release_date": "2013-09-05T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "4354b213-205b-4bf9-b93e-c3e6bbb8f6cc",
         "difficulty": "master",
         "level": "12",
@@ -12917,6 +12907,16 @@
         "version": "GreeN",
         "release_date": "2013-09-05T01:00:00+00:00",
         "notes_designer": "はっぴー",
+        "has_chart_data": true
+      },
+      {
+        "id": "5fb9bd2c-23e6-494b-8abe-0bffefa69e90",
+        "difficulty": "basic",
+        "level": "6",
+        "internal_level": 6,
+        "version": "GreeN",
+        "release_date": "2013-09-05T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       }
     ]
@@ -13266,6 +13266,16 @@
     "gamerch_id": "533703",
     "charts": [
       {
+        "id": "d1d2625b-b2e4-42b8-ba2b-98c347a1deae",
+        "difficulty": "advanced",
+        "level": "6",
+        "internal_level": 6,
+        "version": "でらっくす",
+        "release_date": "2019-07-11T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "5b9fa4c6-48b5-444a-b6f3-03dc542af036",
         "difficulty": "expert",
         "level": "9",
@@ -13280,16 +13290,6 @@
         "difficulty": "basic",
         "level": "3",
         "internal_level": 3,
-        "version": "でらっくす",
-        "release_date": "2019-07-11T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
-        "id": "d1d2625b-b2e4-42b8-ba2b-98c347a1deae",
-        "difficulty": "advanced",
-        "level": "6",
-        "internal_level": 6,
         "version": "でらっくす",
         "release_date": "2019-07-11T01:00:00+00:00",
         "notes_designer": null,
@@ -13877,16 +13877,6 @@
     "gamerch_id": "533868",
     "charts": [
       {
-        "id": "8bbc1cf2-038a-4406-a7ad-f365b029761b",
-        "difficulty": "master",
-        "level": "11",
-        "internal_level": 11.2,
-        "version": "でらっくす PLUS",
-        "release_date": "2020-07-31T01:00:00+00:00",
-        "notes_designer": "シチミヘルツ",
-        "has_chart_data": true
-      },
-      {
         "id": "e3b4592b-cf9f-4dc5-b2b8-6b024f2083b7",
         "difficulty": "advanced",
         "level": "6",
@@ -13904,6 +13894,16 @@
         "version": "でらっくす PLUS",
         "release_date": "2020-07-31T01:00:00+00:00",
         "notes_designer": "華火職人",
+        "has_chart_data": true
+      },
+      {
+        "id": "8bbc1cf2-038a-4406-a7ad-f365b029761b",
+        "difficulty": "master",
+        "level": "11",
+        "internal_level": 11.2,
+        "version": "でらっくす PLUS",
+        "release_date": "2020-07-31T01:00:00+00:00",
+        "notes_designer": "シチミヘルツ",
         "has_chart_data": true
       },
       {
@@ -14334,6 +14334,53 @@
       }
     ]
   },
+  "intergalactic-bound-yunosuke-circusp-l441t": {
+    "title": "Intergalactic Bound",
+    "simai_id": "1854",
+    "gamerch_id": "987744",
+    "charts": [
+      {
+        "id": "27c0a193-6f7e-4604-b951-28389f90027b",
+        "difficulty": "basic",
+        "level": "2",
+        "internal_level": 2,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-05-29T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
+      },
+      {
+        "id": "6aa55346-18a8-491a-be35-c46b54792129",
+        "difficulty": "advanced",
+        "level": "6",
+        "internal_level": 6.5,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-05-29T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
+      },
+      {
+        "id": "7e07b396-1ed2-4aff-8f06-4e2b9da80640",
+        "difficulty": "expert",
+        "level": "10",
+        "internal_level": 10.5,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-05-29T01:00:00+00:00",
+        "notes_designer": "Luxizhel",
+        "has_chart_data": false
+      },
+      {
+        "id": "9e8d3871-40a8-41c6-b95b-9d0662123278",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.1,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-05-29T01:00:00+00:00",
+        "notes_designer": "ロシェ@ペンギン",
+        "has_chart_data": false
+      }
+    ]
+  },
   "internet-overdose-aiobahn-6sqbs": {
     "title": "INTERNET OVERDOSE",
     "simai_id": "1247",
@@ -14605,16 +14652,6 @@
         "has_chart_data": false
       },
       {
-        "id": "f442b926-b31b-4b9e-bef5-966f2ed9e4fb",
-        "difficulty": "expert",
-        "level": "12",
-        "internal_level": 12.2,
-        "version": "GreeN PLUS",
-        "release_date": "2014-07-17T01:00:00+00:00",
-        "notes_designer": "mai-Star",
-        "has_chart_data": true
-      },
-      {
         "id": "dd8f5db3-c6d0-45de-a8e1-1549605ec6b5",
         "difficulty": "master",
         "level": "14",
@@ -14622,6 +14659,16 @@
         "version": "GreeN PLUS",
         "release_date": "2014-07-17T01:00:00+00:00",
         "notes_designer": "Jack",
+        "has_chart_data": true
+      },
+      {
+        "id": "f442b926-b31b-4b9e-bef5-966f2ed9e4fb",
+        "difficulty": "expert",
+        "level": "12",
+        "internal_level": 12.2,
+        "version": "GreeN PLUS",
+        "release_date": "2014-07-17T01:00:00+00:00",
+        "notes_designer": "mai-Star",
         "has_chart_data": true
       }
     ]
@@ -14662,16 +14709,6 @@
         "has_chart_data": false
       },
       {
-        "id": "a7b26017-290e-4059-9b68-9a6410330a02",
-        "difficulty": "remaster",
-        "level": "14",
-        "internal_level": 14,
-        "version": "maimai",
-        "release_date": "2020-10-23T01:00:00+00:00",
-        "notes_designer": "すきやき奉行",
-        "has_chart_data": true
-      },
-      {
         "id": "bd31dd4c-937f-4e43-8c5c-201a89a25beb",
         "difficulty": "master",
         "level": "13+",
@@ -14679,6 +14716,16 @@
         "version": "maimai",
         "release_date": "2012-09-13T01:00:00+00:00",
         "notes_designer": "ニャイン",
+        "has_chart_data": true
+      },
+      {
+        "id": "a7b26017-290e-4059-9b68-9a6410330a02",
+        "difficulty": "remaster",
+        "level": "14",
+        "internal_level": 14,
+        "version": "maimai",
+        "release_date": "2020-10-23T01:00:00+00:00",
+        "notes_designer": "すきやき奉行",
         "has_chart_data": true
       }
     ]
@@ -14736,6 +14783,16 @@
     "gamerch_id": "534654",
     "charts": [
       {
+        "id": "54c3bde9-76bd-4524-acd3-20522f629fe8",
+        "difficulty": "basic",
+        "level": "6",
+        "internal_level": 6,
+        "version": "PiNK",
+        "release_date": "2016-05-12T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "7d0862f9-532d-4dd5-bbd9-ecace478c36f",
         "difficulty": "advanced",
         "level": "7+",
@@ -14753,16 +14810,6 @@
         "version": "PiNK",
         "release_date": "2016-05-12T01:00:00+00:00",
         "notes_designer": "Jack",
-        "has_chart_data": true
-      },
-      {
-        "id": "54c3bde9-76bd-4524-acd3-20522f629fe8",
-        "difficulty": "basic",
-        "level": "6",
-        "internal_level": 6,
-        "version": "PiNK",
-        "release_date": "2016-05-12T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -14830,16 +14877,6 @@
     "gamerch_id": "533884",
     "charts": [
       {
-        "id": "797c936c-2804-4716-93bd-aedb8aa9b514",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.6,
-        "version": "Splash",
-        "release_date": "2020-09-17T01:00:00+00:00",
-        "notes_designer": "シチミヘルツ",
-        "has_chart_data": true
-      },
-      {
         "id": "c62cbc84-e1f6-4b99-8dcc-88f23576cdb7",
         "difficulty": "basic",
         "level": "3",
@@ -14858,6 +14895,16 @@
         "release_date": "2020-09-17T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": false
+      },
+      {
+        "id": "797c936c-2804-4716-93bd-aedb8aa9b514",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.6,
+        "version": "Splash",
+        "release_date": "2020-09-17T01:00:00+00:00",
+        "notes_designer": "シチミヘルツ",
+        "has_chart_data": true
       },
       {
         "id": "a30a3496-2c14-4efb-a3a8-e9139d4638c3",
@@ -15364,7 +15411,7 @@
         "version": "MiLK",
         "release_date": "2018-02-20T01:00:00+00:00",
         "notes_designer": "すきやき奉行",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "cf85ec1b-44b8-4305-8ae4-fed0dd31eb70",
@@ -15488,6 +15535,16 @@
     "gamerch_id": "534101",
     "charts": [
       {
+        "id": "bd9e8f94-9a89-4abc-8bf8-648182378fe9",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.4,
+        "version": "MURASAKi PLUS",
+        "release_date": "2017-08-03T01:00:00+00:00",
+        "notes_designer": "Moon Strix",
+        "has_chart_data": true
+      },
+      {
         "id": "f2493e2c-efef-4632-b194-2eba9b1d8ef6",
         "difficulty": "basic",
         "level": "4",
@@ -15506,16 +15563,6 @@
         "release_date": "2017-08-03T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": false
-      },
-      {
-        "id": "bd9e8f94-9a89-4abc-8bf8-648182378fe9",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13.4,
-        "version": "MURASAKi PLUS",
-        "release_date": "2017-08-03T01:00:00+00:00",
-        "notes_designer": "Moon Strix",
-        "has_chart_data": true
       },
       {
         "id": "e48d26d3-d6b2-4c74-8d7e-ff16f41cb68b",
@@ -16277,6 +16324,63 @@
         "version": "PRiSM PLUS",
         "release_date": "2025-09-05T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": false
+      }
+    ]
+  },
+  "lemon-melon-cookie-g8euz": {
+    "title": "LEMON MELON COOKIE",
+    "simai_id": "1855",
+    "gamerch_id": "987747",
+    "charts": [
+      {
+        "id": "9adac251-e620-407b-b008-64adb190e513",
+        "difficulty": "basic",
+        "level": "3",
+        "internal_level": 3,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-05-29T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
+      },
+      {
+        "id": "bd415321-fe8b-4a23-af79-0a3acccce981",
+        "difficulty": "advanced",
+        "level": "7",
+        "internal_level": 7.5,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-05-29T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
+      },
+      {
+        "id": "c1bb011c-1d71-4a38-9ba7-0ed065b502b0",
+        "difficulty": "expert",
+        "level": "10+",
+        "internal_level": 10.8,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-05-29T01:00:00+00:00",
+        "notes_designer": "サファ太",
+        "has_chart_data": false
+      },
+      {
+        "id": "bb243678-9ba6-4982-9784-d3a6af52ef9b",
+        "difficulty": "master",
+        "level": "11+",
+        "internal_level": 11.7,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-05-29T01:00:00+00:00",
+        "notes_designer": "緑風 犬三郎",
+        "has_chart_data": false
+      },
+      {
+        "id": "d36cc403-2447-4ad9-a8ee-1a8956015221",
+        "difficulty": "remaster",
+        "level": "13",
+        "internal_level": 13.3,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-05-29T01:00:00+00:00",
+        "notes_designer": "カマボコ君",
         "has_chart_data": false
       }
     ]
@@ -17257,6 +17361,16 @@
     "gamerch_id": "533443",
     "charts": [
       {
+        "id": "288bdc71-0031-47a3-a223-30e3a05eef09",
+        "difficulty": "advanced",
+        "level": "7",
+        "internal_level": 7.3,
+        "version": "MiLK PLUS",
+        "release_date": "2018-06-21T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "f1e63aa2-886f-42e3-9ed9-dfb9555371ae",
         "difficulty": "expert",
         "level": "10+",
@@ -17274,16 +17388,6 @@
         "version": "MiLK PLUS",
         "release_date": "2018-06-21T01:00:00+00:00",
         "notes_designer": "LabiLabi",
-        "has_chart_data": true
-      },
-      {
-        "id": "288bdc71-0031-47a3-a223-30e3a05eef09",
-        "difficulty": "advanced",
-        "level": "7",
-        "internal_level": 7.3,
-        "version": "MiLK PLUS",
-        "release_date": "2018-06-21T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -17690,16 +17794,6 @@
     "gamerch_id": "533851",
     "charts": [
       {
-        "id": "77de0d71-abe4-44ba-a520-8cd19a6f4827",
-        "difficulty": "expert",
-        "level": "11+",
-        "internal_level": 11.7,
-        "version": "でらっくす PLUS",
-        "release_date": "2020-06-11T01:00:00+00:00",
-        "notes_designer": "サファ太",
-        "has_chart_data": true
-      },
-      {
         "id": "4942a727-e16c-443b-a719-adca804fbc1b",
         "difficulty": "advanced",
         "level": "8",
@@ -17707,6 +17801,16 @@
         "version": "でらっくす PLUS",
         "release_date": "2020-06-11T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "77de0d71-abe4-44ba-a520-8cd19a6f4827",
+        "difficulty": "expert",
+        "level": "11+",
+        "internal_level": 11.7,
+        "version": "でらっくす PLUS",
+        "release_date": "2020-06-11T01:00:00+00:00",
+        "notes_designer": "サファ太",
         "has_chart_data": true
       },
       {
@@ -18381,6 +18485,16 @@
     "gamerch_id": "534042",
     "charts": [
       {
+        "id": "32212746-8d27-4002-84ff-56990fbd935e",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.7,
+        "version": "Splash PLUS",
+        "release_date": "2021-04-16T01:00:00+00:00",
+        "notes_designer": "はっぴー",
+        "has_chart_data": true
+      },
+      {
         "id": "466a1a37-09e6-42d7-8831-c8fb7faff5e1",
         "difficulty": "basic",
         "level": "4",
@@ -18409,16 +18523,6 @@
         "release_date": "2021-04-16T01:00:00+00:00",
         "notes_designer": "みそかつ侍",
         "has_chart_data": false
-      },
-      {
-        "id": "32212746-8d27-4002-84ff-56990fbd935e",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.7,
-        "version": "Splash PLUS",
-        "release_date": "2021-04-16T01:00:00+00:00",
-        "notes_designer": "はっぴー",
-        "has_chart_data": true
       }
     ]
   },
@@ -18427,16 +18531,6 @@
     "simai_id": "1751",
     "gamerch_id": "860712",
     "charts": [
-      {
-        "id": "3180f84d-87d2-4f70-bdf0-30aa3945ffc3",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13.4,
-        "version": "BUDDiES PLUS",
-        "release_date": "2024-07-05T01:00:00+00:00",
-        "notes_designer": "鳩ホルダー",
-        "has_chart_data": false
-      },
       {
         "id": "91ea810e-b174-4cd7-b05a-4aa18a1451f5",
         "difficulty": "basic",
@@ -18465,6 +18559,16 @@
         "version": "BUDDiES PLUS",
         "release_date": "2024-07-05T01:00:00+00:00",
         "notes_designer": "Luxizhel",
+        "has_chart_data": false
+      },
+      {
+        "id": "3180f84d-87d2-4f70-bdf0-30aa3945ffc3",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.4,
+        "version": "BUDDiES PLUS",
+        "release_date": "2024-07-05T01:00:00+00:00",
+        "notes_designer": "鳩ホルダー",
         "has_chart_data": false
       }
     ]
@@ -18666,16 +18770,6 @@
         "has_chart_data": false
       },
       {
-        "id": "292240bf-d613-4277-a7b9-f57da16b6c8a",
-        "difficulty": "remaster",
-        "level": "14",
-        "internal_level": 14.2,
-        "version": "でらっくす",
-        "release_date": "2021-12-03T01:00:00+00:00",
-        "notes_designer": "サファ太",
-        "has_chart_data": true
-      },
-      {
         "id": "e68db578-1123-42d8-8ebb-10ab519d6a23",
         "difficulty": "expert",
         "level": "11",
@@ -18704,6 +18798,16 @@
         "release_date": "2019-07-11T01:00:00+00:00",
         "notes_designer": "玉子豆腐",
         "has_chart_data": true
+      },
+      {
+        "id": "292240bf-d613-4277-a7b9-f57da16b6c8a",
+        "difficulty": "remaster",
+        "level": "14",
+        "internal_level": 14.2,
+        "version": "でらっくす",
+        "release_date": "2021-12-03T01:00:00+00:00",
+        "notes_designer": "サファ太",
+        "has_chart_data": true
       }
     ]
   },
@@ -18712,6 +18816,16 @@
     "simai_id": "74",
     "gamerch_id": "533670",
     "charts": [
+      {
+        "id": "530fd602-5120-40fb-8f27-d1dcdc79ac80",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.2,
+        "version": "GreeN",
+        "release_date": "2013-07-11T01:00:00+00:00",
+        "notes_designer": "はっぴー",
+        "has_chart_data": true
+      },
       {
         "id": "d7ac3d86-9fc3-4195-a680-c6e53971142d",
         "difficulty": "basic",
@@ -18741,16 +18855,6 @@
         "release_date": "2013-07-11T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": false
-      },
-      {
-        "id": "530fd602-5120-40fb-8f27-d1dcdc79ac80",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13.2,
-        "version": "GreeN",
-        "release_date": "2013-07-11T01:00:00+00:00",
-        "notes_designer": "はっぴー",
-        "has_chart_data": true
       }
     ]
   },
@@ -19454,49 +19558,9 @@
   },
   "mssplanet-mss-project-c0qew": {
     "title": "M.S.S.Planet",
-    "simai_id": "1530",
+    "simai_id": "255",
     "gamerch_id": "534397",
     "charts": [
-      {
-        "id": "3882c5bb-ac72-43ee-bdea-49925fd84d78",
-        "difficulty": "advanced",
-        "level": "7",
-        "internal_level": 7,
-        "version": "FESTiVAL",
-        "release_date": "2022-09-15T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
-        "id": "3026c712-de5d-4b7a-9c9b-5d621a899669",
-        "difficulty": "expert",
-        "level": "9+",
-        "internal_level": 9.7,
-        "version": "FESTiVAL",
-        "release_date": "2022-09-15T01:00:00+00:00",
-        "notes_designer": "翠楼屋",
-        "has_chart_data": false
-      },
-      {
-        "id": "2efc09a2-b88c-4ab6-9d4e-4460de4c2037",
-        "difficulty": "master",
-        "level": "12+",
-        "internal_level": 12.9,
-        "version": "FESTiVAL",
-        "release_date": "2022-09-15T01:00:00+00:00",
-        "notes_designer": "はっぴー",
-        "has_chart_data": false
-      },
-      {
-        "id": "91041a06-e464-4837-9b7a-aef4ec711d3e",
-        "difficulty": "basic",
-        "level": "3",
-        "internal_level": 3,
-        "version": "FESTiVAL",
-        "release_date": "2022-09-15T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
       {
         "id": "09500dd7-9008-4e9f-ae0a-4f38d935a56b",
         "difficulty": "expert",
@@ -19536,6 +19600,46 @@
         "release_date": "2014-03-20T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": true
+      },
+      {
+        "id": "3882c5bb-ac72-43ee-bdea-49925fd84d78",
+        "difficulty": "advanced",
+        "level": "7",
+        "internal_level": 7,
+        "version": "FESTiVAL",
+        "release_date": "2022-09-15T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
+      },
+      {
+        "id": "3026c712-de5d-4b7a-9c9b-5d621a899669",
+        "difficulty": "expert",
+        "level": "9+",
+        "internal_level": 9.7,
+        "version": "FESTiVAL",
+        "release_date": "2022-09-15T01:00:00+00:00",
+        "notes_designer": "翠楼屋",
+        "has_chart_data": false
+      },
+      {
+        "id": "2efc09a2-b88c-4ab6-9d4e-4460de4c2037",
+        "difficulty": "master",
+        "level": "12+",
+        "internal_level": 12.9,
+        "version": "FESTiVAL",
+        "release_date": "2022-09-15T01:00:00+00:00",
+        "notes_designer": "はっぴー",
+        "has_chart_data": false
+      },
+      {
+        "id": "91041a06-e464-4837-9b7a-aef4ec711d3e",
+        "difficulty": "basic",
+        "level": "3",
+        "internal_level": 3,
+        "version": "FESTiVAL",
+        "release_date": "2022-09-15T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
       }
     ]
   },
@@ -19780,16 +19884,6 @@
     "gamerch_id": "533560",
     "charts": [
       {
-        "id": "edad67a6-fa73-4a3a-a03c-90d4489166bc",
-        "difficulty": "basic",
-        "level": "6",
-        "internal_level": 6,
-        "version": "MiLK PLUS",
-        "release_date": "2018-12-04T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "895c9a61-56a7-48df-b2cc-c33f602ebc22",
         "difficulty": "expert",
         "level": "12+",
@@ -19797,6 +19891,16 @@
         "version": "MiLK PLUS",
         "release_date": "2018-12-04T01:00:00+00:00",
         "notes_designer": "Jack",
+        "has_chart_data": true
+      },
+      {
+        "id": "edad67a6-fa73-4a3a-a03c-90d4489166bc",
+        "difficulty": "basic",
+        "level": "6",
+        "internal_level": 6,
+        "version": "MiLK PLUS",
+        "release_date": "2018-12-04T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -20156,6 +20260,16 @@
     "gamerch_id": "533645",
     "charts": [
       {
+        "id": "4c2635e5-5610-4613-b882-d5512460c156",
+        "difficulty": "basic",
+        "level": "5",
+        "internal_level": 5,
+        "version": "GreeN PLUS",
+        "release_date": "2014-04-10T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "8b539c01-eb84-4a72-8176-ed26bb2ffcc9",
         "difficulty": "expert",
         "level": "12",
@@ -20183,16 +20297,6 @@
         "version": "GreeN PLUS",
         "release_date": "2014-04-10T01:00:00+00:00",
         "notes_designer": "mai-Star",
-        "has_chart_data": true
-      },
-      {
-        "id": "4c2635e5-5610-4613-b882-d5512460c156",
-        "difficulty": "basic",
-        "level": "5",
-        "internal_level": 5,
-        "version": "GreeN PLUS",
-        "release_date": "2014-04-10T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       }
     ]
@@ -20297,6 +20401,16 @@
     "gamerch_id": "533970",
     "charts": [
       {
+        "id": "c8424e37-eb66-443d-b3fb-739d9bae4b98",
+        "difficulty": "master",
+        "level": "14",
+        "internal_level": 14.1,
+        "version": "UNiVERSE",
+        "release_date": "2021-09-16T01:00:00+00:00",
+        "notes_designer": "SHICHIMI☆CAT",
+        "has_chart_data": true
+      },
+      {
         "id": "d02bbffe-1ec2-40c2-9ddc-4e766151fd6c",
         "difficulty": "basic",
         "level": "6",
@@ -20325,16 +20439,6 @@
         "release_date": "2021-09-16T01:00:00+00:00",
         "notes_designer": "サファ太",
         "has_chart_data": false
-      },
-      {
-        "id": "c8424e37-eb66-443d-b3fb-739d9bae4b98",
-        "difficulty": "master",
-        "level": "14",
-        "internal_level": 14.1,
-        "version": "UNiVERSE",
-        "release_date": "2021-09-16T01:00:00+00:00",
-        "notes_designer": "SHICHIMI☆CAT",
-        "has_chart_data": true
       }
     ]
   },
@@ -21126,13 +21230,13 @@
     "gamerch_id": "534095",
     "charts": [
       {
-        "id": "af194c56-ac42-4058-912f-9eab7d4415c2",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13.4,
+        "id": "8efb7201-2e12-4c2b-80f8-9d9c9fd86e96",
+        "difficulty": "expert",
+        "level": "11",
+        "internal_level": 11,
         "version": "PiNK PLUS",
         "release_date": "2016-10-06T01:00:00+00:00",
-        "notes_designer": "rioN",
+        "notes_designer": "某S氏",
         "has_chart_data": true
       },
       {
@@ -21146,13 +21250,13 @@
         "has_chart_data": true
       },
       {
-        "id": "8efb7201-2e12-4c2b-80f8-9d9c9fd86e96",
-        "difficulty": "expert",
-        "level": "11",
-        "internal_level": 11,
+        "id": "af194c56-ac42-4058-912f-9eab7d4415c2",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.4,
         "version": "PiNK PLUS",
         "release_date": "2016-10-06T01:00:00+00:00",
-        "notes_designer": "某S氏",
+        "notes_designer": "rioN",
         "has_chart_data": true
       },
       {
@@ -21210,7 +21314,7 @@
         "version": "BUDDiES",
         "release_date": "2023-09-14T01:00:00+00:00",
         "notes_designer": "はっぴー & サファ太",
-        "has_chart_data": false
+        "has_chart_data": true
       }
     ]
   },
@@ -21827,6 +21931,16 @@
     "gamerch_id": "534159",
     "charts": [
       {
+        "id": "50f750ad-52fb-444e-9693-854234b1fc52",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13,
+        "version": "ORANGE",
+        "release_date": "2015-02-19T01:00:00+00:00",
+        "notes_designer": "譜面-100号",
+        "has_chart_data": true
+      },
+      {
         "id": "74691077-edb9-41e7-a555-51ec8abfb117",
         "difficulty": "basic",
         "level": "4",
@@ -21855,16 +21969,6 @@
         "release_date": "2015-02-19T01:00:00+00:00",
         "notes_designer": "rioN",
         "has_chart_data": false
-      },
-      {
-        "id": "50f750ad-52fb-444e-9693-854234b1fc52",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13,
-        "version": "ORANGE",
-        "release_date": "2015-02-19T01:00:00+00:00",
-        "notes_designer": "譜面-100号",
-        "has_chart_data": true
       }
     ]
   },
@@ -22307,10 +22411,30 @@
         "has_chart_data": true
       },
       {
+        "id": "0ff1cb9c-a86f-4d56-9ed9-7f65e5cb57fd",
+        "difficulty": "expert",
+        "level": "13+",
+        "internal_level": 13.9,
+        "version": "FiNALE",
+        "release_date": "2019-05-10T01:00:00+00:00",
+        "notes_designer": "譜面-100号",
+        "has_chart_data": true
+      },
+      {
         "id": "61397387-16bc-459b-a1bd-6501bffa2117",
         "difficulty": "basic",
         "level": "7+",
         "internal_level": 7.7,
+        "version": "FiNALE",
+        "release_date": "2019-05-10T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "d91d80dd-6837-456f-ab6c-785a850aa079",
+        "difficulty": "advanced",
+        "level": "11",
+        "internal_level": 11.5,
         "version": "FiNALE",
         "release_date": "2019-05-10T01:00:00+00:00",
         "notes_designer": null,
@@ -22324,26 +22448,6 @@
         "version": "FiNALE",
         "release_date": "2019-05-10T01:00:00+00:00",
         "notes_designer": "PANDORA PARADOXXX",
-        "has_chart_data": true
-      },
-      {
-        "id": "0ff1cb9c-a86f-4d56-9ed9-7f65e5cb57fd",
-        "difficulty": "expert",
-        "level": "13+",
-        "internal_level": 13.9,
-        "version": "FiNALE",
-        "release_date": "2019-05-10T01:00:00+00:00",
-        "notes_designer": "譜面-100号",
-        "has_chart_data": true
-      },
-      {
-        "id": "d91d80dd-6837-456f-ab6c-785a850aa079",
-        "difficulty": "advanced",
-        "level": "11",
-        "internal_level": 11.5,
-        "version": "FiNALE",
-        "release_date": "2019-05-10T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       }
     ]
@@ -22364,6 +22468,16 @@
         "has_chart_data": true
       },
       {
+        "id": "09b8a64e-5fd0-4858-b5ee-3516ce3977ff",
+        "difficulty": "master",
+        "level": "14",
+        "internal_level": 14.4,
+        "version": "MURASAKi",
+        "release_date": "2017-05-23T01:00:00+00:00",
+        "notes_designer": "Techno Kitchen",
+        "has_chart_data": true
+      },
+      {
         "id": "fdef536d-f585-4f24-b952-75c2d643a8bb",
         "difficulty": "expert",
         "level": "12+",
@@ -22381,16 +22495,6 @@
         "version": "MURASAKi",
         "release_date": "2017-05-23T01:00:00+00:00",
         "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
-        "id": "09b8a64e-5fd0-4858-b5ee-3516ce3977ff",
-        "difficulty": "master",
-        "level": "14",
-        "internal_level": 14.4,
-        "version": "MURASAKi",
-        "release_date": "2017-05-23T01:00:00+00:00",
-        "notes_designer": "Techno Kitchen",
         "has_chart_data": true
       },
       {
@@ -22525,7 +22629,7 @@
         "version": "CiRCLE",
         "release_date": "2026-01-23T01:00:00+00:00",
         "notes_designer": "サファ太",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "50b53486-cb26-438c-8c9f-c431b1ac3552",
@@ -23354,6 +23458,16 @@
     "gamerch_id": "779982",
     "charts": [
       {
+        "id": "c463e993-8a55-4a27-b0f0-4572c88392e3",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.8,
+        "version": "FESTiVAL PLUS",
+        "release_date": "2023-07-07T01:00:00+00:00",
+        "notes_designer": "Jack",
+        "has_chart_data": true
+      },
+      {
         "id": "f6ba2a4d-0fa3-4269-86dc-d12f244148e1",
         "difficulty": "basic",
         "level": "4",
@@ -23382,16 +23496,6 @@
         "release_date": "2023-07-07T01:00:00+00:00",
         "notes_designer": "アマリリス",
         "has_chart_data": false
-      },
-      {
-        "id": "c463e993-8a55-4a27-b0f0-4572c88392e3",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.8,
-        "version": "FESTiVAL PLUS",
-        "release_date": "2023-07-07T01:00:00+00:00",
-        "notes_designer": "Jack",
-        "has_chart_data": true
       }
     ]
   },
@@ -23777,16 +23881,6 @@
     "gamerch_id": "533580",
     "charts": [
       {
-        "id": "fcb33fc5-f070-4583-85c0-44df4baf3834",
-        "difficulty": "basic",
-        "level": "7",
-        "internal_level": 7,
-        "version": "FiNALE",
-        "release_date": "2018-12-18T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "0b4eb3bd-bb04-4a04-8e16-6cb8d1e59e12",
         "difficulty": "expert",
         "level": "13",
@@ -23794,6 +23888,16 @@
         "version": "FiNALE",
         "release_date": "2018-12-18T01:00:00+00:00",
         "notes_designer": "小鳥遊さん",
+        "has_chart_data": true
+      },
+      {
+        "id": "fcb33fc5-f070-4583-85c0-44df4baf3834",
+        "difficulty": "basic",
+        "level": "7",
+        "internal_level": 7,
+        "version": "FiNALE",
+        "release_date": "2018-12-18T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -24022,16 +24126,6 @@
     "gamerch_id": "533603",
     "charts": [
       {
-        "id": "e8a02f71-328a-47aa-9f82-f6ebf6af3c15",
-        "difficulty": "advanced",
-        "level": "9",
-        "internal_level": 9.3,
-        "version": "FiNALE",
-        "release_date": "2019-04-11T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "ea73f1de-e743-4efb-be9c-c2d1fc1baaa5",
         "difficulty": "master",
         "level": "14+",
@@ -24042,10 +24136,10 @@
         "has_chart_data": true
       },
       {
-        "id": "09e47f79-3544-4acf-8bcb-328b5953cb57",
-        "difficulty": "basic",
-        "level": "7",
-        "internal_level": 7,
+        "id": "e8a02f71-328a-47aa-9f82-f6ebf6af3c15",
+        "difficulty": "advanced",
+        "level": "9",
+        "internal_level": 9.3,
         "version": "FiNALE",
         "release_date": "2019-04-11T01:00:00+00:00",
         "notes_designer": null,
@@ -24059,6 +24153,16 @@
         "version": "FiNALE",
         "release_date": "2019-05-10T01:00:00+00:00",
         "notes_designer": "Phoenix",
+        "has_chart_data": true
+      },
+      {
+        "id": "09e47f79-3544-4acf-8bcb-328b5953cb57",
+        "difficulty": "basic",
+        "level": "7",
+        "internal_level": 7,
+        "version": "FiNALE",
+        "release_date": "2019-04-11T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -24361,6 +24465,16 @@
     "gamerch_id": "534349",
     "charts": [
       {
+        "id": "02054026-b319-4160-a713-20cecbb1f857",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.9,
+        "version": "UNiVERSE PLUS",
+        "release_date": "2022-07-11T01:00:00+00:00",
+        "notes_designer": "小鳥遊さん",
+        "has_chart_data": true
+      },
+      {
         "id": "2c162876-2536-4e71-b10b-0cef424244b0",
         "difficulty": "basic",
         "level": "5",
@@ -24389,16 +24503,6 @@
         "release_date": "2022-07-11T01:00:00+00:00",
         "notes_designer": "隅田川星人",
         "has_chart_data": false
-      },
-      {
-        "id": "02054026-b319-4160-a713-20cecbb1f857",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.9,
-        "version": "UNiVERSE PLUS",
-        "release_date": "2022-07-11T01:00:00+00:00",
-        "notes_designer": "小鳥遊さん",
-        "has_chart_data": true
       }
     ]
   },
@@ -24653,16 +24757,6 @@
         "has_chart_data": true
       },
       {
-        "id": "3480ce04-0470-4c94-8365-e5bb9d608597",
-        "difficulty": "basic",
-        "level": "4",
-        "internal_level": 4,
-        "version": "PRiSM PLUS",
-        "release_date": "2025-07-13T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "7da4eba3-7bb9-44a0-a57c-357a4c93b041",
         "difficulty": "advanced",
         "level": "8",
@@ -24680,6 +24774,16 @@
         "version": "PRiSM PLUS",
         "release_date": "2025-07-13T01:00:00+00:00",
         "notes_designer": "きょむりん & Luxizhel",
+        "has_chart_data": true
+      },
+      {
+        "id": "3480ce04-0470-4c94-8365-e5bb9d608597",
+        "difficulty": "basic",
+        "level": "4",
+        "internal_level": 4,
+        "version": "PRiSM PLUS",
+        "release_date": "2025-07-13T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       }
     ]
@@ -24784,6 +24888,16 @@
     "gamerch_id": "902881",
     "charts": [
       {
+        "id": "93e06873-134b-4f81-9d01-bccc53e61dcb",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.7,
+        "version": "PRiSM",
+        "release_date": "2025-02-07T01:00:00+00:00",
+        "notes_designer": "りんご Full Set",
+        "has_chart_data": true
+      },
+      {
         "id": "0fd867d7-03e8-41b7-95a5-5b64d9160251",
         "difficulty": "basic",
         "level": "5",
@@ -24812,16 +24926,6 @@
         "release_date": "2025-02-07T01:00:00+00:00",
         "notes_designer": "鳩ホルダー",
         "has_chart_data": false
-      },
-      {
-        "id": "93e06873-134b-4f81-9d01-bccc53e61dcb",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.7,
-        "version": "PRiSM",
-        "release_date": "2025-02-07T01:00:00+00:00",
-        "notes_designer": "りんご Full Set",
-        "has_chart_data": true
       }
     ]
   },
@@ -24972,6 +25076,16 @@
     "gamerch_id": "533701",
     "charts": [
       {
+        "id": "c005c1e9-376c-4869-a4d7-4201ca595c01",
+        "difficulty": "remaster",
+        "level": "14",
+        "internal_level": 14.4,
+        "version": "PiNK",
+        "release_date": "2022-08-05T01:00:00+00:00",
+        "notes_designer": "ぴちネコ",
+        "has_chart_data": true
+      },
+      {
         "id": "6534e705-6cc0-409f-bc55-c6221b530f6a",
         "difficulty": "basic",
         "level": "6",
@@ -25009,16 +25123,6 @@
         "version": "PiNK",
         "release_date": "2016-01-21T01:00:00+00:00",
         "notes_designer": "Techno Kitchen",
-        "has_chart_data": true
-      },
-      {
-        "id": "c005c1e9-376c-4869-a4d7-4201ca595c01",
-        "difficulty": "remaster",
-        "level": "14",
-        "internal_level": 14.4,
-        "version": "PiNK",
-        "release_date": "2022-08-05T01:00:00+00:00",
-        "notes_designer": "ぴちネコ",
         "has_chart_data": true
       }
     ]
@@ -25264,6 +25368,16 @@
     "gamerch_id": "534707",
     "charts": [
       {
+        "id": "cbe14f1c-f34d-4b89-8b7b-2e1309d600d0",
+        "difficulty": "master",
+        "level": "14",
+        "internal_level": 14.4,
+        "version": "FESTiVAL",
+        "release_date": "2022-11-10T01:00:00+00:00",
+        "notes_designer": "小鳥遊さん",
+        "has_chart_data": true
+      },
+      {
         "id": "73be949d-c045-42d9-b104-16961672047a",
         "difficulty": "basic",
         "level": "5",
@@ -25291,16 +25405,6 @@
         "version": "FESTiVAL",
         "release_date": "2022-11-10T01:00:00+00:00",
         "notes_designer": "ロシェ@ペンギン",
-        "has_chart_data": true
-      },
-      {
-        "id": "cbe14f1c-f34d-4b89-8b7b-2e1309d600d0",
-        "difficulty": "master",
-        "level": "14",
-        "internal_level": 14.4,
-        "version": "FESTiVAL",
-        "release_date": "2022-11-10T01:00:00+00:00",
-        "notes_designer": "小鳥遊さん",
         "has_chart_data": true
       }
     ]
@@ -25358,26 +25462,6 @@
     "gamerch_id": "533434",
     "charts": [
       {
-        "id": "61fad625-2fcc-4571-b84c-202fe79727e2",
-        "difficulty": "expert",
-        "level": "11",
-        "internal_level": 11.1,
-        "version": "MiLK PLUS",
-        "release_date": "2018-07-11T01:00:00+00:00",
-        "notes_designer": "サファ太",
-        "has_chart_data": true
-      },
-      {
-        "id": "9ec25957-1104-4746-bf20-92eb6993ea90",
-        "difficulty": "basic",
-        "level": "3",
-        "internal_level": 3,
-        "version": "MiLK PLUS",
-        "release_date": "2018-07-11T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "b322edf2-890f-4ed3-8755-000b344802bc",
         "difficulty": "advanced",
         "level": "7",
@@ -25388,6 +25472,16 @@
         "has_chart_data": true
       },
       {
+        "id": "61fad625-2fcc-4571-b84c-202fe79727e2",
+        "difficulty": "expert",
+        "level": "11",
+        "internal_level": 11.1,
+        "version": "MiLK PLUS",
+        "release_date": "2018-07-11T01:00:00+00:00",
+        "notes_designer": "サファ太",
+        "has_chart_data": true
+      },
+      {
         "id": "5168fe0a-403d-45bb-9005-36309c9387d1",
         "difficulty": "master",
         "level": "13+",
@@ -25395,6 +25489,16 @@
         "version": "MiLK PLUS",
         "release_date": "2018-07-11T01:00:00+00:00",
         "notes_designer": "はっぴー",
+        "has_chart_data": true
+      },
+      {
+        "id": "9ec25957-1104-4746-bf20-92eb6993ea90",
+        "difficulty": "basic",
+        "level": "3",
+        "internal_level": 3,
+        "version": "MiLK PLUS",
+        "release_date": "2018-07-11T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       }
     ]
@@ -26371,16 +26475,6 @@
     "gamerch_id": "533448",
     "charts": [
       {
-        "id": "05218e13-5be6-45fd-919f-68b51b70b121",
-        "difficulty": "advanced",
-        "level": "7+",
-        "internal_level": 7.6,
-        "version": "MiLK PLUS",
-        "release_date": "2018-06-21T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "1829cce6-5e9e-4b09-ac08-1f47be0aa0ed",
         "difficulty": "master",
         "level": "12+",
@@ -26388,6 +26482,16 @@
         "version": "MiLK PLUS",
         "release_date": "2018-06-21T01:00:00+00:00",
         "notes_designer": "すきやき奉行",
+        "has_chart_data": true
+      },
+      {
+        "id": "05218e13-5be6-45fd-919f-68b51b70b121",
+        "difficulty": "advanced",
+        "level": "7+",
+        "internal_level": 7.6,
+        "version": "MiLK PLUS",
+        "release_date": "2018-06-21T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -27039,16 +27143,6 @@
     "gamerch_id": "534051",
     "charts": [
       {
-        "id": "c434bf80-5ab0-4bcc-abdc-738140f440e5",
-        "difficulty": "expert",
-        "level": "12",
-        "internal_level": 12.5,
-        "version": "Splash PLUS",
-        "release_date": "2021-03-18T01:00:00+00:00",
-        "notes_designer": "サファ太",
-        "has_chart_data": true
-      },
-      {
         "id": "81696ba8-15ad-4fd5-a020-e1429d524f95",
         "difficulty": "advanced",
         "level": "8",
@@ -27056,6 +27150,16 @@
         "version": "Splash PLUS",
         "release_date": "2021-03-18T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "c434bf80-5ab0-4bcc-abdc-738140f440e5",
+        "difficulty": "expert",
+        "level": "12",
+        "internal_level": 12.5,
+        "version": "Splash PLUS",
+        "release_date": "2021-03-18T01:00:00+00:00",
+        "notes_designer": "サファ太",
         "has_chart_data": true
       },
       {
@@ -27764,6 +27868,16 @@
     "gamerch_id": "533666",
     "charts": [
       {
+        "id": "f1269c1b-d791-4ca1-863a-1fd8653e6311",
+        "difficulty": "advanced",
+        "level": "7+",
+        "internal_level": 7.8,
+        "version": "MURASAKi",
+        "release_date": "2017-05-11T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "b94b70ac-e3c8-4fd3-ac43-a2b3ad29d426",
         "difficulty": "basic",
         "level": "3",
@@ -27781,16 +27895,6 @@
         "version": "MURASAKi",
         "release_date": "2017-05-11T01:00:00+00:00",
         "notes_designer": "ぴちネコ",
-        "has_chart_data": true
-      },
-      {
-        "id": "f1269c1b-d791-4ca1-863a-1fd8653e6311",
-        "difficulty": "advanced",
-        "level": "7+",
-        "internal_level": 7.8,
-        "version": "MURASAKi",
-        "release_date": "2017-05-11T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -28201,53 +28305,6 @@
       }
     ]
   },
-  "straight-into-the-lights-cosmograph-9r3er": {
-    "title": "Straight into the lights",
-    "simai_id": "1066",
-    "gamerch_id": "823904",
-    "charts": [
-      {
-        "id": "e90f58e6-6e6a-4651-bdd7-d75d251e51c6",
-        "difficulty": "basic",
-        "level": "4",
-        "internal_level": 4,
-        "version": "BUDDiES",
-        "release_date": "2024-02-02T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
-        "id": "978d149a-e6f5-4505-8dff-ce6081000a1e",
-        "difficulty": "advanced",
-        "level": "8",
-        "internal_level": 8.5,
-        "version": "BUDDiES",
-        "release_date": "2024-02-02T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
-        "id": "55bf3307-0aa1-4433-b40c-7f763f56afe5",
-        "difficulty": "master",
-        "level": "14+",
-        "internal_level": 14.8,
-        "version": "BUDDiES",
-        "release_date": "2024-02-02T01:00:00+00:00",
-        "notes_designer": "Jack",
-        "has_chart_data": true
-      },
-      {
-        "id": "2dda1917-f7bc-40f8-940a-a0064e27d0eb",
-        "difficulty": "expert",
-        "level": "12",
-        "internal_level": 12.5,
-        "version": "BUDDiES",
-        "release_date": "2024-02-02T01:00:00+00:00",
-        "notes_designer": "サファ太",
-        "has_chart_data": true
-      }
-    ]
-  },
   "strange-bar-buxqd": {
     "title": "Strange Bar",
     "simai_id": "1419",
@@ -28405,6 +28462,16 @@
         "has_chart_data": false
       },
       {
+        "id": "281e5ad8-33cf-45f3-8dca-7e3c3833f839",
+        "difficulty": "master",
+        "level": "14",
+        "internal_level": 14.5,
+        "version": "UNiVERSE PLUS",
+        "release_date": "2022-03-24T01:00:00+00:00",
+        "notes_designer": "Redarrow",
+        "has_chart_data": true
+      },
+      {
         "id": "fe4f391a-9d9a-48bb-a377-c0a4b4b39a2d",
         "difficulty": "basic",
         "level": "6",
@@ -28423,16 +28490,6 @@
         "release_date": "2022-03-24T01:00:00+00:00",
         "notes_designer": "はっぴー",
         "has_chart_data": false
-      },
-      {
-        "id": "281e5ad8-33cf-45f3-8dca-7e3c3833f839",
-        "difficulty": "master",
-        "level": "14",
-        "internal_level": 14.5,
-        "version": "UNiVERSE PLUS",
-        "release_date": "2022-03-24T01:00:00+00:00",
-        "notes_designer": "Redarrow",
-        "has_chart_data": true
       }
     ]
   },
@@ -28687,6 +28744,16 @@
     "gamerch_id": "534448",
     "charts": [
       {
+        "id": "a421313d-1282-4e4d-b201-a8b6b2ce1ea7",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.2,
+        "version": "maimai PLUS",
+        "release_date": "2013-04-23T01:00:00+00:00",
+        "notes_designer": "ニャイン",
+        "has_chart_data": true
+      },
+      {
         "id": "ff68fb53-027e-4263-92db-7c18469396bf",
         "difficulty": "basic",
         "level": "6",
@@ -28715,16 +28782,6 @@
         "release_date": "2013-04-23T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": false
-      },
-      {
-        "id": "a421313d-1282-4e4d-b201-a8b6b2ce1ea7",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13.2,
-        "version": "maimai PLUS",
-        "release_date": "2013-04-23T01:00:00+00:00",
-        "notes_designer": "ニャイン",
-        "has_chart_data": true
       }
     ]
   },
@@ -28925,16 +28982,6 @@
         "has_chart_data": false
       },
       {
-        "id": "1df39f1a-fdc6-435b-a769-5a1bb375802f",
-        "difficulty": "expert",
-        "level": "10+",
-        "internal_level": 10.7,
-        "version": "Splash",
-        "release_date": "2021-02-05T01:00:00+00:00",
-        "notes_designer": "サファ太",
-        "has_chart_data": false
-      },
-      {
         "id": "2a14f11e-7ca5-4bbb-8428-de318c152a5a",
         "difficulty": "basic",
         "level": "4",
@@ -28942,6 +28989,16 @@
         "version": "Splash",
         "release_date": "2021-02-05T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": false
+      },
+      {
+        "id": "1df39f1a-fdc6-435b-a769-5a1bb375802f",
+        "difficulty": "expert",
+        "level": "10+",
+        "internal_level": 10.7,
+        "version": "Splash",
+        "release_date": "2021-02-05T01:00:00+00:00",
+        "notes_designer": "サファ太",
         "has_chart_data": false
       },
       {
@@ -29529,16 +29586,6 @@
     "gamerch_id": "564242",
     "charts": [
       {
-        "id": "7d24a5e6-5692-4b16-9467-3b509f1ff91e",
-        "difficulty": "basic",
-        "level": "2",
-        "internal_level": 2,
-        "version": "FESTiVAL",
-        "release_date": "2022-12-23T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
         "id": "270dd0f2-3353-4153-b337-72d146ed64de",
         "difficulty": "advanced",
         "level": "6",
@@ -29556,6 +29603,16 @@
         "version": "FESTiVAL",
         "release_date": "2022-12-23T01:00:00+00:00",
         "notes_designer": "Jack",
+        "has_chart_data": false
+      },
+      {
+        "id": "7d24a5e6-5692-4b16-9467-3b509f1ff91e",
+        "difficulty": "basic",
+        "level": "2",
+        "internal_level": 2,
+        "version": "FESTiVAL",
+        "release_date": "2022-12-23T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": false
       },
       {
@@ -29757,6 +29814,16 @@
     "gamerch_id": "533695",
     "charts": [
       {
+        "id": "bf2055f6-fc9b-4722-a222-039d15b26672",
+        "difficulty": "expert",
+        "level": "10",
+        "internal_level": 10.5,
+        "version": "maimai PLUS",
+        "release_date": "2013-03-07T01:00:00+00:00",
+        "notes_designer": "譜面-100号とはっぴー",
+        "has_chart_data": true
+      },
+      {
         "id": "112dcf44-2080-4016-9d43-f647b589a1e4",
         "difficulty": "basic",
         "level": "6",
@@ -29784,16 +29851,6 @@
         "version": "maimai PLUS",
         "release_date": "2013-03-07T01:00:00+00:00",
         "notes_designer": "mai-Star",
-        "has_chart_data": true
-      },
-      {
-        "id": "bf2055f6-fc9b-4722-a222-039d15b26672",
-        "difficulty": "expert",
-        "level": "10",
-        "internal_level": 10.5,
-        "version": "maimai PLUS",
-        "release_date": "2013-03-07T01:00:00+00:00",
-        "notes_designer": "譜面-100号とはっぴー",
         "has_chart_data": true
       },
       {
@@ -30414,7 +30471,7 @@
         "version": "CiRCLE",
         "release_date": "2025-10-16T01:00:00+00:00",
         "notes_designer": "Luxizhel",
-        "has_chart_data": false
+        "has_chart_data": true
       }
     ]
   },
@@ -30424,20 +30481,20 @@
     "gamerch_id": "533590",
     "charts": [
       {
-        "id": "1d83d3f5-8451-4c17-a713-c1fd44483a9e",
-        "difficulty": "advanced",
-        "level": "10",
-        "internal_level": 10.3,
+        "id": "7407f3b8-d228-47bf-b247-4ff0b4ad92ae",
+        "difficulty": "basic",
+        "level": "7",
+        "internal_level": 7,
         "version": "FiNALE",
         "release_date": "2018-12-13T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": true
       },
       {
-        "id": "7407f3b8-d228-47bf-b247-4ff0b4ad92ae",
-        "difficulty": "basic",
-        "level": "7",
-        "internal_level": 7,
+        "id": "1d83d3f5-8451-4c17-a713-c1fd44483a9e",
+        "difficulty": "advanced",
+        "level": "10",
+        "internal_level": 10.3,
         "version": "FiNALE",
         "release_date": "2018-12-13T01:00:00+00:00",
         "notes_designer": null,
@@ -31045,16 +31102,6 @@
         "has_chart_data": true
       },
       {
-        "id": "84e3536e-f4a3-4494-9422-f1b6ff198927",
-        "difficulty": "advanced",
-        "level": "7",
-        "internal_level": 7,
-        "version": "FiNALE",
-        "release_date": "2019-03-22T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "25d8c841-b642-45df-86b4-55262dd39eb8",
         "difficulty": "master",
         "level": "12",
@@ -31062,6 +31109,16 @@
         "version": "FiNALE",
         "release_date": "2019-03-22T01:00:00+00:00",
         "notes_designer": "某S氏",
+        "has_chart_data": true
+      },
+      {
+        "id": "84e3536e-f4a3-4494-9422-f1b6ff198927",
+        "difficulty": "advanced",
+        "level": "7",
+        "internal_level": 7,
+        "version": "FiNALE",
+        "release_date": "2019-03-22T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -31878,6 +31935,53 @@
       }
     ]
   },
+  "utage-3rd-avenue-sound-souler-u1kt8": {
+    "title": "[覚]3rd Avenue",
+    "simai_id": "1856",
+    "gamerch_id": "987748",
+    "charts": [
+      {
+        "id": "1612d086-8509-41bb-aa69-314c81625b5d",
+        "difficulty": "basic",
+        "level": "3",
+        "internal_level": 3,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-05-29T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
+      },
+      {
+        "id": "65d7b6fe-70ec-44d5-916c-2f7bb63867eb",
+        "difficulty": "advanced",
+        "level": "6",
+        "internal_level": 6.8,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-05-29T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
+      },
+      {
+        "id": "d0238f12-9c73-4957-95bb-5bcb21991be2",
+        "difficulty": "expert",
+        "level": "11",
+        "internal_level": 11,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-05-29T01:00:00+00:00",
+        "notes_designer": "サファ太",
+        "has_chart_data": false
+      },
+      {
+        "id": "1e2370fc-e296-489a-ac48-ff4dc835558e",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.6,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-05-29T01:00:00+00:00",
+        "notes_designer": "Luxizhel",
+        "has_chart_data": false
+      }
+    ]
+  },
   "utage-aegleseeker-silentroom-vs-frums-xh2sd": {
     "title": "[蔵]Aegleseeker",
     "simai_id": "1007",
@@ -32386,16 +32490,6 @@
         "has_chart_data": false
       },
       {
-        "id": "4752f4f6-69d4-42e5-b607-0879e5070fdf",
-        "difficulty": "expert",
-        "level": "13",
-        "internal_level": 13.3,
-        "version": "MiLK",
-        "release_date": "2018-03-06T01:00:00+00:00",
-        "notes_designer": "Jack",
-        "has_chart_data": true
-      },
-      {
         "id": "5102c50e-f771-4722-9cf9-b66b1f707c4d",
         "difficulty": "basic",
         "level": "5",
@@ -32404,6 +32498,16 @@
         "release_date": "2018-03-06T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": false
+      },
+      {
+        "id": "4752f4f6-69d4-42e5-b607-0879e5070fdf",
+        "difficulty": "expert",
+        "level": "13",
+        "internal_level": 13.3,
+        "version": "MiLK",
+        "release_date": "2018-03-06T01:00:00+00:00",
+        "notes_designer": "Jack",
+        "has_chart_data": true
       },
       {
         "id": "f4d21b1b-683b-4245-996a-dad171796d60",
@@ -33360,16 +33464,6 @@
         "has_chart_data": false
       },
       {
-        "id": "c047921a-39a4-4f5c-b587-6066e157ae80",
-        "difficulty": "basic",
-        "level": "5",
-        "internal_level": 5,
-        "version": "PiNK",
-        "release_date": "2015-12-09T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
         "id": "94e2c615-59f0-4f44-86e7-77368265a4cc",
         "difficulty": "remaster",
         "level": "14",
@@ -33378,6 +33472,16 @@
         "release_date": "2020-11-05T01:00:00+00:00",
         "notes_designer": "譜面-100号",
         "has_chart_data": true
+      },
+      {
+        "id": "c047921a-39a4-4f5c-b587-6066e157ae80",
+        "difficulty": "basic",
+        "level": "5",
+        "internal_level": 5,
+        "version": "PiNK",
+        "release_date": "2015-12-09T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
       },
       {
         "id": "5effdeab-6d06-43c7-b269-9b811b275881",
@@ -33510,6 +33614,16 @@
         "has_chart_data": false
       },
       {
+        "id": "053bfbe5-d9de-491f-b6fc-5289344cb6b7",
+        "difficulty": "remaster",
+        "level": "13",
+        "internal_level": 13.1,
+        "version": "BUDDiES PLUS",
+        "release_date": "2024-03-21T01:00:00+00:00",
+        "notes_designer": "Luxizhel",
+        "has_chart_data": true
+      },
+      {
         "id": "85312e85-c7a1-4aab-b759-4fe8e822dd34",
         "difficulty": "basic",
         "level": "3",
@@ -33537,16 +33651,6 @@
         "version": "BUDDiES PLUS",
         "release_date": "2024-03-21T01:00:00+00:00",
         "notes_designer": "ロシェ@ペンギン",
-        "has_chart_data": true
-      },
-      {
-        "id": "053bfbe5-d9de-491f-b6fc-5289344cb6b7",
-        "difficulty": "remaster",
-        "level": "13",
-        "internal_level": 13.1,
-        "version": "BUDDiES PLUS",
-        "release_date": "2024-03-21T01:00:00+00:00",
-        "notes_designer": "Luxizhel",
         "has_chart_data": true
       },
       {
@@ -34030,6 +34134,16 @@
         "has_chart_data": false
       },
       {
+        "id": "bfaca908-8e6e-4aee-a191-a1a56613520e",
+        "difficulty": "basic",
+        "level": "5",
+        "internal_level": 5,
+        "version": "MiLK PLUS",
+        "release_date": "2018-10-16T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "b06035f9-244e-47b7-9add-39d7f5a3e727",
         "difficulty": "expert",
         "level": "10+",
@@ -34057,16 +34171,6 @@
         "version": "MiLK PLUS",
         "release_date": "2018-10-16T01:00:00+00:00",
         "notes_designer": "小鳥遊さん",
-        "has_chart_data": true
-      },
-      {
-        "id": "bfaca908-8e6e-4aee-a191-a1a56613520e",
-        "difficulty": "basic",
-        "level": "5",
-        "internal_level": 5,
-        "version": "MiLK PLUS",
-        "release_date": "2018-10-16T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -34440,6 +34544,16 @@
         "has_chart_data": true
       },
       {
+        "id": "ebe908ba-af45-48bc-9027-da578525886e",
+        "difficulty": "expert",
+        "level": "11",
+        "internal_level": 11.1,
+        "version": "MiLK",
+        "release_date": "2017-12-14T01:00:00+00:00",
+        "notes_designer": "玉子豆腐",
+        "has_chart_data": true
+      },
+      {
         "id": "fae69cc7-664e-4b9b-bf82-033e23730f7b",
         "difficulty": "master",
         "level": "13",
@@ -34457,16 +34571,6 @@
         "version": "MiLK",
         "release_date": "2017-12-14T01:00:00+00:00",
         "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
-        "id": "ebe908ba-af45-48bc-9027-da578525886e",
-        "difficulty": "expert",
-        "level": "11",
-        "internal_level": 11.1,
-        "version": "MiLK",
-        "release_date": "2017-12-14T01:00:00+00:00",
-        "notes_designer": "玉子豆腐",
         "has_chart_data": true
       },
       {
@@ -34510,13 +34614,13 @@
         "has_chart_data": true
       },
       {
-        "id": "37e9969e-7a34-4206-abd5-790e392a5f30",
-        "difficulty": "expert",
-        "level": "11+",
-        "internal_level": 11.8,
+        "id": "fd82ce61-cc6f-4b24-8f4d-04fd179455bc",
+        "difficulty": "advanced",
+        "level": "8",
+        "internal_level": 8.3,
         "version": "ORANGE",
         "release_date": "2014-12-18T01:00:00+00:00",
-        "notes_designer": "ロシェ＠ペンギン",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -34530,13 +34634,13 @@
         "has_chart_data": true
       },
       {
-        "id": "fd82ce61-cc6f-4b24-8f4d-04fd179455bc",
-        "difficulty": "advanced",
-        "level": "8",
-        "internal_level": 8.3,
+        "id": "37e9969e-7a34-4206-abd5-790e392a5f30",
+        "difficulty": "expert",
+        "level": "11+",
+        "internal_level": 11.8,
         "version": "ORANGE",
         "release_date": "2014-12-18T01:00:00+00:00",
-        "notes_designer": null,
+        "notes_designer": "ロシェ＠ペンギン",
         "has_chart_data": true
       },
       {
@@ -34600,13 +34704,13 @@
         "has_chart_data": true
       },
       {
-        "id": "cc6e2bf6-e1c7-454b-aaaf-ab571497c2ed",
-        "difficulty": "remaster",
-        "level": "12+",
-        "internal_level": 12.7,
+        "id": "0fd3c42a-7889-4430-a121-2c946a6e8103",
+        "difficulty": "advanced",
+        "level": "7",
+        "internal_level": 7.5,
         "version": "GreeN",
-        "release_date": "2016-04-07T01:00:00+00:00",
-        "notes_designer": "しろいろ",
+        "release_date": "2013-07-11T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -34617,16 +34721,6 @@
         "version": "GreeN",
         "release_date": "2013-07-11T01:00:00+00:00",
         "notes_designer": "はっぴー",
-        "has_chart_data": true
-      },
-      {
-        "id": "0fd3c42a-7889-4430-a121-2c946a6e8103",
-        "difficulty": "advanced",
-        "level": "7",
-        "internal_level": 7.5,
-        "version": "GreeN",
-        "release_date": "2013-07-11T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -34647,6 +34741,16 @@
         "version": "GreeN",
         "release_date": "2013-07-11T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "cc6e2bf6-e1c7-454b-aaaf-ab571497c2ed",
+        "difficulty": "remaster",
+        "level": "12+",
+        "internal_level": 12.7,
+        "version": "GreeN",
+        "release_date": "2016-04-07T01:00:00+00:00",
+        "notes_designer": "しろいろ",
         "has_chart_data": true
       },
       {
@@ -35090,6 +35194,16 @@
         "has_chart_data": false
       },
       {
+        "id": "49b2cf90-fe72-4a91-88a4-edda20885ae9",
+        "difficulty": "basic",
+        "level": "3",
+        "internal_level": 3,
+        "version": "FiNALE",
+        "release_date": "2019-03-08T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "9eaa8f06-2d5a-46b9-b2fc-79417fc58aae",
         "difficulty": "expert",
         "level": "10+",
@@ -35117,16 +35231,6 @@
         "version": "FiNALE",
         "release_date": "2019-03-08T01:00:00+00:00",
         "notes_designer": "華火職人",
-        "has_chart_data": true
-      },
-      {
-        "id": "49b2cf90-fe72-4a91-88a4-edda20885ae9",
-        "difficulty": "basic",
-        "level": "3",
-        "internal_level": 3,
-        "version": "FiNALE",
-        "release_date": "2019-03-08T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -35260,6 +35364,16 @@
         "has_chart_data": true
       },
       {
+        "id": "5f8fc8b0-75ca-4d00-802d-923df8fe1efe",
+        "difficulty": "basic",
+        "level": "6",
+        "internal_level": 6,
+        "version": "MiLK PLUS",
+        "release_date": "2018-08-07T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "27124c35-2064-4a61-aa59-c3fabc0ac390",
         "difficulty": "advanced",
         "level": "8",
@@ -35277,16 +35391,6 @@
         "version": "MiLK PLUS",
         "release_date": "2018-08-07T01:00:00+00:00",
         "notes_designer": "緑風 犬三郎",
-        "has_chart_data": true
-      },
-      {
-        "id": "5f8fc8b0-75ca-4d00-802d-923df8fe1efe",
-        "difficulty": "basic",
-        "level": "6",
-        "internal_level": 6,
-        "version": "MiLK PLUS",
-        "release_date": "2018-08-07T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -35690,6 +35794,16 @@
         "has_chart_data": true
       },
       {
+        "id": "a2d047b7-41a2-4a4b-9d6c-ae6a2f8c82cd",
+        "difficulty": "master",
+        "level": "12",
+        "internal_level": 12,
+        "version": "でらっくす PLUS",
+        "release_date": "2020-09-04T01:00:00+00:00",
+        "notes_designer": "ロシェ@ペンギン",
+        "has_chart_data": true
+      },
+      {
         "id": "496107cc-ca7b-4254-8493-efef205a5f0a",
         "difficulty": "basic",
         "level": "2",
@@ -35707,16 +35821,6 @@
         "version": "でらっくす PLUS",
         "release_date": "2020-09-04T01:00:00+00:00",
         "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
-        "id": "a2d047b7-41a2-4a4b-9d6c-ae6a2f8c82cd",
-        "difficulty": "master",
-        "level": "12",
-        "internal_level": 12,
-        "version": "でらっくす PLUS",
-        "release_date": "2020-09-04T01:00:00+00:00",
-        "notes_designer": "ロシェ@ペンギン",
         "has_chart_data": true
       },
       {
@@ -36010,6 +36114,16 @@
         "has_chart_data": true
       },
       {
+        "id": "298eecaa-2c88-4c5c-b1d9-6904bc4dcf18",
+        "difficulty": "expert",
+        "level": "11",
+        "internal_level": 11.3,
+        "version": "PiNK PLUS",
+        "release_date": "2016-10-06T01:00:00+00:00",
+        "notes_designer": "Jack",
+        "has_chart_data": true
+      },
+      {
         "id": "0092e48b-dac4-4f1a-8805-3c82013892d7",
         "difficulty": "advanced",
         "level": "7+",
@@ -36037,16 +36151,6 @@
         "version": "PiNK PLUS",
         "release_date": "2016-10-06T01:00:00+00:00",
         "notes_designer": "某S氏",
-        "has_chart_data": true
-      },
-      {
-        "id": "298eecaa-2c88-4c5c-b1d9-6904bc4dcf18",
-        "difficulty": "expert",
-        "level": "11",
-        "internal_level": 11.3,
-        "version": "PiNK PLUS",
-        "release_date": "2016-10-06T01:00:00+00:00",
-        "notes_designer": "Jack",
         "has_chart_data": true
       },
       {
@@ -37210,6 +37314,16 @@
         "has_chart_data": false
       },
       {
+        "id": "033f1dc6-ea44-4d93-9b3e-35b6c06e311f",
+        "difficulty": "master",
+        "level": "12",
+        "internal_level": 12.5,
+        "version": "GreeN PLUS",
+        "release_date": "2014-04-07T01:00:00+00:00",
+        "notes_designer": "某S氏",
+        "has_chart_data": true
+      },
+      {
         "id": "caf19aab-80bf-4c4e-ae91-317f57dc1b1e",
         "difficulty": "expert",
         "level": "9+",
@@ -37228,16 +37342,6 @@
         "release_date": "2014-04-07T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": false
-      },
-      {
-        "id": "033f1dc6-ea44-4d93-9b3e-35b6c06e311f",
-        "difficulty": "master",
-        "level": "12",
-        "internal_level": 12.5,
-        "version": "GreeN PLUS",
-        "release_date": "2014-04-07T01:00:00+00:00",
-        "notes_designer": "某S氏",
-        "has_chart_data": true
       },
       {
         "id": "0955db1d-0c63-4c56-922b-f36b10f528e5",
@@ -37380,16 +37484,6 @@
         "has_chart_data": true
       },
       {
-        "id": "e1bd76b4-a122-4680-a483-7666b26f7c46",
-        "difficulty": "remaster",
-        "level": "14+",
-        "internal_level": 14.7,
-        "version": "ORANGE PLUS",
-        "release_date": "2018-10-16T01:00:00+00:00",
-        "notes_designer": "サファ太",
-        "has_chart_data": true
-      },
-      {
         "id": "e700936f-094f-4df1-a6e4-da2be43c3d56",
         "difficulty": "basic",
         "level": "6",
@@ -37417,6 +37511,16 @@
         "version": "ORANGE PLUS",
         "release_date": "2015-06-25T01:00:00+00:00",
         "notes_designer": "チャン@DP皆伝",
+        "has_chart_data": true
+      },
+      {
+        "id": "e1bd76b4-a122-4680-a483-7666b26f7c46",
+        "difficulty": "remaster",
+        "level": "14+",
+        "internal_level": 14.7,
+        "version": "ORANGE PLUS",
+        "release_date": "2018-10-16T01:00:00+00:00",
+        "notes_designer": "サファ太",
         "has_chart_data": true
       },
       {
@@ -37990,6 +38094,16 @@
         "has_chart_data": true
       },
       {
+        "id": "13ec8be5-e20e-45e0-819b-d8ea7d343a81",
+        "difficulty": "basic",
+        "level": "6",
+        "internal_level": 6,
+        "version": "MURASAKi",
+        "release_date": "2017-03-09T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "c8002537-e89d-4ca3-bb4e-ca31651687bd",
         "difficulty": "expert",
         "level": "10",
@@ -38004,16 +38118,6 @@
         "difficulty": "advanced",
         "level": "8",
         "internal_level": 8.1,
-        "version": "MURASAKi",
-        "release_date": "2017-03-09T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
-        "id": "13ec8be5-e20e-45e0-819b-d8ea7d343a81",
-        "difficulty": "basic",
-        "level": "6",
-        "internal_level": 6,
         "version": "MURASAKi",
         "release_date": "2017-03-09T01:00:00+00:00",
         "notes_designer": null,
@@ -38070,6 +38174,16 @@
         "has_chart_data": true
       },
       {
+        "id": "dc5d7aa3-bc25-4ca1-a8ae-10efe68e71d0",
+        "difficulty": "expert",
+        "level": "10+",
+        "internal_level": 10.9,
+        "version": "MiLK",
+        "release_date": "2018-02-20T01:00:00+00:00",
+        "notes_designer": "玉子豆腐",
+        "has_chart_data": true
+      },
+      {
         "id": "056d4551-6193-4648-9d1f-f4131c40cf9c",
         "difficulty": "advanced",
         "level": "8",
@@ -38087,16 +38201,6 @@
         "version": "MiLK",
         "release_date": "2018-02-20T01:00:00+00:00",
         "notes_designer": "Revo@LC",
-        "has_chart_data": true
-      },
-      {
-        "id": "dc5d7aa3-bc25-4ca1-a8ae-10efe68e71d0",
-        "difficulty": "expert",
-        "level": "10+",
-        "internal_level": 10.9,
-        "version": "MiLK",
-        "release_date": "2018-02-20T01:00:00+00:00",
-        "notes_designer": "玉子豆腐",
         "has_chart_data": true
       },
       {
@@ -38230,16 +38334,6 @@
         "has_chart_data": false
       },
       {
-        "id": "c18e0bf0-055f-4b00-9ba7-938c22e4a0e5",
-        "difficulty": "advanced",
-        "level": "7+",
-        "internal_level": 7.9,
-        "version": "PiNK PLUS",
-        "release_date": "2016-09-08T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "2292cf63-ff50-47ac-a148-7334c4300b1c",
         "difficulty": "expert",
         "level": "11",
@@ -38247,6 +38341,16 @@
         "version": "PiNK PLUS",
         "release_date": "2016-09-08T01:00:00+00:00",
         "notes_designer": "如月 ゆかり",
+        "has_chart_data": true
+      },
+      {
+        "id": "c18e0bf0-055f-4b00-9ba7-938c22e4a0e5",
+        "difficulty": "advanced",
+        "level": "7+",
+        "internal_level": 7.9,
+        "version": "PiNK PLUS",
+        "release_date": "2016-09-08T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -38390,16 +38494,6 @@
         "has_chart_data": false
       },
       {
-        "id": "fd3bfe4b-0280-45ab-9f45-460cd1aa6a7a",
-        "difficulty": "expert",
-        "level": "10+",
-        "internal_level": 10.8,
-        "version": "FiNALE",
-        "release_date": "2019-02-22T01:00:00+00:00",
-        "notes_designer": "サファ太",
-        "has_chart_data": true
-      },
-      {
         "id": "cf2c3af9-4eb3-4569-a458-25c711ef09a6",
         "difficulty": "remaster",
         "level": "13",
@@ -38407,6 +38501,16 @@
         "version": "FiNALE",
         "release_date": "2019-02-22T01:00:00+00:00",
         "notes_designer": "小鳥遊さん",
+        "has_chart_data": true
+      },
+      {
+        "id": "fd3bfe4b-0280-45ab-9f45-460cd1aa6a7a",
+        "difficulty": "expert",
+        "level": "10+",
+        "internal_level": 10.8,
+        "version": "FiNALE",
+        "release_date": "2019-02-22T01:00:00+00:00",
+        "notes_designer": "サファ太",
         "has_chart_data": true
       },
       {
@@ -38570,6 +38674,16 @@
         "has_chart_data": true
       },
       {
+        "id": "321b20bd-df96-468c-aae0-b681fae75d5a",
+        "difficulty": "basic",
+        "level": "5",
+        "internal_level": 5,
+        "version": "maimai PLUS",
+        "release_date": "2012-12-13T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "3abb52e6-29e2-47f3-bc32-6a25182c0946",
         "difficulty": "advanced",
         "level": "8",
@@ -38587,16 +38701,6 @@
         "version": "maimai PLUS",
         "release_date": "2012-12-13T01:00:00+00:00",
         "notes_designer": "ニャイン",
-        "has_chart_data": true
-      },
-      {
-        "id": "321b20bd-df96-468c-aae0-b681fae75d5a",
-        "difficulty": "basic",
-        "level": "5",
-        "internal_level": 5,
-        "version": "maimai PLUS",
-        "release_date": "2012-12-13T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -38640,16 +38744,6 @@
         "has_chart_data": false
       },
       {
-        "id": "80623914-19cb-4009-a70d-f5eed5860bd1",
-        "difficulty": "basic",
-        "level": "5",
-        "internal_level": 5,
-        "version": "MURASAKi",
-        "release_date": "2016-12-15T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "e234b4a3-7b1e-448e-8e3b-2b54b6aa98e7",
         "difficulty": "expert",
         "level": "10+",
@@ -38657,6 +38751,16 @@
         "version": "MURASAKi",
         "release_date": "2016-12-15T01:00:00+00:00",
         "notes_designer": "畳返し",
+        "has_chart_data": true
+      },
+      {
+        "id": "80623914-19cb-4009-a70d-f5eed5860bd1",
+        "difficulty": "basic",
+        "level": "5",
+        "internal_level": 5,
+        "version": "MURASAKi",
+        "release_date": "2016-12-15T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -40190,13 +40294,13 @@
         "has_chart_data": false
       },
       {
-        "id": "526e4144-0018-44c2-94ae-7a20c8695e64",
-        "difficulty": "advanced",
-        "level": "7+",
-        "internal_level": 7.6,
+        "id": "7990a9cc-2e01-4a93-a335-6c212cbcbf31",
+        "difficulty": "expert",
+        "level": "10",
+        "internal_level": 10.5,
         "version": "MiLK PLUS",
         "release_date": "2018-11-06T01:00:00+00:00",
-        "notes_designer": null,
+        "notes_designer": "サファ太",
         "has_chart_data": true
       },
       {
@@ -40210,13 +40314,13 @@
         "has_chart_data": true
       },
       {
-        "id": "7990a9cc-2e01-4a93-a335-6c212cbcbf31",
-        "difficulty": "expert",
-        "level": "10",
-        "internal_level": 10.5,
+        "id": "526e4144-0018-44c2-94ae-7a20c8695e64",
+        "difficulty": "advanced",
+        "level": "7+",
+        "internal_level": 7.6,
         "version": "MiLK PLUS",
         "release_date": "2018-11-06T01:00:00+00:00",
-        "notes_designer": "サファ太",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -40820,16 +40924,6 @@
         "has_chart_data": false
       },
       {
-        "id": "93205e40-650e-481e-8669-e9c1a9d07d54",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.8,
-        "version": "PiNK",
-        "release_date": "2016-04-21T01:00:00+00:00",
-        "notes_designer": "はっぴー",
-        "has_chart_data": false
-      },
-      {
         "id": "28d641a7-da95-43bf-aac9-f7f6399fce00",
         "difficulty": "advanced",
         "level": "8",
@@ -40838,6 +40932,16 @@
         "release_date": "2016-04-21T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": false
+      },
+      {
+        "id": "93205e40-650e-481e-8669-e9c1a9d07d54",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.8,
+        "version": "PiNK",
+        "release_date": "2016-04-21T01:00:00+00:00",
+        "notes_designer": "はっぴー",
+        "has_chart_data": true
       },
       {
         "id": "2ab272f3-ab06-465b-b17e-755faa638ddf",
@@ -40960,16 +41064,6 @@
         "has_chart_data": false
       },
       {
-        "id": "32f025ff-1259-4c45-860c-15de7e8de0d0",
-        "difficulty": "advanced",
-        "level": "7",
-        "internal_level": 7.3,
-        "version": "PiNK",
-        "release_date": "2015-12-09T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "e13e56b5-8913-4606-8cd8-5c8b2280389c",
         "difficulty": "expert",
         "level": "9+",
@@ -40977,6 +41071,16 @@
         "version": "PiNK",
         "release_date": "2015-12-09T01:00:00+00:00",
         "notes_designer": "はっぴー",
+        "has_chart_data": true
+      },
+      {
+        "id": "32f025ff-1259-4c45-860c-15de7e8de0d0",
+        "difficulty": "advanced",
+        "level": "7",
+        "internal_level": 7.3,
+        "version": "PiNK",
+        "release_date": "2015-12-09T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -41480,16 +41584,6 @@
         "has_chart_data": true
       },
       {
-        "id": "e1259830-c4c1-4915-b192-5d6fda934264",
-        "difficulty": "expert",
-        "level": "10+",
-        "internal_level": 10.7,
-        "version": "でらっくす PLUS",
-        "release_date": "2020-01-23T01:00:00+00:00",
-        "notes_designer": "はっぴー",
-        "has_chart_data": true
-      },
-      {
         "id": "c150455c-42af-404e-8630-1c078330dced",
         "difficulty": "advanced",
         "level": "7+",
@@ -41497,6 +41591,16 @@
         "version": "でらっくす PLUS",
         "release_date": "2020-01-23T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "e1259830-c4c1-4915-b192-5d6fda934264",
+        "difficulty": "expert",
+        "level": "10+",
+        "internal_level": 10.7,
+        "version": "でらっくす PLUS",
+        "release_date": "2020-01-23T01:00:00+00:00",
+        "notes_designer": "はっぴー",
         "has_chart_data": true
       },
       {
@@ -42070,16 +42174,6 @@
         "has_chart_data": true
       },
       {
-        "id": "faa73670-055c-4899-b0b4-4be20aa137c6",
-        "difficulty": "advanced",
-        "level": "8+",
-        "internal_level": 8.7,
-        "version": "Splash PLUS",
-        "release_date": "2021-05-28T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "b2784db6-afb0-448d-a31e-903d5bb144a7",
         "difficulty": "master",
         "level": "14",
@@ -42087,6 +42181,16 @@
         "version": "Splash PLUS",
         "release_date": "2021-05-28T01:00:00+00:00",
         "notes_designer": "Safata.Hz",
+        "has_chart_data": true
+      },
+      {
+        "id": "faa73670-055c-4899-b0b4-4be20aa137c6",
+        "difficulty": "advanced",
+        "level": "8+",
+        "internal_level": 8.7,
+        "version": "Splash PLUS",
+        "release_date": "2021-05-28T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -43860,16 +43964,6 @@
         "has_chart_data": true
       },
       {
-        "id": "c82ea633-c26a-47a1-a72b-2f04e45a7e7f",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13.3,
-        "version": "GreeN",
-        "release_date": "2013-07-11T01:00:00+00:00",
-        "notes_designer": "mai-Star",
-        "has_chart_data": true
-      },
-      {
         "id": "1b3389ee-1965-4ae2-a177-f2d2a2508c1d",
         "difficulty": "advanced",
         "level": "8",
@@ -43877,6 +43971,16 @@
         "version": "GreeN",
         "release_date": "2013-07-11T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "c82ea633-c26a-47a1-a72b-2f04e45a7e7f",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.3,
+        "version": "GreeN",
+        "release_date": "2013-07-11T01:00:00+00:00",
+        "notes_designer": "mai-Star",
         "has_chart_data": true
       },
       {
@@ -44350,6 +44454,16 @@
         "has_chart_data": true
       },
       {
+        "id": "13823461-043b-4ccb-99d7-f180c479514b",
+        "difficulty": "master",
+        "level": "14",
+        "internal_level": 14.5,
+        "version": "MURASAKi",
+        "release_date": "2017-04-18T01:00:00+00:00",
+        "notes_designer": "ぴちネコ",
+        "has_chart_data": true
+      },
+      {
         "id": "db82f2e9-20f0-449a-9fae-3434af38da62",
         "difficulty": "advanced",
         "level": "9",
@@ -44377,16 +44491,6 @@
         "version": "MURASAKi",
         "release_date": "2017-04-18T01:00:00+00:00",
         "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
-        "id": "13823461-043b-4ccb-99d7-f180c479514b",
-        "difficulty": "master",
-        "level": "14",
-        "internal_level": 14.5,
-        "version": "MURASAKi",
-        "release_date": "2017-04-18T01:00:00+00:00",
-        "notes_designer": "ぴちネコ",
         "has_chart_data": true
       },
       {
@@ -44740,16 +44844,6 @@
         "has_chart_data": false
       },
       {
-        "id": "eb862987-6544-4034-a13d-9afba3bb789f",
-        "difficulty": "remaster",
-        "level": "14",
-        "internal_level": 14.4,
-        "version": "でらっくす",
-        "release_date": "2021-12-03T01:00:00+00:00",
-        "notes_designer": "ぴちネコ",
-        "has_chart_data": true
-      },
-      {
         "id": "3cb6e55b-2908-49cf-b220-ffb003d097da",
         "difficulty": "master",
         "level": "13+",
@@ -44757,6 +44851,16 @@
         "version": "でらっくす",
         "release_date": "2019-07-11T01:00:00+00:00",
         "notes_designer": "はっぴー",
+        "has_chart_data": true
+      },
+      {
+        "id": "eb862987-6544-4034-a13d-9afba3bb789f",
+        "difficulty": "remaster",
+        "level": "14",
+        "internal_level": 14.4,
+        "version": "でらっくす",
+        "release_date": "2021-12-03T01:00:00+00:00",
+        "notes_designer": "ぴちネコ",
         "has_chart_data": true
       },
       {
@@ -44890,6 +44994,16 @@
         "has_chart_data": true
       },
       {
+        "id": "69519afb-1b19-4cee-90e8-a96ba341a21d",
+        "difficulty": "basic",
+        "level": "6",
+        "internal_level": 6,
+        "version": "PiNK PLUS",
+        "release_date": "2016-07-14T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "305223a1-65cd-42a5-9e23-92acf6da8765",
         "difficulty": "expert",
         "level": "10",
@@ -44907,16 +45021,6 @@
         "version": "PiNK PLUS",
         "release_date": "2016-07-14T01:00:00+00:00",
         "notes_designer": "はっぴー",
-        "has_chart_data": true
-      },
-      {
-        "id": "69519afb-1b19-4cee-90e8-a96ba341a21d",
-        "difficulty": "basic",
-        "level": "6",
-        "internal_level": 6,
-        "version": "PiNK PLUS",
-        "release_date": "2016-07-14T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -44980,6 +45084,16 @@
         "has_chart_data": false
       },
       {
+        "id": "c29cda12-0307-4b51-97b8-a926f1bc68d2",
+        "difficulty": "remaster",
+        "level": "13",
+        "internal_level": 13.2,
+        "version": "PRiSM PLUS",
+        "release_date": "2025-03-13T01:00:00+00:00",
+        "notes_designer": "Jack",
+        "has_chart_data": true
+      },
+      {
         "id": "dc14199d-d0d8-457f-9e97-e420546c1118",
         "difficulty": "expert",
         "level": "9+",
@@ -44997,16 +45111,6 @@
         "version": "PRiSM PLUS",
         "release_date": "2025-03-13T01:00:00+00:00",
         "notes_designer": "緑川 犬三郎",
-        "has_chart_data": true
-      },
-      {
-        "id": "c29cda12-0307-4b51-97b8-a926f1bc68d2",
-        "difficulty": "remaster",
-        "level": "13",
-        "internal_level": 13.2,
-        "version": "PRiSM PLUS",
-        "release_date": "2025-03-13T01:00:00+00:00",
-        "notes_designer": "Jack",
         "has_chart_data": true
       },
       {
@@ -45880,16 +45984,6 @@
         "has_chart_data": true
       },
       {
-        "id": "cf7b4f44-86e0-4053-977e-9f67617952db",
-        "difficulty": "basic",
-        "level": "3",
-        "internal_level": 3,
-        "version": "GreeN PLUS",
-        "release_date": "2014-07-17T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "f5660ea5-731b-449d-beee-71e286a0344d",
         "difficulty": "advanced",
         "level": "7+",
@@ -45917,6 +46011,16 @@
         "version": "GreeN PLUS",
         "release_date": "2014-07-17T01:00:00+00:00",
         "notes_designer": "はっぴー",
+        "has_chart_data": true
+      },
+      {
+        "id": "cf7b4f44-86e0-4053-977e-9f67617952db",
+        "difficulty": "basic",
+        "level": "3",
+        "internal_level": 3,
+        "version": "GreeN PLUS",
+        "release_date": "2014-07-17T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -46370,6 +46474,16 @@
         "has_chart_data": true
       },
       {
+        "id": "26d52913-a263-41b0-876f-74ec0d554d68",
+        "difficulty": "master",
+        "level": "11+",
+        "internal_level": 11.8,
+        "version": "PRiSM PLUS",
+        "release_date": "2025-03-13T01:00:00+00:00",
+        "notes_designer": "緑風 犬三郎",
+        "has_chart_data": true
+      },
+      {
         "id": "edaa985a-0964-4e82-b80f-088c18c5da6a",
         "difficulty": "advanced",
         "level": "6",
@@ -46390,16 +46504,6 @@
         "has_chart_data": true
       },
       {
-        "id": "26d52913-a263-41b0-876f-74ec0d554d68",
-        "difficulty": "master",
-        "level": "11+",
-        "internal_level": 11.8,
-        "version": "PRiSM PLUS",
-        "release_date": "2025-03-13T01:00:00+00:00",
-        "notes_designer": "緑風 犬三郎",
-        "has_chart_data": true
-      },
-      {
         "id": "ce7323cb-3693-468e-a3dc-bbd9b7283cd0",
         "difficulty": "expert",
         "level": "9+",
@@ -46417,16 +46521,6 @@
         "version": "PRiSM PLUS",
         "release_date": "2025-03-13T01:00:00+00:00",
         "notes_designer": "シチミヘルツ",
-        "has_chart_data": true
-      },
-      {
-        "id": "f2200732-ffdc-455c-87d2-d3f44f22530a",
-        "difficulty": "master",
-        "level": "12+",
-        "internal_level": 12.9,
-        "version": "maimai PLUS",
-        "release_date": "2013-05-09T01:00:00+00:00",
-        "notes_designer": "mai-Star",
         "has_chart_data": true
       },
       {
@@ -46458,6 +46552,16 @@
         "release_date": "2013-05-09T01:00:00+00:00",
         "notes_designer": "ニャイン",
         "has_chart_data": false
+      },
+      {
+        "id": "f2200732-ffdc-455c-87d2-d3f44f22530a",
+        "difficulty": "master",
+        "level": "12+",
+        "internal_level": 12.9,
+        "version": "maimai PLUS",
+        "release_date": "2013-05-09T01:00:00+00:00",
+        "notes_designer": "mai-Star",
+        "has_chart_data": true
       },
       {
         "id": "9ba7a767-3c52-4a9c-b95e-211e4037789c",
@@ -46980,16 +47084,6 @@
         "has_chart_data": true
       },
       {
-        "id": "ca6b9f70-05fc-49f5-8e4c-38f52196b857",
-        "difficulty": "master",
-        "level": "12+",
-        "internal_level": 12.6,
-        "version": "MiLK",
-        "release_date": "2018-06-05T01:00:00+00:00",
-        "notes_designer": "玉子豆腐",
-        "has_chart_data": true
-      },
-      {
         "id": "9e9b7874-2e1b-4c7e-81e6-4fb55f4d9a40",
         "difficulty": "expert",
         "level": "10",
@@ -46997,6 +47091,16 @@
         "version": "MiLK",
         "release_date": "2018-06-05T01:00:00+00:00",
         "notes_designer": "LabiLabi",
+        "has_chart_data": true
+      },
+      {
+        "id": "ca6b9f70-05fc-49f5-8e4c-38f52196b857",
+        "difficulty": "master",
+        "level": "12+",
+        "internal_level": 12.6,
+        "version": "MiLK",
+        "release_date": "2018-06-05T01:00:00+00:00",
+        "notes_designer": "玉子豆腐",
         "has_chart_data": true
       },
       {
@@ -47620,16 +47724,6 @@
         "has_chart_data": false
       },
       {
-        "id": "708fa6ab-7e16-4c29-b897-a3b0c788fb36",
-        "difficulty": "basic",
-        "level": "4",
-        "internal_level": 4,
-        "version": "MURASAKi",
-        "release_date": "2017-03-09T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "7a86ff0e-8041-4708-a2fa-f099a02dc055",
         "difficulty": "advanced",
         "level": "7",
@@ -47657,6 +47751,16 @@
         "version": "MURASAKi",
         "release_date": "2017-03-09T01:00:00+00:00",
         "notes_designer": "チャン@DP皆伝",
+        "has_chart_data": true
+      },
+      {
+        "id": "708fa6ab-7e16-4c29-b897-a3b0c788fb36",
+        "difficulty": "basic",
+        "level": "4",
+        "internal_level": 4,
+        "version": "MURASAKi",
+        "release_date": "2017-03-09T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -47960,6 +48064,16 @@
         "has_chart_data": true
       },
       {
+        "id": "fc4a7c82-1679-4dc7-ad5d-0edb37ba6e18",
+        "difficulty": "basic",
+        "level": "6",
+        "internal_level": 6,
+        "version": "maimai",
+        "release_date": "2012-07-11T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "ee1ad152-19e9-457f-b0b2-589027d3e304",
         "difficulty": "master",
         "level": "11+",
@@ -47977,16 +48091,6 @@
         "version": "maimai",
         "release_date": "2012-07-11T01:00:00+00:00",
         "notes_designer": "maimai TEAM",
-        "has_chart_data": true
-      },
-      {
-        "id": "fc4a7c82-1679-4dc7-ad5d-0edb37ba6e18",
-        "difficulty": "basic",
-        "level": "6",
-        "internal_level": 6,
-        "version": "maimai",
-        "release_date": "2012-07-11T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -48200,6 +48304,16 @@
         "has_chart_data": true
       },
       {
+        "id": "fad7a4f6-6e84-4a87-976c-669c5f7b89ff",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.5,
+        "version": "CiRCLE",
+        "release_date": "2025-12-12T01:00:00+00:00",
+        "notes_designer": "アマリリス",
+        "has_chart_data": true
+      },
+      {
         "id": "027d1e07-883a-4376-8e82-d24f75e593ea",
         "difficulty": "basic",
         "level": "4",
@@ -48228,16 +48342,6 @@
         "release_date": "2025-12-12T01:00:00+00:00",
         "notes_designer": "はっぴー",
         "has_chart_data": false
-      },
-      {
-        "id": "fad7a4f6-6e84-4a87-976c-669c5f7b89ff",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13.5,
-        "version": "CiRCLE",
-        "release_date": "2025-12-12T01:00:00+00:00",
-        "notes_designer": "アマリリス",
-        "has_chart_data": true
       },
       {
         "id": "a3e873ea-52b6-42c8-854e-ac624edb7688",
@@ -48360,16 +48464,6 @@
         "has_chart_data": true
       },
       {
-        "id": "eacba1e9-d56a-461f-bd25-21e13b33a677",
-        "difficulty": "expert",
-        "level": "10+",
-        "internal_level": 10.9,
-        "version": "MiLK PLUS",
-        "release_date": "2018-08-21T01:00:00+00:00",
-        "notes_designer": "はっぴー",
-        "has_chart_data": true
-      },
-      {
         "id": "1c6182a9-be34-4538-a7b2-939343732698",
         "difficulty": "advanced",
         "level": "7",
@@ -48377,6 +48471,16 @@
         "version": "MiLK PLUS",
         "release_date": "2018-08-21T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "eacba1e9-d56a-461f-bd25-21e13b33a677",
+        "difficulty": "expert",
+        "level": "10+",
+        "internal_level": 10.9,
+        "version": "MiLK PLUS",
+        "release_date": "2018-08-21T01:00:00+00:00",
+        "notes_designer": "はっぴー",
         "has_chart_data": true
       },
       {
@@ -48482,7 +48586,7 @@
       {
         "id": "d2dc5684-49d7-4947-99f6-37483e3cf701",
         "difficulty": "advanced",
-        "level": "7",
+        "level": "7+",
         "internal_level": 7.6,
         "version": "MiLK PLUS",
         "release_date": "2018-10-02T01:00:00+00:00",
@@ -48980,6 +49084,16 @@
         "has_chart_data": true
       },
       {
+        "id": "40624611-b131-455a-8ce6-4ccf92240b48",
+        "difficulty": "expert",
+        "level": "12+",
+        "internal_level": 12.7,
+        "version": "MiLK",
+        "release_date": "2018-02-06T01:00:00+00:00",
+        "notes_designer": "玉子豆腐",
+        "has_chart_data": true
+      },
+      {
         "id": "03076957-b28f-4dd4-a8ee-4ca7c520f107",
         "difficulty": "basic",
         "level": "5",
@@ -48997,16 +49111,6 @@
         "version": "MiLK",
         "release_date": "2018-02-06T01:00:00+00:00",
         "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
-        "id": "40624611-b131-455a-8ce6-4ccf92240b48",
-        "difficulty": "expert",
-        "level": "12+",
-        "internal_level": 12.7,
-        "version": "MiLK",
-        "release_date": "2018-02-06T01:00:00+00:00",
-        "notes_designer": "玉子豆腐",
         "has_chart_data": true
       },
       {
@@ -49040,16 +49144,6 @@
         "has_chart_data": false
       },
       {
-        "id": "4cb8aefe-37de-4511-ba08-f16fcd23ce45",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.9,
-        "version": "PRiSM PLUS",
-        "release_date": "2025-03-28T01:00:00+00:00",
-        "notes_designer": "サファ太",
-        "has_chart_data": true
-      },
-      {
         "id": "7a2b2596-5337-4e0c-bee6-f60d66f52135",
         "difficulty": "expert",
         "level": "10",
@@ -49057,6 +49151,16 @@
         "version": "PRiSM PLUS",
         "release_date": "2025-03-28T01:00:00+00:00",
         "notes_designer": "Luxizhel",
+        "has_chart_data": true
+      },
+      {
+        "id": "4cb8aefe-37de-4511-ba08-f16fcd23ce45",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.9,
+        "version": "PRiSM PLUS",
+        "release_date": "2025-03-28T01:00:00+00:00",
+        "notes_designer": "サファ太",
         "has_chart_data": true
       },
       {
@@ -49680,26 +49784,6 @@
         "has_chart_data": true
       },
       {
-        "id": "90464eb4-9089-48f7-bc52-61364a707181",
-        "difficulty": "expert",
-        "level": "9+",
-        "internal_level": 9.9,
-        "version": "MiLK",
-        "release_date": "2017-12-14T01:00:00+00:00",
-        "notes_designer": "ロシェ＠ペンギン",
-        "has_chart_data": true
-      },
-      {
-        "id": "dc78156a-e903-4b25-9cbb-625c74ebdb25",
-        "difficulty": "advanced",
-        "level": "7+",
-        "internal_level": 7.6,
-        "version": "MiLK",
-        "release_date": "2017-12-14T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "5a97c3c8-d188-4ebc-bb85-0938276e4ad0",
         "difficulty": "basic",
         "level": "5",
@@ -49717,6 +49801,26 @@
         "version": "MiLK",
         "release_date": "2017-12-14T01:00:00+00:00",
         "notes_designer": "某S氏",
+        "has_chart_data": true
+      },
+      {
+        "id": "dc78156a-e903-4b25-9cbb-625c74ebdb25",
+        "difficulty": "advanced",
+        "level": "7+",
+        "internal_level": 7.6,
+        "version": "MiLK",
+        "release_date": "2017-12-14T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "90464eb4-9089-48f7-bc52-61364a707181",
+        "difficulty": "expert",
+        "level": "9+",
+        "internal_level": 9.9,
+        "version": "MiLK",
+        "release_date": "2017-12-14T01:00:00+00:00",
+        "notes_designer": "ロシェ＠ペンギン",
         "has_chart_data": true
       },
       {
@@ -51360,16 +51464,6 @@
         "has_chart_data": false
       },
       {
-        "id": "bf41c9f1-0ad5-4c18-a211-950a6cb59977",
-        "difficulty": "basic",
-        "level": "4",
-        "internal_level": 4,
-        "version": "FiNALE",
-        "release_date": "2018-12-25T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "440ea776-46f0-4dae-a8a3-4250d94afc14",
         "difficulty": "expert",
         "level": "9+",
@@ -51377,6 +51471,16 @@
         "version": "FiNALE",
         "release_date": "2018-12-25T01:00:00+00:00",
         "notes_designer": "華火職人",
+        "has_chart_data": true
+      },
+      {
+        "id": "bf41c9f1-0ad5-4c18-a211-950a6cb59977",
+        "difficulty": "basic",
+        "level": "4",
+        "internal_level": 4,
+        "version": "FiNALE",
+        "release_date": "2018-12-25T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -51920,16 +52024,6 @@
         "has_chart_data": true
       },
       {
-        "id": "17d4376b-5199-46e1-a9fa-3560bdb8ab5c",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.8,
-        "version": "PiNK PLUS",
-        "release_date": "2016-06-30T01:00:00+00:00",
-        "notes_designer": "Jack",
-        "has_chart_data": true
-      },
-      {
         "id": "3491ea2f-b614-41d1-9e42-65cb4b9af3b3",
         "difficulty": "advanced",
         "level": "8",
@@ -51950,12 +52044,32 @@
         "has_chart_data": true
       },
       {
+        "id": "17d4376b-5199-46e1-a9fa-3560bdb8ab5c",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.8,
+        "version": "PiNK PLUS",
+        "release_date": "2016-06-30T01:00:00+00:00",
+        "notes_designer": "Jack",
+        "has_chart_data": true
+      },
+      {
         "id": "0881cc0e-095f-43a8-9763-2ecf6e34a653",
         "difficulty": "basic",
         "level": "5",
         "internal_level": 5,
         "version": "PiNK PLUS",
         "release_date": "2016-06-30T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "449c77a6-2179-461c-af7b-9ebfd579f073",
+        "difficulty": "basic",
+        "level": "6",
+        "internal_level": 6,
+        "version": "MURASAKi PLUS",
+        "release_date": "2017-08-24T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": true
       },
@@ -51967,16 +52081,6 @@
         "version": "MURASAKi PLUS",
         "release_date": "2017-08-24T01:00:00+00:00",
         "notes_designer": "Moon Strix",
-        "has_chart_data": true
-      },
-      {
-        "id": "449c77a6-2179-461c-af7b-9ebfd579f073",
-        "difficulty": "basic",
-        "level": "6",
-        "internal_level": 6,
-        "version": "MURASAKi PLUS",
-        "release_date": "2017-08-24T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -53380,16 +53484,6 @@
         "has_chart_data": true
       },
       {
-        "id": "7a2c8572-6ae8-4e19-9766-c9d737480e73",
-        "difficulty": "advanced",
-        "level": "7",
-        "internal_level": 7,
-        "version": "Splash",
-        "release_date": "2020-09-17T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "2c616776-8338-477c-9d22-77e9a58c6522",
         "difficulty": "master",
         "level": "12+",
@@ -53397,6 +53491,16 @@
         "version": "Splash",
         "release_date": "2020-09-17T01:00:00+00:00",
         "notes_designer": "はっぴー",
+        "has_chart_data": true
+      },
+      {
+        "id": "7a2c8572-6ae8-4e19-9766-c9d737480e73",
+        "difficulty": "advanced",
+        "level": "7",
+        "internal_level": 7,
+        "version": "Splash",
+        "release_date": "2020-09-17T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -53460,6 +53564,16 @@
         "has_chart_data": true
       },
       {
+        "id": "8e295cc2-0dd8-4b61-b322-7912cda9506e",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.5,
+        "version": "MiLK",
+        "release_date": "2017-12-14T01:00:00+00:00",
+        "notes_designer": "ぴちネコ",
+        "has_chart_data": true
+      },
+      {
         "id": "0896a76b-ce26-4cbf-bbaa-ddc5e378d62e",
         "difficulty": "basic",
         "level": "5",
@@ -53487,16 +53601,6 @@
         "version": "MiLK",
         "release_date": "2017-12-14T01:00:00+00:00",
         "notes_designer": "はっぴー",
-        "has_chart_data": false
-      },
-      {
-        "id": "8e295cc2-0dd8-4b61-b322-7912cda9506e",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13.5,
-        "version": "MiLK",
-        "release_date": "2017-12-14T01:00:00+00:00",
-        "notes_designer": "ぴちネコ",
         "has_chart_data": false
       },
       {
@@ -53870,6 +53974,16 @@
         "has_chart_data": true
       },
       {
+        "id": "345321a1-ee50-4c63-addf-c2e3d527683f",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.6,
+        "version": "PRiSM",
+        "release_date": "2024-12-20T01:00:00+00:00",
+        "notes_designer": "Jack",
+        "has_chart_data": true
+      },
+      {
         "id": "14e4243f-5bed-475c-aaee-dc464f3f4ece",
         "difficulty": "advanced",
         "level": "7+",
@@ -53898,16 +54012,6 @@
         "release_date": "2024-12-20T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": false
-      },
-      {
-        "id": "345321a1-ee50-4c63-addf-c2e3d527683f",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.6,
-        "version": "PRiSM",
-        "release_date": "2024-12-20T01:00:00+00:00",
-        "notes_designer": "Jack",
-        "has_chart_data": true
       },
       {
         "id": "ef2fb5b1-104f-47ff-9fb7-b084b81c0dac",
@@ -54390,6 +54494,16 @@
         "has_chart_data": false
       },
       {
+        "id": "b74d4f2f-fdd7-4410-b4f9-e640174338b8",
+        "difficulty": "master",
+        "level": "14",
+        "internal_level": 14,
+        "version": "MURASAKi",
+        "release_date": "2017-05-23T01:00:00+00:00",
+        "notes_designer": "Jack",
+        "has_chart_data": true
+      },
+      {
         "id": "c941e5d1-1bad-473b-853f-e28d79680da9",
         "difficulty": "advanced",
         "level": "9+",
@@ -54418,16 +54532,6 @@
         "release_date": "2017-05-23T01:00:00+00:00",
         "notes_designer": "rioN",
         "has_chart_data": false
-      },
-      {
-        "id": "b74d4f2f-fdd7-4410-b4f9-e640174338b8",
-        "difficulty": "master",
-        "level": "14",
-        "internal_level": 14,
-        "version": "MURASAKi",
-        "release_date": "2017-05-23T01:00:00+00:00",
-        "notes_designer": "Jack",
-        "has_chart_data": true
       },
       {
         "id": "76adbd09-239a-4c50-9f43-82b3ee12ee85",
@@ -54590,6 +54694,26 @@
         "has_chart_data": true
       },
       {
+        "id": "696200fe-4542-41e7-8684-81823503f3d3",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.8,
+        "version": "FiNALE",
+        "release_date": "2019-03-08T01:00:00+00:00",
+        "notes_designer": "小鳥遊さん",
+        "has_chart_data": true
+      },
+      {
+        "id": "64beac09-e94d-4e70-9069-205b1cccadd6",
+        "difficulty": "basic",
+        "level": "7",
+        "internal_level": 7,
+        "version": "FiNALE",
+        "release_date": "2019-03-08T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "4f3ab5c9-93ad-44f1-9abd-88d6fe1b2a12",
         "difficulty": "advanced",
         "level": "9",
@@ -54607,26 +54731,6 @@
         "version": "FiNALE",
         "release_date": "2019-03-08T01:00:00+00:00",
         "notes_designer": "某S氏",
-        "has_chart_data": true
-      },
-      {
-        "id": "64beac09-e94d-4e70-9069-205b1cccadd6",
-        "difficulty": "basic",
-        "level": "7",
-        "internal_level": 7,
-        "version": "FiNALE",
-        "release_date": "2019-03-08T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
-        "id": "696200fe-4542-41e7-8684-81823503f3d3",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.8,
-        "version": "FiNALE",
-        "release_date": "2019-03-08T01:00:00+00:00",
-        "notes_designer": "小鳥遊さん",
         "has_chart_data": true
       },
       {
@@ -54840,6 +54944,16 @@
         "has_chart_data": true
       },
       {
+        "id": "20ee1354-c412-4fcc-b8e3-c8b6f6678f5c",
+        "difficulty": "basic",
+        "level": "5",
+        "internal_level": 5,
+        "version": "Splash",
+        "release_date": "2020-09-17T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "72c3ad07-7a7d-45b2-8819-5e50f369335d",
         "difficulty": "advanced",
         "level": "8+",
@@ -54867,16 +54981,6 @@
         "version": "Splash",
         "release_date": "2020-09-17T01:00:00+00:00",
         "notes_designer": "サファ太",
-        "has_chart_data": true
-      },
-      {
-        "id": "20ee1354-c412-4fcc-b8e3-c8b6f6678f5c",
-        "difficulty": "basic",
-        "level": "5",
-        "internal_level": 5,
-        "version": "Splash",
-        "release_date": "2020-09-17T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -55290,13 +55394,13 @@
         "has_chart_data": false
       },
       {
-        "id": "f24334dd-5cf9-46af-9077-eb6052b7b603",
-        "difficulty": "basic",
-        "level": "4",
-        "internal_level": 4,
+        "id": "efb1c0e3-2c5d-48a9-a7b4-a80a595a570a",
+        "difficulty": "master",
+        "level": "14",
+        "internal_level": 14.1,
         "version": "GreeN PLUS",
         "release_date": "2014-07-17T01:00:00+00:00",
-        "notes_designer": null,
+        "notes_designer": "はっぴー",
         "has_chart_data": true
       },
       {
@@ -55310,13 +55414,13 @@
         "has_chart_data": true
       },
       {
-        "id": "efb1c0e3-2c5d-48a9-a7b4-a80a595a570a",
-        "difficulty": "master",
-        "level": "14",
-        "internal_level": 14.1,
+        "id": "f24334dd-5cf9-46af-9077-eb6052b7b603",
+        "difficulty": "basic",
+        "level": "4",
+        "internal_level": 4,
         "version": "GreeN PLUS",
         "release_date": "2014-07-17T01:00:00+00:00",
-        "notes_designer": "はっぴー",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -55460,16 +55564,6 @@
         "has_chart_data": true
       },
       {
-        "id": "05287537-7f4a-4bca-a0d9-d1a2191745a4",
-        "difficulty": "master",
-        "level": "12+",
-        "internal_level": 12.8,
-        "version": "でらっくす",
-        "release_date": "2019-12-20T01:00:00+00:00",
-        "notes_designer": "小鳥遊さん",
-        "has_chart_data": true
-      },
-      {
         "id": "644bc8f7-4d7d-4d87-bd56-c71a5b49cd07",
         "difficulty": "expert",
         "level": "10+",
@@ -55477,6 +55571,16 @@
         "version": "でらっくす",
         "release_date": "2019-12-20T01:00:00+00:00",
         "notes_designer": "ぴちネコ",
+        "has_chart_data": true
+      },
+      {
+        "id": "05287537-7f4a-4bca-a0d9-d1a2191745a4",
+        "difficulty": "master",
+        "level": "12+",
+        "internal_level": 12.8,
+        "version": "でらっくす",
+        "release_date": "2019-12-20T01:00:00+00:00",
+        "notes_designer": "小鳥遊さん",
         "has_chart_data": true
       },
       {
@@ -55620,6 +55724,16 @@
         "has_chart_data": false
       },
       {
+        "id": "cce19c13-583e-4c2a-b2fe-dbd18c01d768",
+        "difficulty": "basic",
+        "level": "4",
+        "internal_level": 4,
+        "version": "GreeN",
+        "release_date": "2014-01-09T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "e6a55b11-ae91-41a2-99f1-599087585b0f",
         "difficulty": "advanced",
         "level": "7",
@@ -55637,16 +55751,6 @@
         "version": "GreeN",
         "release_date": "2014-01-09T01:00:00+00:00",
         "notes_designer": "はっぴー",
-        "has_chart_data": true
-      },
-      {
-        "id": "cce19c13-583e-4c2a-b2fe-dbd18c01d768",
-        "difficulty": "basic",
-        "level": "4",
-        "internal_level": 4,
-        "version": "GreeN",
-        "release_date": "2014-01-09T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -55820,6 +55924,16 @@
         "has_chart_data": true
       },
       {
+        "id": "14dec645-cfb2-4bba-b847-e27a140b2af6",
+        "difficulty": "master",
+        "level": "12+",
+        "internal_level": 12.7,
+        "version": "maimai PLUS",
+        "release_date": "2013-01-17T01:00:00+00:00",
+        "notes_designer": "mai-Star",
+        "has_chart_data": true
+      },
+      {
         "id": "7d9d73ef-00f3-4ad1-9177-926b461244e7",
         "difficulty": "basic",
         "level": "5",
@@ -55847,16 +55961,6 @@
         "version": "maimai PLUS",
         "release_date": "2013-01-17T01:00:00+00:00",
         "notes_designer": "ニャイン",
-        "has_chart_data": true
-      },
-      {
-        "id": "14dec645-cfb2-4bba-b847-e27a140b2af6",
-        "difficulty": "master",
-        "level": "12+",
-        "internal_level": 12.7,
-        "version": "maimai PLUS",
-        "release_date": "2013-01-17T01:00:00+00:00",
-        "notes_designer": "mai-Star",
         "has_chart_data": true
       },
       {
@@ -56020,6 +56124,16 @@
         "has_chart_data": true
       },
       {
+        "id": "d00c7651-6367-4b6e-a958-f4e1aa1dd613",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.3,
+        "version": "CiRCLE",
+        "release_date": "2026-02-20T01:00:00+00:00",
+        "notes_designer": "Luxizhel",
+        "has_chart_data": true
+      },
+      {
         "id": "b4ce9b0d-511f-4c68-ae8d-b24490f6ae84",
         "difficulty": "basic",
         "level": "3",
@@ -56048,16 +56162,6 @@
         "release_date": "2026-02-20T01:00:00+00:00",
         "notes_designer": "ロシェ@ペンギン",
         "has_chart_data": false
-      },
-      {
-        "id": "d00c7651-6367-4b6e-a958-f4e1aa1dd613",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13.3,
-        "version": "CiRCLE",
-        "release_date": "2026-02-20T01:00:00+00:00",
-        "notes_designer": "Luxizhel",
-        "has_chart_data": true
       },
       {
         "id": "67407839-8c59-4f17-b059-5f077d6db5da",
@@ -56098,6 +56202,46 @@
         "release_date": "2016-06-30T01:00:00+00:00",
         "notes_designer": "畳返しとはっぴー",
         "has_chart_data": true
+      },
+      {
+        "id": "7acc3429-1ff2-4e06-839b-710632aede07",
+        "difficulty": "basic",
+        "level": "3",
+        "internal_level": 3,
+        "version": "でらっくす",
+        "release_date": "2019-07-11T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
+      },
+      {
+        "id": "fdf16db5-e949-4c5e-b0f2-6445e96b16f2",
+        "difficulty": "advanced",
+        "level": "7+",
+        "internal_level": 7.7,
+        "version": "でらっくす",
+        "release_date": "2019-07-11T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
+      },
+      {
+        "id": "2116c240-ee7b-48aa-ab2f-f77f4c17408c",
+        "difficulty": "expert",
+        "level": "11",
+        "internal_level": 11,
+        "version": "でらっくす",
+        "release_date": "2019-07-11T01:00:00+00:00",
+        "notes_designer": "はっぴー",
+        "has_chart_data": false
+      },
+      {
+        "id": "85d95bba-f8d6-4e52-8a59-9eae568a9d19",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.5,
+        "version": "でらっくす",
+        "release_date": "2019-07-11T01:00:00+00:00",
+        "notes_designer": "小鳥遊さん",
+        "has_chart_data": false
       },
       {
         "id": "a5c2d092-2d6b-4583-a17c-de5e1d7257af",
@@ -56148,46 +56292,6 @@
         "release_date": "2014-05-15T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": true
-      },
-      {
-        "id": "7acc3429-1ff2-4e06-839b-710632aede07",
-        "difficulty": "basic",
-        "level": "3",
-        "internal_level": 3,
-        "version": "でらっくす",
-        "release_date": "2019-07-11T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
-        "id": "fdf16db5-e949-4c5e-b0f2-6445e96b16f2",
-        "difficulty": "advanced",
-        "level": "7+",
-        "internal_level": 7.7,
-        "version": "でらっくす",
-        "release_date": "2019-07-11T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
-        "id": "2116c240-ee7b-48aa-ab2f-f77f4c17408c",
-        "difficulty": "expert",
-        "level": "11",
-        "internal_level": 11,
-        "version": "でらっくす",
-        "release_date": "2019-07-11T01:00:00+00:00",
-        "notes_designer": "はっぴー",
-        "has_chart_data": false
-      },
-      {
-        "id": "85d95bba-f8d6-4e52-8a59-9eae568a9d19",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13.5,
-        "version": "でらっくす",
-        "release_date": "2019-07-11T01:00:00+00:00",
-        "notes_designer": "小鳥遊さん",
-        "has_chart_data": false
       },
       {
         "id": "232f17d7-33de-4a0f-a120-dc8ed92dfe9d",
@@ -56310,6 +56414,16 @@
         "has_chart_data": false
       },
       {
+        "id": "610e47ab-2499-435f-b539-b1f00a1e42db",
+        "difficulty": "remaster",
+        "level": "13",
+        "internal_level": 13.4,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-03-19T01:00:00+00:00",
+        "notes_designer": "ぴちネコ",
+        "has_chart_data": true
+      },
+      {
         "id": "1546f422-4658-4612-bf0b-335179644f88",
         "difficulty": "expert",
         "level": "9",
@@ -56347,16 +56461,6 @@
         "version": "CiRCLE PLUS",
         "release_date": "2026-03-19T01:00:00+00:00",
         "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
-        "id": "610e47ab-2499-435f-b539-b1f00a1e42db",
-        "difficulty": "remaster",
-        "level": "13",
-        "internal_level": 13.4,
-        "version": "CiRCLE PLUS",
-        "release_date": "2026-03-19T01:00:00+00:00",
-        "notes_designer": "ぴちネコ",
         "has_chart_data": false
       },
       {
@@ -56680,16 +56784,6 @@
         "has_chart_data": true
       },
       {
-        "id": "995193a8-97c9-438a-84a8-36a27617b0ca",
-        "difficulty": "basic",
-        "level": "3",
-        "internal_level": 3,
-        "version": "BUDDiES PLUS",
-        "release_date": "2024-05-24T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
         "id": "007e58fc-eded-4a25-a5eb-b03332401d40",
         "difficulty": "advanced",
         "level": "6",
@@ -56720,6 +56814,16 @@
         "has_chart_data": false
       },
       {
+        "id": "995193a8-97c9-438a-84a8-36a27617b0ca",
+        "difficulty": "basic",
+        "level": "3",
+        "internal_level": 3,
+        "version": "BUDDiES PLUS",
+        "release_date": "2024-05-24T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
+      },
+      {
         "id": "424a4592-a184-42e5-adca-4fe30b8ea578",
         "difficulty": "expert",
         "level": "10+",
@@ -56730,16 +56834,6 @@
         "has_chart_data": true
       },
       {
-        "id": "9f0c8a08-b538-4775-bcde-7b785f056987",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13.3,
-        "version": "MURASAKi PLUS",
-        "release_date": "2017-12-05T01:00:00+00:00",
-        "notes_designer": "Jack",
-        "has_chart_data": true
-      },
-      {
         "id": "da9f04c2-ea68-408d-98ec-361e795c2d83",
         "difficulty": "advanced",
         "level": "7",
@@ -56747,6 +56841,16 @@
         "version": "MURASAKi PLUS",
         "release_date": "2017-12-05T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "9f0c8a08-b538-4775-bcde-7b785f056987",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.3,
+        "version": "MURASAKi PLUS",
+        "release_date": "2017-12-05T01:00:00+00:00",
+        "notes_designer": "Jack",
         "has_chart_data": true
       },
       {
@@ -57670,6 +57774,16 @@
         "has_chart_data": false
       },
       {
+        "id": "ebe41194-c29b-4a08-99e9-306fc9b6bdf8",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.6,
+        "version": "PRiSM",
+        "release_date": "2024-09-12T01:00:00+00:00",
+        "notes_designer": "Jack",
+        "has_chart_data": true
+      },
+      {
         "id": "2b79a982-92f1-459a-927a-f22463130aed",
         "difficulty": "basic",
         "level": "4",
@@ -57697,26 +57811,6 @@
         "version": "PRiSM",
         "release_date": "2024-09-12T01:00:00+00:00",
         "notes_designer": "サファ太",
-        "has_chart_data": true
-      },
-      {
-        "id": "ebe41194-c29b-4a08-99e9-306fc9b6bdf8",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.6,
-        "version": "PRiSM",
-        "release_date": "2024-09-12T01:00:00+00:00",
-        "notes_designer": "Jack",
-        "has_chart_data": true
-      },
-      {
-        "id": "6ccddfa8-2a29-4b4b-b317-4f42964f135a",
-        "difficulty": "basic",
-        "level": "6",
-        "internal_level": 6,
-        "version": "FiNALE",
-        "release_date": "2018-12-13T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -57750,6 +57844,26 @@
         "has_chart_data": true
       },
       {
+        "id": "6ccddfa8-2a29-4b4b-b317-4f42964f135a",
+        "difficulty": "basic",
+        "level": "6",
+        "internal_level": 6,
+        "version": "FiNALE",
+        "release_date": "2018-12-13T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "def14b18-2bf3-4322-806c-902ef1bb8aed",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.7,
+        "version": "PRiSM PLUS",
+        "release_date": "2025-05-09T01:00:00+00:00",
+        "notes_designer": "鳩ホルダー",
+        "has_chart_data": true
+      },
+      {
         "id": "9b381c41-d721-4acb-bfd7-6102c23487b9",
         "difficulty": "basic",
         "level": "4",
@@ -57778,16 +57892,6 @@
         "release_date": "2025-05-09T01:00:00+00:00",
         "notes_designer": "はっぴー",
         "has_chart_data": false
-      },
-      {
-        "id": "def14b18-2bf3-4322-806c-902ef1bb8aed",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.7,
-        "version": "PRiSM PLUS",
-        "release_date": "2025-05-09T01:00:00+00:00",
-        "notes_designer": "鳩ホルダー",
-        "has_chart_data": true
       },
       {
         "id": "cfe213b2-cb26-443c-8de8-5eb6a811c8aa",
@@ -58260,6 +58364,16 @@
         "has_chart_data": false
       },
       {
+        "id": "d44faf2c-59ca-4be4-9c23-ff25309eb7dc",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13,
+        "version": "FESTiVAL PLUS",
+        "release_date": "2023-03-23T01:00:00+00:00",
+        "notes_designer": "ロシェ@ペンギン",
+        "has_chart_data": true
+      },
+      {
         "id": "888de56f-6cb0-421c-95e0-86b818c1311e",
         "difficulty": "advanced",
         "level": "6",
@@ -58277,16 +58391,6 @@
         "version": "FESTiVAL PLUS",
         "release_date": "2023-03-23T01:00:00+00:00",
         "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
-        "id": "d44faf2c-59ca-4be4-9c23-ff25309eb7dc",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13,
-        "version": "FESTiVAL PLUS",
-        "release_date": "2023-03-23T01:00:00+00:00",
-        "notes_designer": "ロシェ@ペンギン",
         "has_chart_data": false
       },
       {
@@ -59360,6 +59464,16 @@
         "has_chart_data": true
       },
       {
+        "id": "1c9f7555-6819-4653-ad13-a55107d7bbb2",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.4,
+        "version": "MURASAKi PLUS",
+        "release_date": "2017-11-21T01:00:00+00:00",
+        "notes_designer": "ぴちネコ",
+        "has_chart_data": true
+      },
+      {
         "id": "0a489036-ec1a-491d-a76e-082f6757a07d",
         "difficulty": "basic",
         "level": "5",
@@ -59377,16 +59491,6 @@
         "version": "MURASAKi PLUS",
         "release_date": "2017-11-21T01:00:00+00:00",
         "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
-        "id": "1c9f7555-6819-4653-ad13-a55107d7bbb2",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13.4,
-        "version": "MURASAKi PLUS",
-        "release_date": "2017-11-21T01:00:00+00:00",
-        "notes_designer": "ぴちネコ",
         "has_chart_data": true
       },
       {
@@ -59630,16 +59734,6 @@
         "has_chart_data": true
       },
       {
-        "id": "7788a2f5-5b26-481c-96da-fccae2f63547",
-        "difficulty": "expert",
-        "level": "9",
-        "internal_level": 9.3,
-        "version": "GreeN PLUS",
-        "release_date": "2014-05-15T01:00:00+00:00",
-        "notes_designer": "はっぴー",
-        "has_chart_data": true
-      },
-      {
         "id": "96611a11-5020-4444-a8cf-6c43f0ee7a90",
         "difficulty": "advanced",
         "level": "7",
@@ -59647,6 +59741,16 @@
         "version": "GreeN PLUS",
         "release_date": "2014-05-15T01:00:00+00:00",
         "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "7788a2f5-5b26-481c-96da-fccae2f63547",
+        "difficulty": "expert",
+        "level": "9",
+        "internal_level": 9.3,
+        "version": "GreeN PLUS",
+        "release_date": "2014-05-15T01:00:00+00:00",
+        "notes_designer": "はっぴー",
         "has_chart_data": true
       },
       {
@@ -60130,16 +60234,6 @@
         "has_chart_data": true
       },
       {
-        "id": "a49dffb6-eb23-42ad-81c2-20fedec23a3b",
-        "difficulty": "advanced",
-        "level": "7+",
-        "internal_level": 7.8,
-        "version": "でらっくす",
-        "release_date": "2020-01-10T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "d020a08f-bd2a-4a28-bbee-054dce07c6d3",
         "difficulty": "master",
         "level": "13+",
@@ -60147,6 +60241,16 @@
         "version": "でらっくす",
         "release_date": "2020-01-10T01:00:00+00:00",
         "notes_designer": "シチミヘルツ",
+        "has_chart_data": true
+      },
+      {
+        "id": "a49dffb6-eb23-42ad-81c2-20fedec23a3b",
+        "difficulty": "advanced",
+        "level": "7+",
+        "internal_level": 7.8,
+        "version": "でらっくす",
+        "release_date": "2020-01-10T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -60300,16 +60404,6 @@
         "has_chart_data": true
       },
       {
-        "id": "ab7b3fd7-57bf-4cfb-ae58-24b36d1e443f",
-        "difficulty": "advanced",
-        "level": "6",
-        "internal_level": 6.5,
-        "version": "UNiVERSE PLUS",
-        "release_date": "2022-07-01T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
         "id": "a8f7fddd-88ce-419b-8dbd-580b3e708472",
         "difficulty": "master",
         "level": "12",
@@ -60317,6 +60411,16 @@
         "version": "UNiVERSE PLUS",
         "release_date": "2022-07-01T01:00:00+00:00",
         "notes_designer": "カマボコ君",
+        "has_chart_data": false
+      },
+      {
+        "id": "ab7b3fd7-57bf-4cfb-ae58-24b36d1e443f",
+        "difficulty": "advanced",
+        "level": "6",
+        "internal_level": 6.5,
+        "version": "UNiVERSE PLUS",
+        "release_date": "2022-07-01T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": false
       },
       {
@@ -60500,16 +60604,6 @@
         "has_chart_data": false
       },
       {
-        "id": "0eb9b636-6beb-41ff-9bde-10319ca370e8",
-        "difficulty": "master",
-        "level": "12",
-        "internal_level": 12,
-        "version": "FiNALE",
-        "release_date": "2019-01-25T01:00:00+00:00",
-        "notes_designer": "緑風 犬三郎",
-        "has_chart_data": true
-      },
-      {
         "id": "e752a5c4-b9e2-46cc-814e-f694ca54d836",
         "difficulty": "expert",
         "level": "11",
@@ -60517,6 +60611,16 @@
         "version": "FiNALE",
         "release_date": "2019-01-25T01:00:00+00:00",
         "notes_designer": "サファ太",
+        "has_chart_data": true
+      },
+      {
+        "id": "0eb9b636-6beb-41ff-9bde-10319ca370e8",
+        "difficulty": "master",
+        "level": "12",
+        "internal_level": 12,
+        "version": "FiNALE",
+        "release_date": "2019-01-25T01:00:00+00:00",
+        "notes_designer": "緑風 犬三郎",
         "has_chart_data": true
       },
       {
@@ -61150,16 +61254,6 @@
         "has_chart_data": true
       },
       {
-        "id": "31019740-57e7-466f-b8d1-0088b55247cb",
-        "difficulty": "basic",
-        "level": "4",
-        "internal_level": 4,
-        "version": "MURASAKi",
-        "release_date": "2016-12-15T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "2cf3cbc0-5d5b-43e5-99ff-64274aeadad9",
         "difficulty": "expert",
         "level": "9+",
@@ -61167,6 +61261,16 @@
         "version": "MURASAKi",
         "release_date": "2016-12-15T01:00:00+00:00",
         "notes_designer": "Techno Kitchen",
+        "has_chart_data": true
+      },
+      {
+        "id": "31019740-57e7-466f-b8d1-0088b55247cb",
+        "difficulty": "basic",
+        "level": "4",
+        "internal_level": 4,
+        "version": "MURASAKi",
+        "release_date": "2016-12-15T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -61490,6 +61594,16 @@
         "has_chart_data": true
       },
       {
+        "id": "9cea1fe9-6f69-4599-a9fd-0b7e6fce6dad",
+        "difficulty": "basic",
+        "level": "2",
+        "internal_level": 2,
+        "version": "MURASAKi PLUS",
+        "release_date": "2017-06-22T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
         "id": "6eb1bc88-f8a7-43dc-aac9-4197b028dbe6",
         "difficulty": "advanced",
         "level": "6",
@@ -61507,16 +61621,6 @@
         "version": "MURASAKi PLUS",
         "release_date": "2017-06-22T01:00:00+00:00",
         "notes_designer": "rioN",
-        "has_chart_data": true
-      },
-      {
-        "id": "9cea1fe9-6f69-4599-a9fd-0b7e6fce6dad",
-        "difficulty": "basic",
-        "level": "2",
-        "internal_level": 2,
-        "version": "MURASAKi PLUS",
-        "release_date": "2017-06-22T01:00:00+00:00",
-        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -61570,16 +61674,6 @@
         "has_chart_data": true
       },
       {
-        "id": "f1ce678c-91ce-4bf4-b23d-eb165b5994af",
-        "difficulty": "advanced",
-        "level": "7",
-        "internal_level": 7.2,
-        "version": "PiNK",
-        "release_date": "2016-05-12T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "82310c43-93a7-4c3e-b9d5-8d57b380ab83",
         "difficulty": "master",
         "level": "13",
@@ -61587,6 +61681,16 @@
         "version": "PiNK",
         "release_date": "2016-05-12T01:00:00+00:00",
         "notes_designer": "はっぴー",
+        "has_chart_data": true
+      },
+      {
+        "id": "f1ce678c-91ce-4bf4-b23d-eb165b5994af",
+        "difficulty": "advanced",
+        "level": "7",
+        "internal_level": 7.2,
+        "version": "PiNK",
+        "release_date": "2016-05-12T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -62320,16 +62424,6 @@
         "has_chart_data": true
       },
       {
-        "id": "4690bb8f-f8d9-4fbe-828d-170bc14b9b11",
-        "difficulty": "basic",
-        "level": "6",
-        "internal_level": 6,
-        "version": "MiLK PLUS",
-        "release_date": "2018-10-02T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "aa114e1c-fbe7-402f-b559-684130f06db2",
         "difficulty": "master",
         "level": "13+",
@@ -62354,6 +62448,16 @@
         "difficulty": "advanced",
         "level": "8+",
         "internal_level": 8.6,
+        "version": "MiLK PLUS",
+        "release_date": "2018-10-02T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
+      },
+      {
+        "id": "4690bb8f-f8d9-4fbe-828d-170bc14b9b11",
+        "difficulty": "basic",
+        "level": "6",
+        "internal_level": 6,
         "version": "MiLK PLUS",
         "release_date": "2018-10-02T01:00:00+00:00",
         "notes_designer": null,
@@ -62760,16 +62864,6 @@
         "has_chart_data": false
       },
       {
-        "id": "4ed48735-7864-4ffa-bab8-721e71294284",
-        "difficulty": "basic",
-        "level": "2",
-        "internal_level": 2,
-        "version": "CiRCLE PLUS",
-        "release_date": "2026-04-03T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
         "id": "c8167ba8-cd30-4c7e-b34e-f446b4a8c849",
         "difficulty": "master",
         "level": "13",
@@ -62778,6 +62872,16 @@
         "release_date": "2026-04-03T01:00:00+00:00",
         "notes_designer": "Luxizhel",
         "has_chart_data": true
+      },
+      {
+        "id": "4ed48735-7864-4ffa-bab8-721e71294284",
+        "difficulty": "basic",
+        "level": "2",
+        "internal_level": 2,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-04-03T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
       },
       {
         "id": "f6145a62-378d-411a-a173-fd6131ad5666",
@@ -63150,20 +63254,20 @@
         "has_chart_data": true
       },
       {
-        "id": "eeae7a4b-5763-40b3-ad07-faa176b0fccd",
-        "difficulty": "basic",
-        "level": "5",
-        "internal_level": 5,
+        "id": "008f68e1-c955-4938-bb58-ee3a4cfac135",
+        "difficulty": "advanced",
+        "level": "8+",
+        "internal_level": 8.7,
         "version": "PiNK",
         "release_date": "2016-04-07T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": true
       },
       {
-        "id": "008f68e1-c955-4938-bb58-ee3a4cfac135",
-        "difficulty": "advanced",
-        "level": "8+",
-        "internal_level": 8.7,
+        "id": "eeae7a4b-5763-40b3-ad07-faa176b0fccd",
+        "difficulty": "basic",
+        "level": "5",
+        "internal_level": 5,
         "version": "PiNK",
         "release_date": "2016-04-07T01:00:00+00:00",
         "notes_designer": null,
@@ -63922,6 +64026,16 @@
     "gamerch_id": "533659",
     "charts": [
       {
+        "id": "7bc9d9a5-ffab-4dda-a6b1-b91202f83678",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.8,
+        "version": "ORANGE PLUS",
+        "release_date": "2015-09-17T01:00:00+00:00",
+        "notes_designer": "mai-Star",
+        "has_chart_data": true
+      },
+      {
         "id": "83d3198d-dbf0-4c03-b2c7-ba27aa84fb2b",
         "difficulty": "basic",
         "level": "5",
@@ -63952,13 +64066,13 @@
         "has_chart_data": false
       },
       {
-        "id": "7bc9d9a5-ffab-4dda-a6b1-b91202f83678",
+        "id": "e8f8c8b5-4691-454f-be23-87badfd25d1b",
         "difficulty": "master",
         "level": "13+",
-        "internal_level": 13.8,
-        "version": "ORANGE PLUS",
-        "release_date": "2015-09-17T01:00:00+00:00",
-        "notes_designer": "mai-Star",
+        "internal_level": 13.9,
+        "version": "PRiSM",
+        "release_date": "2024-10-11T01:00:00+00:00",
+        "notes_designer": "サファ太",
         "has_chart_data": true
       },
       {
@@ -63990,16 +64104,6 @@
         "release_date": "2024-10-11T01:00:00+00:00",
         "notes_designer": "Luxizhel",
         "has_chart_data": false
-      },
-      {
-        "id": "e8f8c8b5-4691-454f-be23-87badfd25d1b",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.9,
-        "version": "PRiSM",
-        "release_date": "2024-10-11T01:00:00+00:00",
-        "notes_designer": "サファ太",
-        "has_chart_data": true
       }
     ]
   },
@@ -64892,26 +64996,73 @@
       }
     ]
   },
+  "utage-straight-into-the-lights-cosmograph-fweqc": {
+    "title": "[即]Straight into the lights",
+    "simai_id": "1066",
+    "gamerch_id": "823904",
+    "charts": [
+      {
+        "id": "e90f58e6-6e6a-4651-bdd7-d75d251e51c6",
+        "difficulty": "basic",
+        "level": "4",
+        "internal_level": 4,
+        "version": "BUDDiES",
+        "release_date": "2024-02-02T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
+      },
+      {
+        "id": "978d149a-e6f5-4505-8dff-ce6081000a1e",
+        "difficulty": "advanced",
+        "level": "8",
+        "internal_level": 8.5,
+        "version": "BUDDiES",
+        "release_date": "2024-02-02T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
+      },
+      {
+        "id": "55bf3307-0aa1-4433-b40c-7f763f56afe5",
+        "difficulty": "master",
+        "level": "14+",
+        "internal_level": 14.8,
+        "version": "BUDDiES",
+        "release_date": "2024-02-02T01:00:00+00:00",
+        "notes_designer": "Jack",
+        "has_chart_data": true
+      },
+      {
+        "id": "2dda1917-f7bc-40f8-940a-a0064e27d0eb",
+        "difficulty": "expert",
+        "level": "12",
+        "internal_level": 12.5,
+        "version": "BUDDiES",
+        "release_date": "2024-02-02T01:00:00+00:00",
+        "notes_designer": "サファ太",
+        "has_chart_data": true
+      }
+    ]
+  },
   "utage-the-wheel-to-the-right-sampling-masters-mega-mxjov": {
     "title": "[右]The wheel to the right",
     "simai_id": "726",
     "gamerch_id": "533620",
     "charts": [
       {
-        "id": "18abaa1f-be0d-4b62-a277-865da1a073b0",
-        "difficulty": "advanced",
-        "level": "8+",
-        "internal_level": 8.9,
+        "id": "f68adab3-2c4e-4d16-98a2-ae9899ea1a0b",
+        "difficulty": "basic",
+        "level": "7",
+        "internal_level": 7,
         "version": "MURASAKi",
         "release_date": "2017-04-27T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": true
       },
       {
-        "id": "f68adab3-2c4e-4d16-98a2-ae9899ea1a0b",
-        "difficulty": "basic",
-        "level": "7",
-        "internal_level": 7,
+        "id": "18abaa1f-be0d-4b62-a277-865da1a073b0",
+        "difficulty": "advanced",
+        "level": "8+",
+        "internal_level": 8.9,
         "version": "MURASAKi",
         "release_date": "2017-04-27T01:00:00+00:00",
         "notes_designer": null,
@@ -64965,16 +65116,6 @@
         "has_chart_data": false
       },
       {
-        "id": "b85c7052-6cd6-47b6-8024-eaf7dd955b18",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.7,
-        "version": "maimai PLUS",
-        "release_date": "2013-05-09T01:00:00+00:00",
-        "notes_designer": "はっぴー",
-        "has_chart_data": true
-      },
-      {
         "id": "3d7b849e-589f-431e-8c71-6653feef8744",
         "difficulty": "expert",
         "level": "13",
@@ -64982,6 +65123,16 @@
         "version": "maimai PLUS",
         "release_date": "2013-05-09T01:00:00+00:00",
         "notes_designer": "ニャイン",
+        "has_chart_data": true
+      },
+      {
+        "id": "b85c7052-6cd6-47b6-8024-eaf7dd955b18",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.7,
+        "version": "maimai PLUS",
+        "release_date": "2013-05-09T01:00:00+00:00",
+        "notes_designer": "はっぴー",
         "has_chart_data": true
       }
     ]
@@ -65153,6 +65304,16 @@
         "has_chart_data": true
       },
       {
+        "id": "5c520a05-6f4b-4117-b88f-e4c8a8dc192a",
+        "difficulty": "master",
+        "level": "12+",
+        "internal_level": 12.6,
+        "version": "でらっくす PLUS",
+        "release_date": "2020-02-20T01:00:00+00:00",
+        "notes_designer": "シチミヘルツ",
+        "has_chart_data": true
+      },
+      {
         "id": "1e5f5dbf-4c77-4368-ae06-c48bc97aad87",
         "difficulty": "basic",
         "level": "4",
@@ -65170,16 +65331,6 @@
         "version": "でらっくす PLUS",
         "release_date": "2020-02-20T01:00:00+00:00",
         "notes_designer": "KTM",
-        "has_chart_data": true
-      },
-      {
-        "id": "5c520a05-6f4b-4117-b88f-e4c8a8dc192a",
-        "difficulty": "master",
-        "level": "12+",
-        "internal_level": 12.6,
-        "version": "でらっくす PLUS",
-        "release_date": "2020-02-20T01:00:00+00:00",
-        "notes_designer": "シチミヘルツ",
         "has_chart_data": true
       }
     ]
@@ -65804,13 +65955,13 @@
     "gamerch_id": "534112",
     "charts": [
       {
-        "id": "b1a8a839-bc05-445c-9d19-1d51050b5af6",
-        "difficulty": "expert",
-        "level": "10",
-        "internal_level": 10,
+        "id": "3aadf1b8-0fa4-4ef0-b5b9-b43e98fb9372",
+        "difficulty": "advanced",
+        "level": "7",
+        "internal_level": 7.1,
         "version": "ORANGE PLUS",
         "release_date": "2015-06-04T01:00:00+00:00",
-        "notes_designer": "某S氏",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -65824,13 +65975,13 @@
         "has_chart_data": true
       },
       {
-        "id": "3aadf1b8-0fa4-4ef0-b5b9-b43e98fb9372",
-        "difficulty": "advanced",
-        "level": "7",
-        "internal_level": 7.1,
+        "id": "b1a8a839-bc05-445c-9d19-1d51050b5af6",
+        "difficulty": "expert",
+        "level": "10",
+        "internal_level": 10,
         "version": "ORANGE PLUS",
         "release_date": "2015-06-04T01:00:00+00:00",
-        "notes_designer": null,
+        "notes_designer": "某S氏",
         "has_chart_data": true
       },
       {
@@ -66871,6 +67022,16 @@
         "has_chart_data": true
       },
       {
+        "id": "a3490a68-922e-4d39-b1c9-254853dcb60d",
+        "difficulty": "master",
+        "level": "14",
+        "internal_level": 14.3,
+        "version": "MiLK PLUS",
+        "release_date": "2018-09-04T01:00:00+00:00",
+        "notes_designer": "すきやき奉行",
+        "has_chart_data": true
+      },
+      {
         "id": "fa71e915-2f03-423e-9296-aaf7a1acb478",
         "difficulty": "expert",
         "level": "12+",
@@ -66888,16 +67049,6 @@
         "version": "MiLK PLUS",
         "release_date": "2018-09-04T01:00:00+00:00",
         "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
-        "id": "a3490a68-922e-4d39-b1c9-254853dcb60d",
-        "difficulty": "master",
-        "level": "14",
-        "internal_level": 14.3,
-        "version": "MiLK PLUS",
-        "release_date": "2018-09-04T01:00:00+00:00",
-        "notes_designer": "すきやき奉行",
         "has_chart_data": true
       }
     ]
