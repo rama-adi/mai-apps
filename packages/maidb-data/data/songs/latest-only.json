@@ -1,26 +1,26 @@
 [
   {
-    "songId": "Intergalactic Bound",
-    "category": "niconico-vocaloid",
-    "title": "Intergalactic Bound",
-    "artist": "Yunosuke / CircusP",
-    "bpm": null,
-    "imageName": "9a111be2df7e707637a4a5cfef3541f27c059f5620c323cf6b4b1a55d234b37e.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-05-29",
+    "songId": "オトヒメモリー☆ウタゲーション",
+    "category": "maimai",
+    "title": "オトヒメモリー☆ウタゲーション",
+    "artist": "Junky feat. 乙姫(CV:浅川悠)",
+    "bpm": 140,
+    "imageName": "220fea88947567c7f0a13c58fa479f838c4c66f6c37ad420e9188e2aab425aa1.png",
+    "version": "murasaki-plus",
+    "releaseDate": "2017-07-11",
     "isNew": true,
     "isLocked": false,
     "comment": null,
-    "slug": "intergalactic-bound-yunosuke-circusp-l441t",
-    "internalImageId": "img_woVEvnryT0yw",
+    "slug": "otohimemoryutagation-s7abb",
+    "internalImageId": "img_fxVkoMfahG55",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "2",
-        "levelValue": 2,
+        "level": "3",
+        "levelValue": 3,
         "internalLevel": null,
-        "internalLevelValue": 2,
+        "internalLevelValue": 3,
         "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
@@ -103,8 +103,8 @@
         "difficulty": "master",
         "level": "13",
         "levelValue": 13,
-        "internalLevel": "13.1",
-        "internalLevelValue": 13.1,
+        "internalLevel": "13.4",
+        "internalLevelValue": 13.4,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -125,32 +125,144 @@
         },
         "isSpecial": false,
         "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "std",
+        "difficulty": "basic",
+        "level": "5",
+        "levelValue": 5,
+        "internalLevel": null,
+        "internalLevelValue": 5,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 199,
+          "hold": 18,
+          "slide": 6,
+          "touch": null,
+          "break": 3,
+          "total": 226
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MURASAKi PLUS"
+      },
+      {
+        "type": "std",
+        "difficulty": "advanced",
+        "level": "7+",
+        "levelValue": 7.6,
+        "internalLevel": null,
+        "internalLevelValue": 7.6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 286,
+          "hold": 20,
+          "slide": 25,
+          "touch": null,
+          "break": 14,
+          "total": 345
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MURASAKi PLUS"
+      },
+      {
+        "type": "std",
+        "difficulty": "expert",
+        "level": "11+",
+        "levelValue": 11.6,
+        "internalLevel": null,
+        "internalLevelValue": 11.6,
+        "noteDesigner": "小鳥遊さん",
+        "noteCounts": {
+          "tap": 394,
+          "hold": 40,
+          "slide": 70,
+          "touch": null,
+          "break": 24,
+          "total": 528
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MURASAKi PLUS"
+      },
+      {
+        "type": "std",
+        "difficulty": "master",
+        "level": "12+",
+        "levelValue": 12.6,
+        "internalLevel": "12.9",
+        "internalLevelValue": 12.9,
+        "noteDesigner": "ぴちネコ",
+        "noteCounts": {
+          "tap": 492,
+          "hold": 59,
+          "slide": 115,
+          "touch": null,
+          "break": 37,
+          "total": 703
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MURASAKi PLUS"
       }
     ],
-    "keyword": "Intergalactic Bound"
+    "keyword": "オトヒメモリー☆ウタゲーション\tOTOHIMEMORY☆UTAGATION\totohimemory\tOtohimemory Utage-Syon"
   },
   {
-    "songId": "LEMON MELON COOKIE",
-    "category": "niconico-vocaloid",
-    "title": "LEMON MELON COOKIE",
-    "artist": "TAK",
+    "songId": "TAKE CONTROL",
+    "category": "maimai",
+    "title": "TAKE CONTROL",
+    "artist": "ryhki",
     "bpm": null,
-    "imageName": "421cbaa3be5bc280f7811f2475218f5fc0d104f094f853d3251ab0f49b33bab8.png",
+    "imageName": "69eef40eb3a1d8fd0a097e3d3ec711c5c43deea73013728b870736d863c281db.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-05-29",
+    "releaseDate": "2026-06-12",
     "isNew": true,
-    "isLocked": false,
+    "isLocked": true,
     "comment": null,
-    "slug": "lemon-melon-cookie-g8euz",
-    "internalImageId": "img_jC2wK8p6niIv",
+    "slug": "take-control-gxypn",
+    "internalImageId": "img_U1uix6H-xAX5",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "3",
-        "levelValue": 3,
+        "level": "4",
+        "levelValue": 4,
         "internalLevel": null,
-        "internalLevelValue": 3,
+        "internalLevelValue": 4,
         "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
@@ -175,10 +287,10 @@
       {
         "type": "dx",
         "difficulty": "advanced",
-        "level": "7",
-        "levelValue": 7,
+        "level": "6",
+        "levelValue": 6,
         "internalLevel": null,
-        "internalLevelValue": 7,
+        "internalLevelValue": 6,
         "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
@@ -203,11 +315,11 @@
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "10+",
-        "levelValue": 10.6,
+        "level": "11+",
+        "levelValue": 11.6,
         "internalLevel": null,
-        "internalLevelValue": 10.6,
-        "noteDesigner": "サファ太",
+        "internalLevelValue": 11.6,
+        "noteDesigner": null,
         "noteCounts": {
           "tap": null,
           "hold": null,
@@ -231,39 +343,11 @@
       {
         "type": "dx",
         "difficulty": "master",
-        "level": "11+",
-        "levelValue": 11.6,
-        "internalLevel": "11.7",
-        "internalLevelValue": 11.7,
-        "noteDesigner": "緑風犬三郎",
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "remaster",
-        "level": "13",
-        "levelValue": 13,
-        "internalLevel": "13.3",
-        "internalLevelValue": 13.3,
-        "noteDesigner": "カマボコ君",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.9",
+        "internalLevelValue": 13.9,
+        "noteDesigner": null,
         "noteCounts": {
           "tap": null,
           "hold": null,
@@ -285,22 +369,22 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "LEMON MELON COOKIE"
+    "keyword": "TAKE CONTROL"
   },
   {
-    "songId": "3rd Avenue",
-    "category": "game-variety",
-    "title": "3rd Avenue",
-    "artist": "Sound Souler",
+    "songId": "HyperdrivE",
+    "category": "maimai",
+    "title": "HyperdrivE",
+    "artist": "KARUT",
     "bpm": null,
-    "imageName": "97462087383ba7b75c27ab851e7382fb7b68460fcfc1962a3b510bb234207f44.png",
+    "imageName": "da5f45995c0c58972b8bf2f8b0a9a73045090b53cad465ad687244ac084e7ce5.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-05-29",
+    "releaseDate": "2026-06-12",
     "isNew": true,
-    "isLocked": false,
+    "isLocked": true,
     "comment": null,
-    "slug": "3rd-avenue-sound-souler-3h9k3",
-    "internalImageId": "img_r4N2SeE9ObF9",
+    "slug": "hyperdrive-50cz5",
+    "internalImageId": "img_81hZ7iv2JKxe",
     "sheets": [
       {
         "type": "dx",
@@ -391,8 +475,8 @@
         "difficulty": "master",
         "level": "13+",
         "levelValue": 13.6,
-        "internalLevel": "13.6",
-        "internalLevelValue": 13.6,
+        "internalLevel": "13.9",
+        "internalLevelValue": 13.9,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -415,6 +499,266 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "3rd Avenue"
+    "keyword": "HyperdrivE"
+  },
+  {
+    "songId": "Paradoxical Empress",
+    "category": "maimai",
+    "title": "Paradoxical Empress",
+    "artist": "polysha",
+    "bpm": null,
+    "imageName": "5014a1e781af67dc2821bb1838f6ec585359e46a4d6857aa1da8ca7b61db84da.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-06-12",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "paradoxical-empress-polysha-0c9nd",
+    "internalImageId": "img_BDHx5bsxJw8q",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "4",
+        "levelValue": 4,
+        "internalLevel": null,
+        "internalLevelValue": 4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "7",
+        "levelValue": 7,
+        "internalLevel": null,
+        "internalLevelValue": 7,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "11",
+        "levelValue": 11,
+        "internalLevel": null,
+        "internalLevelValue": 11,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.8",
+        "internalLevelValue": 13.8,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "Paradoxical Empress"
+  },
+  {
+    "songId": "RONDØ",
+    "category": "maimai",
+    "title": "RONDØ",
+    "artist": "Ashrount",
+    "bpm": null,
+    "imageName": "6586b3d8118c9a0205f080d3a7c9d43c2add9cabc6379c9d9cf598e0c3b43537.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-06-12",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "rond-ashrount-zr6nn",
+    "internalImageId": "img_YKctyrpOztfh",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "8",
+        "levelValue": 8,
+        "internalLevel": null,
+        "internalLevelValue": 8,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "12+",
+        "levelValue": 12.6,
+        "internalLevel": "12.8",
+        "internalLevelValue": 12.8,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "14",
+        "levelValue": 14,
+        "internalLevel": "14.5",
+        "internalLevelValue": 14.5,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "RONDØ"
   }
 ]
