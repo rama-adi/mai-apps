@@ -404,6 +404,11 @@
       "value": "【幸】",
       "label": "【幸】",
       "color": "#888"
+    },
+    {
+      "value": "【招】",
+      "label": "【招】",
+      "color": "#888"
     }
   ],
   "types": [
@@ -500,12 +505,12 @@
   ],
   "statuses": [
     {
-      "value": "new",
-      "label": "New"
-    },
-    {
       "value": "locked",
       "label": "Locked"
+    },
+    {
+      "value": "new",
+      "label": "New"
     }
   ]
 }

@@ -26158,7 +26158,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -26186,7 +26186,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -26214,7 +26214,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -26242,7 +26242,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -32364,7 +32364,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -32392,7 +32392,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -32420,7 +32420,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -32448,7 +32448,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -82616,7 +82616,7 @@
     "imageName": "220fea88947567c7f0a13c58fa479f838c4c66f6c37ad420e9188e2aab425aa1.png",
     "version": "murasaki-plus",
     "releaseDate": "2017-07-11",
-    "isNew": true,
+    "isNew": false,
     "isLocked": false,
     "comment": null,
     "slug": "otohimemoryutagation-s7abb",
@@ -82631,12 +82631,12 @@
         "internalLevelValue": 3,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 152,
+          "hold": 10,
+          "slide": 4,
+          "touch": 6,
+          "break": 4,
+          "total": 176
         },
         "regions": {
           "jp": true,
@@ -82659,12 +82659,12 @@
         "internalLevelValue": 6,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 250,
+          "hold": 8,
+          "slide": 6,
+          "touch": 26,
+          "break": 16,
+          "total": 306
         },
         "regions": {
           "jp": true,
@@ -82685,14 +82685,14 @@
         "levelValue": 10,
         "internalLevel": null,
         "internalLevelValue": 10,
-        "noteDesigner": null,
+        "noteDesigner": "サファ太",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 284,
+          "hold": 52,
+          "slide": 45,
+          "touch": 19,
+          "break": 79,
+          "total": 479
         },
         "regions": {
           "jp": true,
@@ -82713,14 +82713,14 @@
         "levelValue": 13,
         "internalLevel": "13.4",
         "internalLevelValue": 13.4,
-        "noteDesigner": null,
+        "noteDesigner": "Luxizhel",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 544,
+          "hold": 53,
+          "slide": 108,
+          "touch": 31,
+          "break": 46,
+          "total": 782
         },
         "regions": {
           "jp": true,
@@ -187024,7 +187024,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -187052,7 +187052,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -187080,7 +187080,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -187108,7 +187108,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -196450,7 +196450,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -196478,7 +196478,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -196506,7 +196506,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -196534,7 +196534,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -201714,7 +201714,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -201742,7 +201742,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -201770,7 +201770,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -201798,7 +201798,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -201844,7 +201844,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -201872,7 +201872,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -201900,7 +201900,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -201928,7 +201928,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -201974,7 +201974,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202002,7 +202002,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202030,7 +202030,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202058,7 +202058,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202104,7 +202104,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {
@@ -202134,7 +202134,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {
@@ -202164,7 +202164,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {
@@ -202194,7 +202194,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {
@@ -202242,7 +202242,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202270,7 +202270,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202298,7 +202298,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202326,7 +202326,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202372,7 +202372,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202400,7 +202400,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202428,7 +202428,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202456,7 +202456,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202502,7 +202502,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202530,7 +202530,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202558,7 +202558,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202586,7 +202586,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202632,7 +202632,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202660,7 +202660,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202688,7 +202688,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202716,7 +202716,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202762,7 +202762,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202790,7 +202790,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202818,7 +202818,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202846,7 +202846,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202892,7 +202892,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202920,7 +202920,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202948,7 +202948,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -202976,7 +202976,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203004,7 +203004,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203050,7 +203050,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203078,7 +203078,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203106,7 +203106,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203134,7 +203134,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203162,7 +203162,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203208,7 +203208,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203236,7 +203236,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203264,7 +203264,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203292,7 +203292,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203338,7 +203338,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203366,7 +203366,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203394,7 +203394,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203422,7 +203422,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203450,7 +203450,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203496,7 +203496,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203524,7 +203524,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203552,7 +203552,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203580,7 +203580,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203626,7 +203626,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203654,7 +203654,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203682,7 +203682,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203710,7 +203710,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203756,7 +203756,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203784,7 +203784,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203812,7 +203812,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203840,7 +203840,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203886,7 +203886,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203914,7 +203914,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203942,7 +203942,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -203970,7 +203970,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204146,7 +204146,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204174,7 +204174,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204202,7 +204202,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204230,7 +204230,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204276,7 +204276,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204304,7 +204304,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204332,7 +204332,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204360,7 +204360,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -220488,8 +220488,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -220516,8 +220516,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -220544,8 +220544,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -220572,8 +220572,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -220618,8 +220618,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -220646,8 +220646,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -220674,8 +220674,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -220702,8 +220702,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -220748,8 +220748,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -220776,8 +220776,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -220804,8 +220804,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -220832,8 +220832,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -231956,7 +231956,7 @@
     "version": "dx-circle-plus",
     "releaseDate": "2026-04-17",
     "isNew": false,
-    "isLocked": true,
+    "isLocked": false,
     "comment": null,
     "slug": "anima-m0sf0",
     "internalImageId": "img_k1YpMndiRfkk",
@@ -233808,7 +233808,7 @@
     "imageName": "69eef40eb3a1d8fd0a097e3d3ec711c5c43deea73013728b870736d863c281db.png",
     "version": "dx-circle-plus",
     "releaseDate": "2026-06-12",
-    "isNew": true,
+    "isNew": false,
     "isLocked": true,
     "comment": null,
     "slug": "take-control-gxypn",
@@ -233823,12 +233823,12 @@
         "internalLevelValue": 4,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 177,
+          "hold": 13,
+          "slide": 6,
+          "touch": 7,
+          "break": 15,
+          "total": 218
         },
         "regions": {
           "jp": true,
@@ -233851,12 +233851,12 @@
         "internalLevelValue": 6,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 285,
+          "hold": 16,
+          "slide": 10,
+          "touch": 22,
+          "break": 17,
+          "total": 350
         },
         "regions": {
           "jp": true,
@@ -233877,14 +233877,14 @@
         "levelValue": 11.6,
         "internalLevel": null,
         "internalLevelValue": 11.6,
-        "noteDesigner": null,
+        "noteDesigner": "はっぴー",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 442,
+          "hold": 80,
+          "slide": 44,
+          "touch": 76,
+          "break": 16,
+          "total": 658
         },
         "regions": {
           "jp": true,
@@ -233905,14 +233905,14 @@
         "levelValue": 13.6,
         "internalLevel": "13.9",
         "internalLevelValue": 13.9,
-        "noteDesigner": null,
+        "noteDesigner": "Safazhel",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 508,
+          "hold": 79,
+          "slide": 85,
+          "touch": 118,
+          "break": 171,
+          "total": 961
         },
         "regions": {
           "jp": true,
@@ -233938,7 +233938,7 @@
     "imageName": "da5f45995c0c58972b8bf2f8b0a9a73045090b53cad465ad687244ac084e7ce5.png",
     "version": "dx-circle-plus",
     "releaseDate": "2026-06-12",
-    "isNew": true,
+    "isNew": false,
     "isLocked": true,
     "comment": null,
     "slug": "hyperdrive-50cz5",
@@ -233953,12 +233953,12 @@
         "internalLevelValue": 3,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 174,
+          "hold": 8,
+          "slide": 6,
+          "touch": 8,
+          "break": 8,
+          "total": 204
         },
         "regions": {
           "jp": true,
@@ -233981,12 +233981,12 @@
         "internalLevelValue": 6,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 271,
+          "hold": 19,
+          "slide": 4,
+          "touch": 27,
+          "break": 11,
+          "total": 332
         },
         "regions": {
           "jp": true,
@@ -234007,14 +234007,14 @@
         "levelValue": 11,
         "internalLevel": null,
         "internalLevelValue": 11,
-        "noteDesigner": null,
+        "noteDesigner": "サファ太",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 307,
+          "hold": 44,
+          "slide": 41,
+          "touch": 36,
+          "break": 48,
+          "total": 476
         },
         "regions": {
           "jp": true,
@@ -234035,14 +234035,14 @@
         "levelValue": 13.6,
         "internalLevel": "13.9",
         "internalLevelValue": 13.9,
-        "noteDesigner": null,
+        "noteDesigner": "Jack",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 594,
+          "hold": 41,
+          "slide": 117,
+          "touch": 37,
+          "break": 42,
+          "total": 831
         },
         "regions": {
           "jp": true,
@@ -234068,11 +234068,271 @@
     "imageName": "5014a1e781af67dc2821bb1838f6ec585359e46a4d6857aa1da8ca7b61db84da.png",
     "version": "dx-circle-plus",
     "releaseDate": "2026-06-12",
-    "isNew": true,
+    "isNew": false,
     "isLocked": true,
     "comment": null,
     "slug": "paradoxical-empress-polysha-0c9nd",
     "internalImageId": "img_BDHx5bsxJw8q",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "4",
+        "levelValue": 4,
+        "internalLevel": null,
+        "internalLevelValue": 4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 178,
+          "hold": 11,
+          "slide": 6,
+          "touch": 22,
+          "break": 12,
+          "total": 229
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "7",
+        "levelValue": 7,
+        "internalLevel": null,
+        "internalLevelValue": 7,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 275,
+          "hold": 14,
+          "slide": 10,
+          "touch": 24,
+          "break": 4,
+          "total": 327
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "11",
+        "levelValue": 11,
+        "internalLevel": null,
+        "internalLevelValue": 11,
+        "noteDesigner": "はっぴー",
+        "noteCounts": {
+          "tap": 426,
+          "hold": 102,
+          "slide": 58,
+          "touch": 13,
+          "break": 21,
+          "total": 620
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.8",
+        "internalLevelValue": 13.8,
+        "noteDesigner": "サファ太",
+        "noteCounts": {
+          "tap": 550,
+          "hold": 88,
+          "slide": 74,
+          "touch": 76,
+          "break": 81,
+          "total": 869
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "Paradoxical Empress"
+  },
+  {
+    "songId": "RONDØ",
+    "category": "maimai",
+    "title": "RONDØ",
+    "artist": "Ashrount",
+    "bpm": null,
+    "imageName": "6586b3d8118c9a0205f080d3a7c9d43c2add9cabc6379c9d9cf598e0c3b43537.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-06-12",
+    "isNew": false,
+    "isLocked": true,
+    "comment": null,
+    "slug": "rond-ashrount-zr6nn",
+    "internalImageId": "img_YKctyrpOztfh",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 215,
+          "hold": 11,
+          "slide": 8,
+          "touch": 15,
+          "break": 11,
+          "total": 260
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "8",
+        "levelValue": 8,
+        "internalLevel": null,
+        "internalLevelValue": 8,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 335,
+          "hold": 14,
+          "slide": 8,
+          "touch": 11,
+          "break": 8,
+          "total": 376
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "12+",
+        "levelValue": 12.6,
+        "internalLevel": "12.8",
+        "internalLevelValue": 12.8,
+        "noteDesigner": "サファ太",
+        "noteCounts": {
+          "tap": 462,
+          "hold": 85,
+          "slide": 32,
+          "touch": 46,
+          "break": 84,
+          "total": 709
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "14",
+        "levelValue": 14,
+        "internalLevel": "14.5",
+        "internalLevelValue": 14.5,
+        "noteDesigner": "Luxizhel",
+        "noteCounts": {
+          "tap": 690,
+          "hold": 103,
+          "slide": 64,
+          "touch": 86,
+          "break": 55,
+          "total": 998
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "RONDØ"
+  },
+  {
+    "songId": "純情アルメリア",
+    "category": "touhou",
+    "title": "純情アルメリア",
+    "artist": "森羅万象",
+    "bpm": null,
+    "imageName": "224ff3c2515d6112b3068a3755cff80341a7e3c1a2c12e26ee616598b21a7aac.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-06-26",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "pb2fe",
+    "internalImageId": "img_ZJMGpugTcuAr",
     "sheets": [
       {
         "type": "dx",
@@ -234088,7 +234348,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": null
+          "total": 206
         },
         "regions": {
           "jp": true,
@@ -234116,7 +234376,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": null
+          "total": 352
         },
         "regions": {
           "jp": true,
@@ -234133,10 +234393,10 @@
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "11",
-        "levelValue": 11,
+        "level": "10+",
+        "levelValue": 10.6,
         "internalLevel": null,
-        "internalLevelValue": 11,
+        "internalLevelValue": 10.6,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -234144,7 +234404,137 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": null
+          "total": 537
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13",
+        "levelValue": 13,
+        "internalLevel": null,
+        "internalLevelValue": 13,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 813
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "純情アルメリア"
+  },
+  {
+    "songId": "運命線上のアリア",
+    "category": "touhou",
+    "title": "運命線上のアリア",
+    "artist": "森羅万象",
+    "bpm": null,
+    "imageName": "9a751550d8490ad9d6835adebbad7a3ce89d5660689fe3de336f49c9883e04d0.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-06-26",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "eb2kq",
+    "internalImageId": "img_a71Jlz50ljKu",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "4",
+        "levelValue": 4,
+        "internalLevel": null,
+        "internalLevelValue": 4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 232
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "7+",
+        "levelValue": 7.6,
+        "internalLevel": null,
+        "internalLevelValue": 7.6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 423
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10+",
+        "levelValue": 10.6,
+        "internalLevel": null,
+        "internalLevelValue": 10.6,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 633
         },
         "regions": {
           "jp": true,
@@ -234163,8 +234553,8 @@
         "difficulty": "master",
         "level": "13+",
         "levelValue": 13.6,
-        "internalLevel": "13.8",
-        "internalLevelValue": 13.8,
+        "internalLevel": null,
+        "internalLevelValue": 13.6,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -234172,7 +234562,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": null
+          "total": 888
         },
         "regions": {
           "jp": true,
@@ -234187,30 +234577,30 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "Paradoxical Empress"
+    "keyword": "運命線上のアリア"
   },
   {
-    "songId": "RONDØ",
-    "category": "maimai",
-    "title": "RONDØ",
-    "artist": "Ashrount",
+    "songId": "デンデラパーティーナイト",
+    "category": "touhou",
+    "title": "デンデラパーティーナイト",
+    "artist": "森羅万象",
     "bpm": null,
-    "imageName": "6586b3d8118c9a0205f080d3a7c9d43c2add9cabc6379c9d9cf598e0c3b43537.png",
+    "imageName": "7a661a24cd3d3d28e80d1ea437301340c21a3bbc00205fcd6a2e00372726f12f.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-06-12",
+    "releaseDate": "2026-06-26",
     "isNew": true,
-    "isLocked": true,
+    "isLocked": false,
     "comment": null,
-    "slug": "rond-ashrount-zr6nn",
-    "internalImageId": "img_YKctyrpOztfh",
+    "slug": "dfyak",
+    "internalImageId": "img_AcW9BoMInweo",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "6",
-        "levelValue": 6,
+        "level": "4",
+        "levelValue": 4,
         "internalLevel": null,
-        "internalLevelValue": 6,
+        "internalLevelValue": 4,
         "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
@@ -234218,7 +234608,137 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": null
+          "total": 207
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "7+",
+        "levelValue": 7.6,
+        "internalLevel": null,
+        "internalLevelValue": 7.6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 398
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10+",
+        "levelValue": 10.6,
+        "internalLevel": null,
+        "internalLevelValue": 10.6,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 546
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13",
+        "levelValue": 13,
+        "internalLevel": null,
+        "internalLevelValue": 13,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 803
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "デンデラパーティーナイト"
+  },
+  {
+    "songId": "Absolute Queen",
+    "category": "touhou",
+    "title": "Absolute Queen",
+    "artist": "Laur",
+    "bpm": null,
+    "imageName": "0c5b39f64d4b76c76a49c4dda9df1f48a26977a0971655e317baa1d08db3d39c.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-06-26",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "absolute-queen-982fk",
+    "internalImageId": "img_ukcYS_Pjt-wK",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "5",
+        "levelValue": 5,
+        "internalLevel": null,
+        "internalLevelValue": 5,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 204
         },
         "regions": {
           "jp": true,
@@ -234246,7 +234766,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": null
+          "total": 368
         },
         "regions": {
           "jp": true,
@@ -234265,8 +234785,8 @@
         "difficulty": "expert",
         "level": "12+",
         "levelValue": 12.6,
-        "internalLevel": "12.8",
-        "internalLevelValue": 12.8,
+        "internalLevel": null,
+        "internalLevelValue": 12.6,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -234274,7 +234794,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": null
+          "total": 593
         },
         "regions": {
           "jp": true,
@@ -234293,8 +234813,54 @@
         "difficulty": "master",
         "level": "14",
         "levelValue": 14,
-        "internalLevel": "14.5",
-        "internalLevelValue": 14.5,
+        "internalLevel": null,
+        "internalLevelValue": 14,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 853
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "Absolute Queen"
+  },
+  {
+    "songId": "_utage_.悪戯センセーション",
+    "category": "utage",
+    "title": "[奏]悪戯センセーション",
+    "artist": "森羅万象",
+    "bpm": null,
+    "imageName": "66619c6142c923312d04833b32eceafd087d019792611725c26c81129902ecc1.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-06-26",
+    "isNew": false,
+    "isLocked": false,
+    "comment": "【🤝バディ】二人で一つなの クランベリー",
+    "slug": "utage-mischievous-sensation-xxkf5",
+    "internalImageId": "img_TFkCzf_BaPu_",
+    "sheets": [
+      {
+        "type": "utage",
+        "difficulty": "【奏】",
+        "level": "13?",
+        "levelValue": 13,
+        "internalLevel": null,
+        "internalLevelValue": 13,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -234313,10 +234879,54 @@
         "regionOverrides": {
           "intl": {}
         },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
+        "isSpecial": true
       }
     ],
-    "keyword": "RONDØ"
+    "keyword": "[奏]悪戯センセーション"
+  },
+  {
+    "songId": "_utage_.Re:Unknown X",
+    "category": "utage",
+    "title": "[招]Re:Unknown X",
+    "artist": "まらしぃ",
+    "bpm": null,
+    "imageName": "52a02b60219e3a6982df8f2894e89d6cc8515123455acdabac6540db0fdf14cd.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-06-26",
+    "isNew": false,
+    "isLocked": false,
+    "comment": "LUNATIC X",
+    "slug": "utage-reunknown-x-4a6s1",
+    "internalImageId": "img_-TZ6CrcKX67L",
+    "sheets": [
+      {
+        "type": "utage",
+        "difficulty": "【招】",
+        "level": "14+?",
+        "levelValue": 14.6,
+        "internalLevel": null,
+        "internalLevelValue": 14.6,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": true
+      }
+    ],
+    "keyword": "[招]Re:Unknown X"
   }
 ]
