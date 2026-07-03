@@ -1,18 +1,18 @@
 [
   {
-    "songId": "純情アルメリア",
-    "category": "touhou",
-    "title": "純情アルメリア",
-    "artist": "森羅万象",
-    "bpm": null,
-    "imageName": "224ff3c2515d6112b3068a3755cff80341a7e3c1a2c12e26ee616598b21a7aac.png",
+    "songId": "歌え踊れや桃源郷！",
+    "category": "maimai",
+    "title": "歌え踊れや桃源郷！",
+    "artist": "karato feat.yuno",
+    "bpm": 178,
+    "imageName": "71e6044efc52b5caff598a4a763e28d25dbc64ce2506684da924fe67d5e4e928.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-06-26",
+    "releaseDate": "2026-07-02",
     "isNew": true,
-    "isLocked": false,
+    "isLocked": true,
     "comment": null,
-    "slug": "pb2fe",
-    "internalImageId": "img_ZJMGpugTcuAr",
+    "slug": "karato-y2c6x",
+    "internalImageId": "img_pJrvUZJ-j1O4",
     "sheets": [
       {
         "type": "dx",
@@ -28,7 +28,133 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 206
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "7+",
+        "levelValue": 7.6,
+        "internalLevel": null,
+        "internalLevelValue": 7.6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10+",
+        "levelValue": 10.6,
+        "internalLevel": null,
+        "internalLevelValue": 10.6,
+        "noteDesigner": "まぐランド",
+        "noteCounts": {
+          "tap": 396,
+          "hold": 45,
+          "slide": 37,
+          "touch": 34,
+          "break": 38,
+          "total": 550
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13",
+        "levelValue": 13,
+        "internalLevel": null,
+        "internalLevelValue": 13,
+        "noteDesigner": "せめんともり",
+        "noteCounts": {
+          "tap": 617,
+          "hold": 34,
+          "slide": 153,
+          "touch": 28,
+          "break": 45,
+          "total": 877
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false
+      }
+    ],
+    "keyword": "歌え踊れや桃源郷！"
+  },
+  {
+    "songId": "私たちは、花になる",
+    "category": "ongeki-chunithm",
+    "title": "私たちは、花になる",
+    "artist": "イロドリミドリ｜HaNaMiNa｜S.S.L.",
+    "bpm": 168,
+    "imageName": "b4f58eb1970b216717a6305bc8e7245b5455267bc15f66fcc2fa18b27df5f664.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-07-02",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "hanaminassl-vn79a",
+    "internalImageId": "img_L2B7zZwRQ9u3",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "2",
+        "levelValue": 2,
+        "internalLevel": null,
+        "internalLevelValue": 2,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 153,
+          "hold": 11,
+          "slide": 11,
+          "touch": 6,
+          "break": 3,
+          "total": 184
         },
         "regions": {
           "jp": true,
@@ -51,12 +177,12 @@
         "internalLevelValue": 7,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 352
+          "tap": 282,
+          "hold": 22,
+          "slide": 12,
+          "touch": 24,
+          "break": 3,
+          "total": 343
         },
         "regions": {
           "jp": true,
@@ -77,144 +203,14 @@
         "levelValue": 10.6,
         "internalLevel": null,
         "internalLevelValue": 10.6,
-        "noteDesigner": null,
+        "noteDesigner": "Luxizhel",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 537
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "master",
-        "level": "13",
-        "levelValue": 13,
-        "internalLevel": null,
-        "internalLevelValue": 13,
-        "noteDesigner": null,
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 813
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      }
-    ],
-    "keyword": "純情アルメリア"
-  },
-  {
-    "songId": "運命線上のアリア",
-    "category": "touhou",
-    "title": "運命線上のアリア",
-    "artist": "森羅万象",
-    "bpm": null,
-    "imageName": "9a751550d8490ad9d6835adebbad7a3ce89d5660689fe3de336f49c9883e04d0.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-06-26",
-    "isNew": true,
-    "isLocked": false,
-    "comment": null,
-    "slug": "eb2kq",
-    "internalImageId": "img_a71Jlz50ljKu",
-    "sheets": [
-      {
-        "type": "dx",
-        "difficulty": "basic",
-        "level": "4",
-        "levelValue": 4,
-        "internalLevel": null,
-        "internalLevelValue": 4,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 232
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "advanced",
-        "level": "7+",
-        "levelValue": 7.6,
-        "internalLevel": null,
-        "internalLevelValue": 7.6,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 423
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "expert",
-        "level": "10+",
-        "levelValue": 10.6,
-        "internalLevel": null,
-        "internalLevelValue": 10.6,
-        "noteDesigner": null,
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 633
+          "tap": 368,
+          "hold": 32,
+          "slide": 50,
+          "touch": 35,
+          "break": 44,
+          "total": 529
         },
         "regions": {
           "jp": true,
@@ -235,14 +231,14 @@
         "levelValue": 13.6,
         "internalLevel": null,
         "internalLevelValue": 13.6,
-        "noteDesigner": null,
+        "noteDesigner": "Get Our MIRAI!!!!!!!!!!!!!!",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 888
+          "tap": 577,
+          "hold": 33,
+          "slide": 72,
+          "touch": 92,
+          "break": 33,
+          "total": 807
         },
         "regions": {
           "jp": true,
@@ -257,38 +253,38 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "運命線上のアリア"
+    "keyword": "私たちは、花になる"
   },
   {
-    "songId": "デンデラパーティーナイト",
-    "category": "touhou",
-    "title": "デンデラパーティーナイト",
-    "artist": "森羅万象",
-    "bpm": null,
-    "imageName": "7a661a24cd3d3d28e80d1ea437301340c21a3bbc00205fcd6a2e00372726f12f.png",
+    "songId": "Here the Our MIRAI!",
+    "category": "ongeki-chunithm",
+    "title": "Here the Our MIRAI!",
+    "artist": "イロドリミドリ",
+    "bpm": 190,
+    "imageName": "fb818abb8fb53cbde865b4953df416d34a13a50870c5115c5fd440ffc4217d08.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-06-26",
+    "releaseDate": "2026-07-02",
     "isNew": true,
     "isLocked": false,
     "comment": null,
-    "slug": "dfyak",
-    "internalImageId": "img_AcW9BoMInweo",
+    "slug": "here-the-our-mirai-c7erg",
+    "internalImageId": "img_3Ur6EVE3dxnn",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "4",
-        "levelValue": 4,
+        "level": "3",
+        "levelValue": 3,
         "internalLevel": null,
-        "internalLevelValue": 4,
+        "internalLevelValue": 3,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 207
+          "tap": 151,
+          "hold": 18,
+          "slide": 9,
+          "touch": 19,
+          "break": 2,
+          "total": 199
         },
         "regions": {
           "jp": true,
@@ -311,12 +307,12 @@
         "internalLevelValue": 7.6,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 398
+          "tap": 275,
+          "hold": 22,
+          "slide": 10,
+          "touch": 11,
+          "break": 7,
+          "total": 325
         },
         "regions": {
           "jp": true,
@@ -333,18 +329,18 @@
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "10+",
-        "levelValue": 10.6,
+        "level": "11",
+        "levelValue": 11,
         "internalLevel": null,
-        "internalLevelValue": 10.6,
-        "noteDesigner": null,
+        "internalLevelValue": 11,
+        "noteDesigner": "サファ太",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 546
+          "tap": 342,
+          "hold": 80,
+          "slide": 44,
+          "touch": 10,
+          "break": 40,
+          "total": 516
         },
         "regions": {
           "jp": true,
@@ -365,14 +361,14 @@
         "levelValue": 13,
         "internalLevel": null,
         "internalLevelValue": 13,
-        "noteDesigner": null,
+        "noteDesigner": "はっぴー",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 803
+          "tap": 523,
+          "hold": 46,
+          "slide": 112,
+          "touch": 34,
+          "break": 51,
+          "total": 766
         },
         "regions": {
           "jp": true,
@@ -387,22 +383,22 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "デンデラパーティーナイト"
+    "keyword": "Here the Our MIRAI!"
   },
   {
-    "songId": "Absolute Queen",
-    "category": "touhou",
-    "title": "Absolute Queen",
-    "artist": "Laur",
-    "bpm": null,
-    "imageName": "0c5b39f64d4b76c76a49c4dda9df1f48a26977a0971655e317baa1d08db3d39c.png",
+    "songId": "色彩過剰のダイアリーミュージック",
+    "category": "ongeki-chunithm",
+    "title": "色彩過剰のダイアリーミュージック",
+    "artist": "イロドリミドリ",
+    "bpm": 136,
+    "imageName": "073e92bb12e8130d04c82f6f9373a7db09e459821e00521e3e0712d1cb57bde5.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-06-26",
+    "releaseDate": "2026-07-02",
     "isNew": true,
-    "isLocked": false,
+    "isLocked": true,
     "comment": null,
-    "slug": "absolute-queen-982fk",
-    "internalImageId": "img_ukcYS_Pjt-wK",
+    "slug": "pfjh7",
+    "internalImageId": "img_vKHcQKMA8xka",
     "sheets": [
       {
         "type": "dx",
@@ -413,12 +409,12 @@
         "internalLevelValue": 5,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 204
+          "tap": 206,
+          "hold": 18,
+          "slide": 11,
+          "touch": 10,
+          "break": 3,
+          "total": 248
         },
         "regions": {
           "jp": true,
@@ -446,7 +442,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 368
+          "total": 340
         },
         "regions": {
           "jp": true,
@@ -467,14 +463,14 @@
         "levelValue": 12.6,
         "internalLevel": null,
         "internalLevelValue": 12.6,
-        "noteDesigner": null,
+        "noteDesigner": "Jack",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 593
+          "tap": 453,
+          "hold": 102,
+          "slide": 46,
+          "touch": 46,
+          "break": 35,
+          "total": 682
         },
         "regions": {
           "jp": true,
@@ -495,14 +491,14 @@
         "levelValue": 14,
         "internalLevel": null,
         "internalLevelValue": 14,
-        "noteDesigner": null,
+        "noteDesigner": "ロシェ@ペンギン",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 853
+          "tap": 876,
+          "hold": 67,
+          "slide": 64,
+          "touch": 102,
+          "break": 77,
+          "total": 1186
         },
         "regions": {
           "jp": true,
@@ -517,6 +513,6 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "Absolute Queen"
+    "keyword": "色彩過剰のダイアリーミュージック"
   }
 ]
