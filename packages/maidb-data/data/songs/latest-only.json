@@ -1,26 +1,26 @@
 [
   {
-    "songId": "歌え踊れや桃源郷！",
-    "category": "maimai",
-    "title": "歌え踊れや桃源郷！",
-    "artist": "karato feat.yuno",
-    "bpm": 178,
-    "imageName": "71e6044efc52b5caff598a4a763e28d25dbc64ce2506684da924fe67d5e4e928.png",
+    "songId": "イレギュラーマン",
+    "category": "niconico-vocaloid",
+    "title": "イレギュラーマン",
+    "artist": "マサラダ",
+    "bpm": null,
+    "imageName": "13b2d175a517ebe2d6ae5cc5249553cdbdac77e2a2bff1371590a1f7b1c54b6f.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-07-02",
+    "releaseDate": "2026-07-17",
     "isNew": true,
-    "isLocked": true,
+    "isLocked": false,
     "comment": null,
-    "slug": "karato-y2c6x",
-    "internalImageId": "img_pJrvUZJ-j1O4",
+    "slug": "q9192",
+    "internalImageId": "img_1Ugk7Ph2PeM3",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "4",
-        "levelValue": 4,
+        "level": "5",
+        "levelValue": 5,
         "internalLevel": null,
-        "internalLevelValue": 4,
+        "internalLevelValue": 5,
         "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
@@ -28,7 +28,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": null
+          "total": 274
         },
         "regions": {
           "jp": true,
@@ -39,7 +39,8 @@
         "regionOverrides": {
           "intl": {}
         },
-        "isSpecial": false
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
       },
       {
         "type": "dx",
@@ -55,7 +56,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": null
+          "total": 394
         },
         "regions": {
           "jp": true,
@@ -66,23 +67,24 @@
         "regionOverrides": {
           "intl": {}
         },
-        "isSpecial": false
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
       },
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "10+",
-        "levelValue": 10.6,
+        "level": "11",
+        "levelValue": 11,
         "internalLevel": null,
-        "internalLevelValue": 10.6,
-        "noteDesigner": "まぐランド",
+        "internalLevelValue": 11,
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 396,
-          "hold": 45,
-          "slide": 37,
-          "touch": 34,
-          "break": 38,
-          "total": 550
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 629
         },
         "regions": {
           "jp": true,
@@ -93,23 +95,24 @@
         "regionOverrides": {
           "intl": {}
         },
-        "isSpecial": false
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
       },
       {
         "type": "dx",
         "difficulty": "master",
-        "level": "13",
-        "levelValue": 13,
+        "level": "13+",
+        "levelValue": 13.6,
         "internalLevel": null,
-        "internalLevelValue": 13,
-        "noteDesigner": "せめんともり",
+        "internalLevelValue": 13.6,
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 617,
-          "hold": 34,
-          "slide": 153,
-          "touch": 28,
-          "break": 45,
-          "total": 877
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 1032
         },
         "regions": {
           "jp": true,
@@ -120,25 +123,156 @@
         "regionOverrides": {
           "intl": {}
         },
-        "isSpecial": false
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "歌え踊れや桃源郷！"
+    "keyword": "イレギュラーマン"
   },
   {
-    "songId": "私たちは、花になる",
-    "category": "ongeki-chunithm",
-    "title": "私たちは、花になる",
-    "artist": "イロドリミドリ｜HaNaMiNa｜S.S.L.",
-    "bpm": 168,
-    "imageName": "b4f58eb1970b216717a6305bc8e7245b5455267bc15f66fcc2fa18b27df5f664.png",
+    "songId": "ちっちゃな私",
+    "category": "niconico-vocaloid",
+    "title": "ちっちゃな私",
+    "artist": "マサラダ",
+    "bpm": null,
+    "imageName": "95c11dd885bdf613c9f306a2afdfd3ecd8aa70a7525b40379db8b9aba1a34108.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-07-02",
+    "releaseDate": "2026-07-17",
     "isNew": true,
     "isLocked": false,
     "comment": null,
-    "slug": "hanaminassl-vn79a",
-    "internalImageId": "img_L2B7zZwRQ9u3",
+    "slug": "a0muh",
+    "internalImageId": "img_RJe2EFEsjh4d",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "3",
+        "levelValue": 3,
+        "internalLevel": null,
+        "internalLevelValue": 3,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 175
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 274
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "9+",
+        "levelValue": 9.6,
+        "internalLevel": null,
+        "internalLevelValue": 9.6,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 389
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "12+",
+        "levelValue": 12.6,
+        "internalLevel": null,
+        "internalLevelValue": 12.6,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 649
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "ちっちゃな私"
+  },
+  {
+    "songId": "2代目閻魔",
+    "category": "niconico-vocaloid",
+    "title": "2代目閻魔",
+    "artist": "読谷あかね",
+    "bpm": null,
+    "imageName": "e4b8339d1f4d4609bac1f22c94736c533ff9c78ce2495a66a49db9aaaac77f0a.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-07-17",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "2-sm067",
+    "internalImageId": "img_2m-MyYaD99Tz",
     "sheets": [
       {
         "type": "dx",
@@ -149,12 +283,142 @@
         "internalLevelValue": 2,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": 153,
-          "hold": 11,
-          "slide": 11,
-          "touch": 6,
-          "break": 3,
-          "total": 184
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 160
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 315
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10",
+        "levelValue": 10,
+        "internalLevel": null,
+        "internalLevelValue": 10,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 477
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": null,
+        "internalLevelValue": 13.6,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 864
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "2代目閻魔"
+  },
+  {
+    "songId": "シスターに懺悔を",
+    "category": "niconico-vocaloid",
+    "title": "シスターに懺悔を",
+    "artist": "廃原メモリ",
+    "bpm": null,
+    "imageName": "0d4d90f457c2fefc4d92119a98445e9dc4ad25c620ceec5a5243f3962dad1912.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-07-17",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "gjt0i",
+    "internalImageId": "img_QfX423Jg2y2M",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "3",
+        "levelValue": 3,
+        "internalLevel": null,
+        "internalLevelValue": 3,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 193
         },
         "regions": {
           "jp": true,
@@ -177,12 +441,12 @@
         "internalLevelValue": 7,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": 282,
-          "hold": 22,
-          "slide": 12,
-          "touch": 24,
-          "break": 3,
-          "total": 343
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 344
         },
         "regions": {
           "jp": true,
@@ -203,144 +467,14 @@
         "levelValue": 10.6,
         "internalLevel": null,
         "internalLevelValue": 10.6,
-        "noteDesigner": "Luxizhel",
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 368,
-          "hold": 32,
-          "slide": 50,
-          "touch": 35,
-          "break": 44,
-          "total": 529
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "master",
-        "level": "13+",
-        "levelValue": 13.6,
-        "internalLevel": null,
-        "internalLevelValue": 13.6,
-        "noteDesigner": "Get Our MIRAI!!!!!!!!!!!!!!",
-        "noteCounts": {
-          "tap": 577,
-          "hold": 33,
-          "slide": 72,
-          "touch": 92,
-          "break": 33,
-          "total": 807
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      }
-    ],
-    "keyword": "私たちは、花になる"
-  },
-  {
-    "songId": "Here the Our MIRAI!",
-    "category": "ongeki-chunithm",
-    "title": "Here the Our MIRAI!",
-    "artist": "イロドリミドリ",
-    "bpm": 190,
-    "imageName": "fb818abb8fb53cbde865b4953df416d34a13a50870c5115c5fd440ffc4217d08.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-07-02",
-    "isNew": true,
-    "isLocked": false,
-    "comment": null,
-    "slug": "here-the-our-mirai-c7erg",
-    "internalImageId": "img_3Ur6EVE3dxnn",
-    "sheets": [
-      {
-        "type": "dx",
-        "difficulty": "basic",
-        "level": "3",
-        "levelValue": 3,
-        "internalLevel": null,
-        "internalLevelValue": 3,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": 151,
-          "hold": 18,
-          "slide": 9,
-          "touch": 19,
-          "break": 2,
-          "total": 199
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "advanced",
-        "level": "7+",
-        "levelValue": 7.6,
-        "internalLevel": null,
-        "internalLevelValue": 7.6,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": 275,
-          "hold": 22,
-          "slide": 10,
-          "touch": 11,
-          "break": 7,
-          "total": 325
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "expert",
-        "level": "11",
-        "levelValue": 11,
-        "internalLevel": null,
-        "internalLevelValue": 11,
-        "noteDesigner": "サファ太",
-        "noteCounts": {
-          "tap": 342,
-          "hold": 80,
-          "slide": 44,
-          "touch": 10,
-          "break": 40,
-          "total": 516
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 451
         },
         "regions": {
           "jp": true,
@@ -361,14 +495,14 @@
         "levelValue": 13,
         "internalLevel": null,
         "internalLevelValue": 13,
-        "noteDesigner": "はっぴー",
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 523,
-          "hold": 46,
-          "slide": 112,
-          "touch": 34,
-          "break": 51,
-          "total": 766
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 743
         },
         "regions": {
           "jp": true,
@@ -383,38 +517,38 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "Here the Our MIRAI!"
+    "keyword": "シスターに懺悔を"
   },
   {
-    "songId": "色彩過剰のダイアリーミュージック",
-    "category": "ongeki-chunithm",
-    "title": "色彩過剰のダイアリーミュージック",
-    "artist": "イロドリミドリ",
-    "bpm": 136,
-    "imageName": "073e92bb12e8130d04c82f6f9373a7db09e459821e00521e3e0712d1cb57bde5.png",
+    "songId": "Cryogenic",
+    "category": "game-variety",
+    "title": "Cryogenic",
+    "artist": "Camellia ft. Petra Gurin「In Falsus」",
+    "bpm": null,
+    "imageName": "e970e78e489671ab3de9772486d51e6a1dec60fdb7d17399490b8ffe90b3b18c.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-07-02",
+    "releaseDate": "2026-07-17",
     "isNew": true,
-    "isLocked": true,
+    "isLocked": false,
     "comment": null,
-    "slug": "pfjh7",
-    "internalImageId": "img_vKHcQKMA8xka",
+    "slug": "cryogenic-camellia-ft-petra-gurinin-falsus-3sot3",
+    "internalImageId": "img_PgALYq21t-zN",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "5",
-        "levelValue": 5,
+        "level": "3",
+        "levelValue": 3,
         "internalLevel": null,
-        "internalLevelValue": 5,
+        "internalLevelValue": 3,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": 206,
-          "hold": 18,
-          "slide": 11,
-          "touch": 10,
-          "break": 3,
-          "total": 248
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 148
         },
         "regions": {
           "jp": true,
@@ -431,10 +565,10 @@
       {
         "type": "dx",
         "difficulty": "advanced",
-        "level": "8",
-        "levelValue": 8,
+        "level": "6",
+        "levelValue": 6,
         "internalLevel": null,
-        "internalLevelValue": 8,
+        "internalLevelValue": 6,
         "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
@@ -442,7 +576,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 340
+          "total": 302
         },
         "regions": {
           "jp": true,
@@ -459,18 +593,18 @@
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "12+",
-        "levelValue": 12.6,
+        "level": "11",
+        "levelValue": 11,
         "internalLevel": null,
-        "internalLevelValue": 12.6,
-        "noteDesigner": "Jack",
+        "internalLevelValue": 11,
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 453,
-          "hold": 102,
-          "slide": 46,
-          "touch": 46,
-          "break": 35,
-          "total": 682
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 419
         },
         "regions": {
           "jp": true,
@@ -487,18 +621,18 @@
       {
         "type": "dx",
         "difficulty": "master",
-        "level": "14",
-        "levelValue": 14,
+        "level": "13+",
+        "levelValue": 13.6,
         "internalLevel": null,
-        "internalLevelValue": 14,
-        "noteDesigner": "ロシェ@ペンギン",
+        "internalLevelValue": 13.6,
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 876,
-          "hold": 67,
-          "slide": 64,
-          "touch": 102,
-          "break": 77,
-          "total": 1186
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 740
         },
         "regions": {
           "jp": true,
@@ -513,6 +647,6 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "色彩過剰のダイアリーミュージック"
+    "keyword": "Cryogenic"
   }
 ]
