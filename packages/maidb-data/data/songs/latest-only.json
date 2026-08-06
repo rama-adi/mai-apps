@@ -1,148 +1,18 @@
 [
   {
-    "songId": "イレギュラーマン",
-    "category": "niconico-vocaloid",
-    "title": "イレギュラーマン",
-    "artist": "マサラダ",
-    "bpm": null,
-    "imageName": "13b2d175a517ebe2d6ae5cc5249553cdbdac77e2a2bff1371590a1f7b1c54b6f.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-07-17",
+    "songId": "Ignite Infinity",
+    "category": "game-variety",
+    "title": "Ignite Infinity",
+    "artist": "「PHANTASY STAR PORTABLE2 ∞」",
+    "bpm": 160,
+    "imageName": "0bd0d8d3acb380d675017b05e1b210749ad9d51b7d9add77ef92288335cc3740.png",
+    "version": "green",
+    "releaseDate": "2013-07-11",
     "isNew": true,
     "isLocked": false,
     "comment": null,
-    "slug": "q9192",
-    "internalImageId": "img_1Ugk7Ph2PeM3",
-    "sheets": [
-      {
-        "type": "dx",
-        "difficulty": "basic",
-        "level": "5",
-        "levelValue": 5,
-        "internalLevel": null,
-        "internalLevelValue": 5,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 274
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "advanced",
-        "level": "7+",
-        "levelValue": 7.6,
-        "internalLevel": null,
-        "internalLevelValue": 7.6,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 394
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "expert",
-        "level": "11",
-        "levelValue": 11,
-        "internalLevel": null,
-        "internalLevelValue": 11,
-        "noteDesigner": null,
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 629
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "master",
-        "level": "13+",
-        "levelValue": 13.6,
-        "internalLevel": null,
-        "internalLevelValue": 13.6,
-        "noteDesigner": null,
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 1032
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      }
-    ],
-    "keyword": "イレギュラーマン"
-  },
-  {
-    "songId": "ちっちゃな私",
-    "category": "niconico-vocaloid",
-    "title": "ちっちゃな私",
-    "artist": "マサラダ",
-    "bpm": null,
-    "imageName": "95c11dd885bdf613c9f306a2afdfd3ecd8aa70a7525b40379db8b9aba1a34108.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-07-17",
-    "isNew": true,
-    "isLocked": false,
-    "comment": null,
-    "slug": "a0muh",
-    "internalImageId": "img_RJe2EFEsjh4d",
+    "slug": "ignite-infinity-phantasy-star-portable2-p80nf",
+    "internalImageId": "img__dU91lGVIaGi",
     "sheets": [
       {
         "type": "dx",
@@ -158,7 +28,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 175
+          "total": 119
         },
         "regions": {
           "jp": true,
@@ -186,137 +56,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 274
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "expert",
-        "level": "9+",
-        "levelValue": 9.6,
-        "internalLevel": null,
-        "internalLevelValue": 9.6,
-        "noteDesigner": null,
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 389
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "master",
-        "level": "12+",
-        "levelValue": 12.6,
-        "internalLevel": null,
-        "internalLevelValue": 12.6,
-        "noteDesigner": null,
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 649
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      }
-    ],
-    "keyword": "ちっちゃな私"
-  },
-  {
-    "songId": "2代目閻魔",
-    "category": "niconico-vocaloid",
-    "title": "2代目閻魔",
-    "artist": "読谷あかね",
-    "bpm": null,
-    "imageName": "e4b8339d1f4d4609bac1f22c94736c533ff9c78ce2495a66a49db9aaaac77f0a.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-07-17",
-    "isNew": true,
-    "isLocked": false,
-    "comment": null,
-    "slug": "2-sm067",
-    "internalImageId": "img_2m-MyYaD99Tz",
-    "sheets": [
-      {
-        "type": "dx",
-        "difficulty": "basic",
-        "level": "2",
-        "levelValue": 2,
-        "internalLevel": null,
-        "internalLevelValue": 2,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 160
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "advanced",
-        "level": "6",
-        "levelValue": 6,
-        "internalLevel": null,
-        "internalLevelValue": 6,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 315
+          "total": 210
         },
         "regions": {
           "jp": true,
@@ -344,137 +84,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 477
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "master",
-        "level": "13+",
-        "levelValue": 13.6,
-        "internalLevel": null,
-        "internalLevelValue": 13.6,
-        "noteDesigner": null,
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 864
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      }
-    ],
-    "keyword": "2代目閻魔"
-  },
-  {
-    "songId": "シスターに懺悔を",
-    "category": "niconico-vocaloid",
-    "title": "シスターに懺悔を",
-    "artist": "廃原メモリ",
-    "bpm": null,
-    "imageName": "0d4d90f457c2fefc4d92119a98445e9dc4ad25c620ceec5a5243f3962dad1912.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-07-17",
-    "isNew": true,
-    "isLocked": false,
-    "comment": null,
-    "slug": "gjt0i",
-    "internalImageId": "img_QfX423Jg2y2M",
-    "sheets": [
-      {
-        "type": "dx",
-        "difficulty": "basic",
-        "level": "3",
-        "levelValue": 3,
-        "internalLevel": null,
-        "internalLevelValue": 3,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 193
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "advanced",
-        "level": "7",
-        "levelValue": 7,
-        "internalLevel": null,
-        "internalLevelValue": 7,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 344
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "expert",
-        "level": "10+",
-        "levelValue": 10.6,
-        "internalLevel": null,
-        "internalLevelValue": 10.6,
-        "noteDesigner": null,
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 451
+          "total": 316
         },
         "regions": {
           "jp": true,
@@ -502,7 +112,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 743
+          "total": 521
         },
         "regions": {
           "jp": true,
@@ -515,24 +125,136 @@
         },
         "isSpecial": false,
         "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "std",
+        "difficulty": "basic",
+        "level": "4",
+        "levelValue": 4,
+        "internalLevel": null,
+        "internalLevelValue": 4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 81,
+          "hold": 5,
+          "slide": 5,
+          "touch": null,
+          "break": 6,
+          "total": 97
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "GreeN"
+      },
+      {
+        "type": "std",
+        "difficulty": "advanced",
+        "level": "7",
+        "levelValue": 7,
+        "internalLevel": null,
+        "internalLevelValue": 7,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 116,
+          "hold": 45,
+          "slide": 8,
+          "touch": null,
+          "break": 5,
+          "total": 174
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "GreeN"
+      },
+      {
+        "type": "std",
+        "difficulty": "expert",
+        "level": "11+",
+        "levelValue": 11.6,
+        "internalLevel": null,
+        "internalLevelValue": 11.6,
+        "noteDesigner": "譜面-100号",
+        "noteCounts": {
+          "tap": 174,
+          "hold": 49,
+          "slide": 76,
+          "touch": null,
+          "break": 2,
+          "total": 301
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "GreeN"
+      },
+      {
+        "type": "std",
+        "difficulty": "master",
+        "level": "12+",
+        "levelValue": 12.6,
+        "internalLevel": "12.6",
+        "internalLevelValue": 12.6,
+        "noteDesigner": "ニャイン",
+        "noteCounts": {
+          "tap": 231,
+          "hold": 55,
+          "slide": 43,
+          "touch": null,
+          "break": 6,
+          "total": 335
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "GreeN"
       }
     ],
-    "keyword": "シスターに懺悔を"
+    "keyword": "Ignite Infinity"
   },
   {
-    "songId": "Cryogenic",
-    "category": "game-variety",
-    "title": "Cryogenic",
-    "artist": "Camellia ft. Petra Gurin「In Falsus」",
-    "bpm": null,
-    "imageName": "e970e78e489671ab3de9772486d51e6a1dec60fdb7d17399490b8ffe90b3b18c.png",
+    "songId": "ボックスワンターバ〜ン",
+    "category": "pops-anime",
+    "title": "ボックスワンターバ〜ン",
+    "artist": "ぼくわたチャンネル",
+    "bpm": 171,
+    "imageName": "d73447696f302731351cadfca8716e74d6528356438db1b399a136dbc92a0805.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-07-17",
+    "releaseDate": "2026-08-04",
     "isNew": true,
     "isLocked": false,
     "comment": null,
-    "slug": "cryogenic-camellia-ft-petra-gurinin-falsus-3sot3",
-    "internalImageId": "img_PgALYq21t-zN",
+    "slug": "p4b0b",
+    "internalImageId": "img_u3neDP9Zqn4u",
     "sheets": [
       {
         "type": "dx",
@@ -548,7 +270,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 148
+          "total": 208
         },
         "regions": {
           "jp": true,
@@ -565,10 +287,10 @@
       {
         "type": "dx",
         "difficulty": "advanced",
-        "level": "6",
-        "levelValue": 6,
+        "level": "7",
+        "levelValue": 7,
         "internalLevel": null,
-        "internalLevelValue": 6,
+        "internalLevelValue": 7,
         "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
@@ -576,7 +298,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 302
+          "total": 347
         },
         "regions": {
           "jp": true,
@@ -593,18 +315,18 @@
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "11",
-        "levelValue": 11,
+        "level": "10",
+        "levelValue": 10,
         "internalLevel": null,
-        "internalLevelValue": 11,
-        "noteDesigner": null,
+        "internalLevelValue": 10,
+        "noteDesigner": "はっぴー",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 419
+          "tap": 405,
+          "hold": 53,
+          "slide": 16,
+          "touch": 8,
+          "break": 33,
+          "total": 515
         },
         "regions": {
           "jp": true,
@@ -625,14 +347,14 @@
         "levelValue": 13.6,
         "internalLevel": null,
         "internalLevelValue": 13.6,
-        "noteDesigner": null,
+        "noteDesigner": "サファ太",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 740
+          "tap": 591,
+          "hold": 59,
+          "slide": 115,
+          "touch": 147,
+          "break": 199,
+          "total": 1111
         },
         "regions": {
           "jp": true,
@@ -647,6 +369,6 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "Cryogenic"
+    "keyword": "ボックスワンターバ〜ン"
   }
 ]
