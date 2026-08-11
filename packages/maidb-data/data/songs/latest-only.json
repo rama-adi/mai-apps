@@ -1,26 +1,26 @@
 [
   {
-    "songId": "Ignite Infinity",
-    "category": "game-variety",
-    "title": "Ignite Infinity",
-    "artist": "「PHANTASY STAR PORTABLE2 ∞」",
-    "bpm": 160,
-    "imageName": "0bd0d8d3acb380d675017b05e1b210749ad9d51b7d9add77ef92288335cc3740.png",
-    "version": "green",
-    "releaseDate": "2013-07-11",
+    "songId": "Story Continued",
+    "category": "maimai",
+    "title": "Story Continued",
+    "artist": "ユアミトス",
+    "bpm": 170,
+    "imageName": "283635d37c8244909195a0a4dacabf88e267ac9afdc52c1923aa930909d5b9b8.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-08-07",
     "isNew": true,
-    "isLocked": false,
+    "isLocked": true,
     "comment": null,
-    "slug": "ignite-infinity-phantasy-star-portable2-p80nf",
-    "internalImageId": "img__dU91lGVIaGi",
+    "slug": "story-continued-9wo9r",
+    "internalImageId": "img_S1li4JlBA65E",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "3",
-        "levelValue": 3,
+        "level": "4",
+        "levelValue": 4,
         "internalLevel": null,
-        "internalLevelValue": 3,
+        "internalLevelValue": 4,
         "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
@@ -28,7 +28,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 119
+          "total": 200
         },
         "regions": {
           "jp": true,
@@ -56,7 +56,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 210
+          "total": 302
         },
         "regions": {
           "jp": true,
@@ -73,18 +73,18 @@
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "10",
-        "levelValue": 10,
+        "level": "10+",
+        "levelValue": 10.6,
         "internalLevel": null,
-        "internalLevelValue": 10,
-        "noteDesigner": null,
+        "internalLevelValue": 10.6,
+        "noteDesigner": "サファ太",
         "noteCounts": {
           "tap": null,
           "hold": null,
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 316
+          "total": 466
         },
         "regions": {
           "jp": true,
@@ -103,16 +103,62 @@
         "difficulty": "master",
         "level": "13",
         "levelValue": 13,
-        "internalLevel": null,
-        "internalLevelValue": 13,
-        "noteDesigner": null,
+        "internalLevel": "13.2",
+        "internalLevelValue": 13.2,
+        "noteDesigner": "けんけん法師",
         "noteCounts": {
           "tap": null,
           "hold": null,
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 521
+          "total": 657
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "Story Continued"
+  },
+  {
+    "songId": "SERAPHIC SYNDROME",
+    "category": "maimai",
+    "title": "SERAPHIC SYNDROME",
+    "artist": "堀田英邦",
+    "bpm": 216,
+    "imageName": "fa56d1fdd9083adac5c200a75c27ba9f7bbf29a7be148b71364b1528a3439096.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-08-07",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "seraphic-syndrome-4q7um",
+    "internalImageId": "img__vnZK0uMQpEU",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 262
         },
         "regions": {
           "jp": true,
@@ -127,7 +173,109 @@
         "version": "CiRCLE PLUS"
       },
       {
-        "type": "std",
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "8",
+        "levelValue": 8,
+        "internalLevel": null,
+        "internalLevelValue": 8,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 391
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "12",
+        "levelValue": 12,
+        "internalLevel": "12.2",
+        "internalLevelValue": 12.2,
+        "noteDesigner": "Jack",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 627
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "14",
+        "levelValue": 14,
+        "internalLevel": "14.2",
+        "internalLevelValue": 14.2,
+        "noteDesigner": "はっぴー",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 1039
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "SERAPHIC SYNDROME"
+  },
+  {
+    "songId": "終幕の傀儡",
+    "category": "maimai",
+    "title": "終幕の傀儡",
+    "artist": "RB.H × lixound × 薛南",
+    "bpm": 200,
+    "imageName": "594fafe048bcf55da92c7a7cab1cf71a7ecea1125163d2966eb9861c17c453bb.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-08-07",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "rbh-lixound-ygixz",
+    "internalImageId": "img_w8u3VgtTYQ05",
+    "sheets": [
+      {
+        "type": "dx",
         "difficulty": "basic",
         "level": "4",
         "levelValue": 4,
@@ -135,134 +283,134 @@
         "internalLevelValue": 4,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": 81,
-          "hold": 5,
-          "slide": 5,
+          "tap": null,
+          "hold": null,
+          "slide": null,
           "touch": null,
-          "break": 6,
-          "total": 97
+          "break": null,
+          "total": 250
         },
         "regions": {
           "jp": true,
-          "intl": true,
-          "usa": true,
-          "cn": true
+          "intl": false,
+          "usa": false,
+          "cn": false
         },
         "regionOverrides": {
           "intl": {}
         },
         "isSpecial": false,
-        "version": "GreeN"
+        "version": "CiRCLE PLUS"
       },
       {
-        "type": "std",
+        "type": "dx",
         "difficulty": "advanced",
-        "level": "7",
-        "levelValue": 7,
+        "level": "8",
+        "levelValue": 8,
         "internalLevel": null,
-        "internalLevelValue": 7,
+        "internalLevelValue": 8,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": 116,
-          "hold": 45,
-          "slide": 8,
+          "tap": null,
+          "hold": null,
+          "slide": null,
           "touch": null,
-          "break": 5,
-          "total": 174
+          "break": null,
+          "total": 382
         },
         "regions": {
           "jp": true,
-          "intl": true,
-          "usa": true,
-          "cn": true
+          "intl": false,
+          "usa": false,
+          "cn": false
         },
         "regionOverrides": {
           "intl": {}
         },
         "isSpecial": false,
-        "version": "GreeN"
+        "version": "CiRCLE PLUS"
       },
       {
-        "type": "std",
+        "type": "dx",
         "difficulty": "expert",
-        "level": "11+",
-        "levelValue": 11.6,
-        "internalLevel": null,
-        "internalLevelValue": 11.6,
-        "noteDesigner": "譜面-100号",
-        "noteCounts": {
-          "tap": 174,
-          "hold": 49,
-          "slide": 76,
-          "touch": null,
-          "break": 2,
-          "total": 301
-        },
-        "regions": {
-          "jp": true,
-          "intl": true,
-          "usa": true,
-          "cn": true
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "GreeN"
-      },
-      {
-        "type": "std",
-        "difficulty": "master",
         "level": "12+",
         "levelValue": 12.6,
-        "internalLevel": "12.6",
-        "internalLevelValue": 12.6,
-        "noteDesigner": "ニャイン",
+        "internalLevel": "12.8",
+        "internalLevelValue": 12.8,
+        "noteDesigner": "サファ太",
         "noteCounts": {
-          "tap": 231,
-          "hold": 55,
-          "slide": 43,
+          "tap": null,
+          "hold": null,
+          "slide": null,
           "touch": null,
-          "break": 6,
-          "total": 335
+          "break": null,
+          "total": 647
         },
         "regions": {
           "jp": true,
-          "intl": true,
-          "usa": true,
-          "cn": true
+          "intl": false,
+          "usa": false,
+          "cn": false
         },
         "regionOverrides": {
           "intl": {}
         },
         "isSpecial": false,
-        "version": "GreeN"
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "14",
+        "levelValue": 14,
+        "internalLevel": "14.3",
+        "internalLevelValue": 14.3,
+        "noteDesigner": "Luxizhel",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 904
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "Ignite Infinity"
+    "keyword": "終幕の傀儡"
   },
   {
-    "songId": "ボックスワンターバ〜ン",
-    "category": "pops-anime",
-    "title": "ボックスワンターバ〜ン",
-    "artist": "ぼくわたチャンネル",
-    "bpm": 171,
-    "imageName": "d73447696f302731351cadfca8716e74d6528356438db1b399a136dbc92a0805.png",
+    "songId": "Aegisfortia",
+    "category": "maimai",
+    "title": "Aegisfortia",
+    "artist": "お月さま交響曲",
+    "bpm": 238,
+    "imageName": "515f38c75cbaf931f61a711c47f15565a0601a6db47c4397e7c5e87913220076.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-08-04",
+    "releaseDate": "2026-08-07",
     "isNew": true,
-    "isLocked": false,
+    "isLocked": true,
     "comment": null,
-    "slug": "p4b0b",
-    "internalImageId": "img_u3neDP9Zqn4u",
+    "slug": "aegisfortia-8wnv1",
+    "internalImageId": "img_BENp2D_exzQM",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "3",
-        "levelValue": 3,
+        "level": "6",
+        "levelValue": 6,
         "internalLevel": null,
-        "internalLevelValue": 3,
+        "internalLevelValue": 6,
         "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
@@ -270,7 +418,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 208
+          "total": 299
         },
         "regions": {
           "jp": true,
@@ -287,10 +435,10 @@
       {
         "type": "dx",
         "difficulty": "advanced",
-        "level": "7",
-        "levelValue": 7,
+        "level": "9",
+        "levelValue": 9,
         "internalLevel": null,
-        "internalLevelValue": 7,
+        "internalLevelValue": 9,
         "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
@@ -298,7 +446,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 347
+          "total": 405
         },
         "regions": {
           "jp": true,
@@ -315,18 +463,18 @@
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "10",
-        "levelValue": 10,
-        "internalLevel": null,
-        "internalLevelValue": 10,
-        "noteDesigner": "はっぴー",
+        "level": "12+",
+        "levelValue": 12.6,
+        "internalLevel": "12.7",
+        "internalLevelValue": 12.7,
+        "noteDesigner": "発光ビーバー",
         "noteCounts": {
-          "tap": 405,
-          "hold": 53,
-          "slide": 16,
-          "touch": 8,
-          "break": 33,
-          "total": 515
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 603
         },
         "regions": {
           "jp": true,
@@ -343,18 +491,18 @@
       {
         "type": "dx",
         "difficulty": "master",
-        "level": "13+",
-        "levelValue": 13.6,
-        "internalLevel": null,
-        "internalLevelValue": 13.6,
-        "noteDesigner": "サファ太",
+        "level": "14+",
+        "levelValue": 14.6,
+        "internalLevel": "14.8",
+        "internalLevelValue": 14.8,
+        "noteDesigner": "Cement Forest",
         "noteCounts": {
-          "tap": 591,
-          "hold": 59,
-          "slide": 115,
-          "touch": 147,
-          "break": 199,
-          "total": 1111
+          "tap": 715,
+          "hold": 58,
+          "slide": 86,
+          "touch": 80,
+          "break": 135,
+          "total": 1074
         },
         "regions": {
           "jp": true,
@@ -369,6 +517,6 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "ボックスワンターバ〜ン"
+    "keyword": "Aegisfortia"
   }
 ]

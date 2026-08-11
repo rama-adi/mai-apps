@@ -42376,7 +42376,7 @@
     "imageName": "0bd0d8d3acb380d675017b05e1b210749ad9d51b7d9add77ef92288335cc3740.png",
     "version": "green",
     "releaseDate": "2013-07-11",
-    "isNew": true,
+    "isNew": false,
     "isLocked": false,
     "comment": null,
     "slug": "ignite-infinity-phantasy-star-portable2-p80nf",
@@ -42391,11 +42391,11 @@
         "internalLevelValue": 3,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
+          "tap": 93,
+          "hold": 11,
+          "slide": 4,
+          "touch": 7,
+          "break": 4,
           "total": 119
         },
         "regions": {
@@ -42419,11 +42419,11 @@
         "internalLevelValue": 6,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
+          "tap": 173,
+          "hold": 15,
+          "slide": 4,
+          "touch": 14,
+          "break": 4,
           "total": 210
         },
         "regions": {
@@ -42447,11 +42447,11 @@
         "internalLevelValue": 10,
         "noteDesigner": null,
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
+          "tap": 212,
+          "hold": 42,
+          "slide": 28,
+          "touch": 5,
+          "break": 29,
           "total": 316
         },
         "regions": {
@@ -42471,15 +42471,15 @@
         "difficulty": "master",
         "level": "13",
         "levelValue": 13,
-        "internalLevel": null,
+        "internalLevel": "13.0",
         "internalLevelValue": 13,
         "noteDesigner": null,
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
+          "tap": 317,
+          "hold": 42,
+          "slide": 82,
+          "touch": 55,
+          "break": 25,
           "total": 521
         },
         "regions": {
@@ -177035,7 +177035,7 @@
           "total": 182
         },
         "regions": {
-          "jp": true,
+          "jp": false,
           "intl": false,
           "usa": false,
           "cn": false
@@ -177063,7 +177063,7 @@
           "total": 325
         },
         "regions": {
-          "jp": true,
+          "jp": false,
           "intl": false,
           "usa": false,
           "cn": false
@@ -177091,7 +177091,7 @@
           "total": 626
         },
         "regions": {
-          "jp": true,
+          "jp": false,
           "intl": false,
           "usa": false,
           "cn": false
@@ -177119,7 +177119,7 @@
           "total": 823
         },
         "regions": {
-          "jp": true,
+          "jp": false,
           "intl": false,
           "usa": false,
           "cn": false
@@ -177147,7 +177147,7 @@
           "total": 961
         },
         "regions": {
-          "jp": true,
+          "jp": false,
           "intl": false,
           "usa": false,
           "cn": false
@@ -179699,7 +179699,7 @@
           "total": 95
         },
         "regions": {
-          "jp": true,
+          "jp": false,
           "intl": false,
           "usa": false,
           "cn": false
@@ -179727,7 +179727,7 @@
           "total": 218
         },
         "regions": {
-          "jp": true,
+          "jp": false,
           "intl": false,
           "usa": false,
           "cn": false
@@ -179755,7 +179755,7 @@
           "total": 372
         },
         "regions": {
-          "jp": true,
+          "jp": false,
           "intl": false,
           "usa": false,
           "cn": false
@@ -179783,7 +179783,7 @@
           "total": 491
         },
         "regions": {
-          "jp": true,
+          "jp": false,
           "intl": false,
           "usa": false,
           "cn": false
@@ -204518,7 +204518,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204546,7 +204546,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204574,7 +204574,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204602,7 +204602,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204648,7 +204648,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204676,7 +204676,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204704,7 +204704,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -204732,7 +204732,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -205558,7 +205558,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -205586,7 +205586,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -205614,7 +205614,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -205642,7 +205642,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -205688,7 +205688,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -205716,7 +205716,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -205744,7 +205744,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -205772,7 +205772,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -205818,7 +205818,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -205846,7 +205846,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -205874,7 +205874,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -205902,7 +205902,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -205948,7 +205948,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -205976,7 +205976,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -206004,7 +206004,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -206032,7 +206032,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -206728,7 +206728,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -206756,7 +206756,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -206784,7 +206784,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -206812,7 +206812,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -206858,7 +206858,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -206886,7 +206886,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -206914,7 +206914,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -206942,7 +206942,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -206988,7 +206988,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -207016,7 +207016,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -207044,7 +207044,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -207072,7 +207072,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -207118,7 +207118,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -207146,7 +207146,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -207174,7 +207174,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -207202,7 +207202,7 @@
           "jp": true,
           "intl": true,
           "usa": true,
-          "cn": false
+          "cn": true
         },
         "regionOverrides": {
           "intl": {}
@@ -228698,7 +228698,7 @@
           "total": null
         },
         "regions": {
-          "jp": true,
+          "jp": false,
           "intl": false,
           "usa": false,
           "cn": false
@@ -228725,7 +228725,7 @@
           "total": null
         },
         "regions": {
-          "jp": true,
+          "jp": false,
           "intl": false,
           "usa": false,
           "cn": false
@@ -231831,8 +231831,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -231859,8 +231859,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -231887,8 +231887,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -231915,8 +231915,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -231961,8 +231961,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -231989,8 +231989,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -232017,8 +232017,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -232045,8 +232045,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -232091,8 +232091,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -232119,8 +232119,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -232147,8 +232147,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -232175,8 +232175,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -235051,7 +235051,7 @@
     "version": "dx-circle-plus",
     "releaseDate": "2026-07-02",
     "isNew": false,
-    "isLocked": true,
+    "isLocked": false,
     "comment": null,
     "slug": "karato-y2c6x",
     "internalImageId": "img_pJrvUZJ-j1O4",
@@ -235065,12 +235065,12 @@
         "internalLevelValue": 4,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 195,
+          "hold": 11,
+          "slide": 4,
+          "touch": 14,
+          "break": 9,
+          "total": 233
         },
         "regions": {
           "jp": true,
@@ -235081,7 +235081,8 @@
         "regionOverrides": {
           "intl": {}
         },
-        "isSpecial": false
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
       },
       {
         "type": "dx",
@@ -235108,7 +235109,8 @@
         "regionOverrides": {
           "intl": {}
         },
-        "isSpecial": false
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
       },
       {
         "type": "dx",
@@ -235135,7 +235137,8 @@
         "regionOverrides": {
           "intl": {}
         },
-        "isSpecial": false
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
       },
       {
         "type": "dx",
@@ -235162,7 +235165,8 @@
         "regionOverrides": {
           "intl": {}
         },
-        "isSpecial": false
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
       }
     ],
     "keyword": "歌え踊れや桃源郷！"
@@ -236216,7 +236220,7 @@
     "imageName": "d73447696f302731351cadfca8716e74d6528356438db1b399a136dbc92a0805.png",
     "version": "dx-circle-plus",
     "releaseDate": "2026-08-04",
-    "isNew": true,
+    "isNew": false,
     "isLocked": false,
     "comment": null,
     "slug": "p4b0b",
@@ -236231,11 +236235,11 @@
         "internalLevelValue": 3,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
+          "tap": 180,
+          "hold": 8,
+          "slide": 4,
+          "touch": 8,
+          "break": 8,
           "total": 208
         },
         "regions": {
@@ -236259,11 +236263,11 @@
         "internalLevelValue": 7,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
+          "tap": 289,
+          "hold": 12,
+          "slide": 8,
+          "touch": 24,
+          "break": 14,
           "total": 347
         },
         "regions": {
@@ -236311,8 +236315,8 @@
         "difficulty": "master",
         "level": "13+",
         "levelValue": 13.6,
-        "internalLevel": null,
-        "internalLevelValue": 13.6,
+        "internalLevel": "13.8",
+        "internalLevelValue": 13.8,
         "noteDesigner": "サファ太",
         "noteCounts": {
           "tap": 591,
@@ -236426,5 +236430,525 @@
       }
     ],
     "keyword": "[僕]ボックスワンターバ〜ン"
+  },
+  {
+    "songId": "Story Continued",
+    "category": "maimai",
+    "title": "Story Continued",
+    "artist": "ユアミトス",
+    "bpm": 170,
+    "imageName": "283635d37c8244909195a0a4dacabf88e267ac9afdc52c1923aa930909d5b9b8.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-08-07",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "story-continued-9wo9r",
+    "internalImageId": "img_S1li4JlBA65E",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "4",
+        "levelValue": 4,
+        "internalLevel": null,
+        "internalLevelValue": 4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 200
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 302
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10+",
+        "levelValue": 10.6,
+        "internalLevel": null,
+        "internalLevelValue": 10.6,
+        "noteDesigner": "サファ太",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 466
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13",
+        "levelValue": 13,
+        "internalLevel": "13.2",
+        "internalLevelValue": 13.2,
+        "noteDesigner": "けんけん法師",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 657
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "Story Continued"
+  },
+  {
+    "songId": "SERAPHIC SYNDROME",
+    "category": "maimai",
+    "title": "SERAPHIC SYNDROME",
+    "artist": "堀田英邦",
+    "bpm": 216,
+    "imageName": "fa56d1fdd9083adac5c200a75c27ba9f7bbf29a7be148b71364b1528a3439096.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-08-07",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "seraphic-syndrome-4q7um",
+    "internalImageId": "img__vnZK0uMQpEU",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 262
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "8",
+        "levelValue": 8,
+        "internalLevel": null,
+        "internalLevelValue": 8,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 391
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "12",
+        "levelValue": 12,
+        "internalLevel": "12.2",
+        "internalLevelValue": 12.2,
+        "noteDesigner": "Jack",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 627
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "14",
+        "levelValue": 14,
+        "internalLevel": "14.2",
+        "internalLevelValue": 14.2,
+        "noteDesigner": "はっぴー",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 1039
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "SERAPHIC SYNDROME"
+  },
+  {
+    "songId": "終幕の傀儡",
+    "category": "maimai",
+    "title": "終幕の傀儡",
+    "artist": "RB.H × lixound × 薛南",
+    "bpm": 200,
+    "imageName": "594fafe048bcf55da92c7a7cab1cf71a7ecea1125163d2966eb9861c17c453bb.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-08-07",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "rbh-lixound-ygixz",
+    "internalImageId": "img_w8u3VgtTYQ05",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "4",
+        "levelValue": 4,
+        "internalLevel": null,
+        "internalLevelValue": 4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 250
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "8",
+        "levelValue": 8,
+        "internalLevel": null,
+        "internalLevelValue": 8,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 382
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "12+",
+        "levelValue": 12.6,
+        "internalLevel": "12.8",
+        "internalLevelValue": 12.8,
+        "noteDesigner": "サファ太",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 647
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "14",
+        "levelValue": 14,
+        "internalLevel": "14.3",
+        "internalLevelValue": 14.3,
+        "noteDesigner": "Luxizhel",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 904
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "終幕の傀儡"
+  },
+  {
+    "songId": "Aegisfortia",
+    "category": "maimai",
+    "title": "Aegisfortia",
+    "artist": "お月さま交響曲",
+    "bpm": 238,
+    "imageName": "515f38c75cbaf931f61a711c47f15565a0601a6db47c4397e7c5e87913220076.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-08-07",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "aegisfortia-8wnv1",
+    "internalImageId": "img_BENp2D_exzQM",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 299
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "9",
+        "levelValue": 9,
+        "internalLevel": null,
+        "internalLevelValue": 9,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 405
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "12+",
+        "levelValue": 12.6,
+        "internalLevel": "12.7",
+        "internalLevelValue": 12.7,
+        "noteDesigner": "発光ビーバー",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 603
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "14+",
+        "levelValue": 14.6,
+        "internalLevel": "14.8",
+        "internalLevelValue": 14.8,
+        "noteDesigner": "Cement Forest",
+        "noteCounts": {
+          "tap": 715,
+          "hold": 58,
+          "slide": 86,
+          "touch": 80,
+          "break": 135,
+          "total": 1074
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "Aegisfortia"
   }
 ]

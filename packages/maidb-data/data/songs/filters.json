@@ -510,12 +510,12 @@
   ],
   "statuses": [
     {
-      "value": "new",
-      "label": "New"
-    },
-    {
       "value": "locked",
       "label": "Locked"
+    },
+    {
+      "value": "new",
+      "label": "New"
     }
   ]
 }
