@@ -1,18 +1,18 @@
 [
   {
-    "songId": "Story Continued",
-    "category": "maimai",
-    "title": "Story Continued",
-    "artist": "ユアミトス",
-    "bpm": 170,
-    "imageName": "283635d37c8244909195a0a4dacabf88e267ac9afdc52c1923aa930909d5b9b8.png",
+    "songId": "Broomstick adventure!",
+    "category": "game-variety",
+    "title": "Broomstick adventure!",
+    "artist": "しーけー",
+    "bpm": null,
+    "imageName": "763fc9e0e4f7f311203547bae22e0b4f2a2d167e9dc674f530bd95a69ef93088.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-08-07",
+    "releaseDate": "2026-08-21",
     "isNew": true,
-    "isLocked": true,
+    "isLocked": false,
     "comment": null,
-    "slug": "story-continued-9wo9r",
-    "internalImageId": "img_S1li4JlBA65E",
+    "slug": "broomstick-adventure-71gab",
+    "internalImageId": "img_r-r_KxpNmzr_",
     "sheets": [
       {
         "type": "dx",
@@ -28,7 +28,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 200
+          "total": 198
         },
         "regions": {
           "jp": true,
@@ -56,7 +56,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 302
+          "total": 354
         },
         "regions": {
           "jp": true,
@@ -77,14 +77,144 @@
         "levelValue": 10.6,
         "internalLevel": null,
         "internalLevelValue": 10.6,
-        "noteDesigner": "サファ太",
+        "noteDesigner": null,
         "noteCounts": {
           "tap": null,
           "hold": null,
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 466
+          "total": 534
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": null,
+        "internalLevelValue": 13.6,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 758
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      }
+    ],
+    "keyword": "Broomstick adventure!"
+  },
+  {
+    "songId": "無彩色のディストピア",
+    "category": "game-variety",
+    "title": "無彩色のディストピア",
+    "artist": "HyuN feat. ウォルピスカーター",
+    "bpm": null,
+    "imageName": "2cfa179a1ba49dcfd523b3f2f79f6857156ac33e2a411aee7380c7618e56f5de.png",
+    "version": "dx-circle-plus",
+    "releaseDate": "2026-08-21",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "ptlzc",
+    "internalImageId": "img_Z8h7CqWBf6r5",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "3",
+        "levelValue": 3,
+        "internalLevel": null,
+        "internalLevelValue": 3,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 206
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 291
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "CiRCLE PLUS"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10+",
+        "levelValue": 10.6,
+        "internalLevel": null,
+        "internalLevelValue": 10.6,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 547
         },
         "regions": {
           "jp": true,
@@ -103,16 +233,16 @@
         "difficulty": "master",
         "level": "13",
         "levelValue": 13,
-        "internalLevel": "13.2",
-        "internalLevelValue": 13.2,
-        "noteDesigner": "けんけん法師",
+        "internalLevel": null,
+        "internalLevelValue": 13,
+        "noteDesigner": null,
         "noteCounts": {
           "tap": null,
           "hold": null,
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 657
+          "total": 754
         },
         "regions": {
           "jp": true,
@@ -127,30 +257,30 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "Story Continued"
+    "keyword": "無彩色のディストピア"
   },
   {
-    "songId": "SERAPHIC SYNDROME",
-    "category": "maimai",
-    "title": "SERAPHIC SYNDROME",
-    "artist": "堀田英邦",
-    "bpm": 216,
-    "imageName": "fa56d1fdd9083adac5c200a75c27ba9f7bbf29a7be148b71364b1528a3439096.png",
+    "songId": "Manifold Hypothesis",
+    "category": "game-variety",
+    "title": "Manifold Hypothesis",
+    "artist": "cybermiso feat. tigerlily",
+    "bpm": null,
+    "imageName": "a9773adab7af4f799533c5594f59bf86e5b5a615b18c6a74ce753592ee434fe2.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-08-07",
+    "releaseDate": "2026-08-21",
     "isNew": true,
     "isLocked": true,
     "comment": null,
-    "slug": "seraphic-syndrome-4q7um",
-    "internalImageId": "img__vnZK0uMQpEU",
+    "slug": "manifold-hypothesis-cybermiso-hjrw0",
+    "internalImageId": "img_aWoGgUvZ3RU3",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "6",
-        "levelValue": 6,
+        "level": "3",
+        "levelValue": 3,
         "internalLevel": null,
-        "internalLevelValue": 6,
+        "internalLevelValue": 3,
         "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
@@ -158,7 +288,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 262
+          "total": 217
         },
         "regions": {
           "jp": true,
@@ -175,10 +305,10 @@
       {
         "type": "dx",
         "difficulty": "advanced",
-        "level": "8",
-        "levelValue": 8,
+        "level": "7+",
+        "levelValue": 7.6,
         "internalLevel": null,
-        "internalLevelValue": 8,
+        "internalLevelValue": 7.6,
         "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
@@ -186,7 +316,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 391
+          "total": 381
         },
         "regions": {
           "jp": true,
@@ -203,18 +333,18 @@
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "12",
-        "levelValue": 12,
-        "internalLevel": "12.2",
-        "internalLevelValue": 12.2,
-        "noteDesigner": "Jack",
+        "level": "11",
+        "levelValue": 11,
+        "internalLevel": null,
+        "internalLevelValue": 11,
+        "noteDesigner": null,
         "noteCounts": {
           "tap": null,
           "hold": null,
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 627
+          "total": 496
         },
         "regions": {
           "jp": true,
@@ -231,18 +361,18 @@
       {
         "type": "dx",
         "difficulty": "master",
-        "level": "14",
-        "levelValue": 14,
-        "internalLevel": "14.2",
-        "internalLevelValue": 14.2,
-        "noteDesigner": "はっぴー",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": null,
+        "internalLevelValue": 13.6,
+        "noteDesigner": null,
         "noteCounts": {
           "tap": null,
           "hold": null,
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 1039
+          "total": 900
         },
         "regions": {
           "jp": true,
@@ -257,22 +387,22 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "SERAPHIC SYNDROME"
+    "keyword": "Manifold Hypothesis"
   },
   {
-    "songId": "終幕の傀儡",
-    "category": "maimai",
-    "title": "終幕の傀儡",
-    "artist": "RB.H × lixound × 薛南",
-    "bpm": 200,
-    "imageName": "594fafe048bcf55da92c7a7cab1cf71a7ecea1125163d2966eb9861c17c453bb.png",
+    "songId": "Inverted World",
+    "category": "game-variety",
+    "title": "Inverted World",
+    "artist": "ARForest",
+    "bpm": null,
+    "imageName": "aeebab7210afc8655f7a4965ce59bb8fc1f7fcd9cb4ce5f0e18d5ca81521ddbd.png",
     "version": "dx-circle-plus",
-    "releaseDate": "2026-08-07",
+    "releaseDate": "2026-08-21",
     "isNew": true,
     "isLocked": true,
     "comment": null,
-    "slug": "rbh-lixound-ygixz",
-    "internalImageId": "img_w8u3VgtTYQ05",
+    "slug": "inverted-world-arforest-sk19x",
+    "internalImageId": "img_oCJQD4edyx8F",
     "sheets": [
       {
         "type": "dx",
@@ -288,7 +418,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 250
+          "total": 205
         },
         "regions": {
           "jp": true,
@@ -305,10 +435,10 @@
       {
         "type": "dx",
         "difficulty": "advanced",
-        "level": "8",
-        "levelValue": 8,
+        "level": "7",
+        "levelValue": 7,
         "internalLevel": null,
-        "internalLevelValue": 8,
+        "internalLevelValue": 7,
         "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
@@ -316,7 +446,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 382
+          "total": 337
         },
         "regions": {
           "jp": true,
@@ -333,18 +463,18 @@
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "12+",
-        "levelValue": 12.6,
-        "internalLevel": "12.8",
-        "internalLevelValue": 12.8,
-        "noteDesigner": "サファ太",
+        "level": "11+",
+        "levelValue": 11.6,
+        "internalLevel": null,
+        "internalLevelValue": 11.6,
+        "noteDesigner": null,
         "noteCounts": {
           "tap": null,
           "hold": null,
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 647
+          "total": 538
         },
         "regions": {
           "jp": true,
@@ -363,16 +493,16 @@
         "difficulty": "master",
         "level": "14",
         "levelValue": 14,
-        "internalLevel": "14.3",
-        "internalLevelValue": 14.3,
-        "noteDesigner": "Luxizhel",
+        "internalLevel": null,
+        "internalLevelValue": 14,
+        "noteDesigner": null,
         "noteCounts": {
           "tap": null,
           "hold": null,
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 904
+          "total": 854
         },
         "regions": {
           "jp": true,
@@ -387,136 +517,6 @@
         "version": "CiRCLE PLUS"
       }
     ],
-    "keyword": "終幕の傀儡"
-  },
-  {
-    "songId": "Aegisfortia",
-    "category": "maimai",
-    "title": "Aegisfortia",
-    "artist": "お月さま交響曲",
-    "bpm": 238,
-    "imageName": "515f38c75cbaf931f61a711c47f15565a0601a6db47c4397e7c5e87913220076.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-08-07",
-    "isNew": true,
-    "isLocked": true,
-    "comment": null,
-    "slug": "aegisfortia-8wnv1",
-    "internalImageId": "img_BENp2D_exzQM",
-    "sheets": [
-      {
-        "type": "dx",
-        "difficulty": "basic",
-        "level": "6",
-        "levelValue": 6,
-        "internalLevel": null,
-        "internalLevelValue": 6,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 299
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "advanced",
-        "level": "9",
-        "levelValue": 9,
-        "internalLevel": null,
-        "internalLevelValue": 9,
-        "noteDesigner": "-",
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 405
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "expert",
-        "level": "12+",
-        "levelValue": 12.6,
-        "internalLevel": "12.7",
-        "internalLevelValue": 12.7,
-        "noteDesigner": "発光ビーバー",
-        "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": 603
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      },
-      {
-        "type": "dx",
-        "difficulty": "master",
-        "level": "14+",
-        "levelValue": 14.6,
-        "internalLevel": "14.8",
-        "internalLevelValue": 14.8,
-        "noteDesigner": "Cement Forest",
-        "noteCounts": {
-          "tap": 715,
-          "hold": 58,
-          "slide": 86,
-          "touch": 80,
-          "break": 135,
-          "total": 1074
-        },
-        "regions": {
-          "jp": true,
-          "intl": false,
-          "usa": false,
-          "cn": false
-        },
-        "regionOverrides": {
-          "intl": {}
-        },
-        "isSpecial": false,
-        "version": "CiRCLE PLUS"
-      }
-    ],
-    "keyword": "Aegisfortia"
+    "keyword": "Inverted World"
   }
 ]
