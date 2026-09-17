@@ -1,18 +1,18 @@
 [
   {
-    "songId": "相性×優勝ドロップス",
-    "category": "pops-anime",
-    "title": "相性×優勝ドロップス",
-    "artist": "Idios",
-    "bpm": null,
-    "imageName": "34b5cecd3a8182a0f69ba14da647b998fe7c9bd1d0d95de1d4d264ad3d8e212a.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-09-04",
+    "songId": "物凄い勢いでけーねが物凄いうた",
+    "category": "touhou",
+    "title": "物凄い勢いでけーねが物凄いうた",
+    "artist": "Halozy",
+    "bpm": 180,
+    "imageName": "af903603ea9b0d777ee9a26ef59fa649339d70f1903343bac7376400e95dc589.png",
+    "version": "pink",
+    "releaseDate": "2015-12-09",
     "isNew": true,
     "isLocked": false,
     "comment": null,
-    "slug": "lf2zc",
-    "internalImageId": "img_SE0Ayk5A0uhI",
+    "slug": "monosugoi-ikioide-ke-ne-halozy-o1kno",
+    "internalImageId": "img_5eQY8rLi_xNT",
     "sheets": [
       {
         "type": "dx",
@@ -28,7 +28,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 171
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -40,7 +40,1159 @@
           "intl": {}
         },
         "isSpecial": false,
-        "version": "CiRCLE PLUS"
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "7",
+        "levelValue": 7,
+        "internalLevel": "7.0",
+        "internalLevelValue": 7,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10+",
+        "levelValue": 10.6,
+        "internalLevel": "10.8",
+        "internalLevelValue": 10.8,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.7",
+        "internalLevelValue": 13.7,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "std",
+        "difficulty": "basic",
+        "level": "5",
+        "levelValue": 5,
+        "internalLevel": null,
+        "internalLevelValue": 5,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 135,
+          "hold": 6,
+          "slide": 4,
+          "touch": null,
+          "break": 4,
+          "total": 149
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "PiNK"
+      },
+      {
+        "type": "std",
+        "difficulty": "advanced",
+        "level": "8",
+        "levelValue": 8,
+        "internalLevel": "8.0",
+        "internalLevelValue": 8,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 251,
+          "hold": 20,
+          "slide": 28,
+          "touch": null,
+          "break": 22,
+          "total": 321
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "PiNK"
+      },
+      {
+        "type": "std",
+        "difficulty": "expert",
+        "level": "9+",
+        "levelValue": 9.6,
+        "internalLevel": "9.8",
+        "internalLevelValue": 9.8,
+        "noteDesigner": "某S氏",
+        "noteCounts": {
+          "tap": 280,
+          "hold": 27,
+          "slide": 54,
+          "touch": null,
+          "break": 27,
+          "total": 388
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "PiNK"
+      },
+      {
+        "type": "std",
+        "difficulty": "master",
+        "level": "13",
+        "levelValue": 13,
+        "internalLevel": "13.4",
+        "internalLevelValue": 13.4,
+        "noteDesigner": "mai-Star",
+        "noteCounts": {
+          "tap": 452,
+          "hold": 30,
+          "slide": 84,
+          "touch": null,
+          "break": 33,
+          "total": 599
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "PiNK"
+      }
+    ],
+    "keyword": "物凄い勢いでけーねが物凄いうた\tMonosugoi Ikioide Ke-ne"
+  },
+  {
+    "songId": "物語はここから",
+    "category": "maimai",
+    "title": "物語はここから",
+    "artist": "OSTER project feat. Kanata.N",
+    "bpm": null,
+    "imageName": "c0906b4b035da0e7de24183201441f97addb3d52ce44102783bf481fcc225016.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "oster-project-0dqd3",
+    "internalImageId": "img_YA1w0kzpMQ3C",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "4",
+        "levelValue": 4,
+        "internalLevel": null,
+        "internalLevelValue": 4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "7",
+        "levelValue": 7,
+        "internalLevel": "7.5",
+        "internalLevelValue": 7.5,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10+",
+        "levelValue": 10.6,
+        "internalLevel": "10.9",
+        "internalLevelValue": 10.9,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13",
+        "levelValue": 13,
+        "internalLevel": "13.5",
+        "internalLevelValue": 13.5,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "物語はここから"
+  },
+  {
+    "songId": "ミルクミルクミルク",
+    "category": "maimai",
+    "title": "ミルクミルクミルク",
+    "artist": "藤原ハガネ feat. マスタード",
+    "bpm": null,
+    "imageName": "43c7d2fa306214c61a77b69533c09efb2e649c1895a05faee4ed6a9d8bdd17cb.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "ao05c",
+    "internalImageId": "img_tXTvWAGGvHmu",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "4",
+        "levelValue": 4,
+        "internalLevel": null,
+        "internalLevelValue": 4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "8",
+        "levelValue": 8,
+        "internalLevel": "8.0",
+        "internalLevelValue": 8,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "11+",
+        "levelValue": 11.6,
+        "internalLevel": "11.8",
+        "internalLevelValue": 11.8,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.8",
+        "internalLevelValue": 13.8,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "ミルクミルクミルク"
+  },
+  {
+    "songId": "MissionDistortion",
+    "category": "maimai",
+    "title": "MissionDistortion",
+    "artist": "Nor",
+    "bpm": null,
+    "imageName": "d028d573301659bf3ffa52221061f8d3dd7d4087060a7070c91297421cca4602.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "missiondistortion-35my1",
+    "internalImageId": "img_8IxsjPE3ykRc",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "3",
+        "levelValue": 3,
+        "internalLevel": null,
+        "internalLevelValue": 3,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "12+",
+        "levelValue": 12.6,
+        "internalLevel": "12.9",
+        "internalLevelValue": 12.9,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.8",
+        "internalLevelValue": 13.8,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "MissionDistortion"
+  },
+  {
+    "songId": "Dear Player 2",
+    "category": "maimai",
+    "title": "Dear Player 2",
+    "artist": "tn-shi",
+    "bpm": null,
+    "imageName": "b6d37211bc809f2dd17299c5438dbe9090f196e3e8303c1fa7e78359e0d67262.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "dear-player-2-x916n",
+    "internalImageId": "img_ob-7gphKeNu0",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "5",
+        "levelValue": 5,
+        "internalLevel": null,
+        "internalLevelValue": 5,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "8",
+        "levelValue": 8,
+        "internalLevel": "8.5",
+        "internalLevelValue": 8.5,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "12+",
+        "levelValue": 12.6,
+        "internalLevel": "12.8",
+        "internalLevelValue": 12.8,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "14",
+        "levelValue": 14,
+        "internalLevel": "14.4",
+        "internalLevelValue": 14.4,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "Dear Player 2"
+  },
+  {
+    "songId": "IMPACT",
+    "category": "ongeki-chunithm",
+    "title": "IMPACT",
+    "artist": "USAO feat.光吉猛修",
+    "bpm": 210,
+    "imageName": "eb447d42894ad8a565450687341a7da88c3b752a975389786e1df106420f40f4.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "impact-e8oz8",
+    "internalImageId": "img_bC2MunoLpyTV",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "5",
+        "levelValue": 5,
+        "internalLevel": null,
+        "internalLevelValue": 5,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "7+",
+        "levelValue": 7.6,
+        "internalLevel": "7.9",
+        "internalLevelValue": 7.9,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "12+",
+        "levelValue": 12.6,
+        "internalLevel": "12.7",
+        "internalLevelValue": 12.7,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "14",
+        "levelValue": 14,
+        "internalLevel": "14.1",
+        "internalLevelValue": 14.1,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "IMPACT"
+  },
+  {
+    "songId": "[HALO]",
+    "category": "ongeki-chunithm",
+    "title": "[HALO]",
+    "artist": "Blacklolita",
+    "bpm": 150,
+    "imageName": "b7483f25ac9bfebe42c490e45efe1c9a582e0345191d00e53ffd86ddeced82ec.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "blacklolita-4dnz9",
+    "internalImageId": "img_o4WXraIihyL9",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "4",
+        "levelValue": 4,
+        "internalLevel": null,
+        "internalLevelValue": 4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "12",
+        "levelValue": 12,
+        "internalLevel": "12.0",
+        "internalLevelValue": 12,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "14",
+        "levelValue": 14,
+        "internalLevel": "14.4",
+        "internalLevelValue": 14.4,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "[HALO]"
+  },
+  {
+    "songId": "ごはん食べヨ",
+    "category": "pops-anime",
+    "title": "ごはん食べヨ",
+    "artist": "Mega Shinnosuke",
+    "bpm": null,
+    "imageName": "af87ae00db42dad63fca38e5a69d30cb4e2c002afbbfef239d9b8d70c56c1271.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "mega-shinnosuke-vqeur",
+    "internalImageId": "img_jlIbWn1Bbva_",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "2",
+        "levelValue": 2,
+        "internalLevel": null,
+        "internalLevelValue": 2,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 115
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 228
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "9+",
+        "levelValue": 9.6,
+        "internalLevel": "9.8",
+        "internalLevelValue": 9.8,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 327
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13",
+        "levelValue": 13,
+        "internalLevel": "13.2",
+        "internalLevelValue": 13.2,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": 515
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "ごはん食べヨ"
+  },
+  {
+    "songId": "Ex-Otogibanashi (Anime ver.)",
+    "category": "pops-anime",
+    "title": "Ex-Otogibanashi (Anime ver.)",
+    "artist": "ryo (supercell), 月見ヤチヨ (cv.早見沙織)",
+    "bpm": null,
+    "imageName": "62986a7e37384207041c350c931464a8e531c6827a857f3dea04fec36993b10b.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "ex-otogibanashi-anime-ver-ryo-supercell-cv-rj5je",
+    "internalImageId": "img_kXL7w3ynxv3Y",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "4",
+        "levelValue": 4,
+        "internalLevel": null,
+        "internalLevelValue": 4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
       },
       {
         "type": "dx",
@@ -56,7 +1208,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 353
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -68,15 +1220,15 @@
           "intl": {}
         },
         "isSpecial": false,
-        "version": "CiRCLE PLUS"
+        "version": "MAGiCAL"
       },
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "10",
-        "levelValue": 10,
-        "internalLevel": "10.5",
-        "internalLevelValue": 10.5,
+        "level": "11",
+        "levelValue": 11,
+        "internalLevel": "11.0",
+        "internalLevelValue": 11,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -84,7 +1236,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 513
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -96,15 +1248,173 @@
           "intl": {}
         },
         "isSpecial": false,
-        "version": "CiRCLE PLUS"
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "12",
+        "levelValue": 12,
+        "internalLevel": "12.0",
+        "internalLevelValue": 12,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "remaster",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.8",
+        "internalLevelValue": 13.8,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "Ex-Otogibanashi (Anime ver.)"
+  },
+  {
+    "songId": "私は、わたしの事が好き。(Short ver.)",
+    "category": "pops-anime",
+    "title": "私は、わたしの事が好き。(Short ver.)",
+    "artist": "HoneyWorks, かぐや(cv.夏吉ゆうこ)",
+    "bpm": null,
+    "imageName": "f681207f33645ad1d064c3c60ea3fa036c6bc7ae45cd92828a1a7866f63a42c4.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "short-ver-honeyworks-cv-lv90f",
+    "internalImageId": "img_j-nfyvhPNUiQ",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "3",
+        "levelValue": 3,
+        "internalLevel": null,
+        "internalLevelValue": 3,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "7",
+        "levelValue": 7,
+        "internalLevel": "7.2",
+        "internalLevelValue": 7.2,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10+",
+        "levelValue": 10.6,
+        "internalLevel": "10.8",
+        "internalLevelValue": 10.8,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
       },
       {
         "type": "dx",
         "difficulty": "master",
         "level": "13",
         "levelValue": 13,
-        "internalLevel": "13.2",
-        "internalLevelValue": 13.2,
+        "internalLevel": "13.4",
+        "internalLevelValue": 13.4,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -112,7 +1422,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 740
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -124,25 +1434,25 @@
           "intl": {}
         },
         "isSpecial": false,
-        "version": "CiRCLE PLUS"
+        "version": "MAGiCAL"
       }
     ],
-    "keyword": "相性×優勝ドロップス"
+    "keyword": "私は、わたしの事が好き。(Short ver.)"
   },
   {
-    "songId": "光線歌",
-    "category": "niconico-vocaloid",
-    "title": "光線歌",
-    "artist": "Guiano",
+    "songId": "ワールドイズマイン CPK! Remix (Anime ver.)",
+    "category": "pops-anime",
+    "title": "ワールドイズマイン CPK! Remix (Anime ver.)",
+    "artist": "ryo (supercell), かぐや (cv.夏吉ゆうこ), 月見ヤチヨ (cv.早見沙織)",
     "bpm": null,
-    "imageName": "d7ec0cdfd0de645e928704ac23fee469141c941f6f6aaa38b417570147871f03.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-09-04",
+    "imageName": "7ab283323964cc11fcc272d86f66e4052977d1fa7c08ff7194f20e01b993fe4f.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
     "isNew": true,
     "isLocked": false,
     "comment": null,
-    "slug": "guiano-qr8u8",
-    "internalImageId": "img_tUOQTjKN-dr_",
+    "slug": "cpk-remix-anime-ver-ryo-supercell-cv-cv-srp4x",
+    "internalImageId": "img_D6mPi5P5X-QG",
     "sheets": [
       {
         "type": "dx",
@@ -158,7 +1468,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 166
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -170,7 +1480,7 @@
           "intl": {}
         },
         "isSpecial": false,
-        "version": "CiRCLE PLUS"
+        "version": "MAGiCAL"
       },
       {
         "type": "dx",
@@ -186,7 +1496,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 295
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -198,15 +1508,15 @@
           "intl": {}
         },
         "isSpecial": false,
-        "version": "CiRCLE PLUS"
+        "version": "MAGiCAL"
       },
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "10",
-        "levelValue": 10,
-        "internalLevel": "10.2",
-        "internalLevelValue": 10.2,
+        "level": "9+",
+        "levelValue": 9.6,
+        "internalLevel": "9.8",
+        "internalLevelValue": 9.8,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -214,7 +1524,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 455
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -226,7 +1536,425 @@
           "intl": {}
         },
         "isSpecial": false,
-        "version": "CiRCLE PLUS"
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "11+",
+        "levelValue": 11.6,
+        "internalLevel": "11.8",
+        "internalLevelValue": 11.8,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "remaster",
+        "level": "13",
+        "levelValue": 13,
+        "internalLevel": "13.3",
+        "internalLevelValue": 13.3,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "ワールドイズマイン CPK! Remix (Anime ver.)"
+  },
+  {
+    "songId": "群青声明",
+    "category": "pops-anime",
+    "title": "群青声明",
+    "artist": "佐藤塩 & 西園チグサ",
+    "bpm": null,
+    "imageName": "3efd7e701937295c0c05111cf166a0c5c347ec6909e9116aff83d489e1862ec3.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "eqfj1",
+    "internalImageId": "img_Ul_O7uWTVM4L",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "5",
+        "levelValue": 5,
+        "internalLevel": null,
+        "internalLevelValue": 5,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "7",
+        "levelValue": 7,
+        "internalLevel": "7.4",
+        "internalLevelValue": 7.4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "11",
+        "levelValue": 11,
+        "internalLevel": "11.5",
+        "internalLevelValue": 11.5,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.8",
+        "internalLevelValue": 13.8,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "群青声明"
+  },
+  {
+    "songId": "推活天使ビビアンちゃん (feat.マスタード＆ビートまりお)",
+    "category": "pops-anime",
+    "title": "推活天使ビビアンちゃん (feat.マスタード＆ビートまりお)",
+    "artist": "ファル公＆DJ Myosuke「ゲーム『ゼンレスゾーンゼロ』ビビアン 同人イメージソング」",
+    "bpm": null,
+    "imageName": "2bf0df71f30d00cb3e02a50b3743599fbf51ad60f2ee96da748001ab29be5cd9.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "feat-dj-myosuke-culzw",
+    "internalImageId": "img_DH-1VI_8VLeg",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "4",
+        "levelValue": 4,
+        "internalLevel": null,
+        "internalLevelValue": 4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "7+",
+        "levelValue": 7.6,
+        "internalLevel": "7.7",
+        "internalLevelValue": 7.7,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "12",
+        "levelValue": 12,
+        "internalLevel": "12.4",
+        "internalLevelValue": 12.4,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.9",
+        "internalLevelValue": 13.9,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "推活天使ビビアンちゃん (feat.マスタード＆ビートまりお)"
+  },
+  {
+    "songId": "愛言葉V",
+    "category": "niconico-vocaloid",
+    "title": "愛言葉V",
+    "artist": "DECO*27",
+    "bpm": null,
+    "imageName": "169ad8125bda0f6e7bb0103cb80246594d4747055695ade96291125a5abaad1e.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "v-87ohg",
+    "internalImageId": "img_kN4--F90H3YV",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "2",
+        "levelValue": 2,
+        "internalLevel": null,
+        "internalLevelValue": 2,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10",
+        "levelValue": 10,
+        "internalLevel": "10.0",
+        "internalLevelValue": 10,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
       },
       {
         "type": "dx",
@@ -242,7 +1970,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 662
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -254,33 +1982,33 @@
           "intl": {}
         },
         "isSpecial": false,
-        "version": "CiRCLE PLUS"
+        "version": "MAGiCAL"
       }
     ],
-    "keyword": "光線歌"
+    "keyword": "愛言葉V"
   },
   {
-    "songId": "電脳眠眠猫",
+    "songId": "PPPP (feat. Hatsune Miku, Kasane Teto)",
     "category": "niconico-vocaloid",
-    "title": "電脳眠眠猫",
-    "artist": "桃寝ちのい",
+    "title": "PPPP (feat. Hatsune Miku, Kasane Teto)",
+    "artist": "TAK",
     "bpm": null,
-    "imageName": "8d9f4441148d49d701451d3977334d0d84f70ad9751b23d7dd1e0792ea83472c.png",
-    "version": "dx-circle-plus",
-    "releaseDate": "2026-09-04",
+    "imageName": "f22553a2b2e35fc26018c3f68d7f94c0a6d4a2d2b81d35a401f899de24e06caf.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
     "isNew": true,
     "isLocked": false,
     "comment": null,
-    "slug": "k7xaa",
-    "internalImageId": "img_CkAZCzpkoH4h",
+    "slug": "pppp-feat-hatsune-miku-kasane-teto-tdspd",
+    "internalImageId": "img_aRWB6_fXvPu3",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "2",
-        "levelValue": 2,
+        "level": "3",
+        "levelValue": 3,
         "internalLevel": null,
-        "internalLevelValue": 2,
+        "internalLevelValue": 3,
         "noteDesigner": "-",
         "noteCounts": {
           "tap": null,
@@ -288,7 +2016,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 197
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -300,7 +2028,7 @@
           "intl": {}
         },
         "isSpecial": false,
-        "version": "CiRCLE PLUS"
+        "version": "MAGiCAL"
       },
       {
         "type": "dx",
@@ -316,7 +2044,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 329
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -328,15 +2056,15 @@
           "intl": {}
         },
         "isSpecial": false,
-        "version": "CiRCLE PLUS"
+        "version": "MAGiCAL"
       },
       {
         "type": "dx",
         "difficulty": "expert",
         "level": "10",
         "levelValue": 10,
-        "internalLevel": "10.4",
-        "internalLevelValue": 10.4,
+        "internalLevel": "10.0",
+        "internalLevelValue": 10,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -344,7 +2072,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 525
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -356,15 +2084,173 @@
           "intl": {}
         },
         "isSpecial": false,
-        "version": "CiRCLE PLUS"
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "11+",
+        "levelValue": 11.6,
+        "internalLevel": "11.8",
+        "internalLevelValue": 11.8,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "remaster",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.6",
+        "internalLevelValue": 13.6,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "PPPP (feat. Hatsune Miku, Kasane Teto)"
+  },
+  {
+    "songId": "さっきゅんライト（2025）",
+    "category": "touhou",
+    "title": "さっきゅんライト（2025）",
+    "artist": "石鹸屋",
+    "bpm": null,
+    "imageName": "ccccb18c35de69ae38a70ec60574b795a1e3e592b8fd8d6beee8cc34b9612436.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "2025-6amvj",
+    "internalImageId": "img_0oLelVqRvxRu",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "3",
+        "levelValue": 3,
+        "internalLevel": null,
+        "internalLevelValue": 3,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10+",
+        "levelValue": 10.6,
+        "internalLevel": "10.6",
+        "internalLevelValue": 10.6,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
       },
       {
         "type": "dx",
         "difficulty": "master",
         "level": "13",
         "levelValue": 13,
-        "internalLevel": "13.2",
-        "internalLevelValue": 13.2,
+        "internalLevel": "13.5",
+        "internalLevelValue": 13.5,
         "noteDesigner": null,
         "noteCounts": {
           "tap": null,
@@ -372,7 +2258,7 @@
           "slide": null,
           "touch": null,
           "break": null,
-          "total": 843
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -384,9 +2270,269 @@
           "intl": {}
         },
         "isSpecial": false,
-        "version": "CiRCLE PLUS"
+        "version": "MAGiCAL"
       }
     ],
-    "keyword": "電脳眠眠猫"
+    "keyword": "さっきゅんライト（2025）"
+  },
+  {
+    "songId": "Antikythera [Vocal Version]",
+    "category": "game-variety",
+    "title": "Antikythera [Vocal Version]",
+    "artist": "technoplanet feat. 木下珠子",
+    "bpm": null,
+    "imageName": "5178775429611dfce04f4da650d33a63e534a5757afc20f01c6daf702930be1b.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "antikythera-vocal-version-technoplanet-7ych7",
+    "internalImageId": "img_amGlW-pyiQUT",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "8+",
+        "levelValue": 8.6,
+        "internalLevel": "8.7",
+        "internalLevelValue": 8.7,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "12",
+        "levelValue": 12,
+        "internalLevel": "12.5",
+        "internalLevelValue": 12.5,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "14",
+        "levelValue": 14,
+        "internalLevel": "14.5",
+        "internalLevelValue": 14.5,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "Antikythera [Vocal Version]"
+  },
+  {
+    "songId": "Halzion",
+    "category": "game-variety",
+    "title": "Halzion",
+    "artist": "H△G",
+    "bpm": null,
+    "imageName": "9112c705eb5dbccf09489272b9ebd7c4114de7651aacfa7508a71beb439a6dc3.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-09-17",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "halzion-5t69z",
+    "internalImageId": "img_b4KM-La7uc82",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "3",
+        "levelValue": 3,
+        "internalLevel": null,
+        "internalLevelValue": 3,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10",
+        "levelValue": 10,
+        "internalLevel": "10.0",
+        "internalLevelValue": 10,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "12+",
+        "levelValue": 12.6,
+        "internalLevel": "12.8",
+        "internalLevelValue": 12.8,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "Halzion"
   }
 ]

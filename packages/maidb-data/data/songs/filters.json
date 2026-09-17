@@ -137,6 +137,10 @@
     {
       "value": "dx-circle-plus",
       "label": "CiRCLE+"
+    },
+    {
+      "value": "MAGiCAL",
+      "label": "MAGiCAL"
     }
   ],
   "difficulties": [
@@ -511,12 +515,12 @@
   ],
   "statuses": [
     {
-      "value": "locked",
-      "label": "Locked"
-    },
-    {
       "value": "new",
       "label": "New"
+    },
+    {
+      "value": "locked",
+      "label": "Locked"
     }
   ]
 }
