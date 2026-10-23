@@ -25123,7 +25123,7 @@
         "id": "72bcc10d-6b35-4054-bfb2-cbe5ef7190a6",
         "difficulty": "master",
         "level": "14",
-        "internal_level": 14.1,
+        "internal_level": 14,
         "version": "CiRCLE PLUS",
         "release_date": "2026-03-19T01:00:00+00:00",
         "notes_designer": "サファ太",
@@ -25270,16 +25270,6 @@
         "has_chart_data": false
       },
       {
-        "id": "3d9346e8-0e3c-4305-b266-0ade3914f34d",
-        "difficulty": "master",
-        "level": "11+",
-        "internal_level": 11.8,
-        "version": "CiRCLE PLUS",
-        "release_date": "2026-03-19T01:00:00+00:00",
-        "notes_designer": "緑風 犬三郎",
-        "has_chart_data": true
-      },
-      {
         "id": "57a32bef-4e50-4155-b319-d57429d7dfa8",
         "difficulty": "expert",
         "level": "10",
@@ -25287,6 +25277,16 @@
         "version": "CiRCLE PLUS",
         "release_date": "2026-03-19T01:00:00+00:00",
         "notes_designer": "Jack",
+        "has_chart_data": true
+      },
+      {
+        "id": "3d9346e8-0e3c-4305-b266-0ade3914f34d",
+        "difficulty": "master",
+        "level": "11+",
+        "internal_level": 11.8,
+        "version": "CiRCLE PLUS",
+        "release_date": "2026-03-19T01:00:00+00:00",
+        "notes_designer": "緑風 犬三郎",
         "has_chart_data": true
       },
       {
@@ -25303,7 +25303,7 @@
         "id": "89fb2675-9402-4749-a1ec-f7ebef832815",
         "difficulty": "advanced",
         "level": "6",
-        "internal_level": 6.5,
+        "internal_level": 6.6,
         "version": "CiRCLE PLUS",
         "release_date": "2026-03-19T01:00:00+00:00",
         "notes_designer": null,
@@ -43210,6 +43210,16 @@
         "has_chart_data": true
       },
       {
+        "id": "fccaf4fd-d2fc-435e-8493-42cfc6e749fd",
+        "difficulty": "master",
+        "level": "13+",
+        "internal_level": 13.9,
+        "version": "でらっくす",
+        "release_date": "2019-10-24T01:00:00+00:00",
+        "notes_designer": "サファ太",
+        "has_chart_data": true
+      },
+      {
         "id": "1ec526cf-590a-40a9-ada6-26b4e1827984",
         "difficulty": "basic",
         "level": "5",
@@ -43227,16 +43237,6 @@
         "version": "でらっくす",
         "release_date": "2019-10-24T01:00:00+00:00",
         "notes_designer": "シチミヘルツ",
-        "has_chart_data": true
-      },
-      {
-        "id": "fccaf4fd-d2fc-435e-8493-42cfc6e749fd",
-        "difficulty": "master",
-        "level": "13+",
-        "internal_level": 13.9,
-        "version": "でらっくす",
-        "release_date": "2019-10-24T01:00:00+00:00",
-        "notes_designer": "サファ太",
         "has_chart_data": true
       },
       {
