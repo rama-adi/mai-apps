@@ -1287,16 +1287,6 @@
     "gamerch_id": "533601",
     "charts": [
       {
-        "id": "91e310ff-bf14-45bf-9af5-b9a5657bca3e",
-        "difficulty": "basic",
-        "level": "7",
-        "internal_level": 7,
-        "version": "FiNALE",
-        "release_date": "2019-02-07T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "63cea140-81ed-4229-8fc0-863131f34791",
         "difficulty": "advanced",
         "level": "10",
@@ -1314,6 +1304,16 @@
         "version": "FiNALE",
         "release_date": "2019-02-07T01:00:00+00:00",
         "notes_designer": "“Carpe diem” ＊ HAN∀BI",
+        "has_chart_data": true
+      },
+      {
+        "id": "91e310ff-bf14-45bf-9af5-b9a5657bca3e",
+        "difficulty": "basic",
+        "level": "7",
+        "internal_level": 7,
+        "version": "FiNALE",
+        "release_date": "2019-02-07T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
@@ -1377,7 +1377,7 @@
         "id": "4b95c54c-586c-41c4-821f-2de4e2f17252",
         "difficulty": "advanced",
         "level": "6",
-        "internal_level": 6.5,
+        "internal_level": 6.6,
         "version": "Splash PLUS",
         "release_date": "2021-07-09T01:00:00+00:00",
         "notes_designer": null,
@@ -3591,8 +3591,8 @@
       {
         "id": "2bfcde91-e1f5-48e1-8c2c-f0c3a2b91bdc",
         "difficulty": "advanced",
-        "level": "8",
-        "internal_level": 8.2,
+        "level": "8+",
+        "internal_level": 8.9,
         "version": "maimai PLUS",
         "release_date": "2013-05-09T01:00:00+00:00",
         "notes_designer": null,
@@ -6822,8 +6822,8 @@
       {
         "id": "ba1fda8d-2062-47ce-8cce-04f665850b65",
         "difficulty": "advanced",
-        "level": "7+",
-        "internal_level": 7.8,
+        "level": "8",
+        "internal_level": 8.5,
         "version": "ORANGE",
         "release_date": "2015-01-08T01:00:00+00:00",
         "notes_designer": null,
@@ -27116,7 +27116,7 @@
         "internal_level": 13.7,
         "version": "ORANGE PLUS",
         "release_date": "2015-07-16T01:00:00+00:00",
-        "notes_designer": "はっぴー",
+        "notes_designer": "はっぴー 定数調査 MAGiCAL 譜面再現テキスト(simai)",
         "has_chart_data": true
       },
       {
@@ -27130,20 +27130,20 @@
         "has_chart_data": false
       },
       {
-        "id": "d05a2785-25bc-4f55-ac16-646c9d1241d1",
-        "difficulty": "advanced",
-        "level": "7+",
-        "internal_level": 7.8,
+        "id": "373b2ac6-c39c-4194-923a-e4f6bf08301e",
+        "difficulty": "basic",
+        "level": "5",
+        "internal_level": 5,
         "version": "ORANGE PLUS",
         "release_date": "2015-07-16T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": false
       },
       {
-        "id": "373b2ac6-c39c-4194-923a-e4f6bf08301e",
-        "difficulty": "basic",
-        "level": "5",
-        "internal_level": 5,
+        "id": "d05a2785-25bc-4f55-ac16-646c9d1241d1",
+        "difficulty": "advanced",
+        "level": "8",
+        "internal_level": 8.5,
         "version": "ORANGE PLUS",
         "release_date": "2015-07-16T01:00:00+00:00",
         "notes_designer": null,
@@ -32300,16 +32300,6 @@
         "has_chart_data": false
       },
       {
-        "id": "c1f241a4-bcc6-403b-a74c-8ac1dd515f5a",
-        "difficulty": "basic",
-        "level": "4",
-        "internal_level": 4,
-        "version": "MAGiCAL",
-        "release_date": "2026-09-17T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
         "id": "b6980621-3a2d-4f04-bf7b-13a1f90b0747",
         "difficulty": "advanced",
         "level": "8",
@@ -32317,7 +32307,17 @@
         "version": "MAGiCAL",
         "release_date": "2026-09-17T01:00:00+00:00",
         "notes_designer": null,
-        "has_chart_data": false
+        "has_chart_data": true
+      },
+      {
+        "id": "c1f241a4-bcc6-403b-a74c-8ac1dd515f5a",
+        "difficulty": "basic",
+        "level": "4",
+        "internal_level": 4,
+        "version": "MAGiCAL",
+        "release_date": "2026-09-17T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": true
       },
       {
         "id": "5a87b8ab-c208-4d6e-8cac-0d46f8025eb3",
@@ -32327,7 +32327,7 @@
         "version": "MAGiCAL",
         "release_date": "2026-09-17T01:00:00+00:00",
         "notes_designer": "せめんともり",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "b3287773-4253-4bd7-af25-5d42e95120ee",
@@ -32337,7 +32337,7 @@
         "version": "MAGiCAL",
         "release_date": "2026-09-17T01:00:00+00:00",
         "notes_designer": "けんけん法師",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "d2dc5684-49d7-4947-99f6-37483e3cf701",
@@ -37512,8 +37512,8 @@
       {
         "id": "052fec75-4998-4621-8629-4be05b3047c8",
         "difficulty": "advanced",
-        "level": "8+",
-        "internal_level": 8.6,
+        "level": "9",
+        "internal_level": 9.3,
         "version": "MURASAKi",
         "release_date": "2017-04-27T01:00:00+00:00",
         "notes_designer": null,
@@ -39372,8 +39372,8 @@
       {
         "id": "836882f4-8402-45f6-8572-16309c7f04b1",
         "difficulty": "advanced",
-        "level": "6",
-        "internal_level": 6.8,
+        "level": "7",
+        "internal_level": 7.5,
         "version": "MURASAKi",
         "release_date": "2017-05-11T01:00:00+00:00",
         "notes_designer": null,
@@ -45177,7 +45177,7 @@
         "version": "MAGiCAL",
         "release_date": "2026-09-17T01:00:00+00:00",
         "notes_designer": "せめんともり & カマボコ君",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "690e0f51-a3ed-48a6-957c-2826d8664934",
@@ -47823,7 +47823,7 @@
         "id": "4c86e2d9-d2e6-458f-8ee1-096aeea98cd7",
         "difficulty": "advanced",
         "level": "6",
-        "internal_level": 6.5,
+        "internal_level": 6.6,
         "version": "FESTiVAL PLUS",
         "release_date": "2023-04-01T01:00:00+00:00",
         "notes_designer": null,
@@ -69858,16 +69858,6 @@
         "has_chart_data": false
       },
       {
-        "id": "0c045fa4-bc95-4f17-af64-c2096a26cdc2",
-        "difficulty": "advanced",
-        "level": "8",
-        "internal_level": 8,
-        "version": "MAGiCAL",
-        "release_date": "2026-09-25T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
         "id": "42f1364f-a615-4148-9e24-ce74697124a4",
         "difficulty": "expert",
         "level": "12+",
@@ -69886,6 +69876,16 @@
         "release_date": "2026-09-25T01:00:00+00:00",
         "notes_designer": "発光ビーバー",
         "has_chart_data": true
+      },
+      {
+        "id": "0c045fa4-bc95-4f17-af64-c2096a26cdc2",
+        "difficulty": "advanced",
+        "level": "8",
+        "internal_level": 8,
+        "version": "MAGiCAL",
+        "release_date": "2026-09-25T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
       }
     ]
   },
