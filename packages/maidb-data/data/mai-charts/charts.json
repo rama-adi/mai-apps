@@ -9204,8 +9204,8 @@
       {
         "id": "e26a1065-2586-443d-aefe-4e37bb0eb49a",
         "difficulty": "master",
-        "level": "12+",
-        "internal_level": 12.8,
+        "level": "13",
+        "internal_level": 13,
         "version": "でらっくす PLUS",
         "release_date": "2020-08-21T01:00:00+00:00",
         "notes_designer": "小鳥遊さん",
@@ -38157,7 +38157,7 @@
         "version": "BUDDiES",
         "release_date": "2024-03-08T01:00:00+00:00",
         "notes_designer": "カマボコ君",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "e99bce4f-befb-44d2-ae28-cbc4bb3da52e",
@@ -47163,7 +47163,7 @@
         "id": "c8167ba8-cd30-4c7e-b34e-f446b4a8c849",
         "difficulty": "master",
         "level": "13",
-        "internal_level": 13.1,
+        "internal_level": 13.3,
         "version": "CiRCLE PLUS",
         "release_date": "2026-04-03T01:00:00+00:00",
         "notes_designer": "Luxizhel",
@@ -47896,17 +47896,37 @@
         "internal_level": 14.8,
         "version": "MAGiCAL",
         "release_date": "2026-10-29T01:00:00+00:00",
-        "notes_designer": "Iynx magical symphony",
+        "notes_designer": "lynx magical symphony",
         "has_chart_data": true
       },
       {
         "id": "2a461aa7-e13f-4da9-b4f2-4269cede42b7",
         "difficulty": "expert",
         "level": "12",
-        "internal_level": 12,
+        "internal_level": 12.2,
         "version": "MAGiCAL",
         "release_date": "2026-10-29T01:00:00+00:00",
-        "notes_designer": "？",
+        "notes_designer": "アマリリス",
+        "has_chart_data": false
+      },
+      {
+        "id": "511d1eb7-c640-473e-bd45-5e60056acf29",
+        "difficulty": "basic",
+        "level": "5",
+        "internal_level": 5,
+        "version": "MAGiCAL",
+        "release_date": "2026-10-29T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
+      },
+      {
+        "id": "07d986a7-cf61-49fc-9b06-08a577816f11",
+        "difficulty": "advanced",
+        "level": "8",
+        "internal_level": 8,
+        "version": "MAGiCAL",
+        "release_date": "2026-10-29T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": false
       },
       {
