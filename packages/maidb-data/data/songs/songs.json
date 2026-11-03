@@ -13172,7 +13172,7 @@
     "imageName": "07efedcb40d494ac2678b09bbc4cc4ac7269630feb58157fb1f549871084ce21.png",
     "version": "orange-plus",
     "releaseDate": "2015-04-16",
-    "isNew": true,
+    "isNew": false,
     "isLocked": false,
     "comment": null,
     "slug": "can-do-granrodeopv-thsa3",
@@ -13187,12 +13187,12 @@
         "internalLevelValue": 4,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
+          "tap": 146,
+          "hold": 8,
+          "slide": 4,
           "touch": null,
-          "break": null,
-          "total": null
+          "break": 4,
+          "total": 162
         },
         "regions": {
           "jp": true,
@@ -13215,12 +13215,12 @@
         "internalLevelValue": 7.7,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
+          "tap": 199,
+          "hold": 22,
+          "slide": 6,
           "touch": null,
-          "break": null,
-          "total": null
+          "break": 6,
+          "total": 233
         },
         "regions": {
           "jp": true,
@@ -13241,14 +13241,14 @@
         "levelValue": 10.6,
         "internalLevel": "10.8",
         "internalLevelValue": 10.8,
-        "noteDesigner": "Jack",
+        "noteDesigner": "はっぴー",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
+          "tap": 337,
+          "hold": 33,
+          "slide": 25,
           "touch": null,
-          "break": null,
-          "total": null
+          "break": 20,
+          "total": 415
         },
         "regions": {
           "jp": true,
@@ -13297,14 +13297,14 @@
         "levelValue": 13.6,
         "internalLevel": "13.7",
         "internalLevelValue": 13.7,
-        "noteDesigner": null,
+        "noteDesigner": "Luxizhel",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
+          "tap": 446,
+          "hold": 19,
+          "slide": 106,
           "touch": null,
-          "break": null,
-          "total": null
+          "break": 43,
+          "total": 614
         },
         "regions": {
           "jp": true,
@@ -234751,8 +234751,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -234779,8 +234779,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -234807,8 +234807,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -234835,8 +234835,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -234881,8 +234881,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -234909,8 +234909,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -234937,8 +234937,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -234965,8 +234965,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -235011,8 +235011,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -235039,8 +235039,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -235067,8 +235067,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -235095,8 +235095,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -235141,8 +235141,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -235169,8 +235169,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -235197,8 +235197,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -235225,8 +235225,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -235271,8 +235271,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -235316,8 +235316,8 @@
         },
         "regions": {
           "jp": true,
-          "intl": false,
-          "usa": false,
+          "intl": true,
+          "usa": true,
           "cn": false
         },
         "regionOverrides": {
@@ -241675,7 +241675,7 @@
     "imageName": "b67c5bba26f89af4e9f13445adf431e1e43259243aeccaf30cc6c17f607df1d9.png",
     "version": "MAGiCAL",
     "releaseDate": "2026-10-16",
-    "isNew": true,
+    "isNew": false,
     "isLocked": false,
     "comment": null,
     "slug": "chaosblue-granrodeo-su21m",
@@ -241690,12 +241690,12 @@
         "internalLevelValue": 3,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 134,
+          "hold": 12,
+          "slide": 4,
+          "touch": 6,
+          "break": 6,
+          "total": 162
         },
         "regions": {
           "jp": true,
@@ -241718,12 +241718,12 @@
         "internalLevelValue": 6,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 204,
+          "hold": 17,
+          "slide": 8,
+          "touch": 29,
+          "break": 4,
+          "total": 262
         },
         "regions": {
           "jp": true,
@@ -241744,14 +241744,14 @@
         "levelValue": 10,
         "internalLevel": "10.0",
         "internalLevelValue": 10,
-        "noteDesigner": null,
+        "noteDesigner": "サファ太",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 291,
+          "hold": 28,
+          "slide": 37,
+          "touch": 12,
+          "break": 48,
+          "total": 416
         },
         "regions": {
           "jp": true,
@@ -241772,14 +241772,14 @@
         "levelValue": 13,
         "internalLevel": "13.4",
         "internalLevelValue": 13.4,
-        "noteDesigner": null,
+        "noteDesigner": "ぴちネコ",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 411,
+          "hold": 62,
+          "slide": 80,
+          "touch": 85,
+          "break": 70,
+          "total": 708
         },
         "regions": {
           "jp": true,
@@ -241805,7 +241805,7 @@
     "imageName": "41d7ec9686b04b8b14aed7ee5ac526434191814592e3a08bbc17caf65e25db8d.png",
     "version": "MAGiCAL",
     "releaseDate": "2026-10-16",
-    "isNew": true,
+    "isNew": false,
     "isLocked": false,
     "comment": null,
     "slug": "go-go-paradise-granrodeo-sginv",
@@ -241820,12 +241820,12 @@
         "internalLevelValue": 3,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 172,
+          "hold": 10,
+          "slide": 5,
+          "touch": 8,
+          "break": 5,
+          "total": 200
         },
         "regions": {
           "jp": true,
@@ -241848,12 +241848,12 @@
         "internalLevelValue": 6,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 280,
+          "hold": 16,
+          "slide": 7,
+          "touch": 21,
+          "break": 8,
+          "total": 332
         },
         "regions": {
           "jp": true,
@@ -241874,14 +241874,14 @@
         "levelValue": 10,
         "internalLevel": "10.5",
         "internalLevelValue": 10.5,
-        "noteDesigner": null,
+        "noteDesigner": "発光ビーバー",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 380,
+          "hold": 37,
+          "slide": 40,
+          "touch": 27,
+          "break": 26,
+          "total": 510
         },
         "regions": {
           "jp": true,
@@ -241902,14 +241902,14 @@
         "levelValue": 13,
         "internalLevel": "13.3",
         "internalLevelValue": 13.3,
-        "noteDesigner": null,
+        "noteDesigner": "けんけん法師",
         "noteCounts": {
-          "tap": null,
-          "hold": null,
-          "slide": null,
-          "touch": null,
-          "break": null,
-          "total": null
+          "tap": 561,
+          "hold": 27,
+          "slide": 109,
+          "touch": 56,
+          "break": 53,
+          "total": 806
         },
         "regions": {
           "jp": true,
@@ -241925,5 +241925,273 @@
       }
     ],
     "keyword": "GO GO PARADISE!!"
+  },
+  {
+    "songId": "魔法仕掛けのファンタジア",
+    "category": "maimai",
+    "title": "魔法仕掛けのファンタジア",
+    "artist": "igel",
+    "bpm": 280,
+    "imageName": "dd49eb4d5bb8ec7ab0510a0012e9901eb5414bb7267dc619bd5a13321433444b.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-10-29",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "dfmep",
+    "internalImageId": "img_5x6EcoJ7ql9G",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "5",
+        "levelValue": 5,
+        "internalLevel": null,
+        "internalLevelValue": 5,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 164,
+          "hold": 15,
+          "slide": 8,
+          "touch": 15,
+          "break": 4,
+          "total": 206
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {
+            "version": "CiRCLE PLUS"
+          }
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "8",
+        "levelValue": 8,
+        "internalLevel": "8.0",
+        "internalLevelValue": 8,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 248,
+          "hold": 8,
+          "slide": 18,
+          "touch": 15,
+          "break": 2,
+          "total": 291
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {
+            "version": "CiRCLE PLUS"
+          }
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "12",
+        "levelValue": 12,
+        "internalLevel": "12.2",
+        "internalLevelValue": 12.2,
+        "noteDesigner": "アマリリス",
+        "noteCounts": {
+          "tap": 477,
+          "hold": 50,
+          "slide": 50,
+          "touch": 4,
+          "break": 36,
+          "total": 617
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {
+            "version": "CiRCLE PLUS"
+          }
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "14+",
+        "levelValue": 14.6,
+        "internalLevel": "14.8",
+        "internalLevelValue": 14.8,
+        "noteDesigner": "lynx magical symphony",
+        "noteCounts": {
+          "tap": 620,
+          "hold": 97,
+          "slide": 87,
+          "touch": 105,
+          "break": 146,
+          "total": 1055
+        },
+        "regions": {
+          "jp": true,
+          "intl": true,
+          "usa": true,
+          "cn": true
+        },
+        "regionOverrides": {
+          "intl": {
+            "version": "CiRCLE PLUS"
+          }
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "魔法仕掛けのファンタジア"
+  },
+  {
+    "songId": "Happy Halloween",
+    "category": "niconico-vocaloid",
+    "title": "Happy Halloween",
+    "artist": "Junky feat. 鏡音リン",
+    "bpm": 120,
+    "imageName": "77d790976e3b4cac5c594fc767d1f087b5ebaa64b3cac840508922436c6b3b40.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-10-29",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "happy-halloween-a71wp",
+    "internalImageId": "img_6L4EcnXW_3en",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "2",
+        "levelValue": 2,
+        "internalLevel": null,
+        "internalLevelValue": 2,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 115,
+          "hold": 8,
+          "slide": 4,
+          "touch": 8,
+          "break": 8,
+          "total": 143
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "5",
+        "levelValue": 5,
+        "internalLevel": null,
+        "internalLevelValue": 5,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": 214,
+          "hold": 8,
+          "slide": 6,
+          "touch": 11,
+          "break": 6,
+          "total": 245
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "9+",
+        "levelValue": 9.6,
+        "internalLevel": "9.8",
+        "internalLevelValue": 9.8,
+        "noteDesigner": "けんけん法師",
+        "noteCounts": {
+          "tap": 215,
+          "hold": 79,
+          "slide": 30,
+          "touch": 20,
+          "break": 19,
+          "total": 363
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13",
+        "levelValue": 13,
+        "internalLevel": "13.5",
+        "internalLevelValue": 13.5,
+        "noteDesigner": "はっぴー",
+        "noteCounts": {
+          "tap": 265,
+          "hold": 24,
+          "slide": 65,
+          "touch": 30,
+          "break": 33,
+          "total": 417
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "Happy Halloween"
   }
 ]
