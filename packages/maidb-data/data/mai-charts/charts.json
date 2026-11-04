@@ -16145,7 +16145,7 @@
         "version": "UNiVERSE",
         "release_date": "2021-09-16T01:00:00+00:00",
         "notes_designer": "ロシェ@ペンギン",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "84c18439-f6da-4c94-858e-aed8e66a564b",
@@ -38590,8 +38590,8 @@
       {
         "id": "c52da018-ff19-4547-b7ff-f5cba6767e39",
         "difficulty": "advanced",
-        "level": "7",
-        "internal_level": 7.2,
+        "level": "7+",
+        "internal_level": 7.9,
         "version": "MURASAKi",
         "release_date": "2017-01-24T01:00:00+00:00",
         "notes_designer": null,
@@ -39765,7 +39765,7 @@
         "version": "でらっくす",
         "release_date": "2019-09-20T01:00:00+00:00",
         "notes_designer": "小鳥遊さん",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "2e5ecfc0-6a78-46ad-8a68-9148bb628cc7",
@@ -42371,8 +42371,8 @@
       {
         "id": "c970fade-80f8-4a86-918c-7ec7b69543ed",
         "difficulty": "advanced",
-        "level": "7+",
-        "internal_level": 7.8,
+        "level": "8",
+        "internal_level": 8.5,
         "version": "PiNK PLUS",
         "release_date": "2016-06-30T01:00:00+00:00",
         "notes_designer": null,
@@ -47036,7 +47036,7 @@
         "version": "MAGiCAL",
         "release_date": "2026-09-17T01:00:00+00:00",
         "notes_designer": "ロシェ@ペンギン",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "73edae05-152b-487c-8043-913858a40d3a",
@@ -52798,7 +52798,7 @@
         "version": "BUDDiES PLUS",
         "release_date": "2024-04-01T01:00:00+00:00",
         "notes_designer": "Luxizhel",
-        "has_chart_data": false
+        "has_chart_data": true
       }
     ]
   },
@@ -55399,7 +55399,7 @@
         "version": "MAGiCAL",
         "release_date": "2026-10-02T01:00:00+00:00",
         "notes_designer": "サファ太",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "b2f540e4-b24c-4a79-9a94-96a82d0456a7",
@@ -59782,7 +59782,7 @@
         "version": "FESTiVAL PLUS",
         "release_date": "2023-07-21T01:00:00+00:00",
         "notes_designer": "ボコ太",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "e14d4992-0c8d-49fc-b3a5-ddca3292e938",
@@ -66072,8 +66072,8 @@
       {
         "id": "c028f040-33bf-495d-973a-53f30ad03218",
         "difficulty": "advanced",
-        "level": "7+",
-        "internal_level": 7.8,
+        "level": "8",
+        "internal_level": 8.5,
         "version": "MiLK PLUS",
         "release_date": "2018-06-21T01:00:00+00:00",
         "notes_designer": null,
@@ -66110,6 +66110,16 @@
         "has_chart_data": true
       },
       {
+        "id": "fbf76da6-8947-4cd2-8072-a2533418d112",
+        "difficulty": "master",
+        "level": "13",
+        "internal_level": 13.5,
+        "version": "でらっくす",
+        "release_date": "2019-10-04T01:00:00+00:00",
+        "notes_designer": "小鳥遊さん",
+        "has_chart_data": true
+      },
+      {
         "id": "6d8c4eb8-cd46-4ae0-9769-504f27a70051",
         "difficulty": "expert",
         "level": "11",
@@ -66138,16 +66148,6 @@
         "release_date": "2019-10-04T01:00:00+00:00",
         "notes_designer": null,
         "has_chart_data": false
-      },
-      {
-        "id": "fbf76da6-8947-4cd2-8072-a2533418d112",
-        "difficulty": "master",
-        "level": "13",
-        "internal_level": 13.5,
-        "version": "でらっくす",
-        "release_date": "2019-10-04T01:00:00+00:00",
-        "notes_designer": "小鳥遊さん",
-        "has_chart_data": true
       }
     ]
   },
@@ -66528,8 +66528,8 @@
       {
         "id": "fda9e98c-c702-4f1a-bd50-6074874e7164",
         "difficulty": "advanced",
-        "level": "6",
-        "internal_level": 6.8,
+        "level": "7",
+        "internal_level": 7.5,
         "version": "PiNK PLUS",
         "release_date": "2016-08-31T01:00:00+00:00",
         "notes_designer": null,
