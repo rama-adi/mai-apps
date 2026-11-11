@@ -25350,8 +25350,8 @@
       {
         "id": "c15b804c-e837-4acc-b22a-1281da9246e7",
         "difficulty": "advanced",
-        "level": "7+",
-        "internal_level": 7.9,
+        "level": "8+",
+        "internal_level": 8.6,
         "version": "PiNK PLUS",
         "release_date": "2016-11-17T01:00:00+00:00",
         "notes_designer": null,
@@ -54285,7 +54285,7 @@
         "version": "UNiVERSE",
         "release_date": "2022-01-14T01:00:00+00:00",
         "notes_designer": "小鳥遊さん",
-        "has_chart_data": false
+        "has_chart_data": true
       }
     ]
   },
@@ -65872,16 +65872,6 @@
     "gamerch_id": "533740",
     "charts": [
       {
-        "id": "a94e3d47-d7a9-43cb-b30c-29e485ee964b",
-        "difficulty": "advanced",
-        "level": "8",
-        "internal_level": 8,
-        "version": "GreeN PLUS",
-        "release_date": "2014-04-10T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": false
-      },
-      {
         "id": "bf749afa-eaa2-4fb3-9ed6-9fbccac344d2",
         "difficulty": "expert",
         "level": "10+",
@@ -65890,6 +65880,16 @@
         "release_date": "2014-04-10T01:00:00+00:00",
         "notes_designer": "mai-Star",
         "has_chart_data": true
+      },
+      {
+        "id": "a94e3d47-d7a9-43cb-b30c-29e485ee964b",
+        "difficulty": "advanced",
+        "level": "8",
+        "internal_level": 8,
+        "version": "GreeN PLUS",
+        "release_date": "2014-04-10T01:00:00+00:00",
+        "notes_designer": null,
+        "has_chart_data": false
       },
       {
         "id": "ac1b33a9-36f1-40c8-9850-f1be669722a1",
