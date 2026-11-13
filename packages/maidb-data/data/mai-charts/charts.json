@@ -14385,7 +14385,7 @@
         "version": "UNiVERSE",
         "release_date": "2021-09-16T01:00:00+00:00",
         "notes_designer": "Jack",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "bb792917-a320-466a-b5cf-1d5e9a8bd8fd",
@@ -18205,7 +18205,7 @@
         "version": "BUDDiES",
         "release_date": "2024-02-16T01:00:00+00:00",
         "notes_designer": "アマリリス",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "92e7eea9-6404-40a2-ade5-f26231fe1e13",
@@ -36815,7 +36815,7 @@
         "version": "UNiVERSE PLUS",
         "release_date": "2022-08-19T01:00:00+00:00",
         "notes_designer": "じゃこレモン",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "6f70bd0a-7bd2-4aec-9fa8-c2ca365a0bb5",
@@ -56419,7 +56419,7 @@
         "version": "BUDDiES",
         "release_date": "2023-09-14T01:00:00+00:00",
         "notes_designer": "はっぴー",
-        "has_chart_data": false
+        "has_chart_data": true
       }
     ]
   },
@@ -64083,16 +64083,6 @@
         "has_chart_data": true
       },
       {
-        "id": "1d83d3f5-8451-4c17-a713-c1fd44483a9e",
-        "difficulty": "advanced",
-        "level": "10+",
-        "internal_level": 10.9,
-        "version": "FiNALE",
-        "release_date": "2018-12-13T01:00:00+00:00",
-        "notes_designer": null,
-        "has_chart_data": true
-      },
-      {
         "id": "94e465bf-3f19-462d-aab2-8fb537644bab",
         "difficulty": "expert",
         "level": "13",
@@ -64100,6 +64090,16 @@
         "version": "FiNALE",
         "release_date": "2018-12-13T01:00:00+00:00",
         "notes_designer": "Jack",
+        "has_chart_data": true
+      },
+      {
+        "id": "1d83d3f5-8451-4c17-a713-c1fd44483a9e",
+        "difficulty": "advanced",
+        "level": "10+",
+        "internal_level": 10.9,
+        "version": "FiNALE",
+        "release_date": "2018-12-13T01:00:00+00:00",
+        "notes_designer": null,
         "has_chart_data": true
       },
       {
