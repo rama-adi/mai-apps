@@ -1522,7 +1522,7 @@
         "version": "MAGiCAL",
         "release_date": "2026-10-02T01:00:00+00:00",
         "notes_designer": "サファ太",
-        "has_chart_data": false
+        "has_chart_data": true
       }
     ]
   },
@@ -31095,7 +31095,7 @@
         "version": "MAGiCAL",
         "release_date": "2026-10-02T01:00:00+00:00",
         "notes_designer": "Luxizhel",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "2e6772a6-7aed-49f9-96d3-110b5fe0b437",
@@ -45200,16 +45200,6 @@
     "gamerch_id": "1014124",
     "charts": [
       {
-        "id": "4232f01a-2066-4cdd-b992-32b498f91dec",
-        "difficulty": "master",
-        "level": "12+",
-        "internal_level": 12.8,
-        "version": "MAGiCAL",
-        "release_date": "2026-09-17T01:00:00+00:00",
-        "notes_designer": "発光ビーバー",
-        "has_chart_data": false
-      },
-      {
         "id": "86141a40-2835-49a0-ace4-939673d33eb0",
         "difficulty": "advanced",
         "level": "6",
@@ -45228,6 +45218,16 @@
         "release_date": "2026-09-17T01:00:00+00:00",
         "notes_designer": "サファ太",
         "has_chart_data": false
+      },
+      {
+        "id": "4232f01a-2066-4cdd-b992-32b498f91dec",
+        "difficulty": "master",
+        "level": "12+",
+        "internal_level": 12.8,
+        "version": "MAGiCAL",
+        "release_date": "2026-09-17T01:00:00+00:00",
+        "notes_designer": "発光ビーバー",
+        "has_chart_data": true
       },
       {
         "id": "22819b3a-c85d-45bc-95ec-6be63f31ece0",
@@ -54708,7 +54708,7 @@
         "version": "BUDDiES",
         "release_date": "2023-10-06T01:00:00+00:00",
         "notes_designer": "鳩ホルダー",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "6cdb992d-09a4-40a9-b0df-cb5e7c6eac90",
@@ -65587,7 +65587,7 @@
         "version": "FESTiVAL",
         "release_date": "2023-03-02T01:00:00+00:00",
         "notes_designer": "はっぴー",
-        "has_chart_data": false
+        "has_chart_data": true
       },
       {
         "id": "5b68ce0d-ac53-4b3c-903f-42220af82841",
