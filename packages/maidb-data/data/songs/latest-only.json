@@ -1,45 +1,303 @@
 [
   {
-    "songId": "魔法仕掛けのファンタジア",
+    "songId": "ルミネイション",
     "category": "maimai",
-    "title": "魔法仕掛けのファンタジア",
-    "artist": "igel",
-    "bpm": 280,
-    "imageName": "dd49eb4d5bb8ec7ab0510a0012e9901eb5414bb7267dc619bd5a13321433444b.png",
+    "title": "ルミネイション",
+    "artist": "Room97 feat.藍来いあ.",
+    "bpm": null,
+    "imageName": "24e82919005eb7ff493a1f5f910d7ab26822c166849f12b36482fae39f5e37f5.png",
     "version": "MAGiCAL",
-    "releaseDate": "2026-10-29",
+    "releaseDate": "2026-11-27",
     "isNew": true,
     "isLocked": true,
     "comment": null,
-    "slug": "dfmep",
-    "internalImageId": "img_5x6EcoJ7ql9G",
+    "slug": "wgson",
+    "internalImageId": "img_a-Ne_0F_1zjv",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "5",
-        "levelValue": 5,
+        "level": "3",
+        "levelValue": 3,
         "internalLevel": null,
-        "internalLevelValue": 5,
+        "internalLevelValue": 3,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": 164,
-          "hold": 15,
-          "slide": 8,
-          "touch": 15,
-          "break": 4,
-          "total": 206
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
-          "intl": true,
-          "usa": true,
-          "cn": true
+          "intl": false,
+          "usa": false,
+          "cn": false
         },
         "regionOverrides": {
-          "intl": {
-            "version": "CiRCLE PLUS"
-          }
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "11+",
+        "levelValue": 11.6,
+        "internalLevel": "11.9",
+        "internalLevelValue": 11.9,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.7",
+        "internalLevelValue": 13.7,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "ルミネイション"
+  },
+  {
+    "songId": "Flare",
+    "category": "maimai",
+    "title": "Flare",
+    "artist": "Aut0＆ILusMin feat.羊羊",
+    "bpm": null,
+    "imageName": "9fe4f01117c93b1e15b9c8f0b36d6cac47edd213bcf4e2ec7fae3f9d27c023a7.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-11-27",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "flare-aut0ilusmin-nemne",
+    "internalImageId": "img_aulAfAfFXTcX",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "3",
+        "levelValue": 3,
+        "internalLevel": null,
+        "internalLevelValue": 3,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "7+",
+        "levelValue": 7.6,
+        "internalLevel": "7.8",
+        "internalLevelValue": 7.8,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10",
+        "levelValue": 10,
+        "internalLevel": "10.5",
+        "internalLevelValue": 10.5,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.7",
+        "internalLevelValue": 13.7,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "Flare"
+  },
+  {
+    "songId": "Asthenosphere",
+    "category": "maimai",
+    "title": "Asthenosphere",
+    "artist": "溝口ゆうま（Yuma.Mizo） feat. 大瀬良あい",
+    "bpm": null,
+    "imageName": "890d40c4ceabe2c4c87ea59c00e27c93ec4d59a96699181331ea59d28586f085.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-11-27",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "asthenosphere-c8iqf",
+    "internalImageId": "img_2dA9Mbv9NVwG",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "4",
+        "levelValue": 4,
+        "internalLevel": null,
+        "internalLevelValue": 4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
         },
         "isSpecial": false,
         "version": "MAGiCAL"
@@ -53,23 +311,21 @@
         "internalLevelValue": 8,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": 248,
-          "hold": 8,
-          "slide": 18,
-          "touch": 15,
-          "break": 2,
-          "total": 291
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
-          "intl": true,
-          "usa": true,
-          "cn": true
+          "intl": false,
+          "usa": false,
+          "cn": false
         },
         "regionOverrides": {
-          "intl": {
-            "version": "CiRCLE PLUS"
-          }
+          "intl": {}
         },
         "isSpecial": false,
         "version": "MAGiCAL"
@@ -77,29 +333,27 @@
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "12",
-        "levelValue": 12,
-        "internalLevel": "12.2",
-        "internalLevelValue": 12.2,
-        "noteDesigner": "アマリリス",
+        "level": "11+",
+        "levelValue": 11.6,
+        "internalLevel": "11.8",
+        "internalLevelValue": 11.8,
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 477,
-          "hold": 50,
-          "slide": 50,
-          "touch": 4,
-          "break": 36,
-          "total": 617
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
-          "intl": true,
-          "usa": true,
-          "cn": true
+          "intl": false,
+          "usa": false,
+          "cn": false
         },
         "regionOverrides": {
-          "intl": {
-            "version": "CiRCLE PLUS"
-          }
+          "intl": {}
         },
         "isSpecial": false,
         "version": "MAGiCAL"
@@ -107,66 +361,64 @@
       {
         "type": "dx",
         "difficulty": "master",
-        "level": "14+",
-        "levelValue": 14.6,
-        "internalLevel": "14.8",
-        "internalLevelValue": 14.8,
-        "noteDesigner": "lynx magical symphony",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.9",
+        "internalLevelValue": 13.9,
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 620,
-          "hold": 97,
-          "slide": 87,
-          "touch": 105,
-          "break": 146,
-          "total": 1055
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
-          "intl": true,
-          "usa": true,
-          "cn": true
+          "intl": false,
+          "usa": false,
+          "cn": false
         },
         "regionOverrides": {
-          "intl": {
-            "version": "CiRCLE PLUS"
-          }
+          "intl": {}
         },
         "isSpecial": false,
         "version": "MAGiCAL"
       }
     ],
-    "keyword": "魔法仕掛けのファンタジア"
+    "keyword": "Asthenosphere"
   },
   {
-    "songId": "Happy Halloween",
-    "category": "niconico-vocaloid",
-    "title": "Happy Halloween",
-    "artist": "Junky feat. 鏡音リン",
-    "bpm": 120,
-    "imageName": "77d790976e3b4cac5c594fc767d1f087b5ebaa64b3cac840508922436c6b3b40.png",
+    "songId": "Unfollow",
+    "category": "maimai",
+    "title": "Unfollow",
+    "artist": "Maozon feat. MOMONADY",
+    "bpm": null,
+    "imageName": "fb4ae7f1dee19b4a8986efd50c1d1610c28e628e63f25a42143f1b07250712f4.png",
     "version": "MAGiCAL",
-    "releaseDate": "2026-10-29",
+    "releaseDate": "2026-11-27",
     "isNew": true,
-    "isLocked": false,
+    "isLocked": true,
     "comment": null,
-    "slug": "happy-halloween-a71wp",
-    "internalImageId": "img_6L4EcnXW_3en",
+    "slug": "unfollow-maozon-bln2h",
+    "internalImageId": "img_1sQeoC30Erc-",
     "sheets": [
       {
         "type": "dx",
         "difficulty": "basic",
-        "level": "2",
-        "levelValue": 2,
+        "level": "4",
+        "levelValue": 4,
         "internalLevel": null,
-        "internalLevelValue": 2,
+        "internalLevelValue": 4,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": 115,
-          "hold": 8,
-          "slide": 4,
-          "touch": 8,
-          "break": 8,
-          "total": 143
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -183,18 +435,18 @@
       {
         "type": "dx",
         "difficulty": "advanced",
-        "level": "5",
-        "levelValue": 5,
-        "internalLevel": null,
-        "internalLevelValue": 5,
+        "level": "8",
+        "levelValue": 8,
+        "internalLevel": "8.0",
+        "internalLevelValue": 8,
         "noteDesigner": "-",
         "noteCounts": {
-          "tap": 214,
-          "hold": 8,
-          "slide": 6,
-          "touch": 11,
-          "break": 6,
-          "total": 245
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -211,18 +463,278 @@
       {
         "type": "dx",
         "difficulty": "expert",
-        "level": "9+",
-        "levelValue": 9.6,
-        "internalLevel": "9.8",
-        "internalLevelValue": 9.8,
-        "noteDesigner": "けんけん法師",
+        "level": "12",
+        "levelValue": 12,
+        "internalLevel": "12.0",
+        "internalLevelValue": 12,
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 215,
-          "hold": 79,
-          "slide": 30,
-          "touch": 20,
-          "break": 19,
-          "total": 363
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "14",
+        "levelValue": 14,
+        "internalLevel": "14.2",
+        "internalLevelValue": 14.2,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "Unfollow"
+  },
+  {
+    "songId": "物語たる迄",
+    "category": "niconico-vocaloid",
+    "title": "物語たる迄",
+    "artist": "Mono. feat. るる",
+    "bpm": null,
+    "imageName": "ecc5b743ac68209b034f02ad6d62866c6dcf4a713b5fbd13623f24cef4a3732b.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-11-27",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "sj1fm",
+    "internalImageId": "img_TvN-OrNssh6r",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "4",
+        "levelValue": 4,
+        "internalLevel": null,
+        "internalLevelValue": 4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "8",
+        "levelValue": 8,
+        "internalLevel": "8.0",
+        "internalLevelValue": 8,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "11",
+        "levelValue": 11,
+        "internalLevel": "11.5",
+        "internalLevelValue": 11.5,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13+",
+        "levelValue": 13.6,
+        "internalLevel": "13.7",
+        "internalLevelValue": 13.7,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "物語たる迄"
+  },
+  {
+    "songId": "Nefilim",
+    "category": "niconico-vocaloid",
+    "title": "Nefilim",
+    "artist": "MokoP",
+    "bpm": null,
+    "imageName": "ff3349988e3f73b5851fea7563391b243f8b0017f41dea24d76200eef77553d6.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-11-27",
+    "isNew": true,
+    "isLocked": false,
+    "comment": null,
+    "slug": "nefilim-jlixr",
+    "internalImageId": "img_tLeOnjm8qw9d",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "2",
+        "levelValue": 2,
+        "internalLevel": null,
+        "internalLevelValue": 2,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "6",
+        "levelValue": 6,
+        "internalLevel": null,
+        "internalLevelValue": 6,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10",
+        "levelValue": 10,
+        "internalLevel": "10.5",
+        "internalLevelValue": 10.5,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -241,16 +753,16 @@
         "difficulty": "master",
         "level": "13",
         "levelValue": 13,
-        "internalLevel": "13.5",
-        "internalLevelValue": 13.5,
-        "noteDesigner": "はっぴー",
+        "internalLevel": "13.2",
+        "internalLevelValue": 13.2,
+        "noteDesigner": null,
         "noteCounts": {
-          "tap": 265,
-          "hold": 24,
-          "slide": 65,
-          "touch": 30,
-          "break": 33,
-          "total": 417
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
         },
         "regions": {
           "jp": true,
@@ -265,6 +777,266 @@
         "version": "MAGiCAL"
       }
     ],
-    "keyword": "Happy Halloween"
+    "keyword": "Nefilim"
+  },
+  {
+    "songId": "Light year (feat.Sea otter club)",
+    "category": "niconico-vocaloid",
+    "title": "Light year (feat.Sea otter club)",
+    "artist": "N",
+    "bpm": null,
+    "imageName": "901524ab5b128d1d94c65d496b40d29b291dc804e24d86ec735e58d6e6b56235.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-11-27",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "light-year-featsea-otter-club-er0yv",
+    "internalImageId": "img_EREI0nPsovVL",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "3",
+        "levelValue": 3,
+        "internalLevel": null,
+        "internalLevelValue": 3,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "7",
+        "levelValue": 7,
+        "internalLevel": "7.0",
+        "internalLevelValue": 7,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "10",
+        "levelValue": 10,
+        "internalLevel": "10.0",
+        "internalLevelValue": 10,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "13",
+        "levelValue": 13,
+        "internalLevel": "13.2",
+        "internalLevelValue": 13.2,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "Light year (feat.Sea otter club)"
+  },
+  {
+    "songId": "＼ﾕｰﾓｱ／ feat. 結月ゆかり",
+    "category": "niconico-vocaloid",
+    "title": "＼ﾕｰﾓｱ／ feat. 結月ゆかり",
+    "artist": "背面８回宙返り",
+    "bpm": null,
+    "imageName": "5571570595d4eba18163da925ea70e772e4c85ae1d066a6ba79c1b50c80c4759.png",
+    "version": "MAGiCAL",
+    "releaseDate": "2026-11-27",
+    "isNew": true,
+    "isLocked": true,
+    "comment": null,
+    "slug": "feat-j3wc7",
+    "internalImageId": "img_8G812i-WX12E",
+    "sheets": [
+      {
+        "type": "dx",
+        "difficulty": "basic",
+        "level": "4",
+        "levelValue": 4,
+        "internalLevel": null,
+        "internalLevelValue": 4,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "advanced",
+        "level": "7+",
+        "levelValue": 7.6,
+        "internalLevel": "7.8",
+        "internalLevelValue": 7.8,
+        "noteDesigner": "-",
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "expert",
+        "level": "11+",
+        "levelValue": 11.6,
+        "internalLevel": "11.7",
+        "internalLevelValue": 11.7,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      },
+      {
+        "type": "dx",
+        "difficulty": "master",
+        "level": "14",
+        "levelValue": 14,
+        "internalLevel": "14.3",
+        "internalLevelValue": 14.3,
+        "noteDesigner": null,
+        "noteCounts": {
+          "tap": null,
+          "hold": null,
+          "slide": null,
+          "touch": null,
+          "break": null,
+          "total": null
+        },
+        "regions": {
+          "jp": true,
+          "intl": false,
+          "usa": false,
+          "cn": false
+        },
+        "regionOverrides": {
+          "intl": {}
+        },
+        "isSpecial": false,
+        "version": "MAGiCAL"
+      }
+    ],
+    "keyword": "＼ﾕｰﾓｱ／ feat. 結月ゆかり"
   }
 ]
